@@ -1,0 +1,28 @@
+# Zero-Shot {.unnumbered}
+
+## ¿Qué es el Zero-Shot Prompting? {.unnumbered}
+
+El Zero-Shot Prompting es una técnica que permite obtener respuestas específicas de un modelo de lenguaje (LLM) proporcionándole únicamente una instrucción directa y sin ejemplos previamente definidos. Este método es ideal cuando se necesitan respuestas inmediatas y claras sin mostrar al modelo ejemplos anteriores de lo que se espera.
+
+
+## ¿Cuándo usar Zero-Shot Prompting? {.unnumbered}
+
+El Zero-Shot Prompting es útil en situaciones donde:
+
+- Se requiere una respuesta rápida
+
+- No se dan ejemplos previos al modelo, solo se le da una instrucción directa.
+
+## Conceptos Clave para un Buen Zero-Shot Prompt {.unnumbered}
+
+1. **Enfoque:** definir claramente la tarea a realizar.
+
+    - Ejemplo: "Ayúdame a planear mis vacaciones con mi esposa.".
+
+2. **Contexto:** información adicional que debe tener en cuenta el LLM desde el inicio.
+
+    - Ejemplo: "Tenemos la idea de ir a Europa, pero no sabemos qué países reqiueren visa.".
+
+3. **Límites:** cosas que puede o no puede hacer el LLM.
+
+4. **Rol:** definir el perfil que debe asumir el LLM, como un agente de viajes.

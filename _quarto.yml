@@ -1,0 +1,38 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "Apuntes varios"
+  author: "Jonatan Salazar"
+  date: "5/11/2025"
+  page-navigation: true
+  back-to-top-navigation: true
+  reader-mode: true
+  page-footer:
+    left: "Copyright 2025, Jonatan Salazar" 
+    right: 
+      - icon: github
+        href: https://github.com/
+    border: true
+  sidebar:
+    logo: static/images/cover.png
+
+  chapters:
+    - index.qmd
+    - part: qmd/prompt_engineering/1_intro.qmd
+      chapters:
+        - qmd/prompt_engineering/zero_shot.qmd
+
+format:
+  html:
+    mainfont: Roboto
+    monofont: Fira Code
+    theme:
+      - cosmo
+      - styles/theme.css
+  pdf:
+    documentclass: scrreprt
+
+
+

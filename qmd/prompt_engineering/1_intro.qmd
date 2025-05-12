@@ -1,0 +1,25 @@
+# Prompt Engineering {.unnumbered}
+
+El Prompt Engineering es el arte y la ciencia de diseñar instrucciones efectivas para modelos de lenguaje de inteligencia artificial. Esta disciplina emergente se centra en cómo formular, estructurar y refinar los "prompts" (instrucciones o peticiones) que se proporcionan a los modelos de IA para obtener los resultados más precisos, útiles y relevantes.
+
+En esencia, un ingeniero de prompts desarrolla habilidades para:
+
+- Formular instrucciones claras y específicas
+- Proporcionar el contexto adecuado
+- Estructurar las peticiones para maximizar la calidad de las respuestas
+- Guiar al modelo hacia el formato y estilo deseado
+- Superar las limitaciones inherentes de los sistemas de IA
+
+El Prompt Engineering se ha convertido en una habilidad esencial para aprovechar al máximo el potencial de los modelos de lenguaje en sus flujos de trabajo.
+
+Importancia del Prompt Engineering
+
+- **Eficiencia:** obtener respuestas precisas y útiles en menos iteraciones
+
+- **Personalización:** adaptar las respuestas a necesidades específicas
+
+- **Superación de limitaciones:** minimizar errores, sesgos o confusiones del modelo
+
+- **Casos de uso avanzados:** habilitar aplicaciones complejas que serían imposibles con prompts básicos
+
+Este apartado refiere a los apuntes hechos del curso Prompt Engineering de [Platzi](https://platzi.com/).
