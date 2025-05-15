@@ -26,3 +26,52 @@ El Zero-Shot Prompting es útil en situaciones donde:
 3. **Límites:** cosas que puede o no puede hacer el LLM.
 
 4. **Rol:** definir el perfil que debe asumir el LLM, como un agente de viajes.
+
+
+## Técnica "Paso a Paso"
+
+Sí uno le inidica al modelo que piense o realice la tarea paso a paso, el LLM razonará un plan para resolver la tarea que le estamos pidiendo.
+
+- **Con la técnica:** hace más preguntas, más estructura tipo cuestionario.
+
+- **Sin la técnica:** puede asumir muchas cosas sin preguntar y limitar opciones.
+
+
+## Técnica de agregar etiquetas XML
+
+Utilizar etiquetas XML permite clarificar con precisión dónde comienzan y finalizan ciertas partes del prompt. Dado que estas etiquetas estructuran claramente el texto, reducen la posibilidad de confusión y facilitan la interpretación correcta del prompt por parte del modelo.
+
+Un ejemplo:
+
+1. Definicion de secciones:
+
+```
+<Instrucciones>
+Crea un plan para unas vacaciones en pareja.
+Como agente de viajes, realizame las preguntas pertinentes para crear el
+plan de vacaciones.
+Da al usuario varias opciones de planes, antes de crear un itinerario.
+Una vez generado el intinerario, crea una lista de requisitios para el viaje
+como: visas, vuelos, hoteles entre otros.
+Piensa paso a paso.
+</Instrucciones>
+
+<contexto>
+Este plan de viaje es para chilenos.
+El destino debe estar en Europa.
+</contexto>
+```
+
+
+
+## En resumen: consideraciones para refinar un prompt
+
+1. **Claridad en el rol:** Define claramente el rol que el LLM debe asumir (por ejemplo, "actúa como un agente de viajes").
+
+2. **Instrucciones específicas:** Proporciona instrucciones claras y directas sobre lo que deseas que haga el modelo, evita ser vago.
+
+3. **Flexibilidad en preguntas:** permite que el modelo formule preguntas abiertas para obtener más información pertinente.
+
+4. **Pensamiento paso a paso:** indica que el modelo debe desglosar el problema en pasos más pequeños, facilitando una respuesta más estructurada.
+
+5. **Delimitación de contexto:** usa etiquetas o delimitadores (sin programación) para separar instrucciones, contexto y reglas, mejorando la comprensión del modelo.
