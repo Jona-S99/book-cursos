@@ -1,0 +1,62 @@
+# FewShot {.unnumbered}
+
+En inteligencia artificial, FewShot es una estrategia que ayuda al modelo a entender con claridad lo que deseas al incluir ejemplos específicos en las instrucciones. A diferencia de ZeroShot, que es más abierta y general, FewShot permite solucionar problemas complejos pero definidos, proporcionando ejemplos claros que guían los resultados.
+
+
+## ¿Cuándo utilizar FewShot en vez de ZeroShot?
+
+**ZeroShot** es ideal cuando buscas flexibilidad y creatividad en respuestas amplias y subjetivas, como diseñar un plan de vacaciones a medida. **FewShot**, por otro lado, destaca en tareas específicas y complejas donde se necesitan respuestas claras y precisas, como clasificar correctamente opiniones en positivas, negativas o neutras.
+
+
+## Ejemplo de uso: clasificación de comentarios con FewShot
+
+Para emplear FewShot y diferenciar los comentarios que recibes, sigue estos pasos:
+
+1. **Define indicaciones claras:** dile al modelo que actúe como analista de sentimientos, identificando comentarios positivos, negativos o neutrales según la opinión expresada.
+
+2. **Incluye ejemplos prácticos:** proporciona ejemplos breves y claros que demuestren qué consideras positivo, negativo o neutro.
+
+3. **Utiliza un formato consistente:** emplea etiquetas claras para pisos y techos de los ejemplos facilitando al modelo la identificación de los límites.
+
+Un ejemplo puede ser:
+
+```
+<reglas>
+Responde solo con la palabra neutral, positiva o negativa.
+</reglas>
+
+<ejemplo>
+Comentario: “La comida fue pésima”.
+Calificación: negativa.
+</ejemplo>
+
+<ejemplo>
+Comentario: “El servicio estuvo increíble y la comida deliciosa”.
+Calificación: positiva.
+</ejemplo>
+
+<ejemplo>
+Comentario: “El servicio fue bueno, pero la comida estuvo muy regular”.
+Calificación: neutral.
+</ejemplo>
+```
+
+
+## Importancia de los ejemplos en FewShot
+
+Cada ejemplo que incluyas enseña al modelo a distinguir con exactitud lo que quieres decir, dando una guía práctica y clara para identificar sentimientos y evitar ambigüedades. Recuerda que cada palabra y detalle influye notablemente en el resultado, por lo que una buena elección de ejemplos impacta positivamente en la efectividad final del modelo.
+
+
+### ¿Cuántos ejemplos debo incluir en mi prompt?
+
+Poner muchos o pocos ejemplos dependerá del rendimiento deseado y la complejidad del problema:
+
+- Cada ejemplo consume tokens y va a afectar el costo del uso.
+- A mayor cantidad de ejemplos, más precisa será la calificación al detalle.
+
+::: {.callout-tip}
+Lo recomendable es iniciar con algunos ejemplos clave e ir agregando aquellos donde identifiques errores previos para mejorar continuamente los resultados.
+:::
+
+## ¿Cómo puedo validar los resultados de mi análisis?
+Realiza pruebas constantes ajustando detalles del prompt como las comillas o etiquetas y verificando si los resultados varían. Mediante ensayos controlados, puedes detectar y corregir errores eficientemente, garantizando que el modelo entienda con precisión tu requerimiento.
