@@ -1,0 +1,42 @@
+# Meta prompting {.unnumbered}
+
+El **meta-prompting** es una técnica avanzada de prompt engineering donde se instruye al modelo de lenguaje para que genere, refine o evalúe prompts. En lugar de pedir directamente una respuesta a una tarea, se le pide al modelo que actúe como un "ingeniero de prompts" o un "asistente de creación de prompts", ayudando a construir el prompt óptimo para una tarea específica. Esta técnica es útil cuando se busca mejorar la calidad de los prompts existentes, generar variaciones de prompts para probar diferentes enfoques, o incluso para que el modelo explique por qué un prompt particular podría ser más efectivo que otro.
+
+
+## Casos de uso:
+
+- **Optimización de Prompts:** Mejorar un prompt existente para obtener mejores respuestas.
+
+- **Generación de Variaciones de Prompts:** Crear múltiples versiones de un prompt para A/B testing o para cubrir diferentes matices de una tarea.
+
+- **Análisis de Prompts:** Pedir al modelo que evalúe la efectividad de un prompt y sugiera mejoras.
+
+- **Creación de Prompts para Tareas Complejas:** Guiar al modelo para que construya un prompt detallado para una tarea que requiere múltiples consideraciones.
+
+- **Educación en Prompt Engineering:** Usar el modelo para que enseñe cómo construir buenos prompts.
+
+
+## ¿Por qué es importante refinar un prompt?
+
+Crear un prompt efectivo va más allá de agregar más instrucciones o reglas. Modificar palabras y comprender claramente su significado es clave para obtener resultados precisos usando inteligencia artificial. Este método de refinamiento puede aplicarse a diversas profesiones y tareas cotidianas.
+
+
+## Ejemplo de Meta promt
+
+```
+[ROL]
+Eres un experto en Prompt Engineering especializado en la creación de prompts para modelos de lenguaje generativos de texto.
+
+[TAREA]
+Quiero generar descripciones de productos concisas y persuasivas para una tienda online de artículos de tecnología. El público objetivo son jóvenes adultos interesados en las últimas novedades.
+
+[INSTRUCCIÓN DE META-PROMPTING]
+Por favor, crea tres variaciones de un prompt que yo pueda usar con un modelo como ChatGPT para generar estas descripciones de producto. Cada prompt debe:
+1. Especificar el tono deseado (moderno, entusiasta).
+2. Indicar la longitud aproximada de la descripción (ej. 2-3 frases).
+3. Solicitar que se destaquen 1-2 características clave del producto.
+4. Incluir un placeholder para el [NOMBRE_DEL_PRODUCTO] y [CARACTERISTICAS_CLAVE].
+
+[FORMATO DESEADO]
+Presenta cada variación del prompt claramente numerada.
+```
