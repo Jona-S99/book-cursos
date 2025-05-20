@@ -1,0 +1,30 @@
+# Chain of thought o cadena de pensamiento {.unnuemered}
+
+La técnica de prompting Chain of Thought, o cadena de pensamiento, mejora significativamente la calidad de respuesta de los modelos de lenguaje como ChatGPT. Aplicar este método implica guiar paso a paso las respuestas mediante instrucciones claras, para obtener resultados más precisos y coherentes. Veamos qué implica esta técnica y cómo sacarle el máximo provecho.
+
+**Chain of Thought** consiste en **pedir al modelo que explique, paso por paso, cómo llega a una respuesta determinada**, especialmente ante preguntas que requieren razonamiento lógico. Antes de contar con modelos avanzados, era necesario indicar explícitamente en los prompts que "pensaran paso a paso"; los modelos actuales con capacidad de razonamiento avanzado ya operan bajo esta lógica por defecto.
+
+Esta técnica mejora los resultados, pero necesita un mayor tiempo de procesamiento por parte del modelo.
+
+# ¿Cuándo conviene usar chain of thougth?
+
+- Resolución lógica de acertijos.
+
+- Procedimientos matemáticos y científicos que siguen un orden definido. Por ejemplo, resolver ecuaciones siguiendo reglas establecidas como la jerarquía de operaciones matemáticas (primero paréntesis, luego multiplicación y división, finalmente suma y resta).
+
+Ejemplo práctico
+
+```
+[CONTEXTO]
+Necesito resolver el siguiente problema matemático: Un tren A sale de Madrid a las 8:00 AM viajando a 120 km/h hacia Valencia. Un tren B sale de Valencia a las 9:30 AM viajando a 90 km/h hacia Madrid. Si la distancia entre Madrid y Valencia es de 360 km, ¿a qué hora se cruzarán los trenes?
+
+[INSTRUCCIÓN EXPLÍCITA CON CHAIN OF THOUGHT]
+Por favor, resuelve este problema paso a paso. Piensa de forma estructurada:
+1. Identifica los datos relevantes
+2. Plantea las ecuaciones necesarias
+3. Resuelve algebraicamente
+4. Verifica tu respuesta
+
+[FORMATO DESEADO]
+Muestra cada uno de tus pasos de razonamiento y explica por qué sigues ese enfoque. Finaliza con una conclusión clara que responda directamente a la pregunta.
+```
