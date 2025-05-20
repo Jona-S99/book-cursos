@@ -24,6 +24,8 @@ book:
       chapters:
         - qmd/prompt_engineering/zero_shot.qmd
         - qmd/prompt_engineering/few_shot.qmd
+        - qmd/prompt_engineering/chain_of_thought.qmd
+        - qmd/prompt_engineering/meta_prompting.qmd
 
 format:
   html:
