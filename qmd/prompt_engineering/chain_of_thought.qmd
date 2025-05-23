@@ -1,4 +1,4 @@
-# Chain of thought o cadena de pensamiento {.unnuemered}
+# Chain of thought o cadena de pensamiento {.unnumbered}
 
 La técnica de prompting Chain of Thought, o cadena de pensamiento, mejora significativamente la calidad de respuesta de los modelos de lenguaje como ChatGPT. Aplicar este método implica guiar paso a paso las respuestas mediante instrucciones claras, para obtener resultados más precisos y coherentes. Veamos qué implica esta técnica y cómo sacarle el máximo provecho.
 

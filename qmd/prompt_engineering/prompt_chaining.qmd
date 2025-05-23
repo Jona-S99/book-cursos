@@ -1,0 +1,3 @@
+# Prompt chaining {.unnumbered}
+
+El Prompt Chaining se basa en descomponer grandes retos en partes pequeñas que manejas individualmente en múltiples chats. A diferencia de lo habitual, donde mantienes todo dentro de un solo chat, esta técnica implica tomar cada resultado logrado y moverlo a un nuevo chat específico, garantizando mayor claridad y menos errores.
