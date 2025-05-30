@@ -1,0 +1,204 @@
+---
+jupyter: python3
+---
+
+# Strings o cadenas {.unnumbered}
+
+Entender cómo trabajar con las cadenas en Python es fundamental para la manipulación de textos y datos en muchos proyectos. Desde definir variables hasta aplicar métodos específicos, el uso de strings es una habilidad básica, pero poderosa, que se utiliza en áreas avanzadas como el procesamiento del lenguaje natural (NLP).
+
+## ¿Cómo se definen las cadenas en Python?
+
+Para crear una cadena en Python, puedes utilizar comillas simples, dobles o triples. Por ejemplo:
+
+```{python}
+# Comillas simples
+nombre_cs = 'Juan Rosas'
+print('String con comillas simples: ', nombre_cs)
+```
+
+```{python}
+# Comillas dobles
+nombre_cd = "Juan Rosas"
+print('String con comillas dobles: ', nombre_cd)
+```
+
+```{python}
+# Comillas triples: acepta saltos de linea
+nombre_tc = '''
+Juan
+Rosas
+'''
+print('String con comillas triples: ', nombre_tc)
+```
+
+
+## Métodos para strings
+
+### **.lower**
+Convierte todos los caracteres a minúsculas.
+
+```{python}
+#| eval: false
+
+s = "Hola Mundo"
+print(s.lower())  # 'hola mundo'
+```
+
+### **.upper**
+Convierte todos los caracteres a mayúsculas.
+
+```{python}
+#| eval: false
+
+s = "Hola Mundo"
+print(s.upper())  # 'HOLA MUNDO'
+```
+
+### **.capitalize**
+Pone en mayúscula la primera letra y el resto en minúsculas.
+
+```{python}
+#| eval: false
+
+s = "hOLA"
+print(s.capitalize())  # 'Hola'
+```
+
+### **.title**
+Capitaliza la primera letra de cada palabra.
+
+```{python}
+#| eval: false
+
+s = "hola mundo"
+print(s.title())  # 'Hola Mundo'
+```
+
+### **.swapcase**
+Invierte el caso de cada carácter.
+
+```{python}
+#| eval: false
+
+s = "Hola Mundo"
+print(s.swapcase())  # 'hOLA mUNDO'
+```
+
+### **.strip(), .lstrip(), .rstrip()**
+Elimina espacios (u otros caracteres) al inicio/final de la cadena.
+
+```{python}
+#| eval: false
+s = "  ejemplo  "
+print(s.strip())   # 'ejemplo'
+print(s.lstrip())  # 'ejemplo  '
+print(s.rstrip())  # '  ejemplo'
+```
+
+### **.split(sep=None), .rsplit(sep=None)**
+Divide la cadena en una lista según el separador.
+
+```{python}
+#| eval: false
+s = "a,b,c"
+print(s.split(","))   # ['a', 'b', 'c']
+print(s.rsplit(",", 1))  # ['a,b', 'c']
+```
+
+### **.join(iterable)**
+Une los elementos de un iterable usando la cadena como separador.
+
+```{python}
+#| eval: false
+parts = ["Python", "es", "genial"]
+print(" ".join(parts))  # 'Python es genial'
+```
+
+### **.replace(old, new)**
+Reemplaza todas las ocurrencias de old por new.
+
+```{python}
+#| eval: false
+s = "2025-05-29"
+print(s.replace("-", "/"))  # '2025/05/29'
+```
+
+### **.find(sub), .index(sub)**
+Devuelven el índice de la primera aparición de sub (–1 si no existe en find, excepción en index).
+
+```{python}
+#| eval: false
+s = "abcdef"
+print(s.find("cd"))   # 2
+# print(s.index("xy"))  # ValueError
+```
+
+### **.count(sub)**
+Cuenta cuántas veces aparece sub.
+
+```{python}
+#| eval: false
+s = "banana"
+print(s.count("a"))  # 3
+```
+
+### **.startswith(pref), .endswith(suf)**
+Comprueban si la cadena empieza o termina con el prefijo/sufijo dado.
+
+```{python}
+#| eval: false
+s = "Hola.py"
+print(s.startswith("Ho"))  # True
+print(s.endswith(".py"))   # True
+```
+
+### **.isalpha(), .isdigit(), .isalnum(), .isspace()**
+Validaciones de contenido: solo letras, dígitos, alfanumérico o espacios.
+
+```{python}
+#| eval: false
+print("abc".isalpha())   # True
+print("123".isdigit())   # True
+print("a1b2".isalnum())  # True
+print(" \t".isspace())   # True
+```
+
+### **.zfill(width)**
+Rellena con ceros a la izquierda hasta lograr el ancho width.
+
+```{python}
+#| eval: false
+print("42".zfill(5))  # '00042'
+```
+
+### **.center(width, [fillchar])**
+Centra la cadena en un ancho dado, rellenando con fillchar (espacio por defecto).
+
+```{python}
+#| eval: false
+print("cat".center(7, "-"))  # '--cat--'
+```
+
+### **.partition(sep), .rpartition(sep)**
+Divide en tres partes: antes de sep, sep, después de sep.
+
+```{python}
+#| eval: false
+s = "key=value"
+print(s.partition("="))   # ('key', '=', 'value')
+print(s.rpartition("o"))  # ('hell', 'o', '')
+```
+
+### **.format(args, kwargs)**
+Formatea la cadena usando llaves como marcadores.
+
+- args (argumentos posicionales) se usan para rellenar marcadores {} o {0}, {1}, … según el orden.
+
+- kwargs (argumentos nombrados) se usan para rellenar marcadores {nombre}.
+
+```{python}
+#| eval: false
+tpl = "Hola, {}. Tienes {n} mensajes."
+print(tpl.format("Ana", n=5))  # 'Hola, Ana. Tienes 5 mensajes.'
+```
+
