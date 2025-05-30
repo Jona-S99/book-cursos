@@ -27,6 +27,9 @@ book:
         - qmd/prompt_engineering/chain_of_thought.qmd
         - qmd/prompt_engineering/meta_prompting.qmd
         - qmd/prompt_engineering/prompt_chaining.qmd
+    - part: qmd/python/1_intro_py.qmd
+      chapters:
+        - qmd/python/tipos_de_datos/strings.qmd
 
 format:
   html:
