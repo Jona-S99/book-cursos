@@ -12,7 +12,8 @@ book:
   reader-mode: true
   favicon: static/images/cover.png
   page-footer:
-    left: "Copyright 2025, Jonatan Salazar" 
+    left: |
+      Sitio construido con [![](https://quarto.org/quarto.png){width=65px}](https://quarto.org)
     right: 
       - icon: github
         href: https://github.com/
