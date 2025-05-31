@@ -5,10 +5,12 @@ project:
 book:
   title: "Apuntes varios"
   author: "Jonatan Salazar"
+  language: "es"
   date: "5/11/2025"
   page-navigation: true
   back-to-top-navigation: true
   reader-mode: true
+  favicon: static/images/cover.png
   page-footer:
     left: "Copyright 2025, Jonatan Salazar" 
     right: 
@@ -17,6 +19,7 @@ book:
     border: true
   sidebar:
     logo: static/images/cover.png
+    collapse-level: 1
 
   chapters:
     - index.qmd
@@ -29,17 +32,21 @@ book:
         - qmd/prompt_engineering/prompt_chaining.qmd
     - part: qmd/python/1_intro_py.qmd
       chapters:
-        - qmd/python/tipos_de_datos/strings.qmd
+        - qmd/python/strings.qmd
+        - qmd/python/int_float_bool.qmd
+        - qmd/python/operadores.qmd
+        - qmd/python/input_casting.qmd
 
 format:
   html:
+    toc: true
+    toc-depth: 3
     mainfont: Roboto
     monofont: Fira Code
     theme:
-      - cosmo
-      - styles/theme.css
-  pdf:
-    documentclass: scrreprt
+      light: flatly
+      dark: darkly
+    css: styles/theme.css
 
 
 
