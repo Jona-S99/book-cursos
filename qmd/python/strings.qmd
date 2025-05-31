@@ -2,11 +2,11 @@
 jupyter: python3
 ---
 
-# Strings o cadenas {.unnumbered}
+# Strings o cadenas
 
 Entender cómo trabajar con las cadenas en Python es fundamental para la manipulación de textos y datos en muchos proyectos. Desde definir variables hasta aplicar métodos específicos, el uso de strings es una habilidad básica, pero poderosa, que se utiliza en áreas avanzadas como el procesamiento del lenguaje natural (NLP).
 
-## ¿Cómo se definen las cadenas en Python?
+## ¿Cómo se definen las cadenas en Python? {.unnumbered}
 
 Para crear una cadena en Python, puedes utilizar comillas simples, dobles o triples. Por ejemplo:
 
@@ -32,9 +32,9 @@ print('String con comillas triples: ', nombre_tc)
 ```
 
 
-## Métodos para strings
+## Métodos para strings {.unnumbered}
 
-### **.lower**
+### **.lower** {.unnumbered}
 Convierte todos los caracteres a minúsculas.
 
 ```{python}
@@ -44,7 +44,7 @@ s = "Hola Mundo"
 print(s.lower())  # 'hola mundo'
 ```
 
-### **.upper**
+### **.upper** {.unnumbered}
 Convierte todos los caracteres a mayúsculas.
 
 ```{python}
@@ -54,7 +54,7 @@ s = "Hola Mundo"
 print(s.upper())  # 'HOLA MUNDO'
 ```
 
-### **.capitalize**
+### **.capitalize** {.unnumbered}
 Pone en mayúscula la primera letra y el resto en minúsculas.
 
 ```{python}
@@ -64,7 +64,7 @@ s = "hOLA"
 print(s.capitalize())  # 'Hola'
 ```
 
-### **.title**
+### **.title** {.unnumbered}
 Capitaliza la primera letra de cada palabra.
 
 ```{python}
@@ -74,7 +74,7 @@ s = "hola mundo"
 print(s.title())  # 'Hola Mundo'
 ```
 
-### **.swapcase**
+### **.swapcase** {.unnumbered}
 Invierte el caso de cada carácter.
 
 ```{python}
@@ -84,7 +84,7 @@ s = "Hola Mundo"
 print(s.swapcase())  # 'hOLA mUNDO'
 ```
 
-### **.strip(), .lstrip(), .rstrip()**
+### **.strip(), .lstrip(), .rstrip()** {.unnumbered}
 Elimina espacios (u otros caracteres) al inicio/final de la cadena.
 
 ```{python}
@@ -95,7 +95,7 @@ print(s.lstrip())  # 'ejemplo  '
 print(s.rstrip())  # '  ejemplo'
 ```
 
-### **.split(sep=None), .rsplit(sep=None)**
+### **.split(sep=None), .rsplit(sep=None)** {.unnumbered}
 Divide la cadena en una lista según el separador.
 
 ```{python}
@@ -105,7 +105,7 @@ print(s.split(","))   # ['a', 'b', 'c']
 print(s.rsplit(",", 1))  # ['a,b', 'c']
 ```
 
-### **.join(iterable)**
+### **.join(iterable)** {.unnumbered}
 Une los elementos de un iterable usando la cadena como separador.
 
 ```{python}
@@ -114,7 +114,7 @@ parts = ["Python", "es", "genial"]
 print(" ".join(parts))  # 'Python es genial'
 ```
 
-### **.replace(old, new)**
+### **.replace(old, new)** {.unnumbered}
 Reemplaza todas las ocurrencias de old por new.
 
 ```{python}
@@ -123,7 +123,7 @@ s = "2025-05-29"
 print(s.replace("-", "/"))  # '2025/05/29'
 ```
 
-### **.find(sub), .index(sub)**
+### **.find(sub), .index(sub)** {.unnumbered}
 Devuelven el índice de la primera aparición de sub (–1 si no existe en find, excepción en index).
 
 ```{python}
@@ -133,7 +133,7 @@ print(s.find("cd"))   # 2
 # print(s.index("xy"))  # ValueError
 ```
 
-### **.count(sub)**
+### **.count(sub)** {.unnumbered}
 Cuenta cuántas veces aparece sub.
 
 ```{python}
@@ -142,7 +142,7 @@ s = "banana"
 print(s.count("a"))  # 3
 ```
 
-### **.startswith(pref), .endswith(suf)**
+### **.startswith(pref), .endswith(suf)** {.unnumbered}
 Comprueban si la cadena empieza o termina con el prefijo/sufijo dado.
 
 ```{python}
@@ -152,7 +152,7 @@ print(s.startswith("Ho"))  # True
 print(s.endswith(".py"))   # True
 ```
 
-### **.isalpha(), .isdigit(), .isalnum(), .isspace()**
+### **.isalpha(), .isdigit(), .isalnum(), .isspace()** {.unnumbered}
 Validaciones de contenido: solo letras, dígitos, alfanumérico o espacios.
 
 ```{python}
@@ -163,7 +163,7 @@ print("a1b2".isalnum())  # True
 print(" \t".isspace())   # True
 ```
 
-### **.zfill(width)**
+### **.zfill(width)** {.unnumbered}
 Rellena con ceros a la izquierda hasta lograr el ancho width.
 
 ```{python}
@@ -171,7 +171,7 @@ Rellena con ceros a la izquierda hasta lograr el ancho width.
 print("42".zfill(5))  # '00042'
 ```
 
-### **.center(width, [fillchar])**
+### **.center(width, [fillchar])** {.unnumbered}
 Centra la cadena en un ancho dado, rellenando con fillchar (espacio por defecto).
 
 ```{python}
@@ -179,7 +179,7 @@ Centra la cadena en un ancho dado, rellenando con fillchar (espacio por defecto)
 print("cat".center(7, "-"))  # '--cat--'
 ```
 
-### **.partition(sep), .rpartition(sep)**
+### **.partition(sep), .rpartition(sep)** {.unnumbered}
 Divide en tres partes: antes de sep, sep, después de sep.
 
 ```{python}
@@ -189,7 +189,7 @@ print(s.partition("="))   # ('key', '=', 'value')
 print(s.rpartition("o"))  # ('hell', 'o', '')
 ```
 
-### **.format(args, kwargs)**
+### **.format(args, kwargs)** {.unnumbered}
 Formatea la cadena usando llaves como marcadores.
 
 - args (argumentos posicionales) se usan para rellenar marcadores {} o {0}, {1}, … según el orden.

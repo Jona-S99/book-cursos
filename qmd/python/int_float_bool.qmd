@@ -1,0 +1,76 @@
+---
+jupyter: python3
+---
+
+# Integer, Float, Boolean
+
+En Python, los tipos de datos numéricos son esenciales para representar valores cuantitativos y realizar operaciones matemáticas. Entre los tipos numéricos básicos se encuentran:
+
+1. **Enteros (int):** 
+Representan números enteros positivos, negativos o cero (0).
+Se declaran utilizando el literal int o sin especificar tipo.
+
+
+::: {.callout-tip title="Ejemplos"}
+Ejemplos: 1, -10, 2024
+:::
+
+2. **Flotantes (float):**
+Representan números decimales, incluyendo positivos, negativos y cero (0.0).
+Se declaran utilizando el literal float o con un punto decimal.
+
+::: {.callout-tip title="Ejemplos"}
+Ejemplos: 3.14, -5.2, 10.000
+:::
+
+3. **Booleanos (bool):**
+Representan valores lógicos: True (verdadero) o False (falso).
+Se utilizan en expresiones condicionales y toma de decisiones.
+
+::: {.callout-tip title="Ejemplos"}
+Ejemplos: True, False
+:::
+
+## Operaciones aritméticas {.unnumbered}
+
+```{python}
+#| eval: false
+
+# Definición de variables
+a = 7
+b = 3.5
+
+print(a + b)    # Suma:           10.5
+print(a - b)    # Resta:           3.5
+print(a * b)    # Multiplicación:  24.5
+print(a / b)    # División real:   2.0
+print(a // b)   # División entera: 2.0
+print(a % b)    # Módulo:          0.0
+print(a ** b)   # Exponente:       ≈ 643.397
+```
+
+
+## Conversión entre tipos {.unnumbered}
+
+```{python}
+#| eval: false
+
+f = 3.14
+n = int(f)      # Convierte float a int (trunca parte decimal)
+print(n)        # 3
+
+s = "42"
+m = int(s)      # Convierte str a int
+print(m + 8)    # 50
+```
+
+
+## Algunas funciones integradas útiles {.unnumbered}
+
+```{python}
+#| eval: false
+print(abs(-5))        # Valor absoluto: 5
+print(pow(2, 3))      # Potencia: 8
+print(divmod(7, 3))   # División entera y resto: (2, 1)
+print(round(3.6))     # Redondeo: 4
+```

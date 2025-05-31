@@ -1,0 +1,61 @@
+---
+jupyter: python3
+---
+
+# Input y Casting
+
+
+## Función `input()` {.unnumbered}
+
+En Python, cuando trabajamos con proyectos que requieren interacción del usuario, es común solicitar datos como correo o contraseña para ejecutar acciones específicas. Este mismo enfoque es útil para entender la función `input()`.
+
+- Detiene la ejecución del programa y muestra un mensaje en pantalla (opcional). Luego espera a que el usuario escriba texto y presione Enter.
+
+```{python}
+#| eval: false
+
+# Sin mensaje personalizado
+nombre = input()
+print("Hola", nombre)
+
+# Con mensaje
+edad = input("¿Cuántos años tienes? ")
+print("Vas a cumplir", edad, "este año.")
+```
+
+::: {.callout-note}
+En ambos casos `nombre` y `edad` serán variables de tipo `str`.
+:::
+
+
+## ¿Qué es el casting (conversión de tipos)? {.unnumbered}
+
+Casting es el proceso de convertir un valor de un tipo de dato a otro. En Python, esto se hace normalmente llamando al constructor del tipo deseado:
+
+- `int(valor)` → convierte a entero (trunca decimales o produce error si no es numérico).
+- `float(valor)` → convierte a número de punto flotante.
+- `str(valor)` → convierte cualquier valor a cadena de texto.
+- `bool(valor)` → convierte a booleano (False si el valor es “vacío” o cero).
+
+Ejemplos:
+
+
+```{python}
+#| eval: false
+
+# Pedimos la edad, la recibimos como str y la convertimos a int
+edad_str = input("¿Cuántos años tienes? ")
+edad = int(edad_str)    
+print("El año que viene tendrás", edad + 1, "años.")
+
+# Pedimos un número decimal y lo convertimos a float
+nota_str = input("¿Qué nota obtuviste? ")
+nota = float(nota_str)
+print("Has sacado un", nota, "en la nota final.")
+```
+
+En estos ejemplos:
+
+1. `input()` lee siempre una cadena.
+2. Aplicamos `int(...)` o `float(...)` para poder usar operaciones aritméticas con el valor ingresado.
+3. Si el usuario introduce un texto no convertible (por ejemplo "hola" al hacer int("hola")), Python lanzará un `ValueError`.

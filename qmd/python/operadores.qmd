@@ -1,0 +1,43 @@
+# Operadores
+
+Los operadores son herramientas esenciales en Python para realizar operaciones con diferentes tipos de datos. Existen distintos tipos de operadores:
+
+
+## Operadores aritméticos {.unnumbered}
+
+| Operación         | Símbolo | Descripción                                              | Ejemplo      | Resultado |
+|-------------------|---------|----------------------------------------------------------|--------------|-----------|
+| Suma              | +       | Suma dos operandos.                                      | 5 + 3        | 8         |
+| Resta             | -       | Resta un operando del otro.                              | 5 - 3        | 2         |
+| Multiplicación    | *       | Multiplica dos operandos.                                | 5 * 3        | 15        |
+| División          | /       | Divide un operando por otro.                             | 6 / 3        | 2         |
+| División entera   | //      | Divide dos operandos y devuelve la parte entera del resultado. | 7 // 3 | 2         |
+
+
+
+## Operadores relacionales {.unnumbered}
+
+| Operación           | Símbolo | Descripción                                              | Ejemplo   | Resultado |
+|---------------------|---------|----------------------------------------------------------|-----------|-----------|
+| Igualdad            | =       | Comprueba si dos operandos son iguales.                 | 5 = 5     | TRUE      |
+| Desigualdad         | #       | Comprueba si dos operandos son diferentes.              | 5 # 3     | TRUE      |
+| Menor que           | <       | Comprueba si un operando es menor que el otro.          | 3 < 5     | TRUE      |
+| Menor o igual que   | <=      | Comprueba si un operando es menor o igual que el otro.  | 5 <= 5    | TRUE      |
+| Mayor que           | >       | Comprueba si un operando es mayor que el otro.          | 5 > 3     | TRUE      |
+| Mayor o igual que   | >=      | Comprueba si un operando es mayor o igual que el otro.  | 5 >= 6    | FALSE     |
+
+
+
+
+## Operadores de Asignación {.unnumbered}
+
+| Operación                    | Símbolo | Descripción                                                                 | Ejemplo     | Resultado |
+|-----------------------------|---------|-----------------------------------------------------------------------------|-------------|-----------|
+| Asignación simple           | =       | Asigna un valor a una variable.                                            | x = 5       | x = 5     |
+| Suma y asignación           | +=      | Suma un valor a una variable existente.                                    | x = 5; x += 3 | x = 8   |
+| Resta y asignación          | -=      | Resta un valor a una variable existente.                                   | x = 5; x -= 2 | x = 3   |
+| Multiplicación y asignación | *=      | Multiplica un valor a una variable existente.                              | x = 4; x *= 2 | x = 8   |
+| División y asignación       | /=      | Divide un valor a una variable existente.                                  | x = 10; x /= 2 | x = 5  |
+| Módulo y asignación         | %=      | Obtiene el residuo de la división y lo asigna a una variable existente.    | x = 10; x %= 4 | x = 2  |
+| Exponenciación y asignación | **=     | Eleva un valor a la potencia del otro y lo asigna a una variable existente.| x = 2; x **= 3 | x = 8  |
+
