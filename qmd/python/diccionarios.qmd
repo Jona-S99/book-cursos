@@ -1,0 +1,29 @@
+---
+jupyter: python3
+---
+
+# Diccionarios
+
+Los diccionarios en Python son una estructura que almacenan dos datos, la `clave` y el `valor`. Un ejemplo cotidiano es un diccionario físico donde buscamos el significado de una palabra y encontramos la palabra (clave) y su definición (valor).
+
+Es importante mencionar las siguientes carecterísticas:
+
+- Cada clave (key) es única y generalmente de tipo inmutable (cadena, número, tupla).
+
+- Cada valor (value) puede ser de cualquier tipo de dato (inmutable o mutable).
+
+- El acceso a los valores se hace por clave, no por posición.
+
+
+## ¿Cómo crear un diccionario?
+
+Para crear un diccionario utilizamos las llaves `{}`.
+
+```{python}
+numbers = {
+  1: "one", 
+  2: "two",
+  3: "three"
+}
+print(numbers)
+```

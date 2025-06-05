@@ -39,6 +39,7 @@ book:
         - qmd/python/input_casting.qmd
         - qmd/python/listas.qmd
         - qmd/python/matrices_tuplas.qmd
+        - qmd/python/diccionarios.qmd
 
 format:
   html:
