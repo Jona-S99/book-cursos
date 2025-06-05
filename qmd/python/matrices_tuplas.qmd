@@ -1,0 +1,76 @@
+---
+jupyter: python3
+---
+
+# Matrices y tuplas
+
+## Matriz 
+
+Una matriz es una colección ordenada de datos dispuestos en filas y columnas. Se representa como una lista de listas, donde cada sublista es una fila de la matriz, es decir, una matriz es una lista de listas.
+
+Ejemplo de matriz:
+
+```{python}
+matrix = [
+  # Columnas
+    [1, 2, 3],  # Filas
+    [4, 5, 6],  # Filas
+    [7, 8, 9]   # Filas
+]
+```
+
+- Sitaxis: como se trata de listas, se crean utilizando corchetes `[]`
+
+- Mutable: puedes modificar elementos, añadir o quitar filas/columnas.
+
+- Se accede por doble índice: matrix[fila][columna].
+
+- Útil para datos bidimensionales (tablas, imágenes, operaciones numéricas).
+
+- Se usa cuando necesitas una secuencia de elementos que puede cambiar a lo largo del programa.
+
+```{python}
+#| eval: false
+
+# Acceder al elemento de la segunda fila, tercera columna
+print(matrix[1][2])  # 6
+
+# Modificar un valor
+matrix[0][0] = 10
+print(matrix)  
+# [
+#   [10, 2, 3],
+#   [4, 5, 6],
+#   [7, 8, 9]
+# ]
+```
+
+
+## Tuplas
+
+Una tupla es una secuencia ordenada e inmutable de elementos:
+
+```{python}
+numbers = (1, 2, 3, 4, 5)
+
+print("El tipo de numbers es: ", type(numbers))
+```
+
+- Sintaxis: se crea usando paréntesis `()`. Ejemplo: `tupla = (1, 2, 3)`.
+
+- Inmutable: no puedes cambiar su contenido una vez creada.
+
+- Más ligera que la lista y adecuada para datos fijos o como clave en diccionarios.
+
+- Se usa cuando tienes una secuencia de elementos que no debería cambiar, o para mejorar el rendimiento, ya que las tuplas son más rápidas y consumen menos memoria que las listas.
+
+```{python}
+#| eval: false
+
+# Acceso por índice
+print(numbers[1])     # '2'
+
+# No permite asignación
+numbers[0] = 5
+# TypeError: 'tuple' object does not support item assignment
+```
