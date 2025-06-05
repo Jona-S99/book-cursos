@@ -37,6 +37,7 @@ book:
         - qmd/python/int_float_bool.qmd
         - qmd/python/operadores.qmd
         - qmd/python/input_casting.qmd
+        - qmd/python/listas.qmd
 
 format:
   html:
