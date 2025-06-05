@@ -1,0 +1,152 @@
+---
+jupyter: python3
+---
+
+# Listas
+
+Una lista en Python es una colección ordenada de elementos que puede contener elementos de diferentes tipos (enteros, flotantes, cadenas, etc.). Las listas son mutables, lo que significa que sus elementos se pueden cambiar después de que se ha creado la lista.
+
+Para crear una lista utilizamos los corchetes `[]`
+
+```{python}
+# Creación de listas
+lista_vacia = []
+lista_numeros = [1, 2, 3, 4, 5]
+lista_mixta = [1, "dos", 3.0, True]
+```
+
+- Verificamos el tipo usando `type`
+
+```{python}
+print(type(lista_mixta))
+```
+
+- Podemos utilizar la función `len` para saber cuántos elementos tiene una lista
+
+```{python}
+print(
+  "La cantidad de elementos que existen 'lista_mixta' son: ", 
+  len(lista_mixta)
+)
+```
+
+- Podemos utilizar la `indexación` para acceder a los elementos específicos de la lista
+
+```{python}
+# Acceder a elementos
+print("Primer elemento:", lista_mixta[0])
+print("Último elemento:", lista_mixta[-1])
+```
+
+- También podemos hacer `slicing`, obteniendo sublistas a partir de una lista existente, especificando un rango de índices:
+
+```{python}
+print(lista_mixta[1:3]) 
+```
+
+## Métodos para listas {.unnumbered}
+
+### append(item) {.unnumbered}
+Añade un elemento `item` al final de la lista.
+
+```{python}
+lista = [1, 2, 3]
+lista.append(["a", "b", "c"])
+print(lista)  # [1, 2, 3, 4]
+```
+
+
+### insert(index, item) {.unnumbered}
+Inserta item en la posición index, desplazando el resto a la derecha.
+
+```{python}
+lista = ['a', 'b', 'd']
+lista.insert(2, 'c')
+print(lista)  # ['a', 'b', 'c', 'd']
+```
+
+
+### remove(item) {.unnumbered}
+Elimina la primera aparición de item en la lista. Lanza ValueError si no existe.
+
+```{python}
+lista = [1, 2, 3, 2]
+lista.remove(2)
+print(lista)  # [1, 3, 2]
+```
+
+
+### clear() {.unnumbered}
+Elimina todos los elementos de la lista, dejándola vacía.
+
+```{python}
+lista = [1, 2, 3]
+lista.clear()
+print(lista)  # []
+```
+
+
+### count(item) {.unnumbered}
+Cuenta cuántas veces aparece item en la lista.
+
+```{python}
+lista = [1, 2, 2, 2, 3]
+print("El valor 2 se repite ", lista.count(2), " veces en la lista")  # 3
+```
+
+
+### sort(key=None, reverse=False) {.unnumbered}
+Ordena la lista in place.
+
+- `key`: función para extraer el valor de comparación.
+- `reverse=True`: orden descendente.
+
+```{python}
+lista = [3, 1, 2]
+lista.sort()
+print(lista)  # [1, 2, 3]
+
+lista = ['b', 'aa', 'ccc']
+lista.sort(key=len, reverse=True)
+print(lista)  # ['ccc', 'aa', 'b']
+```
+
+### reverse() {.unnumbered}
+Invierte el orden de los elementos in place.
+
+```{python}
+lista = [1, 2, 3]
+lista.reverse()
+print(lista)  # [3, 2, 1]
+```
+
+## Copiar una lista {.unnumbered}
+
+::: {.callout-note}
+Cuando asignamos una lista a una nueva variable, por ejemplo, `B = A`, no estamos creando una copia independiente. Ambas variables apuntan al mismo **espacio de memori**a. Así, cualquier cambio en A se reflejará en B.
+:::
+
+```{python}
+# Crear lista
+ls_a = [1, 2, 3, 4, 5]
+
+# Copiar lista
+ls_b = ls_a
+
+print("El id de la lista a es: ", id(ls_a))
+print("El id de la lista b es: ", id(ls_b))
+```
+
+Como podemos ver, son iguales, pues apuntan la mismo lugar en memoria. Entonces, ¿cómo evitamos esto?
+
+Uitlizando el método `slicing`.
+
+```{python}
+# Crear lista c
+ls_c = ls_a[:]
+
+print("El id de la lista a es: ", id(ls_a))
+print("El id de la lista b es: ", id(ls_c))
+```
+
+Como vemos, son ids diferentes.
