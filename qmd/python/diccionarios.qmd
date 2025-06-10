@@ -4,7 +4,7 @@ jupyter: python3
 
 # Diccionarios
 
-Los diccionarios en Python son una estructura que almacenan dos datos, la `clave` y el `valor`. Un ejemplo cotidiano es un diccionario físico donde buscamos el significado de una palabra y encontramos la palabra (clave) y su definición (valor).
+Los diccionarios en Python son una estructura que almacenan dos datos, la `clave` y el `valor`. Un ejemplo cotidiano es un diccionario físico donde buscamos el significado de una palabra y encontramos la **palabra (clave)** y su **definición (valor)**.
 
 Es importante mencionar las siguientes carecterísticas:
 
@@ -27,3 +27,79 @@ numbers = {
 }
 print(numbers)
 ```
+
+Para acceder a un elemento dentro del diccionario utilizamos su llave.
+
+```{python}
+# Acceder al numero 2
+print(numbers[2])
+```
+
+## Modificaciones a los diccionarios
+
+Modificación de valores
+
+```{python}
+# Modificacion de un valor
+numbers[3] = "tres"
+print(numbers[3])
+```
+
+Para eliminar una clave y su valor utilizamos la función `del`
+
+```{python}
+# Eliminacion de la clave `3`
+del numbers[3]
+print(numbers)
+```
+
+
+## Métodos para los diccionarios
+
+```{python}
+# Diccionario para probar metodos
+diccionario = {
+  'Nombre': 'Juan',
+  'Edad': 30,
+  'Profesion': 'Ingeniero',
+  'Ubicacion': 'Punta Arenas'
+}
+```
+
+
+### key() {.unnumbered}
+
+Devuelve una vista (iterable) con todas las claves del diccionario.
+
+```{python}
+key_test = diccionario.keys()
+print("El restultado es: ", key_test)
+print("El tipo es: ", type(key_test))
+```
+
+### values() {.unnumbered}
+
+Devuelve una vista con todos los valores del diccionario.
+
+```{python}
+print(diccionario.values())
+```
+
+### items() {.unnumbered}
+
+Devuelve una vista de tuplas (clave, valor) para cada par del diccionario.
+
+```{python}
+print(diccionario.items())
+```
+
+
+### clear() {.unnumbered}
+
+Elimina todos los elementos del diccionario, dejándolo vacío.
+
+```{python}
+diccionario.clear()
+print(diccionario)
+```
+
