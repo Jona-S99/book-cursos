@@ -40,6 +40,7 @@ book:
         - qmd/python/listas.qmd
         - qmd/python/matrices_tuplas.qmd
         - qmd/python/diccionarios.qmd
+        - qmd/python/if_else_elif.qmd
 
 format:
   html:

@@ -1,0 +1,104 @@
+---
+jupyter: python3
+---
+
+# If, Else y Elif
+
+En programación, las estructuras condicionales son esenciales para tomar decisiones basadas en ciertas condiciones. Por ejemplo, al usar la instrucción `IF` en Python, se puede verificar si una variable cumple con una condición específica y ejecutar el código correspondiente.
+
+
+## IF en python
+
+Para utilizar el `IF`, primero se define una variable, por ejemplo, x = 10. Luego, se escribe la estructura condicional usando la palabra reservada `IF` seguida de la condición, como `if x > 5`:. Si esta condición es verdadera, se ejecuta el código dentro del `IF`, que debe estar indentado.
+
+::: {.callout-tip}
+Es importante presetar atención a la indentación al momento de utilizar estas estructuras.
+:::
+
+```{python}
+x = 10
+if x > 5:
+    print("x es mayor que 5")
+    print("Indentación dentro del `if`")
+
+print("Indentación fuera del `if`")
+```
+
+
+## ¿Qué pasa si la condición del IF es falsa?
+
+Si la condición del `IF` no se cumple, se puede utilizar la instrucción `else` para manejar el caso contrario. Por ejemplo, si x es menor o igual a 5, se ejecutará el bloque de código dentro del else.
+
+```{python}
+x = 3
+if x > 5:
+    print("x es mayor que 5")
+else:
+    print("x es menor o igual a 5")
+```
+
+
+## ¿Cómo se manejan múltiples condiciones?
+
+Cuando hay múltiples condiciones, se puede usar `elif` (`else if`). Esto permite agregar condiciones adicionales entre `if` y `else`.
+
+```{python}
+x = 5
+if x > 5:
+    print("x es mayor que 5")
+elif x == 5:
+    print("x es igual a 5")
+else:
+    print("x es menor que 5")
+```
+
+
+## ¿Cómo se manejan múltiples condiciones en un solo IF?
+
+Para evaluar múltiples condiciones en una sola sentencia `IF`, se pueden utilizar los operadores lógicos `and` y `or`. El operador and requiere que ambas condiciones sean verdaderas, mientras que el operador or requiere que al menos una condición sea verdadera.
+
+```{python}
+x = 15
+y = 30
+
+# Ambas son verdaderas
+if x > 10 and y > 25:
+    print("x es mayor que 10 y y es mayor que 25")
+
+# Al menos una es verdadera
+if x > 10 or y > 35:
+    print("x es mayor que 10 o y es mayor que 35")
+```
+
+## ¿Qué es la negación en las condiciones?
+
+La palabra reservada `not` se utiliza para negar una condición. Si una condición es verdadera, not la convierte en falsa, y viceversa.
+
+```{python}
+x = 15
+if not x > 20:
+    print("x no es mayor que 20")
+```
+
+## ¿Cómo se anidan las estructuras IF?
+
+Los `IF` anidados permiten evaluar condiciones dentro de otras condiciones. Esto es útil para verificar múltiples niveles de requisitos.
+
+```{python}
+isMember = True
+age = 15
+
+# Si es miembro
+if isMember:
+    # Si es miembro y es mayor a 15 anios
+    if age >= 15:
+        print("Tienes acceso ya que eres miembro y mayor que 15")
+
+    # Si es miembro, pero es menor a 15 anios
+    else:
+        print("No tienes acceso ya que eres miembro, pero menor a 15 años")
+
+# Si no es miembro
+else:
+    print("No eres miembro y no tienes acceso")
+```
