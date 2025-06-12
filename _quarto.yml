@@ -41,6 +41,9 @@ book:
         - qmd/python/matrices_tuplas.qmd
         - qmd/python/diccionarios.qmd
         - qmd/python/if_else_elif.qmd
+        - qmd/python/bucles.qmd
+        - qmd/python/iteradores.qmd
+        - qmd/python/comprehension_list.qmd
 
 format:
   html:
