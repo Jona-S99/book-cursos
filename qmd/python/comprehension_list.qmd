@@ -1,0 +1,21 @@
+---
+jupyter: python3
+---
+
+# Comprehension List
+
+Una Comprehension List es una forma concisa de crear listas en Python, pues permite generar listas nuevas transformando cada elemento de una colección existente o creando elementos a partir de un rango. La sintaxis es compacta y directa, lo que facilita la comprensión del propósito de tu código de un vistazo.
+
+
+::: {.callout-tip}
+## Estructura básica de una Comprehension List:
+
+[expresión `for` elemento `in` iterable `if` condición]
+
+Que se traduce a: “Crea una nueva lista evaluando nueva_expresión para cada elemento en el iterable.”
+:::
+
+
+
+
+
