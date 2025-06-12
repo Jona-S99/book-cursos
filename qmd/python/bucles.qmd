@@ -1,0 +1,138 @@
+---
+jupyter: python3
+---
+
+# Iteraciones y bucles
+
+Aprender a automatizar el proceso de iteración en listas utilizando bucles y controles de iteración es fundamental para optimizar el manejo de datos en Python.
+
+## For
+
+Un bucle `for` en Python te permite recorrer secuencias (listas, tuplas, cadenas, rangos, etc.) elemento a elemento, ejecutando un bloque de código para cada uno. Su sintaxis básica es:
+
+```{python}
+#| eval: false
+
+for elemento in iterable:
+    # bloque de código que usa “elemento”
+```
+
+Sus características son:
+
+- **Iterable:** cualquier objeto que implemente el protocolo de iteración (list, tuple, str, dict, range, etc.).
+
+- **Elemento:** variable que toma, en cada iteración, el siguiente valor del iterable.
+
+- El bloque indentado se ejecuta una vez por cada elemento.
+
+Ejemplo con una lista
+
+```{python}
+# Lista
+numbers = [1, 2, 3, 4, 5, 6]
+
+# Imprimir el valor de i
+for i in numbers:
+    print(f"El valor de i es: {i}")
+```
+
+
+## Range
+
+ELa función `range` permite iterar un conjunto de números fijos para producir índices o repeticiones controladas.
+
+::: {.callout-note}
+Es importante mencionar que range omite el último número solicitado.
+:::
+
+Ejemplos:
+
+```{python}
+# Imprimit del 0 al 9, omitiendo el 10
+for i in range(10):
+    print(i)
+```
+
+
+```{python}
+# Imprime del 3 al 9
+for i in range(3, 10):
+    print(i)  
+```
+
+```{python}
+# range(start, stop, step)
+# Imprime los pares entre 2 y 10 (excluyendo 10)
+for n in range(2, 10, 2):
+    print(n)
+```
+
+## Condicionales dentro de bucles
+
+También podemos utilizar condicionales `ìf`, `else` y `elif` al momento de usar los bucles for.
+
+Un ejemplo sencillo sería:
+
+```{python}
+frutas = ["manzana", "pera", "uva", "naranja", "tomate"]
+for fruta in frutas:
+    print(fruta)
+    if fruta == "naranja":
+        print("naranja encontrada")
+```
+
+En tanto, un ejemplo más complejo sería:
+
+1. El `for` itera `i` desde 0 hasta 9.
+
+2. `if i % 2 == 0` comprueba si es par.
+
+3. Si no es par, `elif i % 3 == 0` comprueba si es múltiplo de 3.
+
+4. `else` cubre todos los demás casos.
+
+```{python}
+# Recorremos del 0 al 9
+for i in range(10):
+    if i % 2 == 0:
+        print(f"{i} es par")
+    elif i % 3 == 0:
+        print(f"{i} es múltiplo de 3 pero no par")
+    else:
+        print(f"{i} es impar y no múltiplo de 3")
+```
+
+
+## while
+
+La instrucción `while` permite ejecutar un bloque de código de forma repetida **mientras** una condición booleana sea `True`. Es útil cuando no sabemos de antemano cuántas iteraciones haremos.
+
+En este ejemplo estamos diciendo "voy a imprimir el contar cuando sea menor a 5"
+
+```{python}
+# Ejemplo: contar de 0 a 4
+contador = 0
+while contador < 5:
+    print(f"Valor de contador: {contador}")
+    contador += 1
+```
+
+## break y continue
+
+La palabra clave `break` se utiliza para salir del bucle prematuramente, mientras que `continue` omite la iteración actual y pasa a la siguiente:
+
+```{python}
+for i in numbers:
+    if i == 3:
+        break
+    print(i)  # Termina al llegar a 3
+```
+
+
+
+```{python}
+for i in numbers:
+    if i == 3:
+        continue
+    print(i)  # Omite el 3
+```
