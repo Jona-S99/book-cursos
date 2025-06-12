@@ -1,0 +1,72 @@
+---
+jupyter: python3
+---
+
+# Iteradores y generadores
+
+Trabajar con iteradores y generadores en Python permite manejar grandes cantidades de datos de manera eficiente, sin necesidad de cargar todo en memoria.
+
+Un iterador es un objeto que produce una secuencia de valores uno a uno, bajo demanda, implementando dos métodos clave:
+
+- `__iter__()` que devuelve el propio iterador.
+
+- `__next__()` que devuelve el siguiente valor; cuando se agotan los elementos lanza la excepción StopIteration.
+
+Todos los iteradores son iterables, pero no todos los iterables son iteradores hasta que se les aplica iter().
+
+Ejemplo:
+
+```{python}
+#| eval: false
+# Crear una lista
+lista = [1, 2, 3, 4]
+
+# Obtener el iterador de la lista
+iterador = iter(lista)
+
+# Usar el iterador para obtener elementos
+print(next(iterador))  # Imprime: 1
+print(next(iterador))  # Imprime: 2
+print(next(iterador))  # Imprime: 3
+print(next(iterador))  # Imprime: 4
+```
+
+Los iteradores también pueden recorrer cadenas de texto.
+
+```{python}
+text = "Hola mundo!"
+text_iter = iter(text)
+
+for i in text_iter:
+  print(i)
+```
+
+
+## ¿Qué es un generador y cómo se utiliza?
+
+Un generador en Python es una función que, en lugar de devolver todos sus resultados de golpe con `return`, utiliza la palabra clave `yield` para ir “produciendo” valores uno a uno y de forma perezosa (lazy), es decir, solo cuando el código que lo consume los solicita.
+
+```{python}
+def mi_generador():
+    yield 1
+    yield 2
+    yield 3
+
+# Usar el generador
+for valor in mi_generador():
+    print(valor)
+```
+
+Ejemplo con serie Fibonacci
+
+```{python}
+def fibonacci(limite):
+    a, b = 0, 1
+    while a < limite:
+        yield a
+        a, b = b, a + b
+
+# Usar el generador para la serie de Fibonacci hasta 10
+for numero in fibonacci(10):
+    print(numero)
+```
