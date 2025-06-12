@@ -44,7 +44,7 @@ print("Último elemento:", lista_mixta[-1])
 print(lista_mixta[1:3]) 
 ```
 
-## Métodos para listas {.unnumbered}
+## Métodos para listas
 
 ### append(item) {.unnumbered}
 Añade un elemento `item` al final de la lista.
@@ -120,7 +120,7 @@ lista.reverse()
 print(lista)  # [3, 2, 1]
 ```
 
-## Copiar una lista {.unnumbered}
+## Copiar una lista
 
 ::: {.callout-note}
 Cuando asignamos una lista a una nueva variable, por ejemplo, `B = A`, no estamos creando una copia independiente. Ambas variables apuntan al mismo **espacio de memori**a. Así, cualquier cambio en A se reflejará en B.
