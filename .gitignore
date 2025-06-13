@@ -12,6 +12,8 @@ Thumbs.db
 # quarto things
 /.quarto/
 /_book/
+/_site/
+/docs/
 
 # vscode things
 .favorites.json
