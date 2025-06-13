@@ -1,0 +1,12 @@
+{
+  "hash": "33b8a7b265098ad5505e4f8f2851ce59",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\njupyter: python3\n---\n\n# Input y Casting\n\n\n## Función `input()` {.unnumbered}\n\nEn Python, cuando trabajamos con proyectos que requieren interacción del usuario, es común solicitar datos como correo o contraseña para ejecutar acciones específicas. Este mismo enfoque es útil para entender la función `input()`.\n\n- Detiene la ejecución del programa y muestra un mensaje en pantalla (opcional). Luego espera a que el usuario escriba texto y presione Enter.\n\n::: {#162df4ac .cell execution_count=1}\n``` {.python .cell-code}\n# Sin mensaje personalizado\nnombre = input()\nprint(\"Hola\", nombre)\n\n# Con mensaje\nedad = input(\"¿Cuántos años tienes? \")\nprint(\"Vas a cumplir\", edad, \"este año.\")\n```\n:::\n\n\n::: {.callout-note}\nEn ambos casos `nombre` y `edad` serán variables de tipo `str`.\n:::\n\n\n## ¿Qué es el casting (conversión de tipos)? {.unnumbered}\n\nCasting es el proceso de convertir un valor de un tipo de dato a otro. En Python, esto se hace normalmente llamando al constructor del tipo deseado:\n\n- `int(valor)` → convierte a entero (trunca decimales o produce error si no es numérico).\n- `float(valor)` → convierte a número de punto flotante.\n- `str(valor)` → convierte cualquier valor a cadena de texto.\n- `bool(valor)` → convierte a booleano (False si el valor es “vacío” o cero).\n\nEjemplos:\n\n::: {#346f8bea .cell execution_count=2}\n``` {.python .cell-code}\n# Pedimos la edad, la recibimos como str y la convertimos a int\nedad_str = input(\"¿Cuántos años tienes? \")\nedad = int(edad_str)    \nprint(\"El año que viene tendrás\", edad + 1, \"años.\")\n\n# Pedimos un número decimal y lo convertimos a float\nnota_str = input(\"¿Qué nota obtuviste? \")\nnota = float(nota_str)\nprint(\"Has sacado un\", nota, \"en la nota final.\")\n```\n:::\n\n\nEn estos ejemplos:\n\n1. `input()` lee siempre una cadena.\n2. Aplicamos `int(...)` o `float(...)` para poder usar operaciones aritméticas con el valor ingresado.\n3. Si el usuario introduce un texto no convertible (por ejemplo \"hola\" al hacer int(\"hola\")), Python lanzará un `ValueError`.\n\n",
+    "supporting": [
+      "input_casting_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

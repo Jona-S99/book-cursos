@@ -1,0 +1,604 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Apuntes varios",
+    "section": "",
+    "text": "Bienvenida\nEste libro electrónico viene a ser una compilación para los cursos que hago, de esta manera tengo todos mis apuntes en un solo lugar para cuando deba volver a ellos.\nEste sitio está en construcción.",
+    "crumbs": [
+      "Bienvenida"
+    ]
+  },
+  {
+    "objectID": "qmd/prompt_engineering/1_intro.html",
+    "href": "qmd/prompt_engineering/1_intro.html",
+    "title": "Prompt Engineering",
+    "section": "",
+    "text": "El Prompt Engineering es el arte y la ciencia de diseñar instrucciones efectivas para modelos de lenguaje de inteligencia artificial. Esta disciplina emergente se centra en cómo formular, estructurar y refinar los “prompts” (instrucciones o peticiones) que se proporcionan a los modelos de IA para obtener los resultados más precisos, útiles y relevantes.\nEn esencia, un ingeniero de prompts desarrolla habilidades para:\n\nFormular instrucciones claras y específicas\nProporcionar el contexto adecuado\nEstructurar las peticiones para maximizar la calidad de las respuestas\nGuiar al modelo hacia el formato y estilo deseado\nSuperar las limitaciones inherentes de los sistemas de IA\n\nEl Prompt Engineering se ha convertido en una habilidad esencial para aprovechar al máximo el potencial de los modelos de lenguaje en sus flujos de trabajo.\nImportancia del Prompt Engineering\n\nEficiencia: obtener respuestas precisas y útiles en menos iteraciones\nPersonalización: adaptar las respuestas a necesidades específicas\nSuperación de limitaciones: minimizar errores, sesgos o confusiones del modelo\nCasos de uso avanzados: habilitar aplicaciones complejas que serían imposibles con prompts básicos\n\nEste apartado refiere a los apuntes hechos del curso Prompt Engineering de Platzi.",
+    "crumbs": [
+      "Prompt Engineering"
+    ]
+  },
+  {
+    "objectID": "qmd/prompt_engineering/zero_shot.html",
+    "href": "qmd/prompt_engineering/zero_shot.html",
+    "title": "Zero-Shot",
+    "section": "",
+    "text": "¿Qué es el Zero-Shot Prompting?\nEl Zero-Shot Prompting es una técnica que permite obtener respuestas específicas de un modelo de lenguaje (LLM) proporcionándole únicamente una instrucción directa y sin ejemplos previamente definidos. Este método es ideal cuando se necesitan respuestas inmediatas y claras sin mostrar al modelo ejemplos anteriores de lo que se espera.",
+    "crumbs": [
+      "Prompt Engineering",
+      "Zero-Shot"
+    ]
+  },
+  {
+    "objectID": "qmd/prompt_engineering/zero_shot.html#cuándo-usar-zero-shot-prompting",
+    "href": "qmd/prompt_engineering/zero_shot.html#cuándo-usar-zero-shot-prompting",
+    "title": "Zero-Shot",
+    "section": "¿Cuándo usar Zero-Shot Prompting?",
+    "text": "¿Cuándo usar Zero-Shot Prompting?\nEl Zero-Shot Prompting es útil en situaciones donde:\n\nSe requiere una respuesta rápida\nNo se dan ejemplos previos al modelo, solo se le da una instrucción directa.",
+    "crumbs": [
+      "Prompt Engineering",
+      "Zero-Shot"
+    ]
+  },
+  {
+    "objectID": "qmd/prompt_engineering/zero_shot.html#conceptos-clave-para-un-buen-zero-shot-prompt",
+    "href": "qmd/prompt_engineering/zero_shot.html#conceptos-clave-para-un-buen-zero-shot-prompt",
+    "title": "Zero-Shot",
+    "section": "Conceptos Clave para un Buen Zero-Shot Prompt",
+    "text": "Conceptos Clave para un Buen Zero-Shot Prompt\n\nEnfoque: definir claramente la tarea a realizar.\n\nEjemplo: “Ayúdame a planear mis vacaciones con mi esposa.”.\n\nContexto: información adicional que debe tener en cuenta el LLM desde el inicio.\n\nEjemplo: “Tenemos la idea de ir a Europa, pero no sabemos qué países reqiueren visa.”.\n\nLímites: cosas que puede o no puede hacer el LLM.\nRol: definir el perfil que debe asumir el LLM, como un agente de viajes.",
+    "crumbs": [
+      "Prompt Engineering",
+      "Zero-Shot"
+    ]
+  },
+  {
+    "objectID": "qmd/prompt_engineering/zero_shot.html#técnica-paso-a-paso",
+    "href": "qmd/prompt_engineering/zero_shot.html#técnica-paso-a-paso",
+    "title": "Zero-Shot",
+    "section": "Técnica “Paso a Paso”",
+    "text": "Técnica “Paso a Paso”\nSí uno le inidica al modelo que piense o realice la tarea paso a paso, el LLM razonará un plan para resolver la tarea que le estamos pidiendo.\n\nCon la técnica: hace más preguntas, más estructura tipo cuestionario.\nSin la técnica: puede asumir muchas cosas sin preguntar y limitar opciones.",
+    "crumbs": [
+      "Prompt Engineering",
+      "Zero-Shot"
+    ]
+  },
+  {
+    "objectID": "qmd/prompt_engineering/zero_shot.html#técnica-de-agregar-etiquetas-xml",
+    "href": "qmd/prompt_engineering/zero_shot.html#técnica-de-agregar-etiquetas-xml",
+    "title": "Zero-Shot",
+    "section": "Técnica de agregar etiquetas XML",
+    "text": "Técnica de agregar etiquetas XML\nUtilizar etiquetas XML permite clarificar con precisión dónde comienzan y finalizan ciertas partes del prompt. Dado que estas etiquetas estructuran claramente el texto, reducen la posibilidad de confusión y facilitan la interpretación correcta del prompt por parte del modelo.\nUn ejemplo:\n\nDefinicion de secciones:\n\n&lt;Instrucciones&gt;\nCrea un plan para unas vacaciones en pareja.\nComo agente de viajes, realizame las preguntas pertinentes para crear el\nplan de vacaciones.\nDa al usuario varias opciones de planes, antes de crear un itinerario.\nUna vez generado el intinerario, crea una lista de requisitios para el viaje\ncomo: visas, vuelos, hoteles entre otros.\nPiensa paso a paso.\n&lt;/Instrucciones&gt;\n\n&lt;contexto&gt;\nEste plan de viaje es para chilenos.\nEl destino debe estar en Europa.\n&lt;/contexto&gt;",
+    "crumbs": [
+      "Prompt Engineering",
+      "Zero-Shot"
+    ]
+  },
+  {
+    "objectID": "qmd/prompt_engineering/zero_shot.html#en-resumen-consideraciones-para-refinar-un-prompt",
+    "href": "qmd/prompt_engineering/zero_shot.html#en-resumen-consideraciones-para-refinar-un-prompt",
+    "title": "Zero-Shot",
+    "section": "En resumen: consideraciones para refinar un prompt",
+    "text": "En resumen: consideraciones para refinar un prompt\n\nClaridad en el rol: Define claramente el rol que el LLM debe asumir (por ejemplo, “actúa como un agente de viajes”).\nInstrucciones específicas: Proporciona instrucciones claras y directas sobre lo que deseas que haga el modelo, evita ser vago.\nFlexibilidad en preguntas: permite que el modelo formule preguntas abiertas para obtener más información pertinente.\nPensamiento paso a paso: indica que el modelo debe desglosar el problema en pasos más pequeños, facilitando una respuesta más estructurada.\nDelimitación de contexto: usa etiquetas o delimitadores (sin programación) para separar instrucciones, contexto y reglas, mejorando la comprensión del modelo.",
+    "crumbs": [
+      "Prompt Engineering",
+      "Zero-Shot"
+    ]
+  },
+  {
+    "objectID": "qmd/prompt_engineering/few_shot.html",
+    "href": "qmd/prompt_engineering/few_shot.html",
+    "title": "FewShot",
+    "section": "",
+    "text": "¿Cuándo utilizar FewShot en vez de ZeroShot?\nEn inteligencia artificial, FewShot es una estrategia que ayuda al modelo a entender con claridad lo que deseas al incluir ejemplos específicos en las instrucciones. A diferencia de ZeroShot, que es más abierta y general, FewShot permite solucionar problemas complejos pero definidos, proporcionando ejemplos claros que guían los resultados.\nZeroShot es ideal cuando buscas flexibilidad y creatividad en respuestas amplias y subjetivas, como diseñar un plan de vacaciones a medida. FewShot, por otro lado, destaca en tareas específicas y complejas donde se necesitan respuestas claras y precisas, como clasificar correctamente opiniones en positivas, negativas o neutras.",
+    "crumbs": [
+      "Prompt Engineering",
+      "FewShot"
+    ]
+  },
+  {
+    "objectID": "qmd/prompt_engineering/few_shot.html#ejemplo-de-uso-clasificación-de-comentarios-con-fewshot",
+    "href": "qmd/prompt_engineering/few_shot.html#ejemplo-de-uso-clasificación-de-comentarios-con-fewshot",
+    "title": "FewShot",
+    "section": "Ejemplo de uso: clasificación de comentarios con FewShot",
+    "text": "Ejemplo de uso: clasificación de comentarios con FewShot\nPara emplear FewShot y diferenciar los comentarios que recibes, sigue estos pasos:\n\nDefine indicaciones claras: dile al modelo que actúe como analista de sentimientos, identificando comentarios positivos, negativos o neutrales según la opinión expresada.\nIncluye ejemplos prácticos: proporciona ejemplos breves y claros que demuestren qué consideras positivo, negativo o neutro.\nUtiliza un formato consistente: emplea etiquetas claras para pisos y techos de los ejemplos facilitando al modelo la identificación de los límites.\n\nUn ejemplo puede ser:\n&lt;reglas&gt;\nResponde solo con la palabra neutral, positiva o negativa.\n&lt;/reglas&gt;\n\n&lt;ejemplo&gt;\nComentario: “La comida fue pésima”.\nCalificación: negativa.\n&lt;/ejemplo&gt;\n\n&lt;ejemplo&gt;\nComentario: “El servicio estuvo increíble y la comida deliciosa”.\nCalificación: positiva.\n&lt;/ejemplo&gt;\n\n&lt;ejemplo&gt;\nComentario: “El servicio fue bueno, pero la comida estuvo muy regular”.\nCalificación: neutral.\n&lt;/ejemplo&gt;",
+    "crumbs": [
+      "Prompt Engineering",
+      "FewShot"
+    ]
+  },
+  {
+    "objectID": "qmd/prompt_engineering/few_shot.html#importancia-de-los-ejemplos-en-fewshot",
+    "href": "qmd/prompt_engineering/few_shot.html#importancia-de-los-ejemplos-en-fewshot",
+    "title": "FewShot",
+    "section": "Importancia de los ejemplos en FewShot",
+    "text": "Importancia de los ejemplos en FewShot\nCada ejemplo que incluyas enseña al modelo a distinguir con exactitud lo que quieres decir, dando una guía práctica y clara para identificar sentimientos y evitar ambigüedades. Recuerda que cada palabra y detalle influye notablemente en el resultado, por lo que una buena elección de ejemplos impacta positivamente en la efectividad final del modelo.\n\n¿Cuántos ejemplos debo incluir en mi prompt?\nPoner muchos o pocos ejemplos dependerá del rendimiento deseado y la complejidad del problema:\n\nCada ejemplo consume tokens y va a afectar el costo del uso.\nA mayor cantidad de ejemplos, más precisa será la calificación al detalle.\n\n\n\n\n\n\n\nTip\n\n\n\nLo recomendable es iniciar con algunos ejemplos clave e ir agregando aquellos donde identifiques errores previos para mejorar continuamente los resultados.",
+    "crumbs": [
+      "Prompt Engineering",
+      "FewShot"
+    ]
+  },
+  {
+    "objectID": "qmd/prompt_engineering/few_shot.html#cómo-puedo-validar-los-resultados-de-mi-análisis",
+    "href": "qmd/prompt_engineering/few_shot.html#cómo-puedo-validar-los-resultados-de-mi-análisis",
+    "title": "FewShot",
+    "section": "¿Cómo puedo validar los resultados de mi análisis?",
+    "text": "¿Cómo puedo validar los resultados de mi análisis?\nRealiza pruebas constantes ajustando detalles del prompt como las comillas o etiquetas y verificando si los resultados varían. Mediante ensayos controlados, puedes detectar y corregir errores eficientemente, garantizando que el modelo entienda con precisión tu requerimiento.",
+    "crumbs": [
+      "Prompt Engineering",
+      "FewShot"
+    ]
+  },
+  {
+    "objectID": "qmd/prompt_engineering/chain_of_thought.html",
+    "href": "qmd/prompt_engineering/chain_of_thought.html",
+    "title": "Chain of thought o cadena de pensamiento",
+    "section": "",
+    "text": "La técnica de prompting Chain of Thought, o cadena de pensamiento, mejora significativamente la calidad de respuesta de los modelos de lenguaje como ChatGPT. Aplicar este método implica guiar paso a paso las respuestas mediante instrucciones claras, para obtener resultados más precisos y coherentes. Veamos qué implica esta técnica y cómo sacarle el máximo provecho.\nChain of Thought consiste en pedir al modelo que explique, paso por paso, cómo llega a una respuesta determinada, especialmente ante preguntas que requieren razonamiento lógico. Antes de contar con modelos avanzados, era necesario indicar explícitamente en los prompts que “pensaran paso a paso”; los modelos actuales con capacidad de razonamiento avanzado ya operan bajo esta lógica por defecto.\nEsta técnica mejora los resultados, pero necesita un mayor tiempo de procesamiento por parte del modelo.\n\n¿Cuándo conviene usar chain of thougth?\n\nResolución lógica de acertijos.\nProcedimientos matemáticos y científicos que siguen un orden definido. Por ejemplo, resolver ecuaciones siguiendo reglas establecidas como la jerarquía de operaciones matemáticas (primero paréntesis, luego multiplicación y división, finalmente suma y resta).\n\nEjemplo práctico\n[CONTEXTO]\nNecesito resolver el siguiente problema matemático: Un tren A sale de Madrid a las 8:00 AM viajando a 120 km/h hacia Valencia. Un tren B sale de Valencia a las 9:30 AM viajando a 90 km/h hacia Madrid. Si la distancia entre Madrid y Valencia es de 360 km, ¿a qué hora se cruzarán los trenes?\n\n[INSTRUCCIÓN EXPLÍCITA CON CHAIN OF THOUGHT]\nPor favor, resuelve este problema paso a paso. Piensa de forma estructurada:\n1. Identifica los datos relevantes\n2. Plantea las ecuaciones necesarias\n3. Resuelve algebraicamente\n4. Verifica tu respuesta\n\n[FORMATO DESEADO]\nMuestra cada uno de tus pasos de razonamiento y explica por qué sigues ese enfoque. Finaliza con una conclusión clara que responda directamente a la pregunta.",
+    "crumbs": [
+      "Prompt Engineering",
+      "Chain of thought o cadena de pensamiento"
+    ]
+  },
+  {
+    "objectID": "qmd/prompt_engineering/meta_prompting.html",
+    "href": "qmd/prompt_engineering/meta_prompting.html",
+    "title": "Meta prompting",
+    "section": "",
+    "text": "Casos de uso:\nEl meta-prompting es una técnica avanzada de prompt engineering donde se instruye al modelo de lenguaje para que genere, refine o evalúe prompts. En lugar de pedir directamente una respuesta a una tarea, se le pide al modelo que actúe como un “ingeniero de prompts” o un “asistente de creación de prompts”, ayudando a construir el prompt óptimo para una tarea específica. Esta técnica es útil cuando se busca mejorar la calidad de los prompts existentes, generar variaciones de prompts para probar diferentes enfoques, o incluso para que el modelo explique por qué un prompt particular podría ser más efectivo que otro.",
+    "crumbs": [
+      "Prompt Engineering",
+      "Meta prompting"
+    ]
+  },
+  {
+    "objectID": "qmd/prompt_engineering/meta_prompting.html#casos-de-uso",
+    "href": "qmd/prompt_engineering/meta_prompting.html#casos-de-uso",
+    "title": "Meta prompting",
+    "section": "",
+    "text": "Optimización de Prompts: Mejorar un prompt existente para obtener mejores respuestas.\nGeneración de Variaciones de Prompts: Crear múltiples versiones de un prompt para A/B testing o para cubrir diferentes matices de una tarea.\nAnálisis de Prompts: Pedir al modelo que evalúe la efectividad de un prompt y sugiera mejoras.\nCreación de Prompts para Tareas Complejas: Guiar al modelo para que construya un prompt detallado para una tarea que requiere múltiples consideraciones.\nEducación en Prompt Engineering: Usar el modelo para que enseñe cómo construir buenos prompts.",
+    "crumbs": [
+      "Prompt Engineering",
+      "Meta prompting"
+    ]
+  },
+  {
+    "objectID": "qmd/prompt_engineering/meta_prompting.html#por-qué-es-importante-refinar-un-prompt",
+    "href": "qmd/prompt_engineering/meta_prompting.html#por-qué-es-importante-refinar-un-prompt",
+    "title": "Meta prompting",
+    "section": "¿Por qué es importante refinar un prompt?",
+    "text": "¿Por qué es importante refinar un prompt?\nCrear un prompt efectivo va más allá de agregar más instrucciones o reglas. Modificar palabras y comprender claramente su significado es clave para obtener resultados precisos usando inteligencia artificial. Este método de refinamiento puede aplicarse a diversas profesiones y tareas cotidianas.",
+    "crumbs": [
+      "Prompt Engineering",
+      "Meta prompting"
+    ]
+  },
+  {
+    "objectID": "qmd/prompt_engineering/meta_prompting.html#ejemplo-de-meta-promt",
+    "href": "qmd/prompt_engineering/meta_prompting.html#ejemplo-de-meta-promt",
+    "title": "Meta prompting",
+    "section": "Ejemplo de Meta promt",
+    "text": "Ejemplo de Meta promt\n[ROL]\nEres un experto en Prompt Engineering especializado en la creación de prompts para modelos de lenguaje generativos de texto.\n\n[TAREA]\nQuiero generar descripciones de productos concisas y persuasivas para una tienda online de artículos de tecnología. El público objetivo son jóvenes adultos interesados en las últimas novedades.\n\n[INSTRUCCIÓN DE META-PROMPTING]\nPor favor, crea tres variaciones de un prompt que yo pueda usar con un modelo como ChatGPT para generar estas descripciones de producto. Cada prompt debe:\n1. Especificar el tono deseado (moderno, entusiasta).\n2. Indicar la longitud aproximada de la descripción (ej. 2-3 frases).\n3. Solicitar que se destaquen 1-2 características clave del producto.\n4. Incluir un placeholder para el [NOMBRE_DEL_PRODUCTO] y [CARACTERISTICAS_CLAVE].\n\n[FORMATO DESEADO]\nPresenta cada variación del prompt claramente numerada.",
+    "crumbs": [
+      "Prompt Engineering",
+      "Meta prompting"
+    ]
+  },
+  {
+    "objectID": "qmd/prompt_engineering/prompt_chaining.html",
+    "href": "qmd/prompt_engineering/prompt_chaining.html",
+    "title": "Prompt chaining",
+    "section": "",
+    "text": "El Prompt Chaining se basa en descomponer grandes retos en partes pequeñas que manejas individualmente en múltiples chats. A diferencia de lo habitual, donde mantienes todo dentro de un solo chat, esta técnica implica tomar cada resultado logrado y moverlo a un nuevo chat específico, garantizando mayor claridad y menos errores.",
+    "crumbs": [
+      "Prompt Engineering",
+      "Prompt chaining"
+    ]
+  },
+  {
+    "objectID": "qmd/python/1_intro_py.html",
+    "href": "qmd/python/1_intro_py.html",
+    "title": "Python",
+    "section": "",
+    "text": "Introducción de python",
+    "crumbs": [
+      "Python"
+    ]
+  },
+  {
+    "objectID": "qmd/python/strings.html",
+    "href": "qmd/python/strings.html",
+    "title": "1  Strings o cadenas",
+    "section": "",
+    "text": "¿Cómo se definen las cadenas en Python?\nEntender cómo trabajar con las cadenas en Python es fundamental para la manipulación de textos y datos en muchos proyectos. Desde definir variables hasta aplicar métodos específicos, el uso de strings es una habilidad básica, pero poderosa, que se utiliza en áreas avanzadas como el procesamiento del lenguaje natural (NLP).\nPara crear una cadena en Python, puedes utilizar comillas simples, dobles o triples. Por ejemplo:\n# Comillas simples\nnombre_cs = 'Juan Rosas'\nprint('String con comillas simples: ', nombre_cs)\n\nString con comillas simples:  Juan Rosas\n# Comillas dobles\nnombre_cd = \"Juan Rosas\"\nprint('String con comillas dobles: ', nombre_cd)\n\nString con comillas dobles:  Juan Rosas\n# Comillas triples: acepta saltos de linea\nnombre_tc = '''\nJuan\nRosas\n'''\nprint('String con comillas triples: ', nombre_tc)\n\nString con comillas triples:  \nJuan\nRosas",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Strings o cadenas</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/strings.html#métodos-para-strings",
+    "href": "qmd/python/strings.html#métodos-para-strings",
+    "title": "1  Strings o cadenas",
+    "section": "Métodos para strings",
+    "text": "Métodos para strings\n\n.lower\nConvierte todos los caracteres a minúsculas.\n\ns = \"Hola Mundo\"\nprint(s.lower())  # 'hola mundo'\n\n\n\n.upper\nConvierte todos los caracteres a mayúsculas.\n\ns = \"Hola Mundo\"\nprint(s.upper())  # 'HOLA MUNDO'\n\n\n\n.capitalize\nPone en mayúscula la primera letra y el resto en minúsculas.\n\ns = \"hOLA\"\nprint(s.capitalize())  # 'Hola'\n\n\n\n.title\nCapitaliza la primera letra de cada palabra.\n\ns = \"hola mundo\"\nprint(s.title())  # 'Hola Mundo'\n\n\n\n.swapcase\nInvierte el caso de cada carácter.\n\ns = \"Hola Mundo\"\nprint(s.swapcase())  # 'hOLA mUNDO'\n\n\n\n.strip(), .lstrip(), .rstrip()\nElimina espacios (u otros caracteres) al inicio/final de la cadena.\n\ns = \"  ejemplo  \"\nprint(s.strip())   # 'ejemplo'\nprint(s.lstrip())  # 'ejemplo  '\nprint(s.rstrip())  # '  ejemplo'\n\n\n\n.split(sep=None), .rsplit(sep=None)\nDivide la cadena en una lista según el separador.\n\ns = \"a,b,c\"\nprint(s.split(\",\"))   # ['a', 'b', 'c']\nprint(s.rsplit(\",\", 1))  # ['a,b', 'c']\n\n\n\n.join(iterable)\nUne los elementos de un iterable usando la cadena como separador.\n\nparts = [\"Python\", \"es\", \"genial\"]\nprint(\" \".join(parts))  # 'Python es genial'\n\n\n\n.replace(old, new)\nReemplaza todas las ocurrencias de old por new.\n\ns = \"2025-05-29\"\nprint(s.replace(\"-\", \"/\"))  # '2025/05/29'\n\n\n\n.find(sub), .index(sub)\nDevuelven el índice de la primera aparición de sub (–1 si no existe en find, excepción en index).\n\ns = \"abcdef\"\nprint(s.find(\"cd\"))   # 2\n# print(s.index(\"xy\"))  # ValueError\n\n\n\n.count(sub)\nCuenta cuántas veces aparece sub.\n\ns = \"banana\"\nprint(s.count(\"a\"))  # 3\n\n\n\n.startswith(pref), .endswith(suf)\nComprueban si la cadena empieza o termina con el prefijo/sufijo dado.\n\ns = \"Hola.py\"\nprint(s.startswith(\"Ho\"))  # True\nprint(s.endswith(\".py\"))   # True\n\n\n\n.isalpha(), .isdigit(), .isalnum(), .isspace()\nValidaciones de contenido: solo letras, dígitos, alfanumérico o espacios.\n\nprint(\"abc\".isalpha())   # True\nprint(\"123\".isdigit())   # True\nprint(\"a1b2\".isalnum())  # True\nprint(\" \\t\".isspace())   # True\n\n\n\n.zfill(width)\nRellena con ceros a la izquierda hasta lograr el ancho width.\n\nprint(\"42\".zfill(5))  # '00042'\n\n\n\n.center(width, [fillchar])\nCentra la cadena en un ancho dado, rellenando con fillchar (espacio por defecto).\n\nprint(\"cat\".center(7, \"-\"))  # '--cat--'\n\n\n\n.partition(sep), .rpartition(sep)\nDivide en tres partes: antes de sep, sep, después de sep.\n\ns = \"key=value\"\nprint(s.partition(\"=\"))   # ('key', '=', 'value')\nprint(s.rpartition(\"o\"))  # ('hell', 'o', '')\n\n\n\n.format(args, kwargs)\nFormatea la cadena usando llaves como marcadores.\n\nargs (argumentos posicionales) se usan para rellenar marcadores {} o {0}, {1}, … según el orden.\nkwargs (argumentos nombrados) se usan para rellenar marcadores {nombre}.\n\n\ntpl = \"Hola, {}. Tienes {n} mensajes.\"\nprint(tpl.format(\"Ana\", n=5))  # 'Hola, Ana. Tienes 5 mensajes.'",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Strings o cadenas</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/int_float_bool.html",
+    "href": "qmd/python/int_float_bool.html",
+    "title": "2  Integer, Float, Boolean",
+    "section": "",
+    "text": "Operaciones aritméticas\nEn Python, los tipos de datos numéricos son esenciales para representar valores cuantitativos y realizar operaciones matemáticas. Entre los tipos numéricos básicos se encuentran:\n# Definición de variables\na = 7\nb = 3.5\n\nprint(a + b)    # Suma:           10.5\nprint(a - b)    # Resta:           3.5\nprint(a * b)    # Multiplicación:  24.5\nprint(a / b)    # División real:   2.0\nprint(a // b)   # División entera: 2.0\nprint(a % b)    # Módulo:          0.0\nprint(a ** b)   # Exponente:       ≈ 643.397",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Integer, Float, Boolean</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/int_float_bool.html#conversión-entre-tipos",
+    "href": "qmd/python/int_float_bool.html#conversión-entre-tipos",
+    "title": "2  Integer, Float, Boolean",
+    "section": "Conversión entre tipos",
+    "text": "Conversión entre tipos\n\nf = 3.14\nn = int(f)      # Convierte float a int (trunca parte decimal)\nprint(n)        # 3\n\ns = \"42\"\nm = int(s)      # Convierte str a int\nprint(m + 8)    # 50",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Integer, Float, Boolean</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/int_float_bool.html#algunas-funciones-integradas-útiles",
+    "href": "qmd/python/int_float_bool.html#algunas-funciones-integradas-útiles",
+    "title": "2  Integer, Float, Boolean",
+    "section": "Algunas funciones integradas útiles",
+    "text": "Algunas funciones integradas útiles\n\nprint(abs(-5))        # Valor absoluto: 5\nprint(pow(2, 3))      # Potencia: 8\nprint(divmod(7, 3))   # División entera y resto: (2, 1)\nprint(round(3.6))     # Redondeo: 4",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Integer, Float, Boolean</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/operadores.html",
+    "href": "qmd/python/operadores.html",
+    "title": "3  Operadores",
+    "section": "",
+    "text": "Operadores aritméticos\nLos operadores son herramientas esenciales en Python para realizar operaciones con diferentes tipos de datos. Existen distintos tipos de operadores:",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Operadores</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/operadores.html#operadores-aritméticos",
+    "href": "qmd/python/operadores.html#operadores-aritméticos",
+    "title": "3  Operadores",
+    "section": "",
+    "text": "Operación\nSímbolo\nDescripción\nEjemplo\nResultado\n\n\n\n\nSuma\n+\nSuma dos operandos.\n5 + 3\n8\n\n\nResta\n-\nResta un operando del otro.\n5 - 3\n2\n\n\nMultiplicación\n*\nMultiplica dos operandos.\n5 * 3\n15\n\n\nDivisión\n/\nDivide un operando por otro.\n6 / 3\n2\n\n\nDivisión entera\n//\nDivide dos operandos y devuelve la parte entera del resultado.\n7 // 3\n2",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Operadores</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/operadores.html#operadores-relacionales",
+    "href": "qmd/python/operadores.html#operadores-relacionales",
+    "title": "3  Operadores",
+    "section": "Operadores relacionales",
+    "text": "Operadores relacionales\n\n\n\n\n\n\n\n\n\n\nOperación\nSímbolo\nDescripción\nEjemplo\nResultado\n\n\n\n\nIgualdad\n=\nComprueba si dos operandos son iguales.\n5 = 5\nTRUE\n\n\nDesigualdad\n#\nComprueba si dos operandos son diferentes.\n5 # 3\nTRUE\n\n\nMenor que\n&lt;\nComprueba si un operando es menor que el otro.\n3 &lt; 5\nTRUE\n\n\nMenor o igual que\n&lt;=\nComprueba si un operando es menor o igual que el otro.\n5 &lt;= 5\nTRUE\n\n\nMayor que\n&gt;\nComprueba si un operando es mayor que el otro.\n5 &gt; 3\nTRUE\n\n\nMayor o igual que\n&gt;=\nComprueba si un operando es mayor o igual que el otro.\n5 &gt;= 6\nFALSE",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Operadores</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/operadores.html#operadores-de-asignación",
+    "href": "qmd/python/operadores.html#operadores-de-asignación",
+    "title": "3  Operadores",
+    "section": "Operadores de Asignación",
+    "text": "Operadores de Asignación\n\n\n\n\n\n\n\n\n\n\nOperación\nSímbolo\nDescripción\nEjemplo\nResultado\n\n\n\n\nAsignación simple\n=\nAsigna un valor a una variable.\nx = 5\nx = 5\n\n\nSuma y asignación\n+=\nSuma un valor a una variable existente.\nx = 5; x += 3\nx = 8\n\n\nResta y asignación\n-=\nResta un valor a una variable existente.\nx = 5; x -= 2\nx = 3\n\n\nMultiplicación y asignación\n*=\nMultiplica un valor a una variable existente.\nx = 4; x *= 2\nx = 8\n\n\nDivisión y asignación\n/=\nDivide un valor a una variable existente.\nx = 10; x /= 2\nx = 5\n\n\nMódulo y asignación\n%=\nObtiene el residuo de la división y lo asigna a una variable existente.\nx = 10; x %= 4\nx = 2\n\n\nExponenciación y asignación\n**=\nEleva un valor a la potencia del otro y lo asigna a una variable existente.\nx = 2; x **= 3\nx = 8",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Operadores</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/input_casting.html",
+    "href": "qmd/python/input_casting.html",
+    "title": "4  Input y Casting",
+    "section": "",
+    "text": "Función input()\nEn Python, cuando trabajamos con proyectos que requieren interacción del usuario, es común solicitar datos como correo o contraseña para ejecutar acciones específicas. Este mismo enfoque es útil para entender la función input().\n# Sin mensaje personalizado\nnombre = input()\nprint(\"Hola\", nombre)\n\n# Con mensaje\nedad = input(\"¿Cuántos años tienes? \")\nprint(\"Vas a cumplir\", edad, \"este año.\")",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Input y Casting</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/input_casting.html#función-input",
+    "href": "qmd/python/input_casting.html#función-input",
+    "title": "4  Input y Casting",
+    "section": "",
+    "text": "Detiene la ejecución del programa y muestra un mensaje en pantalla (opcional). Luego espera a que el usuario escriba texto y presione Enter.\n\n\n\n\n\n\n\n\nNote\n\n\n\nEn ambos casos nombre y edad serán variables de tipo str.",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Input y Casting</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/input_casting.html#qué-es-el-casting-conversión-de-tipos",
+    "href": "qmd/python/input_casting.html#qué-es-el-casting-conversión-de-tipos",
+    "title": "4  Input y Casting",
+    "section": "¿Qué es el casting (conversión de tipos)?",
+    "text": "¿Qué es el casting (conversión de tipos)?\nCasting es el proceso de convertir un valor de un tipo de dato a otro. En Python, esto se hace normalmente llamando al constructor del tipo deseado:\n\nint(valor) → convierte a entero (trunca decimales o produce error si no es numérico).\nfloat(valor) → convierte a número de punto flotante.\nstr(valor) → convierte cualquier valor a cadena de texto.\nbool(valor) → convierte a booleano (False si el valor es “vacío” o cero).\n\nEjemplos:\n\n# Pedimos la edad, la recibimos como str y la convertimos a int\nedad_str = input(\"¿Cuántos años tienes? \")\nedad = int(edad_str)    \nprint(\"El año que viene tendrás\", edad + 1, \"años.\")\n\n# Pedimos un número decimal y lo convertimos a float\nnota_str = input(\"¿Qué nota obtuviste? \")\nnota = float(nota_str)\nprint(\"Has sacado un\", nota, \"en la nota final.\")\n\nEn estos ejemplos:\n\ninput() lee siempre una cadena.\nAplicamos int(...) o float(...) para poder usar operaciones aritméticas con el valor ingresado.\nSi el usuario introduce un texto no convertible (por ejemplo “hola” al hacer int(“hola”)), Python lanzará un ValueError.",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Input y Casting</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/listas.html",
+    "href": "qmd/python/listas.html",
+    "title": "5  Listas",
+    "section": "",
+    "text": "5.1 Métodos para listas\nUna lista en Python es una colección ordenada de elementos que puede contener elementos de diferentes tipos (enteros, flotantes, cadenas, etc.). Las listas son mutables, lo que significa que sus elementos se pueden cambiar después de que se ha creado la lista.\nPara crear una lista utilizamos los corchetes []",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Listas</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/listas.html#métodos-para-listas",
+    "href": "qmd/python/listas.html#métodos-para-listas",
+    "title": "5  Listas",
+    "section": "",
+    "text": "append(item)\nAñade un elemento item al final de la lista.\n\nlista = [1, 2, 3]\nlista.append([\"a\", \"b\", \"c\"])\nprint(lista)  # [1, 2, 3, 4]\n\n[1, 2, 3, ['a', 'b', 'c']]\n\n\n\n\ninsert(index, item)\nInserta item en la posición index, desplazando el resto a la derecha.\n\nlista = ['a', 'b', 'd']\nlista.insert(2, 'c')\nprint(lista)  # ['a', 'b', 'c', 'd']\n\n['a', 'b', 'c', 'd']\n\n\n\n\nremove(item)\nElimina la primera aparición de item en la lista. Lanza ValueError si no existe.\n\nlista = [1, 2, 3, 2]\nlista.remove(2)\nprint(lista)  # [1, 3, 2]\n\n[1, 3, 2]\n\n\n\n\nclear()\nElimina todos los elementos de la lista, dejándola vacía.\n\nlista = [1, 2, 3]\nlista.clear()\nprint(lista)  # []\n\n[]\n\n\n\n\ncount(item)\nCuenta cuántas veces aparece item en la lista.\n\nlista = [1, 2, 2, 2, 3]\nprint(\"El valor 2 se repite \", lista.count(2), \" veces en la lista\")  # 3\n\nEl valor 2 se repite  3  veces en la lista\n\n\n\n\nsort(key=None, reverse=False)\nOrdena la lista in place.\n\nkey: función para extraer el valor de comparación.\nreverse=True: orden descendente.\n\n\nlista = [3, 1, 2]\nlista.sort()\nprint(lista)  # [1, 2, 3]\n\nlista = ['b', 'aa', 'ccc']\nlista.sort(key=len, reverse=True)\nprint(lista)  # ['ccc', 'aa', 'b']\n\n[1, 2, 3]\n['ccc', 'aa', 'b']\n\n\n\n\nreverse()\nInvierte el orden de los elementos in place.\n\nlista = [1, 2, 3]\nlista.reverse()\nprint(lista)  # [3, 2, 1]\n\n[3, 2, 1]",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Listas</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/listas.html#copiar-una-lista",
+    "href": "qmd/python/listas.html#copiar-una-lista",
+    "title": "5  Listas",
+    "section": "5.2 Copiar una lista",
+    "text": "5.2 Copiar una lista\n\n\n\n\n\n\nNote\n\n\n\nCuando asignamos una lista a una nueva variable, por ejemplo, B = A, no estamos creando una copia independiente. Ambas variables apuntan al mismo espacio de memoria. Así, cualquier cambio en A se reflejará en B.\n\n\n\n# Crear lista\nls_a = [1, 2, 3, 4, 5]\n\n# Copiar lista\nls_b = ls_a\n\nprint(\"El id de la lista a es: \", id(ls_a))\nprint(\"El id de la lista b es: \", id(ls_b))\n\nEl id de la lista a es:  4434485120\nEl id de la lista b es:  4434485120\n\n\nComo podemos ver, son iguales, pues apuntan la mismo lugar en memoria. Entonces, ¿cómo evitamos esto?\nUitlizando el método slicing.\n\n# Crear lista c\nls_c = ls_a[:]\n\nprint(\"El id de la lista a es: \", id(ls_a))\nprint(\"El id de la lista b es: \", id(ls_c))\n\nEl id de la lista a es:  4434485120\nEl id de la lista b es:  4434485888\n\n\nComo vemos, son ids diferentes.",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Listas</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/matrices_tuplas.html",
+    "href": "qmd/python/matrices_tuplas.html",
+    "title": "6  Matrices y tuplas",
+    "section": "",
+    "text": "6.1 Matriz\nUna matriz es una colección ordenada de datos dispuestos en filas y columnas. Se representa como una lista de listas, donde cada sublista es una fila de la matriz, es decir, una matriz es una lista de listas.\nEjemplo de matriz:\nmatrix = [\n  # Columnas\n    [1, 2, 3],  # Filas\n    [4, 5, 6],  # Filas\n    [7, 8, 9]   # Filas\n]\n# Acceder al elemento de la segunda fila, tercera columna\nprint(matrix[1][2])  # 6\n\n# Modificar un valor\nmatrix[0][0] = 10\nprint(matrix)  \n# [\n#   [10, 2, 3],\n#   [4, 5, 6],\n#   [7, 8, 9]\n# ]",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Matrices y tuplas</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/matrices_tuplas.html#matriz",
+    "href": "qmd/python/matrices_tuplas.html#matriz",
+    "title": "6  Matrices y tuplas",
+    "section": "",
+    "text": "Sitaxis: como se trata de listas, se crean utilizando corchetes []\nMutable: puedes modificar elementos, añadir o quitar filas/columnas.\nSe accede por doble índice: matrix[fila][columna].\nÚtil para datos bidimensionales (tablas, imágenes, operaciones numéricas).\nSe usa cuando necesitas una secuencia de elementos que puede cambiar a lo largo del programa.",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Matrices y tuplas</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/matrices_tuplas.html#tuplas",
+    "href": "qmd/python/matrices_tuplas.html#tuplas",
+    "title": "6  Matrices y tuplas",
+    "section": "6.2 Tuplas",
+    "text": "6.2 Tuplas\nUna tupla es una secuencia ordenada e inmutable de elementos:\n\nnumbers = (1, 2, 3, 4, 5)\n\nprint(\"El tipo de numbers es: \", type(numbers))\n\nEl tipo de numbers es:  &lt;class 'tuple'&gt;\n\n\n\nSintaxis: se crea usando paréntesis (). Ejemplo: tupla = (1, 2, 3).\nInmutable: no puedes cambiar su contenido una vez creada.\nMás ligera que la lista y adecuada para datos fijos o como clave en diccionarios.\nSe usa cuando tienes una secuencia de elementos que no debería cambiar, o para mejorar el rendimiento, ya que las tuplas son más rápidas y consumen menos memoria que las listas.\n\n\n# Acceso por índice\nprint(numbers[1])     # '2'\n\n# No permite asignación\nnumbers[0] = 5\n# TypeError: 'tuple' object does not support item assignment",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Matrices y tuplas</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/diccionarios.html",
+    "href": "qmd/python/diccionarios.html",
+    "title": "7  Diccionarios",
+    "section": "",
+    "text": "7.1 ¿Cómo crear un diccionario?\nLos diccionarios en Python son una estructura que almacenan dos datos, la clave y el valor. Un ejemplo cotidiano es un diccionario físico donde buscamos el significado de una palabra y encontramos la palabra (clave) y su definición (valor).\nEs importante mencionar las siguientes carecterísticas:\nPara crear un diccionario utilizamos las llaves {}.\nnumbers = {\n  1: \"one\", \n  2: \"two\",\n  3: \"three\"\n}\nprint(numbers)\n\n{1: 'one', 2: 'two', 3: 'three'}\nPara acceder a un elemento dentro del diccionario utilizamos su llave.\n# Acceder al numero 2\nprint(numbers[2])\n\ntwo",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Diccionarios</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/diccionarios.html#modificaciones-a-los-diccionarios",
+    "href": "qmd/python/diccionarios.html#modificaciones-a-los-diccionarios",
+    "title": "7  Diccionarios",
+    "section": "7.2 Modificaciones a los diccionarios",
+    "text": "7.2 Modificaciones a los diccionarios\nModificación de valores\n\n# Modificacion de un valor\nnumbers[3] = \"tres\"\nprint(numbers[3])\n\ntres\n\n\nPara eliminar una clave y su valor utilizamos la función del\n\n# Eliminacion de la clave `3`\ndel numbers[3]\nprint(numbers)\n\n{1: 'one', 2: 'two'}",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Diccionarios</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/diccionarios.html#métodos-para-los-diccionarios",
+    "href": "qmd/python/diccionarios.html#métodos-para-los-diccionarios",
+    "title": "7  Diccionarios",
+    "section": "7.3 Métodos para los diccionarios",
+    "text": "7.3 Métodos para los diccionarios\n\n# Diccionario para probar metodos\ndiccionario = {\n  'Nombre': 'Juan',\n  'Edad': 30,\n  'Profesion': 'Ingeniero',\n  'Ubicacion': 'Punta Arenas'\n}\n\n\nkey()\nDevuelve una vista (iterable) con todas las claves del diccionario.\n\nkey_test = diccionario.keys()\nprint(\"El restultado es: \", key_test)\nprint(\"El tipo es: \", type(key_test))\n\nEl restultado es:  dict_keys(['Nombre', 'Edad', 'Profesion', 'Ubicacion'])\nEl tipo es:  &lt;class 'dict_keys'&gt;\n\n\n\n\nvalues()\nDevuelve una vista con todos los valores del diccionario.\n\nprint(diccionario.values())\n\ndict_values(['Juan', 30, 'Ingeniero', 'Punta Arenas'])\n\n\n\n\nitems()\nDevuelve una vista de tuplas (clave, valor) para cada par del diccionario.\n\nprint(diccionario.items())\n\ndict_items([('Nombre', 'Juan'), ('Edad', 30), ('Profesion', 'Ingeniero'), ('Ubicacion', 'Punta Arenas')])\n\n\n\n\nclear()\nElimina todos los elementos del diccionario, dejándolo vacío.\n\ndiccionario.clear()\nprint(diccionario)\n\n{}",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Diccionarios</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/if_else_elif.html",
+    "href": "qmd/python/if_else_elif.html",
+    "title": "8  If, Else y Elif",
+    "section": "",
+    "text": "8.1 IF en python\nEn programación, las estructuras condicionales son esenciales para tomar decisiones basadas en ciertas condiciones. Por ejemplo, al usar la instrucción IF en Python, se puede verificar si una variable cumple con una condición específica y ejecutar el código correspondiente.\nPara utilizar el IF, primero se define una variable, por ejemplo, x = 10. Luego, se escribe la estructura condicional usando la palabra reservada IF seguida de la condición, como if x &gt; 5:. Si esta condición es verdadera, se ejecuta el código dentro del IF, que debe estar indentado.\nx = 10\nif x &gt; 5:\n    print(\"x es mayor que 5\")\n    print(\"Indentación dentro del `if`\")\n\nprint(\"Indentación fuera del `if`\")\n\nx es mayor que 5\nIndentación dentro del `if`\nIndentación fuera del `if`",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>If, Else y Elif</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/if_else_elif.html#if-en-python",
+    "href": "qmd/python/if_else_elif.html#if-en-python",
+    "title": "8  If, Else y Elif",
+    "section": "",
+    "text": "Tip\n\n\n\nEs importante presetar atención a la indentación al momento de utilizar estas estructuras.",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>If, Else y Elif</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/if_else_elif.html#qué-pasa-si-la-condición-del-if-es-falsa",
+    "href": "qmd/python/if_else_elif.html#qué-pasa-si-la-condición-del-if-es-falsa",
+    "title": "8  If, Else y Elif",
+    "section": "8.2 ¿Qué pasa si la condición del IF es falsa?",
+    "text": "8.2 ¿Qué pasa si la condición del IF es falsa?\nSi la condición del IF no se cumple, se puede utilizar la instrucción else para manejar el caso contrario. Por ejemplo, si x es menor o igual a 5, se ejecutará el bloque de código dentro del else.\n\nx = 3\nif x &gt; 5:\n    print(\"x es mayor que 5\")\nelse:\n    print(\"x es menor o igual a 5\")\n\nx es menor o igual a 5",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>If, Else y Elif</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/if_else_elif.html#cómo-se-manejan-múltiples-condiciones",
+    "href": "qmd/python/if_else_elif.html#cómo-se-manejan-múltiples-condiciones",
+    "title": "8  If, Else y Elif",
+    "section": "8.3 ¿Cómo se manejan múltiples condiciones?",
+    "text": "8.3 ¿Cómo se manejan múltiples condiciones?\nCuando hay múltiples condiciones, se puede usar elif (else if). Esto permite agregar condiciones adicionales entre if y else.\n\nx = 5\nif x &gt; 5:\n    print(\"x es mayor que 5\")\nelif x == 5:\n    print(\"x es igual a 5\")\nelse:\n    print(\"x es menor que 5\")\n\nx es igual a 5",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>If, Else y Elif</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/if_else_elif.html#cómo-se-manejan-múltiples-condiciones-en-un-solo-if",
+    "href": "qmd/python/if_else_elif.html#cómo-se-manejan-múltiples-condiciones-en-un-solo-if",
+    "title": "8  If, Else y Elif",
+    "section": "8.4 ¿Cómo se manejan múltiples condiciones en un solo IF?",
+    "text": "8.4 ¿Cómo se manejan múltiples condiciones en un solo IF?\nPara evaluar múltiples condiciones en una sola sentencia IF, se pueden utilizar los operadores lógicos and y or. El operador and requiere que ambas condiciones sean verdaderas, mientras que el operador or requiere que al menos una condición sea verdadera.\n\nx = 15\ny = 30\n\n# Ambas son verdaderas\nif x &gt; 10 and y &gt; 25:\n    print(\"x es mayor que 10 y y es mayor que 25\")\n\n# Al menos una es verdadera\nif x &gt; 10 or y &gt; 35:\n    print(\"x es mayor que 10 o y es mayor que 35\")\n\nx es mayor que 10 y y es mayor que 25\nx es mayor que 10 o y es mayor que 35",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>If, Else y Elif</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/if_else_elif.html#qué-es-la-negación-en-las-condiciones",
+    "href": "qmd/python/if_else_elif.html#qué-es-la-negación-en-las-condiciones",
+    "title": "8  If, Else y Elif",
+    "section": "8.5 ¿Qué es la negación en las condiciones?",
+    "text": "8.5 ¿Qué es la negación en las condiciones?\nLa palabra reservada not se utiliza para negar una condición. Si una condición es verdadera, not la convierte en falsa, y viceversa.\n\nx = 15\nif not x &gt; 20:\n    print(\"x no es mayor que 20\")\n\nx no es mayor que 20",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>If, Else y Elif</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/if_else_elif.html#cómo-se-anidan-las-estructuras-if",
+    "href": "qmd/python/if_else_elif.html#cómo-se-anidan-las-estructuras-if",
+    "title": "8  If, Else y Elif",
+    "section": "8.6 ¿Cómo se anidan las estructuras IF?",
+    "text": "8.6 ¿Cómo se anidan las estructuras IF?\nLos IF anidados permiten evaluar condiciones dentro de otras condiciones. Esto es útil para verificar múltiples niveles de requisitos.\n\nisMember = True\nage = 15\n\n# Si es miembro\nif isMember:\n    # Si es miembro y es mayor a 15 anios\n    if age &gt;= 15:\n        print(\"Tienes acceso ya que eres miembro y mayor que 15\")\n\n    # Si es miembro, pero es menor a 15 anios\n    else:\n        print(\"No tienes acceso ya que eres miembro, pero menor a 15 años\")\n\n# Si no es miembro\nelse:\n    print(\"No eres miembro y no tienes acceso\")\n\nTienes acceso ya que eres miembro y mayor que 15",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>If, Else y Elif</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/bucles.html",
+    "href": "qmd/python/bucles.html",
+    "title": "9  Iteraciones y bucles",
+    "section": "",
+    "text": "9.1 For\nAprender a automatizar el proceso de iteración en listas utilizando bucles y controles de iteración es fundamental para optimizar el manejo de datos en Python.\nUn bucle for en Python te permite recorrer secuencias (listas, tuplas, cadenas, rangos, etc.) elemento a elemento, ejecutando un bloque de código para cada uno. Su sintaxis básica es:\nfor elemento in iterable:\n    # bloque de código que usa “elemento”\nSus características son:\nEjemplo con una lista\n# Lista\nnumbers = [1, 2, 3, 4, 5, 6]\n\n# Imprimir el valor de i\nfor i in numbers:\n    print(f\"El valor de i es: {i}\")\n\nEl valor de i es: 1\nEl valor de i es: 2\nEl valor de i es: 3\nEl valor de i es: 4\nEl valor de i es: 5\nEl valor de i es: 6",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Iteraciones y bucles</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/bucles.html#for",
+    "href": "qmd/python/bucles.html#for",
+    "title": "9  Iteraciones y bucles",
+    "section": "",
+    "text": "Iterable: cualquier objeto que implemente el protocolo de iteración (list, tuple, str, dict, range, etc.).\nElemento: variable que toma, en cada iteración, el siguiente valor del iterable.\nEl bloque indentado se ejecuta una vez por cada elemento.",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Iteraciones y bucles</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/bucles.html#range",
+    "href": "qmd/python/bucles.html#range",
+    "title": "9  Iteraciones y bucles",
+    "section": "9.2 Range",
+    "text": "9.2 Range\nELa función range permite iterar un conjunto de números fijos para producir índices o repeticiones controladas.\n\n\n\n\n\n\nNote\n\n\n\nEs importante mencionar que range omite el último número solicitado.\n\n\nEjemplos:\n\n# Imprimit del 0 al 9, omitiendo el 10\nfor i in range(10):\n    print(i)\n\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n\n\n\n# Imprime del 3 al 9\nfor i in range(3, 10):\n    print(i)  \n\n3\n4\n5\n6\n7\n8\n9\n\n\n\n# range(start, stop, step)\n# Imprime los pares entre 2 y 10 (excluyendo 10)\nfor n in range(2, 10, 2):\n    print(n)\n\n2\n4\n6\n8",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Iteraciones y bucles</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/bucles.html#condicionales-dentro-de-bucles",
+    "href": "qmd/python/bucles.html#condicionales-dentro-de-bucles",
+    "title": "9  Iteraciones y bucles",
+    "section": "9.3 Condicionales dentro de bucles",
+    "text": "9.3 Condicionales dentro de bucles\nTambién podemos utilizar condicionales ìf, else y elif al momento de usar los bucles for.\nUn ejemplo sencillo sería:\n\nfrutas = [\"manzana\", \"pera\", \"uva\", \"naranja\", \"tomate\"]\nfor fruta in frutas:\n    print(fruta)\n    if fruta == \"naranja\":\n        print(\"naranja encontrada\")\n\nmanzana\npera\nuva\nnaranja\nnaranja encontrada\ntomate\n\n\nEn tanto, un ejemplo más complejo sería:\n\nEl for itera i desde 0 hasta 9.\nif i % 2 == 0 comprueba si es par.\nSi no es par, elif i % 3 == 0 comprueba si es múltiplo de 3.\nelse cubre todos los demás casos.\n\n\n# Recorremos del 0 al 9\nfor i in range(10):\n    if i % 2 == 0:\n        print(f\"{i} es par\")\n    elif i % 3 == 0:\n        print(f\"{i} es múltiplo de 3 pero no par\")\n    else:\n        print(f\"{i} es impar y no múltiplo de 3\")\n\n0 es par\n1 es impar y no múltiplo de 3\n2 es par\n3 es múltiplo de 3 pero no par\n4 es par\n5 es impar y no múltiplo de 3\n6 es par\n7 es impar y no múltiplo de 3\n8 es par\n9 es múltiplo de 3 pero no par",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Iteraciones y bucles</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/bucles.html#while",
+    "href": "qmd/python/bucles.html#while",
+    "title": "9  Iteraciones y bucles",
+    "section": "9.4 while",
+    "text": "9.4 while\nLa instrucción while permite ejecutar un bloque de código de forma repetida mientras una condición booleana sea True. Es útil cuando no sabemos de antemano cuántas iteraciones haremos.\nEn este ejemplo estamos diciendo “voy a imprimir el contar cuando sea menor a 5”\n\n# Ejemplo: contar de 0 a 4\ncontador = 0\nwhile contador &lt; 5:\n    print(f\"Valor de contador: {contador}\")\n    contador += 1\n\nValor de contador: 0\nValor de contador: 1\nValor de contador: 2\nValor de contador: 3\nValor de contador: 4",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Iteraciones y bucles</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/bucles.html#break-y-continue",
+    "href": "qmd/python/bucles.html#break-y-continue",
+    "title": "9  Iteraciones y bucles",
+    "section": "9.5 break y continue",
+    "text": "9.5 break y continue\nLa palabra clave break se utiliza para salir del bucle prematuramente, mientras que continue omite la iteración actual y pasa a la siguiente:\n\nfor i in numbers:\n    if i == 3:\n        break\n    print(i)  # Termina al llegar a 3\n\n1\n2\n\n\n\nfor i in numbers:\n    if i == 3:\n        continue\n    print(i)  # Omite el 3\n\n1\n2\n4\n5\n6",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Iteraciones y bucles</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/iteradores.html",
+    "href": "qmd/python/iteradores.html",
+    "title": "10  Iteradores y generadores",
+    "section": "",
+    "text": "10.1 ¿Qué es un generador y cómo se utiliza?\nTrabajar con iteradores y generadores en Python permite manejar grandes cantidades de datos de manera eficiente, sin necesidad de cargar todo en memoria.\nUn iterador es un objeto que produce una secuencia de valores uno a uno, bajo demanda, implementando dos métodos clave:\nTodos los iteradores son iterables, pero no todos los iterables son iteradores hasta que se les aplica iter().\nEjemplo:\nLos iteradores también pueden recorrer cadenas de texto.\nUn generador en Python es una función que, en lugar de devolver todos sus resultados de golpe con return, utiliza la palabra clave yield para ir “produciendo” valores uno a uno y de forma perezosa (lazy), es decir, solo cuando el código que lo consume los solicita.\ndef mi_generador():\n    yield 1\n    yield 2\n    yield 3\n\n# Usar el generador\nfor valor in mi_generador():\n    print(valor)\n\n1\n2\n3\nEjemplo con serie Fibonacci\ndef fibonacci(limite):\n    a, b = 0, 1\n    while a &lt; limite:\n        yield a\n        a, b = b, a + b\n\n# Usar el generador para la serie de Fibonacci hasta 10\nfor numero in fibonacci(10):\n    print(numero)\n\n0\n1\n1\n2\n3\n5\n8",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Iteradores y generadores</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/comprehension_list.html",
+    "href": "qmd/python/comprehension_list.html",
+    "title": "11  Comprehension List",
+    "section": "",
+    "text": "Una Comprehension List es una forma concisa de crear listas en Python, pues permite generar listas nuevas transformando cada elemento de una colección existente o creando elementos a partir de un rango. La sintaxis es compacta y directa, lo que facilita la comprensión del propósito de tu código de un vistazo.\n\n\n\n\n\n\nEstructura básica de una Comprehension List:\n\n\n\n[expresión for elemento in iterable if condición]\nQue se traduce a: “Crea una nueva lista evaluando nueva_expresión para cada elemento en el iterable.”",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Comprehension List</span>"
+    ]
+  }
+]
