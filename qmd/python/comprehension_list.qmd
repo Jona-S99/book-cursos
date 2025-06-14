@@ -12,10 +12,42 @@ Una Comprehension List es una forma concisa de crear listas en Python, pues perm
 
 [expresión `for` elemento `in` iterable `if` condición]
 
-Que se traduce a: “Crea una nueva lista evaluando nueva_expresión para cada elemento en el iterable.”
+Que se traduce a: “Crea una nueva lista evaluando `nueva_expresión` para cada `elemento` en el `iterable`.”
 :::
 
+Ejemplos:
+
+- Doble de los Números
+
+Dada una lista de números [1, 2, 3, 4, 5], crea una nueva lista que contenga el doble de cada número usando una List Comprehension.
+
+```{python}
+numbers = [1, 2, 3, 4, 5]
+squares = [x ** 2 for x in numbers]
+print(f"Cuadrados: {squares}")
+```
 
 
+- Filtrar y Transformar en un Solo Paso
 
+Tienes una lista de palabras ["sol", "mar", "montaña", "rio", "estrella"] y quieres obtener una nueva lista con las palabras que tengan más de 3 letras y estén en mayúsculas.
 
+```{python}
+palabras = ["sol", "mar", "montaña", "rio", "estrella"]
+palabras_mod = [x.upper() for x in palabras if len(x) > 3]
+print(f"Las palabras moficadas son: {palabras_mod}")
+```
+
+- Anidación de List Comprehensions
+
+Dada una lista de listas (una matriz), calcula la matriz traspuesta utilizando una List Comprehension anidada.
+
+```{python}
+matriz = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+transpuesta_comprehension = [[fila[i] for fila in matriz] for i in range(len(matriz[0]))]
+print("Transpuesta con List Comprehension:", transpuesta_comprehension)
+```
