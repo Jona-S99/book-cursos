@@ -443,6 +443,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Comprehension List</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/python/funciones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Funciones y parámetros</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/python/funciones_lambda.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Funciones lambda</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/python/recursividad.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Recursividad</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/python/errores.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Manejo de errores</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -487,7 +511,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="6.1" class="anchored" data-anchor-id="matriz"><span class="header-section-number">6.1</span> Matriz</h2>
 <p>Una matriz es una colección ordenada de datos dispuestos en filas y columnas. Se representa como una lista de listas, donde cada sublista es una fila de la matriz, es decir, una matriz es una lista de listas.</p>
 <p>Ejemplo de matriz:</p>
-<div id="72ea3fe6" class="cell" data-execution_count="1">
+<div id="375db97e" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>matrix <span class="op">=</span> [</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Columnas</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],  <span class="co"># Filas</span></span>
@@ -502,7 +526,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Útil para datos bidimensionales (tablas, imágenes, operaciones numéricas).</p></li>
 <li><p>Se usa cuando necesitas una secuencia de elementos que puede cambiar a lo largo del programa.</p></li>
 </ul>
-<div id="8d7ae1eb" class="cell" data-execution_count="2">
+<div id="58ae97bf" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Acceder al elemento de la segunda fila, tercera columna</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(matrix[<span class="dv">1</span>][<span class="dv">2</span>])  <span class="co"># 6</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -519,7 +543,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="tuplas" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="tuplas"><span class="header-section-number">6.2</span> Tuplas</h2>
 <p>Una tupla es una secuencia ordenada e inmutable de elementos:</p>
-<div id="98b46958" class="cell" data-execution_count="3">
+<div id="e7c0a8e0" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"El tipo de numbers es: "</span>, <span class="bu">type</span>(numbers))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -533,7 +557,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Más ligera que la lista y adecuada para datos fijos o como clave en diccionarios.</p></li>
 <li><p>Se usa cuando tienes una secuencia de elementos que no debería cambiar, o para mejorar el rendimiento, ya que las tuplas son más rápidas y consumen menos memoria que las listas.</p></li>
 </ul>
-<div id="718e61f3" class="cell" data-execution_count="4">
+<div id="ff4052f7" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Acceso por índice</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numbers[<span class="dv">1</span>])     <span class="co"># '2'</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>

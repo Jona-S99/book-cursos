@@ -364,7 +364,7 @@
     "href": "qmd/python/listas.html#copiar-una-lista",
     "title": "5  Listas",
     "section": "5.2 Copiar una lista",
-    "text": "5.2 Copiar una lista\n\n\n\n\n\n\nNote\n\n\n\nCuando asignamos una lista a una nueva variable, por ejemplo, B = A, no estamos creando una copia independiente. Ambas variables apuntan al mismo espacio de memoria. Así, cualquier cambio en A se reflejará en B.\n\n\n\n# Crear lista\nls_a = [1, 2, 3, 4, 5]\n\n# Copiar lista\nls_b = ls_a\n\nprint(\"El id de la lista a es: \", id(ls_a))\nprint(\"El id de la lista b es: \", id(ls_b))\n\nEl id de la lista a es:  4393296512\nEl id de la lista b es:  4393296512\n\n\nComo podemos ver, son iguales, pues apuntan la mismo lugar en memoria. Entonces, ¿cómo evitamos esto?\nUitlizando el método slicing.\n\n# Crear lista c\nls_c = ls_a[:]\n\nprint(\"El id de la lista a es: \", id(ls_a))\nprint(\"El id de la lista b es: \", id(ls_c))\n\nEl id de la lista a es:  4393296512\nEl id de la lista b es:  4393297472\n\n\nComo vemos, son ids diferentes.",
+    "text": "5.2 Copiar una lista\n\n\n\n\n\n\nNote\n\n\n\nCuando asignamos una lista a una nueva variable, por ejemplo, B = A, no estamos creando una copia independiente. Ambas variables apuntan al mismo espacio de memoria. Así, cualquier cambio en A se reflejará en B.\n\n\n\n# Crear lista\nls_a = [1, 2, 3, 4, 5]\n\n# Copiar lista\nls_b = ls_a\n\nprint(\"El id de la lista a es: \", id(ls_a))\nprint(\"El id de la lista b es: \", id(ls_b))\n\nEl id de la lista a es:  4427465472\nEl id de la lista b es:  4427465472\n\n\nComo podemos ver, son iguales, pues apuntan la mismo lugar en memoria. Entonces, ¿cómo evitamos esto?\nUitlizando el método slicing.\n\n# Crear lista c\nls_c = ls_a[:]\n\nprint(\"El id de la lista a es: \", id(ls_a))\nprint(\"El id de la lista b es: \", id(ls_c))\n\nEl id de la lista a es:  4427465472\nEl id de la lista b es:  4427475904\n\n\nComo vemos, son ids diferentes.",
     "crumbs": [
       "Python",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Listas</span>"
@@ -595,10 +595,109 @@
     "href": "qmd/python/comprehension_list.html",
     "title": "11  Comprehension List",
     "section": "",
-    "text": "Una Comprehension List es una forma concisa de crear listas en Python, pues permite generar listas nuevas transformando cada elemento de una colección existente o creando elementos a partir de un rango. La sintaxis es compacta y directa, lo que facilita la comprensión del propósito de tu código de un vistazo.\n\n\n\n\n\n\nEstructura básica de una Comprehension List:\n\n\n\n[expresión for elemento in iterable if condición]\nQue se traduce a: “Crea una nueva lista evaluando nueva_expresión para cada elemento en el iterable.”",
+    "text": "Una Comprehension List es una forma concisa de crear listas en Python, pues permite generar listas nuevas transformando cada elemento de una colección existente o creando elementos a partir de un rango. La sintaxis es compacta y directa, lo que facilita la comprensión del propósito de tu código de un vistazo.\n\n\n\n\n\n\nEstructura básica de una Comprehension List:\n\n\n\n[expresión for elemento in iterable if condición]\nQue se traduce a: “Crea una nueva lista evaluando nueva_expresión para cada elemento en el iterable.”\n\n\nEjemplos:\n\nDoble de los Números\n\nDada una lista de números [1, 2, 3, 4, 5], crea una nueva lista que contenga el doble de cada número usando una List Comprehension.\n\nnumbers = [1, 2, 3, 4, 5]\nsquares = [x ** 2 for x in numbers]\nprint(f\"Cuadrados: {squares}\")\n\nCuadrados: [1, 4, 9, 16, 25]\n\n\n\nFiltrar y Transformar en un Solo Paso\n\nTienes una lista de palabras [“sol”, “mar”, “montaña”, “rio”, “estrella”] y quieres obtener una nueva lista con las palabras que tengan más de 3 letras y estén en mayúsculas.\n\npalabras = [\"sol\", \"mar\", \"montaña\", \"rio\", \"estrella\"]\npalabras_mod = [x.upper() for x in palabras if len(x) &gt; 3]\nprint(f\"Las palabras moficadas son: {palabras_mod}\")\n\nLas palabras moficadas son: ['MONTAÑA', 'ESTRELLA']\n\n\n\nAnidación de List Comprehensions\n\nDada una lista de listas (una matriz), calcula la matriz traspuesta utilizando una List Comprehension anidada.\n\nmatriz = [\n    [1, 2, 3],\n    [4, 5, 6],\n    [7, 8, 9]\n]\ntranspuesta_comprehension = [[fila[i] for fila in matriz] for i in range(len(matriz[0]))]\nprint(\"Transpuesta con List Comprehension:\", transpuesta_comprehension)\n\nTranspuesta con List Comprehension: [[1, 4, 7], [2, 5, 8], [3, 6, 9]]",
     "crumbs": [
       "Python",
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>Comprehension List</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/funciones.html",
+    "href": "qmd/python/funciones.html",
+    "title": "12  Funciones y parámetros",
+    "section": "",
+    "text": "12.1 Parámetros o argumentos de una función\nEn Python, uno de los principios fundamentales es el de divide y vencerás. Esto se refiere a dividir el código en porciones más pequeñas para facilitar su legibilidad, mantenimiento y reutilización.\nLas funciones nos permiten encapsular lógica específica, evitando la duplicación de código.\nUn parámetro es una variable que se define en la declaración de una función y sirve como un marcador de posición para los valores que la función recibirá.\nPodemos tener múltiples parámetros dentro de una misma función, donde cada uno se reemplaza en algún lugar del cuerpo de la función.\nIncluso, se pueden definir parámetros por defecto, que se utilizarán si no se proporciona uno específico.\ndef saludar(name, last_name = \"Casas\"):\n    print(f\"Hola, {name} {last_name}\")\n\nsaludar(name = \"Armando\")\n\nHola, Armando Casas",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Funciones y parámetros</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/funciones_lambda.html",
+    "href": "qmd/python/funciones_lambda.html",
+    "title": "13  Funciones lambda",
+    "section": "",
+    "text": "13.1 map()\nEn el capítulo anterior, revisamos la difinición de funciones explícitas en python.\nHabrán momentos en donde querramos usar funciones pequeñas, que no necesitemos reutilizar constamente, es decir, que solo usemos en una línea en específico. En estos casos, es recomedable construir una función lambda.\nComo usuario de R, mi vida mejoró cuando aprendí a utilizar purrr::map() y sus otro útiles derivados. Por suerte map() también está en python, cumpliendo con la misma funcionalidad: aplicar una función a todos los elementos.\n# Python\nnumbers = range(11)\nlist(map(lambda x: x**2, numbers))\n\n# Esto es similar a lo que hariamos en R\n# numbers &lt;- list(1:10)\n# purrr::map(numbers, \\(x) x**2)\n# [1]   1   4   9  16  25  36  49  64  81 100\n\n[0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100]\nAquí, map() aplica la función lambda a cada elemento de la lista numbers, devolviendo una nueva lista con los resultados.",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Funciones lambda</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/funciones_lambda.html#filter",
+    "href": "qmd/python/funciones_lambda.html#filter",
+    "title": "13  Funciones lambda",
+    "section": "13.2 filter()",
+    "text": "13.2 filter()\nfilter() filtra los elementos de una secuencia según una función que devuelve True o False.\nEn este ejemplo, filter() utiliza la función lambda para seleccionar solo los números pares de la lista.\n\nlist(filter(lambda x: x % 2 == 0, numbers))\n\n[0, 2, 4, 6, 8, 10]",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Funciones lambda</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/recursividad.html",
+    "href": "qmd/python/recursividad.html",
+    "title": "14  Recursividad",
+    "section": "",
+    "text": "14.1 Consideraciones sobre la Recursividad\nLa recursividad es una técnica de programación en la que una función se llama a sí misma para resolver un problema. Un problema se divide en subproblemas más pequeños y la función se llama recursivamente hasta que se alcanza una condición base que finaliza las llamadas recursivas.\nCuando llamas a una función en Python (o en la mayoría de los lenguajes de programación), la llamada a la función se añade al call stack. El call stack lleva un registro de todas las llamadas a funciones que necesitan resolverse. Cuando una función devuelve un valor, se elimina del call stack.\nPara el caso del factorial de 5 tendríamos algo así:\nCuando se llama a factorial(0), se alcanza el caso base y devuelve 1. Este valor de retorno comienza el proceso de desenrollar el call stack.\nEjemplo de función factorial(5):",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Recursividad</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/recursividad.html#consideraciones-sobre-la-recursividad",
+    "href": "qmd/python/recursividad.html#consideraciones-sobre-la-recursividad",
+    "title": "14  Recursividad",
+    "section": "",
+    "text": "Condición Base: Es crucial definir correctamente una condición base para evitar llamadas recursivas infinitas.\nEficiencia: Las implementaciones recursivas pueden ser ineficientes para problemas complejos debido a la sobrecarga de llamadas a funciones.\nPython tiene un límite de recursión (por defecto ~1000 llamadas) para evitar desbordamiento de pila. Para problemas grandes, considera alternativas iterativas.",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Recursividad</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/errores.html",
+    "href": "qmd/python/errores.html",
+    "title": "15  Manejo de errores",
+    "section": "",
+    "text": "15.1 try:\nLas excepciones (o errores) en Python están organizadas en una jerarquía de clases, donde las excepciones más generales se encuentran en la parte superior y las más específicas en la parte inferior.\nLo normal es que cuando ocurre un error, el código se rompe, finaliza su ejecución, no dejando avanzar en las siguientes líneas. Aquí es donde entramos nosotros, pues debemos aprender a manejar esos errores, ya sea para enviar un mensaje de qué está ocurriendo o realizando alguna otra tarea cuando ocurre un error.\nEl bloque try: en Python es una estructura de control que te permite intentar ejecutar código que podría generar una excepción (error) y manejar esa situación de forma controlada, evitando que el programa se detenga abruptamente.\nUna buena práctica es manejar el TipoDeError si lo conocemos con anterioridad. En el siguiente ejemplo podemos ver cómo se definen los errores dependiendo del valor que toma numero.\n# Lo ideal seria que el ejemplo sea con un input(), pero eso no es \n# admisible usando quarto, asi que definire un valor X para el \n# ejemplo, de todas maneras quedo comentado.\n\nnumero = 0\n\ntry:\n    # numero = int(input(\"Ingresa un número: \"))\n    resultado = 10 / numero\n    print(f\"El resultado es: {resultado}\")\nexcept ValueError:\n    print(\"Error: No ingresaste un número válido\")\nexcept ZeroDivisionError:\n    print(\"Error: No puedes dividir por cero\")\nexcept Exception as e:\n    print(f\"Error inesperado: {e}\")\nelse:\n    print(\"Todo salió bien, no hubo errores\")\nfinally:\n    print(\"Operación finalizada\")\n\nError: No puedes dividir por cero\nOperación finalizada\nLa lógica del código es:",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Manejo de errores</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/errores.html#try",
+    "href": "qmd/python/errores.html#try",
+    "title": "15  Manejo de errores",
+    "section": "",
+    "text": "Estructúra básica de un try: except:\n\n\n\n\ntry:\n    # Código que puede generar una excepción\n    codigo_riesgoso()\nexcept TipoDeError:\n    # Código que se ejecuta si ocurre ese error específico\n    print(\"Se produjo un error\")\nfinally:\n    # Código que SIEMPRE se ejecuta (opcional)\n    print(\"Limpieza final\")\n\n\n\n\n\n\n\ntry: Python ejecuta el código dentro del bloque try\nSi no hay error: continúa con el bloque else (si existe) y luego finally\nSi hay error: busca un bloque except que coincida con el tipo de excepción\nexcept: maneja el error específico\nfinally: se ejecuta siempre, haya error o no (útil para cerrar archivos, conexiones, etc.)",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Manejo de errores</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/errores.html#levantar-errores-personalizados",
+    "href": "qmd/python/errores.html#levantar-errores-personalizados",
+    "title": "15  Manejo de errores",
+    "section": "15.2 Levantar errores personalizados",
+    "text": "15.2 Levantar errores personalizados\nEn ciertas ocasiones necesitarás errores personalizados para tu programa. Para levantar una excepción o error puedes utilizar raise y seguido de la clase del error con un mensaje personalizado.\nLevantar excepciones hace que nuestro código más explicativo de lo que debemos o no manejar.\nPor ejemplo, creemos una función que evalúe la edad de un usuario no sea negativa y que no sea menor de edad.\n\ndef verificar_edad(edad):\n    if edad &lt; 0:\n        raise ValueError(\"La edad no puede ser negativa\")\n    elif edad &lt; 18:\n        raise Exception(\"La persona es menor de edad\")\n    else:\n        return \"Edad válida\"\n\nprint(f\"Primer error personalizado: {verificar_edad(-20)}\")\n# ValueError: La edad no puede ser negativa\n\nprint(f\"Segundo error personalizado: {verificar_edad(15)}\")\n# Exception: La persona es menor de edad",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Manejo de errores</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/errores.html#jerarquías-de-excepciones",
+    "href": "qmd/python/errores.html#jerarquías-de-excepciones",
+    "title": "15  Manejo de errores",
+    "section": "15.3 Jerarquías de excepciones",
+    "text": "15.3 Jerarquías de excepciones\nLas excepciones tienen jerarquías, esto significa que están organizadas en una estructura de clases tipo árbol, donde unas excepciones son más generales (padre) y otras más específicas (hijas), heredando características de sus clases padre.\nEsta jerarquía es importante porque podemos tratar a una exepción padre y que englobará a todas las excepciones hijas.\nLa clase base de todas las excepciones es BaseException, y de ahí se derivan clases más específicas:\n\ndef print_exception_hierarchy(exception_class, indent=0):\n    print(' ' * indent + exception_class.__name__)\n    for subclass in exception_class.__subclasses__():\n        print_exception_hierarchy(subclass, indent + 4)\n\n# Imprimir la jerarquía comenzando desde la clase base Exception\nprint_exception_hierarchy(Exception)\n\nException\n    ArithmeticError\n        FloatingPointError\n        OverflowError\n        ZeroDivisionError\n            DivisionByZero\n            DivisionUndefined\n        DecimalException\n            Clamped\n            Rounded\n                Underflow\n                Overflow\n            Inexact\n                Underflow\n                Overflow\n            Subnormal\n                Underflow\n            DivisionByZero\n            FloatOperation\n            InvalidOperation\n                ConversionSyntax\n                DivisionImpossible\n                DivisionUndefined\n                InvalidContext\n    AssertionError\n    AttributeError\n        FrozenInstanceError\n    BufferError\n    EOFError\n        IncompleteReadError\n    ImportError\n        ModuleNotFoundError\n            PackageNotFoundError\n        ZipImportError\n    LookupError\n        IndexError\n            IllegalMonthError\n        KeyError\n            NoSuchKernel\n            UnknownBackend\n        CodecRegistryError\n    MemoryError\n    NameError\n        UnboundLocalError\n    OSError\n        BlockingIOError\n        ChildProcessError\n        ConnectionError\n            BrokenPipeError\n            ConnectionAbortedError\n            ConnectionRefusedError\n            ConnectionResetError\n                RemoteDisconnected\n        FileExistsError\n        FileNotFoundError\n        InterruptedError\n            InterruptedSystemCall\n        IsADirectoryError\n        NotADirectoryError\n        PermissionError\n        ProcessLookupError\n        TimeoutError\n        UnsupportedOperation\n        itimer_error\n        herror\n        gaierror\n        SSLError\n            SSLCertVerificationError\n            SSLZeroReturnError\n            SSLWantWriteError\n            SSLWantReadError\n            SSLSyscallError\n            SSLEOFError\n        Error\n            SameFileError\n        SpecialFileError\n        ExecError\n        ReadError\n        URLError\n            HTTPError\n            ContentTooShortError\n        BadGzipFile\n    ReferenceError\n    RuntimeError\n        NotImplementedError\n            UnsupportedOperation\n            ZMQVersionError\n            StdinNotImplementedError\n        PythonFinalizationError\n        RecursionError\n        _DeadlockError\n        BrokenBarrierError\n        BrokenExecutor\n            BrokenThreadPool\n        SendfileNotAvailableError\n        BrokenBarrierError\n        VariableError\n    StopAsyncIteration\n    StopIteration\n    SyntaxError\n        IndentationError\n            TabError\n        _IncompleteInputError\n    SystemError\n        CodecRegistryError\n    TypeError\n        FloatOperation\n        MultipartConversionError\n    ValueError\n        UnicodeError\n            UnicodeDecodeError\n            UnicodeEncodeError\n            UnicodeTranslateError\n        NotShareableError\n        UnsupportedOperation\n        JSONDecodeError\n        SSLCertVerificationError\n        Error\n        UnsupportedDigestmodError\n        AddressValueError\n        NetmaskValueError\n        IllegalMonthError\n        IllegalWeekdayError\n        ParserError\n        ClassNotFound\n        MessageDefect\n            NoBoundaryInMultipartDefect\n            StartBoundaryNotFoundDefect\n            CloseBoundaryNotFoundDefect\n            FirstHeaderLineIsContinuationDefect\n            MisplacedEnvelopeHeaderDefect\n            MissingHeaderBodySeparatorDefect\n            MultipartInvariantViolationDefect\n            InvalidMultipartContentTransferEncodingDefect\n            UndecodableBytesDefect\n            InvalidBase64PaddingDefect\n            InvalidBase64CharactersDefect\n            InvalidBase64LengthDefect\n            HeaderDefect\n                InvalidHeaderDefect\n                HeaderMissingRequiredValue\n                NonPrintableDefect\n                ObsoleteHeaderDefect\n                NonASCIILocalPartDefect\n                InvalidDateDefect\n        ClipboardEmpty\n        MacroToEdit\n        InvalidVersion\n        InvalidFileException\n    Warning\n        BytesWarning\n        DeprecationWarning\n            ProvisionalWarning\n        EncodingWarning\n        FutureWarning\n            ProvisionalCompleterWarning\n        ImportWarning\n        PendingDeprecationWarning\n        ResourceWarning\n        RuntimeWarning\n            ProactorSelectorThreadWarning\n            UnknownTimezoneWarning\n        SyntaxWarning\n        UnicodeWarning\n        UserWarning\n            GetPassWarning\n            FormatterWarning\n        DeprecatedTzFormatWarning\n    InterpreterError\n        InterpreterNotFoundError\n    ExceptionGroup\n    PatternError\n    _Error\n    _OptionError\n    Error\n    SubprocessError\n        CalledProcessError\n        TimeoutExpired\n    ZMQBaseError\n        ZMQError\n            ContextTerminated\n            Again\n            InterruptedSystemCall\n        ZMQBindError\n        NotDone\n    error\n    PickleError\n        PicklingError\n        UnpicklingError\n    _Stop\n    Error\n        CancelledError\n        InvalidStateError\n    _GiveupOnSendfile\n    Incomplete\n    TokenError\n    ClassFoundException\n    EndOfBlock\n    InvalidStateError\n    LimitOverrunError\n    QueueEmpty\n    QueueFull\n    QueueShutDown\n    TraitError\n    Error\n    Empty\n    Full\n    ShutDown\n    error\n    error\n    ReturnValueIgnoredError\n    ArgumentError\n    ArgumentTypeError\n    ConfigError\n        ConfigLoaderError\n            ArgumentError\n        ConfigFileNotFound\n    ConfigurableError\n        MultipleInstanceError\n    ApplicationError\n    InvalidPortNumber\n    error\n    LZMAError\n    RegistryError\n    _GiveupOnFastCopy\n    NoIPAddresses\n    BadZipFile\n    LargeZipFile\n    TraversalError\n    DuplicateKernelError\n    NotOneValueFound\n    KnownIssue\n    VerifierFailure\n    CannotEval\n    OptionError\n    FindCmdError\n    HomeDirError\n    ErrorDuringImport\n    BdbQuit\n    Restart\n    ProfileDirError\n    IPythonCoreError\n        TryNext\n        UsageError\n        StdinNotImplementedError\n    InputRejected\n    GetoptError\n    ErrorToken\n    PrefilterError\n    AliasError\n        InvalidAliasError\n    Error\n        InterfaceError\n        DatabaseError\n            InternalError\n            OperationalError\n            ProgrammingError\n            IntegrityError\n            DataError\n            NotSupportedError\n    Warning\n    SpaceInInput\n    DOMException\n        IndexSizeErr\n        DomstringSizeErr\n        HierarchyRequestErr\n        WrongDocumentErr\n        InvalidCharacterErr\n        NoDataAllowedErr\n        NoModificationAllowedErr\n        NotFoundErr\n        NotSupportedErr\n        InuseAttributeErr\n        InvalidStateErr\n        SyntaxErr\n        InvalidModificationErr\n        NamespaceErr\n        InvalidAccessErr\n        ValidationErr\n    ValidationError\n    EditReadOnlyBuffer\n    _Retry\n    InvalidLayoutError\n    HeightIsUnknownError\n    ExpatError\n    ParseEscape\n    MessageError\n        MessageParseError\n            HeaderParseError\n            BoundaryError\n        MultipartConversionError\n        CharsetError\n        HeaderWriteError\n    GuardRejection\n    ParserSyntaxError\n    InternalParseError\n    _PositionUpdatingFinished\n    SimpleGetItemNotFound\n    UncaughtAttributeError\n    HasNoContext\n    ParamIssue\n    _JediError\n        InternalError\n        WrongVersion\n        RefactoringError\n    OnErrorLeaf\n    InvalidPythonEnvironment\n    HTTPException\n        NotConnected\n        InvalidURL\n        UnknownProtocol\n        UnknownTransferEncoding\n        UnimplementedFileMode\n        IncompleteRead\n        ImproperConnectionState\n            CannotSendRequest\n            CannotSendHeader\n            ResponseNotReady\n        BadStatusLine\n            RemoteDisconnected\n        LineTooLong\n    InteractivelyDefined\n    RaiseAfterInterrupt\n    KillEmbedded\n    Error\n        NoSuchProcess\n            ZombieProcess\n        AccessDenied\n        TimeoutExpired\n    KeyReuseError\n    UnknownKeyError\n    LeakedCallbackError\n    BadYieldError\n    ReturnValueIgnoredError\n    Return\n    QueueEmpty\n    QueueFull\n    ArgumentError\n    DebuggerInitializationError\n    Error\n        ProtocolError\n        ResponseError\n        Fault\n    _Error\n    UnableToResolveVariableException\n    InvalidTypeInArgsException",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Manejo de errores</span>"
     ]
   }
 ]

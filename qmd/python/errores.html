@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4&nbsp; Input y Casting – Apuntes varios</title>
+<title>15&nbsp; Manejo de errores – Apuntes varios</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,8 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../qmd/python/listas.html" rel="next">
-<link href="../../qmd/python/operadores.html" rel="prev">
+<link href="../../qmd/python/recursividad.html" rel="prev">
 <link href="../../static/images/cover.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -285,7 +284,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../qmd/python/1_intro_py.html">Python</a></li><li class="breadcrumb-item"><a href="../../qmd/python/input_casting.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Input y Casting</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../qmd/python/1_intro_py.html">Python</a></li><li class="breadcrumb-item"><a href="../../qmd/python/errores.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Manejo de errores</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -397,7 +396,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../qmd/python/input_casting.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../qmd/python/input_casting.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Input y Casting</span></span></a>
   </div>
 </li>
@@ -463,7 +462,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../qmd/python/errores.html" class="sidebar-item-text sidebar-link">
+  <a href="../../qmd/python/errores.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Manejo de errores</span></span></a>
   </div>
 </li>
@@ -479,8 +478,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#función-input" id="toc-función-input" class="nav-link active" data-scroll-target="#función-input">Función <code>input()</code></a></li>
-  <li><a href="#qué-es-el-casting-conversión-de-tipos" id="toc-qué-es-el-casting-conversión-de-tipos" class="nav-link" data-scroll-target="#qué-es-el-casting-conversión-de-tipos">¿Qué es el casting (conversión de tipos)?</a></li>
+  <li><a href="#try" id="toc-try" class="nav-link active" data-scroll-target="#try"><span class="header-section-number">15.1</span> try:</a></li>
+  <li><a href="#levantar-errores-personalizados" id="toc-levantar-errores-personalizados" class="nav-link" data-scroll-target="#levantar-errores-personalizados"><span class="header-section-number">15.2</span> Levantar errores personalizados</a></li>
+  <li><a href="#jerarquías-de-excepciones" id="toc-jerarquías-de-excepciones" class="nav-link" data-scroll-target="#jerarquías-de-excepciones"><span class="header-section-number">15.3</span> Jerarquías de excepciones</a></li>
   </ul>
 </nav>
     </div>
@@ -488,9 +488,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../qmd/python/1_intro_py.html">Python</a></li><li class="breadcrumb-item"><a href="../../qmd/python/input_casting.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Input y Casting</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../qmd/python/1_intro_py.html">Python</a></li><li class="breadcrumb-item"><a href="../../qmd/python/errores.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Manejo de errores</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Input y Casting</span></h1>
+<h1 class="title"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Manejo de errores</span></h1>
 </div>
 
 
@@ -507,62 +507,453 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="función-input" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="función-input">Función <code>input()</code></h2>
-<p>En Python, cuando trabajamos con proyectos que requieren interacción del usuario, es común solicitar datos como correo o contraseña para ejecutar acciones específicas. Este mismo enfoque es útil para entender la función <code>input()</code>.</p>
-<ul>
-<li>Detiene la ejecución del programa y muestra un mensaje en pantalla (opcional). Luego espera a que el usuario escriba texto y presione Enter.</li>
-</ul>
-<div id="68b89dd7" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sin mensaje personalizado</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>nombre <span class="op">=</span> <span class="bu">input</span>()</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hola"</span>, nombre)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Con mensaje</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>edad <span class="op">=</span> <span class="bu">input</span>(<span class="st">"¿Cuántos años tienes? "</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Vas a cumplir"</span>, edad, <span class="st">"este año."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
+<p>Las excepciones (o errores) en Python están organizadas en una jerarquía de clases, donde las excepciones más generales se encuentran en la parte superior y las más específicas en la parte inferior.</p>
+<p>Lo normal es que cuando ocurre un error, el código se rompe, finaliza su ejecución, no dejando avanzar en las siguientes líneas. Aquí es donde entramos nosotros, pues debemos aprender a manejar esos errores, ya sea para enviar un mensaje de qué está ocurriendo o realizando alguna otra tarea cuando ocurre un error.</p>
+<section id="try" class="level2" data-number="15.1">
+<h2 data-number="15.1" class="anchored" data-anchor-id="try"><span class="header-section-number">15.1</span> try:</h2>
+<p>El bloque <code>try:</code> en Python es una estructura de control que te permite intentar ejecutar código que podría generar una excepción (error) y manejar esa situación de forma controlada, evitando que el programa se detenga abruptamente.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Estructúra básica de un <code>try: except:</code>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>En ambos casos <code>nombre</code> y <code>edad</code> serán variables de tipo <code>str</code>.</p>
+<div id="2a7d8788" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Código que puede generar una excepción</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    codigo_riesgoso()</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> TipoDeError:</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Código que se ejecuta si ocurre ese error específico</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Se produjo un error"</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="cf">finally</span>:</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Código que SIEMPRE se ejecuta (opcional)</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Limpieza final"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
+</div>
+<p>Una <strong>buena práctica</strong> es manejar el <code>TipoDeError</code> si lo conocemos con anterioridad. En el siguiente ejemplo podemos ver cómo se definen los errores dependiendo del valor que toma <code>numero</code>.</p>
+<div id="a1603c73" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Lo ideal seria que el ejemplo sea con un input(), pero eso no es </span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># admisible usando quarto, asi que definire un valor X para el </span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ejemplo, de todas maneras quedo comentado.</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>numero <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># numero = int(input("Ingresa un número: "))</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    resultado <span class="op">=</span> <span class="dv">10</span> <span class="op">/</span> numero</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"El resultado es: </span><span class="sc">{</span>resultado<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">ValueError</span>:</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Error: No ingresaste un número válido"</span>)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">ZeroDivisionError</span>:</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Error: No puedes dividir por cero"</span>)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Error inesperado: </span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Todo salió bien, no hubo errores"</span>)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="cf">finally</span>:</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Operación finalizada"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Error: No puedes dividir por cero
+Operación finalizada</code></pre>
+</div>
+</div>
+<p>La lógica del código es:</p>
+<ol type="1">
+<li><strong>try</strong>: Python ejecuta el código dentro del bloque try</li>
+<li><strong>Si no hay error</strong>: continúa con el bloque else (si existe) y luego finally</li>
+<li><strong>Si hay error</strong>: busca un bloque except que coincida con el tipo de excepción</li>
+<li><strong>except</strong>: maneja el error específico</li>
+<li><strong>finally</strong>: se ejecuta siempre, haya error o no (útil para cerrar archivos, conexiones, etc.)</li>
+</ol>
+</section>
+<section id="levantar-errores-personalizados" class="level2" data-number="15.2">
+<h2 data-number="15.2" class="anchored" data-anchor-id="levantar-errores-personalizados"><span class="header-section-number">15.2</span> Levantar errores personalizados</h2>
+<p>En ciertas ocasiones necesitarás errores personalizados para tu programa. Para levantar una excepción o error puedes utilizar <code>raise</code> y seguido de la clase del error con un mensaje personalizado.</p>
+<p>Levantar excepciones hace que nuestro código más explicativo de lo que debemos o no manejar.</p>
+<p>Por ejemplo, creemos una función que evalúe la edad de un usuario no sea negativa y que no sea menor de edad.</p>
+<div id="b957fc64" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> verificar_edad(edad):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> edad <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">"La edad no puede ser negativa"</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> edad <span class="op">&lt;</span> <span class="dv">18</span>:</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">Exception</span>(<span class="st">"La persona es menor de edad"</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"Edad válida"</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Primer error personalizado: </span><span class="sc">{</span>verificar_edad(<span class="op">-</span><span class="dv">20</span>)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co"># ValueError: La edad no puede ser negativa</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Segundo error personalizado: </span><span class="sc">{</span>verificar_edad(<span class="dv">15</span>)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Exception: La persona es menor de edad</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="qué-es-el-casting-conversión-de-tipos" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="qué-es-el-casting-conversión-de-tipos">¿Qué es el casting (conversión de tipos)?</h2>
-<p>Casting es el proceso de convertir un valor de un tipo de dato a otro. En Python, esto se hace normalmente llamando al constructor del tipo deseado:</p>
-<ul>
-<li><code>int(valor)</code> → convierte a entero (trunca decimales o produce error si no es numérico).</li>
-<li><code>float(valor)</code> → convierte a número de punto flotante.</li>
-<li><code>str(valor)</code> → convierte cualquier valor a cadena de texto.</li>
-<li><code>bool(valor)</code> → convierte a booleano (False si el valor es “vacío” o cero).</li>
-</ul>
-<p>Ejemplos:</p>
-<div id="46c6c21a" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pedimos la edad, la recibimos como str y la convertimos a int</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>edad_str <span class="op">=</span> <span class="bu">input</span>(<span class="st">"¿Cuántos años tienes? "</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>edad <span class="op">=</span> <span class="bu">int</span>(edad_str)    </span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"El año que viene tendrás"</span>, edad <span class="op">+</span> <span class="dv">1</span>, <span class="st">"años."</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Pedimos un número decimal y lo convertimos a float</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>nota_str <span class="op">=</span> <span class="bu">input</span>(<span class="st">"¿Qué nota obtuviste? "</span>)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>nota <span class="op">=</span> <span class="bu">float</span>(nota_str)</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Has sacado un"</span>, nota, <span class="st">"en la nota final."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="jerarquías-de-excepciones" class="level2" data-number="15.3">
+<h2 data-number="15.3" class="anchored" data-anchor-id="jerarquías-de-excepciones"><span class="header-section-number">15.3</span> Jerarquías de excepciones</h2>
+<p>Las excepciones tienen jerarquías, esto significa que están organizadas en una estructura de clases tipo árbol, donde unas excepciones son más generales (padre) y otras más específicas (hijas), heredando características de sus clases padre.</p>
+<p>Esta jerarquía es importante porque podemos tratar a una exepción padre y que englobará a todas las excepciones hijas.</p>
+<p>La clase base de todas las excepciones es <code>BaseException</code>, y de ahí se derivan clases más específicas:</p>
+<div id="c722c135" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> print_exception_hierarchy(exception_class, indent<span class="op">=</span><span class="dv">0</span>):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">' '</span> <span class="op">*</span> indent <span class="op">+</span> exception_class.<span class="va">__name__</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> subclass <span class="kw">in</span> exception_class.__subclasses__():</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        print_exception_hierarchy(subclass, indent <span class="op">+</span> <span class="dv">4</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Imprimir la jerarquía comenzando desde la clase base Exception</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>print_exception_hierarchy(<span class="pp">Exception</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Exception
+    ArithmeticError
+        FloatingPointError
+        OverflowError
+        ZeroDivisionError
+            DivisionByZero
+            DivisionUndefined
+        DecimalException
+            Clamped
+            Rounded
+                Underflow
+                Overflow
+            Inexact
+                Underflow
+                Overflow
+            Subnormal
+                Underflow
+            DivisionByZero
+            FloatOperation
+            InvalidOperation
+                ConversionSyntax
+                DivisionImpossible
+                DivisionUndefined
+                InvalidContext
+    AssertionError
+    AttributeError
+        FrozenInstanceError
+    BufferError
+    EOFError
+        IncompleteReadError
+    ImportError
+        ModuleNotFoundError
+            PackageNotFoundError
+        ZipImportError
+    LookupError
+        IndexError
+            IllegalMonthError
+        KeyError
+            NoSuchKernel
+            UnknownBackend
+        CodecRegistryError
+    MemoryError
+    NameError
+        UnboundLocalError
+    OSError
+        BlockingIOError
+        ChildProcessError
+        ConnectionError
+            BrokenPipeError
+            ConnectionAbortedError
+            ConnectionRefusedError
+            ConnectionResetError
+                RemoteDisconnected
+        FileExistsError
+        FileNotFoundError
+        InterruptedError
+            InterruptedSystemCall
+        IsADirectoryError
+        NotADirectoryError
+        PermissionError
+        ProcessLookupError
+        TimeoutError
+        UnsupportedOperation
+        itimer_error
+        herror
+        gaierror
+        SSLError
+            SSLCertVerificationError
+            SSLZeroReturnError
+            SSLWantWriteError
+            SSLWantReadError
+            SSLSyscallError
+            SSLEOFError
+        Error
+            SameFileError
+        SpecialFileError
+        ExecError
+        ReadError
+        URLError
+            HTTPError
+            ContentTooShortError
+        BadGzipFile
+    ReferenceError
+    RuntimeError
+        NotImplementedError
+            UnsupportedOperation
+            ZMQVersionError
+            StdinNotImplementedError
+        PythonFinalizationError
+        RecursionError
+        _DeadlockError
+        BrokenBarrierError
+        BrokenExecutor
+            BrokenThreadPool
+        SendfileNotAvailableError
+        BrokenBarrierError
+        VariableError
+    StopAsyncIteration
+    StopIteration
+    SyntaxError
+        IndentationError
+            TabError
+        _IncompleteInputError
+    SystemError
+        CodecRegistryError
+    TypeError
+        FloatOperation
+        MultipartConversionError
+    ValueError
+        UnicodeError
+            UnicodeDecodeError
+            UnicodeEncodeError
+            UnicodeTranslateError
+        NotShareableError
+        UnsupportedOperation
+        JSONDecodeError
+        SSLCertVerificationError
+        Error
+        UnsupportedDigestmodError
+        AddressValueError
+        NetmaskValueError
+        IllegalMonthError
+        IllegalWeekdayError
+        ParserError
+        ClassNotFound
+        MessageDefect
+            NoBoundaryInMultipartDefect
+            StartBoundaryNotFoundDefect
+            CloseBoundaryNotFoundDefect
+            FirstHeaderLineIsContinuationDefect
+            MisplacedEnvelopeHeaderDefect
+            MissingHeaderBodySeparatorDefect
+            MultipartInvariantViolationDefect
+            InvalidMultipartContentTransferEncodingDefect
+            UndecodableBytesDefect
+            InvalidBase64PaddingDefect
+            InvalidBase64CharactersDefect
+            InvalidBase64LengthDefect
+            HeaderDefect
+                InvalidHeaderDefect
+                HeaderMissingRequiredValue
+                NonPrintableDefect
+                ObsoleteHeaderDefect
+                NonASCIILocalPartDefect
+                InvalidDateDefect
+        ClipboardEmpty
+        MacroToEdit
+        InvalidVersion
+        InvalidFileException
+    Warning
+        BytesWarning
+        DeprecationWarning
+            ProvisionalWarning
+        EncodingWarning
+        FutureWarning
+            ProvisionalCompleterWarning
+        ImportWarning
+        PendingDeprecationWarning
+        ResourceWarning
+        RuntimeWarning
+            ProactorSelectorThreadWarning
+            UnknownTimezoneWarning
+        SyntaxWarning
+        UnicodeWarning
+        UserWarning
+            GetPassWarning
+            FormatterWarning
+        DeprecatedTzFormatWarning
+    InterpreterError
+        InterpreterNotFoundError
+    ExceptionGroup
+    PatternError
+    _Error
+    _OptionError
+    Error
+    SubprocessError
+        CalledProcessError
+        TimeoutExpired
+    ZMQBaseError
+        ZMQError
+            ContextTerminated
+            Again
+            InterruptedSystemCall
+        ZMQBindError
+        NotDone
+    error
+    PickleError
+        PicklingError
+        UnpicklingError
+    _Stop
+    Error
+        CancelledError
+        InvalidStateError
+    _GiveupOnSendfile
+    Incomplete
+    TokenError
+    ClassFoundException
+    EndOfBlock
+    InvalidStateError
+    LimitOverrunError
+    QueueEmpty
+    QueueFull
+    QueueShutDown
+    TraitError
+    Error
+    Empty
+    Full
+    ShutDown
+    error
+    error
+    ReturnValueIgnoredError
+    ArgumentError
+    ArgumentTypeError
+    ConfigError
+        ConfigLoaderError
+            ArgumentError
+        ConfigFileNotFound
+    ConfigurableError
+        MultipleInstanceError
+    ApplicationError
+    InvalidPortNumber
+    error
+    LZMAError
+    RegistryError
+    _GiveupOnFastCopy
+    NoIPAddresses
+    BadZipFile
+    LargeZipFile
+    TraversalError
+    DuplicateKernelError
+    NotOneValueFound
+    KnownIssue
+    VerifierFailure
+    CannotEval
+    OptionError
+    FindCmdError
+    HomeDirError
+    ErrorDuringImport
+    BdbQuit
+    Restart
+    ProfileDirError
+    IPythonCoreError
+        TryNext
+        UsageError
+        StdinNotImplementedError
+    InputRejected
+    GetoptError
+    ErrorToken
+    PrefilterError
+    AliasError
+        InvalidAliasError
+    Error
+        InterfaceError
+        DatabaseError
+            InternalError
+            OperationalError
+            ProgrammingError
+            IntegrityError
+            DataError
+            NotSupportedError
+    Warning
+    SpaceInInput
+    DOMException
+        IndexSizeErr
+        DomstringSizeErr
+        HierarchyRequestErr
+        WrongDocumentErr
+        InvalidCharacterErr
+        NoDataAllowedErr
+        NoModificationAllowedErr
+        NotFoundErr
+        NotSupportedErr
+        InuseAttributeErr
+        InvalidStateErr
+        SyntaxErr
+        InvalidModificationErr
+        NamespaceErr
+        InvalidAccessErr
+        ValidationErr
+    ValidationError
+    EditReadOnlyBuffer
+    _Retry
+    InvalidLayoutError
+    HeightIsUnknownError
+    ExpatError
+    ParseEscape
+    MessageError
+        MessageParseError
+            HeaderParseError
+            BoundaryError
+        MultipartConversionError
+        CharsetError
+        HeaderWriteError
+    GuardRejection
+    ParserSyntaxError
+    InternalParseError
+    _PositionUpdatingFinished
+    SimpleGetItemNotFound
+    UncaughtAttributeError
+    HasNoContext
+    ParamIssue
+    _JediError
+        InternalError
+        WrongVersion
+        RefactoringError
+    OnErrorLeaf
+    InvalidPythonEnvironment
+    HTTPException
+        NotConnected
+        InvalidURL
+        UnknownProtocol
+        UnknownTransferEncoding
+        UnimplementedFileMode
+        IncompleteRead
+        ImproperConnectionState
+            CannotSendRequest
+            CannotSendHeader
+            ResponseNotReady
+        BadStatusLine
+            RemoteDisconnected
+        LineTooLong
+    InteractivelyDefined
+    RaiseAfterInterrupt
+    KillEmbedded
+    Error
+        NoSuchProcess
+            ZombieProcess
+        AccessDenied
+        TimeoutExpired
+    KeyReuseError
+    UnknownKeyError
+    LeakedCallbackError
+    BadYieldError
+    ReturnValueIgnoredError
+    Return
+    QueueEmpty
+    QueueFull
+    ArgumentError
+    DebuggerInitializationError
+    Error
+        ProtocolError
+        ResponseError
+        Fault
+    _Error
+    UnableToResolveVariableException
+    InvalidTypeInArgsException</code></pre>
 </div>
-<p>En estos ejemplos:</p>
-<ol type="1">
-<li><code>input()</code> lee siempre una cadena.</li>
-<li>Aplicamos <code>int(...)</code> o <code>float(...)</code> para poder usar operaciones aritméticas con el valor ingresado.</li>
-<li>Si el usuario introduce un texto no convertible (por ejemplo “hola” al hacer int(“hola”)), Python lanzará un <code>ValueError</code>.</li>
-</ol>
+</div>
 
 
 </section>
@@ -982,14 +1373,11 @@ Note
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../qmd/python/operadores.html" class="pagination-link" aria-label="Operadores">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Operadores</span></span>
+      <a href="../../qmd/python/recursividad.html" class="pagination-link" aria-label="Recursividad">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Recursividad</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../qmd/python/listas.html" class="pagination-link" aria-label="Listas">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Listas</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

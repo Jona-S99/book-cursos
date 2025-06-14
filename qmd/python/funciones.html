@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4&nbsp; Input y Casting – Apuntes varios</title>
+<title>12&nbsp; Funciones y parámetros – Apuntes varios</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,8 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../qmd/python/listas.html" rel="next">
-<link href="../../qmd/python/operadores.html" rel="prev">
+<link href="../../qmd/python/funciones_lambda.html" rel="next">
+<link href="../../qmd/python/comprehension_list.html" rel="prev">
 <link href="../../static/images/cover.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -285,7 +285,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../qmd/python/1_intro_py.html">Python</a></li><li class="breadcrumb-item"><a href="../../qmd/python/input_casting.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Input y Casting</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../qmd/python/1_intro_py.html">Python</a></li><li class="breadcrumb-item"><a href="../../qmd/python/funciones.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Funciones y parámetros</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -397,7 +397,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../qmd/python/input_casting.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../qmd/python/input_casting.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Input y Casting</span></span></a>
   </div>
 </li>
@@ -445,7 +445,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../qmd/python/funciones.html" class="sidebar-item-text sidebar-link">
+  <a href="../../qmd/python/funciones.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Funciones y parámetros</span></span></a>
   </div>
 </li>
@@ -479,8 +479,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#función-input" id="toc-función-input" class="nav-link active" data-scroll-target="#función-input">Función <code>input()</code></a></li>
-  <li><a href="#qué-es-el-casting-conversión-de-tipos" id="toc-qué-es-el-casting-conversión-de-tipos" class="nav-link" data-scroll-target="#qué-es-el-casting-conversión-de-tipos">¿Qué es el casting (conversión de tipos)?</a></li>
+  <li><a href="#parámetros-o-argumentos-de-una-función" id="toc-parámetros-o-argumentos-de-una-función" class="nav-link active" data-scroll-target="#parámetros-o-argumentos-de-una-función"><span class="header-section-number">12.1</span> Parámetros o argumentos de una función</a></li>
   </ul>
 </nav>
     </div>
@@ -488,9 +487,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../qmd/python/1_intro_py.html">Python</a></li><li class="breadcrumb-item"><a href="../../qmd/python/input_casting.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Input y Casting</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../qmd/python/1_intro_py.html">Python</a></li><li class="breadcrumb-item"><a href="../../qmd/python/funciones.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Funciones y parámetros</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Input y Casting</span></h1>
+<h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Funciones y parámetros</span></h1>
 </div>
 
 
@@ -507,62 +506,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="función-input" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="función-input">Función <code>input()</code></h2>
-<p>En Python, cuando trabajamos con proyectos que requieren interacción del usuario, es común solicitar datos como correo o contraseña para ejecutar acciones específicas. Este mismo enfoque es útil para entender la función <code>input()</code>.</p>
-<ul>
-<li>Detiene la ejecución del programa y muestra un mensaje en pantalla (opcional). Luego espera a que el usuario escriba texto y presione Enter.</li>
-</ul>
-<div id="68b89dd7" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sin mensaje personalizado</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>nombre <span class="op">=</span> <span class="bu">input</span>()</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hola"</span>, nombre)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Con mensaje</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>edad <span class="op">=</span> <span class="bu">input</span>(<span class="st">"¿Cuántos años tienes? "</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Vas a cumplir"</span>, edad, <span class="st">"este año."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
+<p>En Python, uno de los principios fundamentales es el de divide y vencerás. Esto se refiere a dividir el código en porciones más pequeñas para facilitar su legibilidad, mantenimiento y reutilización.</p>
+<p>Las funciones nos permiten encapsular lógica específica, <strong>evitando la duplicación de código</strong>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Definición de una función
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>En ambos casos <code>nombre</code> y <code>edad</code> serán variables de tipo <code>str</code>.</p>
+<p>Las funciones en Python se definen utilizando la palabra reservada <code>def</code>, seguida del <code>nombre de la función</code> y los <code>parámetros</code> que representan la información necesaria para su ejecución.</p>
+<p><strong>Es importante la indentación luego de los <code>:</code></strong></p>
+<p>Ejemplo:</p>
+<div id="1be1ca99" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Difinir la funcion</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> holamundo():</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"Hola mundo"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejecutar la funcion</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>holamundo()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-</section>
-<section id="qué-es-el-casting-conversión-de-tipos" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="qué-es-el-casting-conversión-de-tipos">¿Qué es el casting (conversión de tipos)?</h2>
-<p>Casting es el proceso de convertir un valor de un tipo de dato a otro. En Python, esto se hace normalmente llamando al constructor del tipo deseado:</p>
-<ul>
-<li><code>int(valor)</code> → convierte a entero (trunca decimales o produce error si no es numérico).</li>
-<li><code>float(valor)</code> → convierte a número de punto flotante.</li>
-<li><code>str(valor)</code> → convierte cualquier valor a cadena de texto.</li>
-<li><code>bool(valor)</code> → convierte a booleano (False si el valor es “vacío” o cero).</li>
-</ul>
-<p>Ejemplos:</p>
-<div id="46c6c21a" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pedimos la edad, la recibimos como str y la convertimos a int</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>edad_str <span class="op">=</span> <span class="bu">input</span>(<span class="st">"¿Cuántos años tienes? "</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>edad <span class="op">=</span> <span class="bu">int</span>(edad_str)    </span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"El año que viene tendrás"</span>, edad <span class="op">+</span> <span class="dv">1</span>, <span class="st">"años."</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Pedimos un número decimal y lo convertimos a float</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>nota_str <span class="op">=</span> <span class="bu">input</span>(<span class="st">"¿Qué nota obtuviste? "</span>)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>nota <span class="op">=</span> <span class="bu">float</span>(nota_str)</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Has sacado un"</span>, nota, <span class="st">"en la nota final."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>En estos ejemplos:</p>
-<ol type="1">
-<li><code>input()</code> lee siempre una cadena.</li>
-<li>Aplicamos <code>int(...)</code> o <code>float(...)</code> para poder usar operaciones aritméticas con el valor ingresado.</li>
-<li>Si el usuario introduce un texto no convertible (por ejemplo “hola” al hacer int(“hola”)), Python lanzará un <code>ValueError</code>.</li>
-</ol>
+<section id="parámetros-o-argumentos-de-una-función" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="parámetros-o-argumentos-de-una-función"><span class="header-section-number">12.1</span> Parámetros o argumentos de una función</h2>
+<p>Un parámetro es una variable que se define en la declaración de una función y sirve como un marcador de posición para los valores que la función recibirá.</p>
+<p>Podemos tener múltiples parámetros dentro de una misma función, donde cada uno se reemplaza en algún lugar del cuerpo de la función.</p>
+<p>Incluso, se pueden definir parámetros por defecto, que se utilizarán si no se proporciona uno específico.</p>
+<div id="c73c0745" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> saludar(name, last_name <span class="op">=</span> <span class="st">"Casas"</span>):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Hola, </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>last_name<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>saludar(name <span class="op">=</span> <span class="st">"Armando"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hola, Armando Casas</code></pre>
+</div>
+</div>
 
 
 </section>
@@ -982,13 +964,13 @@ Note
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../qmd/python/operadores.html" class="pagination-link" aria-label="Operadores">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Operadores</span></span>
+      <a href="../../qmd/python/comprehension_list.html" class="pagination-link" aria-label="Comprehension List">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Comprehension List</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../qmd/python/listas.html" class="pagination-link" aria-label="Listas">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Listas</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../qmd/python/funciones_lambda.html" class="pagination-link" aria-label="Funciones lambda">
+        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Funciones lambda</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
