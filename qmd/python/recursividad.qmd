@@ -1,0 +1,60 @@
+---
+jupyter: python3
+---
+
+# Recursividad
+
+La recursividad es una técnica de programación en la que una función se llama a sí misma para resolver un problema. Un problema se divide en subproblemas más pequeños y la función se llama recursivamente hasta que se alcanza una condición base que finaliza las llamadas recursivas.
+
+Cuando llamas a una función en Python (o en la mayoría de los lenguajes de programación), la llamada a la función se añade al `call stack`. El call stack lleva un registro de todas las llamadas a funciones que necesitan resolverse. Cuando una función devuelve un valor, se elimina del call stack.
+
+Para el caso del factorial de 5 tendríamos algo así:
+
+1. Llamada inicial: Se llama a factorial(5) y se añade al call stack.
+    - Call stack: 
+      - [factorial(5)]
+
+2. Segunda llamada: factorial(5) llama a factorial(4).
+    - Call stack: 
+      - [factorial(5), factorial(4)]
+
+3. Tercera llamada: factorial(4) llama a factorial(3).
+    - Call stack: 
+      - [factorial(5), factorial(4), factorial(3)]
+
+4. Cuarta llamada: factorial(3) llama a factorial(2).
+    - Call stack: 
+      - [factorial(5), factorial(4), factorial(3), factorial(2)]
+
+5. Quinta llamada: factorial(2) llama a factorial(1).
+    - Call stack: 
+      - [factorial(5), factorial(4), factorial(3), factorial(2), factorial(1)]
+
+6. Sexta llamada: factorial(1) llama a factorial(0).
+    - Call stack: 
+      - [factorial(5), factorial(4), factorial(3), factorial(2), factorial(1), factorial(0)]
+
+
+Cuando se llama a `factorial(0)`, se alcanza el caso base y devuelve 1. Este valor de retorno comienza el proceso de desenrollar el call stack.
+
+Ejemplo de función factorial(5):
+
+```{python}
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+factorial5 = factorial(5)
+print(f"El factorial de 5 es: {factorial5}")
+```
+
+
+## Consideraciones sobre la Recursividad
+
+- **Condición Base**: Es crucial definir correctamente una condición base para evitar llamadas recursivas infinitas.
+
+- **Eficiencia**: Las implementaciones recursivas pueden ser ineficientes para problemas complejos debido a la sobrecarga de llamadas a funciones.
+
+- **Python tiene un límite de recursión** (por defecto ~1000 llamadas) para evitar desbordamiento de pila. Para problemas grandes, considera alternativas iterativas.
