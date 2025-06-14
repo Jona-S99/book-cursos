@@ -1,0 +1,45 @@
+---
+jupyter: python3
+---
+
+# Funciones y parámetros
+
+En Python, uno de los principios fundamentales es el de divide y vencerás. Esto se refiere a dividir el código en porciones más pequeñas para facilitar su legibilidad, mantenimiento y reutilización. 
+
+Las funciones nos permiten encapsular lógica específica, **evitando la duplicación de código**.
+
+::: {.callout-tip}
+## Definición de una función
+
+Las funciones en Python se definen utilizando la palabra reservada `def`, seguida del `nombre de la función` y los `parámetros` que representan la información necesaria para su ejecución.
+
+**Es importante la indentación luego de los `:`**
+
+Ejemplo:
+
+```{python}
+#| eval: false
+
+# Difinir la funcion
+def holamundo():
+  print("Hola mundo")
+
+# Ejecutar la funcion
+holamundo()
+```
+:::
+
+## Parámetros o argumentos de una función
+
+Un parámetro es una variable que se define en la declaración de una función y sirve como un marcador de posición para los valores que la función recibirá.
+
+Podemos tener múltiples parámetros dentro de una misma función, donde cada uno se reemplaza en algún lugar del cuerpo de la función. 
+
+Incluso, se pueden definir parámetros por defecto, que se utilizarán si no se proporciona uno específico.
+
+```{python}
+def saludar(name, last_name = "Casas"):
+    print(f"Hola, {name} {last_name}")
+
+saludar(name = "Armando")
+```

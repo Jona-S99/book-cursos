@@ -1,0 +1,51 @@
+---
+jupyter: python3
+---
+
+# Funciones lambda
+
+En el capítulo anterior, revisamos la difinición de funciones explícitas en python.
+
+Habrán momentos en donde querramos usar funciones pequeñas, que no necesitemos reutilizar constamente, es decir, que solo usemos en una línea en específico. En estos casos, es recomedable construir una función lambda.
+
+
+::: {.callout-tip}
+## Definición de una función lambda
+
+Una función lambda en Python es una forma de crear funciones pequeñas y anónimas (sin nombre) en una sola línea. Se define con la palabra clave `lambda` seguida de los parámetros, dos puntos, y la expresión que devuelve.
+
+```{python}
+#| eval: false
+
+lambda parámetros: expresión
+```
+:::
+
+
+## map()
+
+Como usuario de R, mi vida mejoró cuando aprendí a utilizar `purrr::map()` y sus otro útiles derivados. Por suerte `map()` también está en python, cumpliendo con la misma funcionalidad: **aplicar una función a todos los elementos**.
+
+```{python}
+# Python
+numbers = range(11)
+list(map(lambda x: x**2, numbers))
+
+# Esto es similar a lo que hariamos en R
+# numbers <- list(1:10)
+# purrr::map(numbers, \(x) x**2)
+# [1]   1   4   9  16  25  36  49  64  81 100
+```
+
+Aquí, `map()` aplica la función lambda a cada elemento de la lista numbers, **devolviendo una nueva lista con los resultados**.
+
+
+## filter()
+
+`filter()` filtra los elementos de una secuencia según una función que devuelve True o False.
+
+En este ejemplo, `filter()` utiliza la función lambda para seleccionar solo los números pares de la lista.
+
+```{python}
+list(filter(lambda x: x % 2 == 0, numbers))
+```
