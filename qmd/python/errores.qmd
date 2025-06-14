@@ -1,0 +1,108 @@
+---
+jupyter: python3
+---
+
+# Manejo de errores
+
+Las excepciones (o errores) en Python están organizadas en una jerarquía de clases, donde las excepciones más generales se encuentran en la parte superior y las más específicas en la parte inferior.
+
+Lo normal es que cuando ocurre un error, el código se rompe, finaliza su ejecución, no dejando avanzar en las siguientes líneas. Aquí es donde entramos nosotros, pues debemos aprender a manejar esos errores, ya sea para enviar un mensaje de qué está ocurriendo o realizando alguna otra tarea cuando ocurre un error.
+
+## try:
+
+El bloque `try:` en Python es una estructura de control que te permite intentar ejecutar código que podría generar una excepción (error) y manejar esa situación de forma controlada, evitando que el programa se detenga abruptamente.
+
+::: {.callout-tip}
+## Estructúra básica de un `try: except:`
+```{python}
+#| eval: false
+try:
+    # Código que puede generar una excepción
+    codigo_riesgoso()
+except TipoDeError:
+    # Código que se ejecuta si ocurre ese error específico
+    print("Se produjo un error")
+finally:
+    # Código que SIEMPRE se ejecuta (opcional)
+    print("Limpieza final")
+```
+:::
+
+
+Una **buena práctica** es manejar el `TipoDeError` si lo conocemos con anterioridad. En el siguiente ejemplo podemos ver cómo se definen los errores dependiendo del valor que toma `numero`.
+
+```{python}
+# Lo ideal seria que el ejemplo sea con un input(), pero eso no es 
+# admisible usando quarto, asi que definire un valor X para el 
+# ejemplo, de todas maneras quedo comentado.
+
+numero = 0
+
+try:
+    # numero = int(input("Ingresa un número: "))
+    resultado = 10 / numero
+    print(f"El resultado es: {resultado}")
+except ValueError:
+    print("Error: No ingresaste un número válido")
+except ZeroDivisionError:
+    print("Error: No puedes dividir por cero")
+except Exception as e:
+    print(f"Error inesperado: {e}")
+else:
+    print("Todo salió bien, no hubo errores")
+finally:
+    print("Operación finalizada")
+```
+
+La lógica del código es:
+
+1. **try**: Python ejecuta el código dentro del bloque try
+2. **Si no hay error**: continúa con el bloque else (si existe) y luego finally
+3. **Si hay error**: busca un bloque except que coincida con el tipo de excepción
+4. **except**: maneja el error específico
+5. **finally**: se ejecuta siempre, haya error o no (útil para cerrar archivos, conexiones, etc.)
+
+
+## Levantar errores personalizados
+
+En ciertas ocasiones necesitarás errores personalizados para tu programa. Para levantar una excepción o error puedes utilizar `raise` y seguido de la clase del error con un mensaje personalizado.
+
+Levantar excepciones hace que nuestro código más explicativo de lo que debemos o no manejar.
+
+Por ejemplo, creemos una función que evalúe la edad de un usuario no sea negativa y que no sea menor de edad.
+
+```{python}
+#| eval: false
+
+def verificar_edad(edad):
+    if edad < 0:
+        raise ValueError("La edad no puede ser negativa")
+    elif edad < 18:
+        raise Exception("La persona es menor de edad")
+    else:
+        return "Edad válida"
+
+print(f"Primer error personalizado: {verificar_edad(-20)}")
+# ValueError: La edad no puede ser negativa
+
+print(f"Segundo error personalizado: {verificar_edad(15)}")
+# Exception: La persona es menor de edad
+```
+
+## Jerarquías de excepciones
+
+Las excepciones tienen jerarquías, esto significa que están organizadas en una estructura de clases tipo árbol, donde unas excepciones son más generales (padre) y otras más específicas (hijas), heredando características de sus clases padre.
+
+Esta jerarquía es importante porque podemos tratar a una exepción padre y que englobará a todas las excepciones hijas.
+
+La clase base de todas las excepciones es `BaseException`, y de ahí se derivan clases más específicas:
+
+```{python}
+def print_exception_hierarchy(exception_class, indent=0):
+    print(' ' * indent + exception_class.__name__)
+    for subclass in exception_class.__subclasses__():
+        print_exception_hierarchy(subclass, indent + 4)
+
+# Imprimir la jerarquía comenzando desde la clase base Exception
+print_exception_hierarchy(Exception)
+```
