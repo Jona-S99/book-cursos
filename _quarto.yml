@@ -44,6 +44,10 @@ book:
         - qmd/python/bucles.qmd
         - qmd/python/iteradores.qmd
         - qmd/python/comprehension_list.qmd
+        - qmd/python/funciones.qmd
+        - qmd/python/funciones_lambda.qmd
+        - qmd/python/recursividad.qmd
+        - qmd/python/errores.qmd
 
 format:
   html:
