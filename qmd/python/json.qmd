@@ -1,0 +1,60 @@
+---
+jupyter: python3
+---
+
+# Lectura de archivos JSON
+
+JSON, que significa JavaScript Object Notation, es un formato liviano de intercambio de datos. Es crucial para trabajar con datos en aplicaciones web y APIs. Aprender a manejarlo con Python es esencial para desarrolladores que buscan eficiencia y flexibilidad.
+
+Para cargar un JSON a python usamos la librería `json`, en específico, la la función `load()`, 
+
+```{python}
+# Importar libreria
+import json
+
+# Cargar archivo a python
+with open('../../data/python/products.json', 'r') as file:
+    products = json.load(file)
+
+# Mostramos 
+for i in products:
+    print(i)
+```
+
+Una vez cargado el archivo, podemos iterar sobre el contenido.
+
+```{python}
+# Recuperar el nombre y el precio
+for i in products:
+  print(f"Nombre: {i['name']}, Precio: {i['price']}")
+```
+
+## Añadir información
+
+Añadir información a un archivo JSON es tan sencillo como leerlo. Supongamos que quieres añadir un nuevo producto:
+
+```{python}
+#| eval: false
+
+### Este bloque de codigo no se ejecutara en el libro ###
+# Creamos un nuevo producto con la estructura del JSON
+new_product = {
+    "name": "Wireless Charger",
+    "price": 75,
+    "quantity": 100,
+    "brand": "ChargeMaster",
+    "category": "Accessories",
+    "entry_date": "2025-06-14"
+}
+
+# Leemos el archivo
+with open('Products.json', 'r') as file:
+    products = json.load(file)
+
+# Ingresamos el nuevo producto a la lista con los datos JSON
+products.append(new_product)
+
+# Sobreescribimos el archivo
+with open('Products.json', 'w') as file:
+    json.dump(products, file, indent = 4)
+```
