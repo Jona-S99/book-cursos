@@ -1,0 +1,151 @@
+---
+jupyter: python3
+---
+
+# Librerías útiles de sistema
+
+## os
+
+Interactuar con el sistema operativo desde Python es una tarea que se hace mucho más sencilla gracias a la librería `OS`. Sin necesidad de instalaciones adicionales, esta herramienta permite automatizar y manejar archivos y directorios, lo que simplifica enormemente el flujo de trabajo. Veamos algunos ejemplos prácticos de su uso.
+
+```{python}
+# Importamos la libreria
+import os
+```
+
+### Directorio actual {.unnumbered}
+
+```{python}
+os.getcwd()
+```
+
+### Listar los archivos del directorio {.unnumbered}
+
+```{python}
+# Listamos los archivos que comienzan con "poo" usando
+# list comprehension
+poo = [files for files in os.listdir(".") if files.startswith("poo")]
+print(f"Los archivos de POO son: {poo}")
+```
+
+¿Cómo funciona esta list comprehension?
+
+1. `os.listdir(".")`: 
+  - Devuelve una lista con todos los archivos y carpetas del directorio actual (el punto "." representa el directorio actual).
+2. `for files in ...`: 
+  - Itera sobre cada elemento (archivo/carpeta) de la lista que devuelve os.listdir(".")
+  - La variable files toma el valor de cada nombre de archivo en cada iteración.
+3. `if files.startswith("poo")`:
+  - Condición que filtra solo los archivos cuyo nombre comience con "poo"
+  - `startswith()` devuelve True si el string comienza con el prefijo especificado.
+4. `files (al inicio)`:
+  - Es lo que se incluye en la lista final para cada elemento que cumple la condición.
+
+
+## math
+
+Cuando trabajamos con cálculos matemáticos en Python, la librería Math es una aliada invaluable. Ofrece una serie de funciones y constantes matemáticas, ideal para conseguir resultados precisos.
+
+```{python}
+import math
+```
+
+Ejemplos de uso de la librería math:
+
+```{python}
+# 1. Calcular el area y perimetro de una circunferencia
+radio = 5
+
+area = round((math.pi * radio ** 2), 1)
+perimetro = round((2 * math.pi * radio), 1) 
+
+print(f"El área de un círculo con radio 5 es de: {area}")
+print(f"El perímetro de un círculo con radio 5 es de: {perimetro}")
+```
+
+## random
+
+La generación de números y elecciones aleatorias es una tarea comúnmente requerida, y la librería Random en Python nos ofrece varias herramientas útiles para este propósito.
+
+```{python}
+import random
+```
+
+Ejemplos de uso de la librería random:
+
+```{python}
+# 1. Generar un numero entero aleatorio entre 1 y 10
+print(f"Número entero aleatorio: {random.randint(1, 10)}")
+
+# 2. Elegir aleatoriamente
+## Con lista
+lista = ['manzana', 'banana', 'cereza']
+print("Elegir un elemento de una lista: ", random.choice(lista))
+
+## Con tupla
+tupla = (10, 20, 30, 40)
+print("Elegir un elemento de una tupla: ",random.choice(tupla))  # ej: 30
+
+## Con string
+cadena = "ABCDEFG"
+print("Elegir un elemento de una string: ",random.choice(cadena))  # ej: 'D'
+
+## Con range
+rango = range(1, 11)  # números del 1 al 10
+print("Elegir un elemento de un rango: ",random.choice(rango))
+```
+
+Ejemplo de `shuffle`
+
+```{python}
+# Lista original
+cartas = ['As', 'Rey', 'Reina', 'Jota', '10', '9']
+print("Original:", cartas)
+
+# Mezclar la lista
+random.shuffle(cartas)
+print("Mezclada:", cartas)
+```
+
+
+## statistics
+
+En el análisis de datos, es fundamental comprender y utilizar diversas medidas estadísticas para interpretar correctamente la información. Estas medidas nos permiten resumir y describir las características principales de un conjunto de datos, facilitando la toma de decisiones informadas.
+
+```{python}
+import statistics
+```
+
+Algunas de las medidas estadísticas más comunes y sus fórmulas asociadas son las siguientes:
+
+```{python}
+# Datos para ejemplo:
+datos = [1, 2, 3, 4, 4, 5, 6, 7, 8, 9, 10]
+
+# Media aritmetica: `.mean()`
+print("La media es: ", statistics.mean(datos))
+
+# Mediana (valor central): `.median()`
+print("La mediana es: ", statistics.median(datos))
+
+# Moda (valor mas frecuente): `.mode()`
+print("La moda es: ", statistics.mode(datos))
+
+# Desviacion estandar: `.stdev()`
+print("La desviación estándar es: ", round((statistics.stdev(datos)), 2))
+
+# Varianza de la muestra: `.variance()`
+print("La varianza es: ", round((statistics.variance(datos)), 2))
+
+# Valor minimo: `.min()`
+print("El valor mínimo es: ", min(datos))
+
+# Valor maximo: `.max()`
+print("El valor máximo es: ", max(datos))
+
+# Cuartiles general: `.quantiles()`
+print("Los cuartiles son: ", statistics.quantiles(datos, n = 4))
+
+# Primer cuartil: [N] segun index
+print("El primer cuartil es: ", statistics.quantiles(datos, n = 4)[0])
+```
