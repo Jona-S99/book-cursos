@@ -1,0 +1,209 @@
+---
+jupyter: python3
+---
+
+# Código pythonco
+
+Escribir código Pytónico es fundamental para cualquier desarrollador que aspire a trabajar en proyectos grandes y colaborativos. No se trata solo de hacer que el código funcione, sino de garantizar que sea claro, eficiente y mantenible. 
+
+Al dominar estas habilidades, un desarrollador no solo mejora su capacidad para colaborar con otros, sino que también contribuye significativamente a la calidad de los proyectos. 
+
+Este enfoque resalta la importancia de seguir las mejores prácticas de Python, que se describen en el documento [PEP8](https://peps.python.org/pep-0008/).
+
+1. **Simple y directo**: Resolver problemas de la manera más clara y sencilla posible.
+2. **Legible**: Permitir que cualquier desarrollador pueda entender el código rápidamente.
+3. **Eficiente**: A pesar de que Python no es el lenguaje más rápido, es crucial crear soluciones optimizadas.
+
+## Uso general
+
+Ejemplos de código no pythonico y código sí pythonico para uso general:
+
+```{python}
+#| eval: false
+
+# 1. Iteración sobre listas:
+## No pythónico
+lista = [1, 2, 3, 4, 5]
+for i in range(len(lista)):
+    print(lista[i])
+
+## Pythónico
+for elemento in lista:
+    print(elemento)
+
+---------------------------
+
+# 2. Intercambio de variables:
+## No pythónico
+temp = a
+a = b
+b = temp
+
+## Pythónico
+a, b = b, a
+
+--------------------------
+
+# 3. List comprehensions:
+## No pythónico
+cuadrados = []
+for x in range(10):
+    cuadrados.append(x**2)
+
+## Pythónico
+cuadrados = [x**2 for x in range(10)]
+
+--------------------------
+
+# 4. Verificar si una lista está vacía:
+## No pythónico
+if len(lista) == 0:
+    print("Lista vacía")
+
+## Pythónico
+if not lista:
+    print("Lista vacía")
+
+--------------------------
+
+# 5. Usar enumerate() para índices:
+## No pythónico
+nombres = ['Ana', 'Luis', 'María']
+for i in range(len(nombres)):
+    print(f"{i}: {nombres[i]}")
+
+## Pythónico
+for i, nombre in enumerate(nombres):
+    print(f"{i}: {nombre}")
+
+--------------------------
+
+# 6. Manejo de diccionarios:
+## No pythónico
+diccionario = {'clave': 'valor'}
+if 'clave' in diccionario:
+    valor = diccionario['clave']
+else:
+    valor = 'por_defecto'
+
+## Pythónico
+valor = diccionario.get('clave',
+```
+
+
+## Clases
+
+```{python}
+#| eval: false
+
+# 1. Definición de clases:
+## No pythónico - nombres incorrectos
+# PROBLEMA: Nombre de clase en camelCase y atributo con prefijo innecesario
+# SOLUCIÓN: Usar PascalCase para clases y nombres descriptivos para atributos
+class miClase:
+    def __init__(self, valor):
+        self.mi_valor = valor
+
+## Pythónico - PascalCase para clases
+class MiClase:
+    def __init__(self, valor):
+        self.valor = valor
+
+--------------------------
+
+# 2. Propiedades vs getters/setters:
+## No pythónico - getters/setters innecesarios
+# PROBLEMA: Usar métodos get/set como en Java, hace el código verboso
+# SOLUCIÓN: Python prefiere acceso directo o propiedades con @property
+class Persona:
+    def __init__(self, nombre):
+        self._nombre = nombre
+    
+    def get_nombre(self):
+        return self._nombre
+    
+    def set_nombre(self, nombre):
+        self._nombre = nombre
+
+## Pythónico - usar propiedades
+class Persona:
+    def __init__(self, nombre):
+        self._nombre = nombre
+    
+    @property
+    def nombre(self):
+        return self._nombre
+    
+    @nombre.setter
+    def nombre(self, valor):
+        self._nombre = valor
+
+--------------------------
+
+# 3. Método __str__ vs print manual:
+## No pythónico
+# PROBLEMA: Método personalizado para mostrar info, no reutilizable
+# SOLUCIÓN: Usar __str__ para representación legible y __repr__ para depuración
+class Producto:
+    def __init__(self, nombre, precio):
+        self.nombre = nombre
+        self.precio = precio
+    
+    def mostrar_info(self):
+        print(f"{self.nombre}: ${self.precio}")
+
+## Pythónico - usar __str__ y __repr__
+class Producto:
+    def __init__(self, nombre, precio):
+        self.nombre = nombre
+        self.precio = precio
+    
+    def __str__(self):
+        return f"{self.nombre}: ${self.precio}"
+    
+    def __repr__(self):
+        return f"Producto({self.nombre!r}, {self.precio})"
+
+--------------------------
+
+# 4. Herencia y super():
+## No pythónico - llamada directa a clase padre
+# PROBLEMA: Llamar directamente al constructor padre por nombre, 
+#            frágil si cambia la herencia
+# SOLUCIÓN: Usar super() que es más flexible y mantenible
+class Animal:
+    def __init__(self, nombre):
+        self.nombre = nombre
+
+class Perro(Animal):
+    def __init__(self, nombre, raza):
+        Animal.__init__(self, nombre)  # Rígido y propenso a errores
+        self.raza = raza
+
+## Pythónico - usar super()
+class Perro(Animal):
+    def __init__(self, nombre, raza):
+        super().__init__(nombre)  # Flexible y mantenible
+        self.raza = raza
+
+--------------------------
+
+# 5. Métodos de clase vs funciones externas:
+## No pythónico
+# PROBLEMA: Función externa para crear instancias, rompe encapsulación
+# SOLUCIÓN: Usar @classmethod para constructores alternativos dentro de la clase
+class Contador:
+    def __init__(self, valor=0):
+        self.valor = valor
+
+def crear_contador_desde_string(texto):  # Función suelta, no cohesiva
+    return Contador(len(texto))
+
+## Pythónico - usar @classmethod
+class Contador:
+    def __init__(self, valor=0):
+        self.valor = valor
+    
+    @classmethod
+    def desde_string(cls, texto):  # Constructor alternativo
+```
