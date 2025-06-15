@@ -1,0 +1,99 @@
+---
+jupyter: python3
+---
+
+# POO 1: clases
+
+La Programación Orientada a Objetos es un paradigma de programación que organiza el diseño del software en torno a objetos. Los objetos son instancias de clases, que pueden tener atributos (datos) y métodos (funciones).
+
+Las clases actúan como plantillas genéricas que definen atributos y comportamientos. Por ejemplo, una clase “Persona” puede tener atributos como nombre, apellido y fecha de nacimiento.
+
+Conceptos claves:
+
+- **Clase**: Es un molde o plantilla que define los atributos y métodos que tendrán los objetos.
+- **Objeto**: Es una instancia de una clase.
+- **Atributo**: Es una variable que pertenece a una clase o a un objeto.
+- **Método**: Es una función que pertenece a una clase o a un objeto.
+- **Herencia**: Es un mecanismo por el cual una clase puede heredar atributos y métodos de otra clase.
+- **Encapsulamiento**: Es el concepto de ocultar los detalles internos de un objeto y exponer sólo lo necesario.
+- **Polimorfismo**: Es la capacidad de diferentes clases de ser tratadas como instancias de la misma clase a través de una interfaz común.
+
+
+## Crear una clase
+
+Para crear una clase en Python, se utiliza la palabra reservada `class` seguida del nombre de la clase con **la primera letra en mayúscula** (es una buena práctica). Dentro de la clase, se define un constructor con la función `__init__`. Esta función inicializa los atributos del objeto.
+
+```{python}
+# Difinicion de la clase
+class Persona:
+    # Constructor de la clase:
+    #   - Es importante que tenga 'self'
+    def __init__(self, nombre, edad):
+        self.nombre = nombre
+        self.edad = edad
+    
+    def saludar(self):
+        print(f"Hola, mi nombre es {self.nombre} y tengo {self.edad} años")
+```
+
+Crearemos dos objetos utilzando esta clase:
+
+```{python}
+# Crear objetos de la clase Persona
+persona1 = Persona(nombre = "Ana", edad = 30)
+persona2 = Persona("Luis", 25)
+```
+
+Y utilizamos el método `saludar` de nuestra clase Persona: los métodos son funciones definidas dentro de una clase que operan sobre los objetos de la misma.
+
+```{python}
+persona1.saludar()
+persona2.saludar()
+```
+
+
+## Self - Analogía con un espejo:
+
+Encotré este ejemplo en un comentario el platzi.
+
+Imagina que cada objeto tiene un espejo. Cuando un objeto se mira en el espejo (self), ve sus propios atributos (nombre, color, nivel de batería) y puede actuar sobre ellos (caminar, hablar, cargar batería).
+
+Ejemplo con robot's:
+
+```{python}
+#| eval: false
+class Robot:
+    def __init__(self, nombre, color, nivel_bateria):
+        self.nombre = nombre
+        self.color = color
+        self.nivel_bateria = nivel_bateria
+
+    def caminar(self):
+        if self.nivel_bateria > 10:
+            print(f"{self.nombre} está caminando.")
+            self.nivel_bateria -= 10  # Reduce la batería al caminar
+        else:
+            print(f"{self.nombre} necesita recargar batería.")
+
+    def hablar(self, mensaje):
+        print(f"{self.nombre} dice: {mensaje}")
+
+    def cargar_bateria(self):
+        self.nivel_bateria = 100
+        print(f"{self.nombre} ha recargado su batería al 100%.")
+
+# Creamos dos robots
+mi_robot = Robot("R2-D2", "blanco", 100)
+
+# Hacemos que los robots realicen acciones
+mi_robot.caminar()        # Output: R2-D2 está caminando.
+mi_robot.hablar("¡Hola!")  # Output: R2-D2 dice: ¡Hola!
+
+# Simulamos que los robots caminan varias veces
+for _ in range(10): 
+    mi_robot.caminar()
+
+mi_robot.caminar()        # Output: R2-D2 necesita recargar batería.
+mi_robot.cargar_bateria()  # Output: R2-D2 ha recargado su batería al 100%.
+mi_robot.caminar()        # Output: R2-D2 está caminando.
+```

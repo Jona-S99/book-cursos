@@ -1,0 +1,110 @@
+---
+jupyter: python3
+---
+
+# POO 2: herencias
+
+Imagina que tienes un coche y una bicicleta. Ambos son vehículos. Aunque son diferentes, tienen cosas en común: ambos pueden moverse, tienen ruedas, y se pueden usar para transportarte. La Herencia es como decir:
+
+- Tengo una "clase general" llamada Vehículo (que tiene cosas en común).
+- Luego, creo "clases específicas" como Coche o Bicicleta, que heredan las cosas que son comunes de la clase Vehículo.
+
+En términos simples, la Herencia permite que una clase (la "clase hija") tome características y comportamientos de otra clase (la "clase padre").
+
+**¿Por qué es útil la Herencia?**
+
+- Reutilización de código: No tienes que escribir las mismas cosas una y otra vez.
+- Organización: Agrupas comportamientos comunes en una clase base (como Vehiculo) y especificas comportamientos únicos en clases hijas (como Coche y Bicicleta).
+- El uso de `super()` en Python está relacionado con la herencia de clases. Permite llamar métodos o acceder a atributos de la **clase padre** desde una **clase hija**, sin necesidad de referenciar explícitamente el nombre de la clase padre. Es especialmente útil cuando se trabaja con herencia múltiple o se desea extender la funcionalidad de la clase base sin sobrescribir completamente su comportamiento.
+
+## Ejemplo: sistema de vehículos
+
+- Es la clase base que define características comunes a todos los vehículos.
+- `__init__` es el constructor que inicializa los atributos básicos.
+- Todos los vehículos tienen marca, modelo, año y estado de encendido.
+
+```{python}
+# Clase padre (superclase)
+class Vehiculo:
+    def __init__(self, marca, modelo, año):
+        self.marca = marca
+        self.modelo = modelo
+        self.año = año
+        self.encendido = False
+
+    # Métodos comunes en Vehiculo
+    def encender(self):
+        self.encendido = True
+        print(f"{self.marca} {self.modelo} está encendido")
+    
+    def apagar(self):
+        self.encendido = False
+        print(f"{self.marca} {self.modelo} está apagado")
+    
+    def info(self):
+        return f"{self.marca} {self.modelo} ({self.año})"
+```
+
+- Auto(Vehiculo) significa que Auto hereda de Vehiculo.
+- super().__init__() ejecuta el constructor del padre primero.
+- Luego agregamos puertas, que es específico de los autos.
+
+```{python}
+# Clase hija que hereda de Vehiculo
+class Auto(Vehiculo):
+    def __init__(self, marca, modelo, año, puertas):
+        super().__init__(marca, modelo, año)  # Llama al constructor del padre
+        self.puertas = puertas
+    
+    def abrir_cajuela(self):
+        print(f"Cajuela del {self.marca} {self.modelo} abierta")
+    
+    # Sobrescribir método del padre (polimorfismo)
+    def info(self):
+        return f"{super().info()} - {self.puertas} puertas"
+
+# Otra clase hija
+class Motocicleta(Vehiculo):
+    def __init__(self, marca, modelo, año, cilindrada):
+        super().__init__(marca, modelo, año)
+        self.cilindrada = cilindrada
+    
+    def hacer_wheelie(self):
+        if self.encendido:
+            print(f"¡{self.marca} {self.modelo} haciendo wheelie!")
+        else:
+            print("Primero enciende la motocicleta")
+    
+    def info(self):
+        return f"{super().info()} - {self.cilindrada}cc"
+```
+
+Uso de las clases:
+
+```{python}
+# Crear instancias
+mi_auto = Auto("Toyota", "Corolla", 2022, 4)
+```
+
+Cuando se ejecuta ocurre:
+
+- Se llama `Auto.__init__()`.
+- Que a su vez llama `Vehiculo.__init__()` con `super()`.
+- Se inicializan marca, modelo, año, encendido (del padre).
+- Se inicializa puertas (específico del auto).
+
+```{python}
+mi_moto = Motocicleta("Honda", "CBR", 2021, 600)
+
+# Usar métodos heredados
+mi_auto.encender()          # Método del padre
+mi_moto.encender()          # Método del padre
+
+# Usar métodos específicos de cada clase
+mi_auto.abrir_cajuela()     # Método específico de Auto
+mi_moto.hacer_wheelie()     # Método específico de Motocicleta
+
+# Polimorfismo: mismo método, comportamiento diferente
+print(mi_auto.info())       # Toyota Corolla (2022) - 4 puertas
+print(mi_moto.info())       # Honda CBR (2021) - 600cc
+```

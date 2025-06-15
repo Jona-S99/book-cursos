@@ -48,6 +48,9 @@ book:
         - qmd/python/funciones_lambda.qmd
         - qmd/python/recursividad.qmd
         - qmd/python/errores.qmd
+        - qmd/python/poo1_clases.qmd
+        - qmd/python/poo2_herencias.qmd
+        - qmd/python/poo3_resumen.qmd
 
 format:
   html:
