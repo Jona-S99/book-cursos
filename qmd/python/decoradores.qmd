@@ -1,0 +1,51 @@
+---
+jupyter: python3
+---
+
+# Decoradores
+
+Los decoradores en Python son una herramienta poderosa y flexible que permite modificar o extender la funcionalidad de funciones o métodos sin cambiar su código original. Son funciones que "envuelven" otra función o método, lo que permite agregar comportamientos adicionales antes o después de la ejecución de la función original.
+
+Un decorador toma una función como entrada, la "envuelve" o "modifica", y luego devuelve una nueva función con la funcionalidad extendida o alterada. Los decoradores se aplican a las funciones usando el símbolo `@` encima de la definición de la función.
+
+**Ejemplo:** construimos un decorador que imprima cosas antes y después de ejecutar la función original.
+
+- `log_transaccion` es el decorador (función que recibe otra función como parámetro)
+- Dentro define `wrapper()` que es la función que va a "envolver" la función original
+- `wrapper()` ejecuta código antes de la función (print("1. Lo de la transacción..."))
+- Luego ejecuta la función original, en este caso, procesar pago (`funcion()`)
+- Después ejecuta código adicional (print("3. Lo terminado..."))
+- Finalmente retorna la función wrapper
+
+```{python}
+# Creacion del decorador
+def log_transaccion(funcion):
+  def wrapper():
+    print("1. Lo de la transacción...")
+    funcion()
+    print("3. Lo terminado...")
+  return wrapper
+```
+
+Aplicación del decorador: cuando se llama a `procesar_pago()`, en realidad se está ejecutando la función `wrapper()` que:
+
+- Imprime "1. Lo de la transacción..."
+- Ejecuta la función original (que imprime "2. Procesando pago...")
+- Imprime "3. Lo terminado..."
+
+```{python}
+# Aplicando el decorador
+@log_transaccion
+def procesar_pago():
+  print("2. Procesando pago...")
+
+# Aplicamos la funcion original, que ya viene con el decorador
+# integrado
+procesar_pago()
+```
+
+
+## Decoradores anidados
+
+Los decoradores anidados son una técnica avanzada en Python que permite aplicar múltiples decoradores a una sola función. Son herramientas poderosas que facilitan la modificación del comportamiento de las funciones de manera dinámica y reutilizable. Esta capacidad de anidar decoradores y hacer uso de parámetros adicionales es especialmente útil en proyectos grandes y complejos que requieren control sobre el flujo de ejecución.
+
