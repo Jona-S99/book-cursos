@@ -1,0 +1,73 @@
+---
+jupyter: python3
+---
+
+# Anotaciones
+
+Las anotaciones en Python son una herramienta que permite agregar **información adicional** sobre las variables, funciones y métodos que programamos. Aunque no restringen el tipo de datos que se puede almacenar en una variable, proporcionan un contexto más claro sobre el objetivo del código, beneficiando la legibilidad y comprensión, especialmente en entornos de trabajo en equipo.
+
+## En variables
+
+Las anotaciones para las variables consisten en especificar el tipo esperado usando **dos puntos seguidos** de la declaración del tipo. Por ejemplo, al crear un identificador para empleados, podríamos especificarlo de la siguiente manera:
+
+```{python}
+#| eval: false
+id1: int = 101
+id2: int = 102
+```
+
+## En funciones
+
+En las funciones, las anotaciones ayudan a definir los tipos de datos que los parámetros deben recibir y el tipo de dato que devolverá la función. La sintaxis se asemeja a esto:
+
+```{python}
+#| eval: false
+# Aqui estipulamos lo que se espera para los parametros
+# y el resultado deberia ser un entero
+def sumar_ids_empleados(id1: int, id2: int) -> int:
+    return id1 + id2
+```
+
+## En clases
+
+Al trabajar con clases, las anotaciones ayudan a definir tipos de los atributos y métodos.
+
+```{python}
+class Empleado:
+    def __init__(self, nombre: str, edad: int, salario: float):
+        self.nombre = nombre
+        self.edad = edad
+        self.salario = salario
+
+    def presentarse(self) -> str:
+        return f"Hola, me llamo {self.nombre}. Tengo {self.edad} años."
+```
+
+## Optional y Union
+
+Las librerías `Optional` y `Union` permiten mayor flexibilidad en las anotaciones al trabajar con funciones que pueden manejar múltiples tipos de datos o retornar `None`.
+
+```{python}
+#| eval: false
+
+from typing import Optional
+
+def buscar_usuario(id_usuario: int) -> Optional[str]:
+    """
+    Busca un usuario por ID.
+    Retorna el nombre del usuario o None si no existe.
+    """
+    usuarios = {1: "Ana", 2: "Luis", 3: "María"}
+    
+    if id_usuario in usuarios:
+        return usuarios[id_usuario]  # Retorna str
+    else:
+        return None  # Retorna None
+
+# Uso de la función
+nombre = buscar_usuario(1)  # tipo: Optional[str]
+print(nombre)  # "Ana"
+
+nombre = buscar_usuario(99)  # tipo: Optional[str] 
+print(nombre)  # None
+```
