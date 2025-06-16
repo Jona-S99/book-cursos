@@ -1,0 +1,44 @@
+---
+jupyter: python3
+---
+
+# Comentarios y dockstrings
+
+Trabajar en proyectos grandes y complejos requiere no solo habilidades técnicas sino también la capacidad de comunicar eficazmente dentro del equipo. Mantener la claridad a través de documentación precisa, como comentarios y docstrings, es esencial.
+
+- **Docstrings**: Se utilizan principalmente dentro de métodos o funciones. Consisten en ofrecer una descripción breve de lo que hace la función, sus parámetros de entrada y el tipo de dato que retorna. Por ejemplo, en una función que calcula el promedio de una lista de números, estructuraríamos un docstring de la siguiente manera:
+
+Esto es similar a roxygen2 en R.
+
+Si trabajamos en VSCode, al invocar la función y pasar el mouse sobre esta, si dicha función tiene comentarios este te los va a mostrar en una pequeña ventana.
+
+```{python}
+#| eval: false
+
+def calcular_promedio(numbers):
+    """
+    Calcula el promedio de una lista de números.
+
+    Parameters:
+    numbers (list): Lista de enteros o flotantes.
+
+    Returns:
+    float: El promedio de los números en la lista.
+    """
+    return sum(numbers) / len(numbers)
+```
+
+
+- **Comentarios**: Los comentarios se utilizan para describir lo que hace una línea de código o para agregar notas explicativas. No debemos abusar de ellos ni explicar lo obvio. Son más útiles cuando describen la intención detrás de una línea de código más compleja o cuando se necesita un contexto adicional, pero siempre buscando ser breves y precisos.
+
+```{python}
+#| eval: false
+# Imprime el resultado de la función calcular_promedio
+print(calcular_promedio([1, 2, 3, 4, 5]))
+```
+
+## Cosas a evitar
+
+- **Redundancia**: No repitas lo que ya es evidente en el nombre de la función o la operación realizada. Si el nombre de la función ya indica que calcula el área de un triángulo, un comentario adicional que repita esta información es innecesario.
+
+- **Sobreinformar**: Incluir demasiada información puede llegar a confundir en lugar de aclarar. Recuerda, los comentarios deben añadir valor al código, no abarrotarlo de explicaciones obvias.
