@@ -1,0 +1,26 @@
+---
+jupyter: python3
+---
+
+# Variables locales y globales
+
+En el fascinante mundo de la programación, comprender la vida útil de una variable es vital para evitar errores comunes y mejorar el rendimiento del código. Las variables locales y globales juegan un papel crucial en este ámbito. 
+
+Mientras que las variables locales existen sólo dentro de un bloque de código determinado, las variables globales pueden ser accedidas desde cualquier parte del programa.
+
+Las variables `nonlocal` actúan como un puente entre variables locales y globales, permitiendo que las funciones internas accedan y modifiquen variables en funciones 'encapsulantes' externas.
+
+```{python}
+def funcion_externa():
+    x = "inicial"
+
+    def funcion_interna():
+        nonlocal x
+        x = "modificado"
+        print("El valor en inner es", x)
+
+    funcion_interna()
+    print("El valor afuera es", x)
+
+funcion_externa()
+```
