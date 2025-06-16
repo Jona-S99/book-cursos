@@ -51,6 +51,14 @@ book:
         - qmd/python/poo1_clases.qmd
         - qmd/python/poo2_herencias.qmd
         - qmd/python/poo3_resumen.qmd
+        - qmd/python/json.qmd
+        - qmd/python/librerias_modulos.qmd
+        - qmd/python/librerias_ejemplos.qmd
+        - qmd/python/pythonic.qmd
+        - qmd/python/comm_dockstrings.qmd
+        - qmd/python/var_local_global.qmd
+        - qmd/python/anotaciones.qmd
+        - qmd/python/validaciones.qmd
 
 format:
   html:
