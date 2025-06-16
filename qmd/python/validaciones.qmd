@@ -1,0 +1,40 @@
+---
+jupyter: python3
+---
+
+# Validaciones de datos
+
+La validación de tipos y manejo de excepciones en Python es esencial, sobre todo en proyectos colaborativos o críticos donde los datos externos juegan un papel crucial. 
+
+::: {.callout-important}
+Aunque Python permite especificar tipos de datos para los parámetros de una función (capítulo anterior), **no garantiza que estos sean correctos en tiempo de ejecución**.
+:::
+
+Para realizar esto utilizamos la función `isinstance`, que verifica si un objeto es una instancia de una clase específica o de cualquiera de las clases especificadas. Devuelve `True` si la condición se cumple, `False` en caso contrario.
+
+```{python}
+#| eval: false
+
+def dividir(a, b):
+
+    # Validar que ambos valores rean enteros:
+    #  not isinstance(a, int) = "Si no es entero"
+    if not isinstance(a, int) or not isinstance(b, int):
+        raise TypeError("Ambos parámetros deben ser enteros")
+        return None
+
+    # Validar que no se pueda dividir por 0
+    if b == 0:
+        raise ValueError("El divisor no puede ser cero")
+    
+    # Retornar el resultado
+    return a / b
+
+# Error de tipo de dato
+dividir(a = 4, b = 2.2)
+# TypeError: Ambos parámetros deben ser enteros
+
+
+dividir(a = 4, b = 0)
+# ValueError: El divisor no puede ser cero
+```
