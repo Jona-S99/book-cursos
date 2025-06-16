@@ -364,7 +364,7 @@
     "href": "qmd/python/listas.html#copiar-una-lista",
     "title": "5  Listas",
     "section": "5.2 Copiar una lista",
-    "text": "5.2 Copiar una lista\n\n\n\n\n\n\nNote\n\n\n\nCuando asignamos una lista a una nueva variable, por ejemplo, B = A, no estamos creando una copia independiente. Ambas variables apuntan al mismo espacio de memoria. Así, cualquier cambio en A se reflejará en B.\n\n\n\n# Crear lista\nls_a = [1, 2, 3, 4, 5]\n\n# Copiar lista\nls_b = ls_a\n\nprint(\"El id de la lista a es: \", id(ls_a))\nprint(\"El id de la lista b es: \", id(ls_b))\n\nEl id de la lista a es:  4427465472\nEl id de la lista b es:  4427465472\n\n\nComo podemos ver, son iguales, pues apuntan la mismo lugar en memoria. Entonces, ¿cómo evitamos esto?\nUitlizando el método slicing.\n\n# Crear lista c\nls_c = ls_a[:]\n\nprint(\"El id de la lista a es: \", id(ls_a))\nprint(\"El id de la lista b es: \", id(ls_c))\n\nEl id de la lista a es:  4427465472\nEl id de la lista b es:  4427475904\n\n\nComo vemos, son ids diferentes.",
+    "text": "5.2 Copiar una lista\n\n\n\n\n\n\nNote\n\n\n\nCuando asignamos una lista a una nueva variable, por ejemplo, B = A, no estamos creando una copia independiente. Ambas variables apuntan al mismo espacio de memoria. Así, cualquier cambio en A se reflejará en B.\n\n\n\n# Crear lista\nls_a = [1, 2, 3, 4, 5]\n\n# Copiar lista\nls_b = ls_a\n\nprint(\"El id de la lista a es: \", id(ls_a))\nprint(\"El id de la lista b es: \", id(ls_b))\n\nEl id de la lista a es:  4421662272\nEl id de la lista b es:  4421662272\n\n\nComo podemos ver, son iguales, pues apuntan la mismo lugar en memoria. Entonces, ¿cómo evitamos esto?\nUitlizando el método slicing.\n\n# Crear lista c\nls_c = ls_a[:]\n\nprint(\"El id de la lista a es: \", id(ls_a))\nprint(\"El id de la lista b es: \", id(ls_c))\n\nEl id de la lista a es:  4421662272\nEl id de la lista b es:  4421663232\n\n\nComo vemos, son ids diferentes.",
     "crumbs": [
       "Python",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Listas</span>"
@@ -698,6 +698,325 @@
     "crumbs": [
       "Python",
       "<span class='chapter-number'>15</span>  <span class='chapter-title'>Manejo de errores</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/poo1_clases.html",
+    "href": "qmd/python/poo1_clases.html",
+    "title": "16  POO 1: clases",
+    "section": "",
+    "text": "16.1 Crear una clase\nLa Programación Orientada a Objetos es un paradigma de programación que organiza el diseño del software en torno a objetos. Los objetos son instancias de clases, que pueden tener atributos (datos) y métodos (funciones).\nLas clases actúan como plantillas genéricas que definen atributos y comportamientos. Por ejemplo, una clase “Persona” puede tener atributos como nombre, apellido y fecha de nacimiento.\nConceptos claves:\nPara crear una clase en Python, se utiliza la palabra reservada class seguida del nombre de la clase con la primera letra en mayúscula (es una buena práctica). Dentro de la clase, se define un constructor con la función __init__. Esta función inicializa los atributos del objeto.\n# Difinicion de la clase\nclass Persona:\n    # Constructor de la clase:\n    #   - Es importante que tenga 'self'\n    def __init__(self, nombre, edad):\n        self.nombre = nombre\n        self.edad = edad\n    \n    def saludar(self):\n        print(f\"Hola, mi nombre es {self.nombre} y tengo {self.edad} años\")\nCrearemos dos objetos utilzando esta clase:\n# Crear objetos de la clase Persona\npersona1 = Persona(nombre = \"Ana\", edad = 30)\npersona2 = Persona(\"Luis\", 25)\nY utilizamos el método saludar de nuestra clase Persona: los métodos son funciones definidas dentro de una clase que operan sobre los objetos de la misma.\npersona1.saludar()\npersona2.saludar()\n\nHola, mi nombre es Ana y tengo 30 años\nHola, mi nombre es Luis y tengo 25 años",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>POO 1: clases</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/poo1_clases.html#self---analogía-con-un-espejo",
+    "href": "qmd/python/poo1_clases.html#self---analogía-con-un-espejo",
+    "title": "16  POO 1: clases",
+    "section": "16.2 Self - Analogía con un espejo:",
+    "text": "16.2 Self - Analogía con un espejo:\nEncotré este ejemplo en un comentario el platzi.\nImagina que cada objeto tiene un espejo. Cuando un objeto se mira en el espejo (self), ve sus propios atributos (nombre, color, nivel de batería) y puede actuar sobre ellos (caminar, hablar, cargar batería).\nEjemplo con robot’s:\n\nclass Robot:\n    def __init__(self, nombre, color, nivel_bateria):\n        self.nombre = nombre\n        self.color = color\n        self.nivel_bateria = nivel_bateria\n\n    def caminar(self):\n        if self.nivel_bateria &gt; 10:\n            print(f\"{self.nombre} está caminando.\")\n            self.nivel_bateria -= 10  # Reduce la batería al caminar\n        else:\n            print(f\"{self.nombre} necesita recargar batería.\")\n\n    def hablar(self, mensaje):\n        print(f\"{self.nombre} dice: {mensaje}\")\n\n    def cargar_bateria(self):\n        self.nivel_bateria = 100\n        print(f\"{self.nombre} ha recargado su batería al 100%.\")\n\n# Creamos dos robots\nmi_robot = Robot(\"R2-D2\", \"blanco\", 100)\n\n# Hacemos que los robots realicen acciones\nmi_robot.caminar()        # Output: R2-D2 está caminando.\nmi_robot.hablar(\"¡Hola!\")  # Output: R2-D2 dice: ¡Hola!\n\n# Simulamos que los robots caminan varias veces\nfor _ in range(10): \n    mi_robot.caminar()\n\nmi_robot.caminar()        # Output: R2-D2 necesita recargar batería.\nmi_robot.cargar_bateria()  # Output: R2-D2 ha recargado su batería al 100%.\nmi_robot.caminar()        # Output: R2-D2 está caminando.",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>POO 1: clases</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/poo2_herencias.html",
+    "href": "qmd/python/poo2_herencias.html",
+    "title": "17  POO 2: herencias",
+    "section": "",
+    "text": "17.1 Ejemplo: sistema de vehículos\nImagina que tienes un coche y una bicicleta. Ambos son vehículos. Aunque son diferentes, tienen cosas en común: ambos pueden moverse, tienen ruedas, y se pueden usar para transportarte. La Herencia es como decir:\nEn términos simples, la Herencia permite que una clase (la “clase hija”) tome características y comportamientos de otra clase (la “clase padre”).\n¿Por qué es útil la Herencia?\n# Clase padre (superclase)\nclass Vehiculo:\n    def __init__(self, marca, modelo, año):\n        self.marca = marca\n        self.modelo = modelo\n        self.año = año\n        self.encendido = False\n\n    # Métodos comunes en Vehiculo\n    def encender(self):\n        self.encendido = True\n        print(f\"{self.marca} {self.modelo} está encendido\")\n    \n    def apagar(self):\n        self.encendido = False\n        print(f\"{self.marca} {self.modelo} está apagado\")\n    \n    def info(self):\n        return f\"{self.marca} {self.modelo} ({self.año})\"\n# Clase hija que hereda de Vehiculo\nclass Auto(Vehiculo):\n    def __init__(self, marca, modelo, año, puertas):\n        super().__init__(marca, modelo, año)  # Llama al constructor del padre\n        self.puertas = puertas\n    \n    def abrir_cajuela(self):\n        print(f\"Cajuela del {self.marca} {self.modelo} abierta\")\n    \n    # Sobrescribir método del padre (polimorfismo)\n    def info(self):\n        return f\"{super().info()} - {self.puertas} puertas\"\n\n# Otra clase hija\nclass Motocicleta(Vehiculo):\n    def __init__(self, marca, modelo, año, cilindrada):\n        super().__init__(marca, modelo, año)\n        self.cilindrada = cilindrada\n    \n    def hacer_wheelie(self):\n        if self.encendido:\n            print(f\"¡{self.marca} {self.modelo} haciendo wheelie!\")\n        else:\n            print(\"Primero enciende la motocicleta\")\n    \n    def info(self):\n        return f\"{super().info()} - {self.cilindrada}cc\"\nUso de las clases:\n# Crear instancias\nmi_auto = Auto(\"Toyota\", \"Corolla\", 2022, 4)\nCuando se ejecuta ocurre:\nmi_moto = Motocicleta(\"Honda\", \"CBR\", 2021, 600)\n\n# Usar métodos heredados\nmi_auto.encender()          # Método del padre\nmi_moto.encender()          # Método del padre\n\n# Usar métodos específicos de cada clase\nmi_auto.abrir_cajuela()     # Método específico de Auto\nmi_moto.hacer_wheelie()     # Método específico de Motocicleta\n\n# Polimorfismo: mismo método, comportamiento diferente\nprint(mi_auto.info())       # Toyota Corolla (2022) - 4 puertas\nprint(mi_moto.info())       # Honda CBR (2021) - 600cc\n\nToyota Corolla está encendido\nHonda CBR está encendido\nCajuela del Toyota Corolla abierta\n¡Honda CBR haciendo wheelie!\nToyota Corolla (2022) - 4 puertas\nHonda CBR (2021) - 600cc",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>POO 2: herencias</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/poo2_herencias.html#ejemplo-sistema-de-vehículos",
+    "href": "qmd/python/poo2_herencias.html#ejemplo-sistema-de-vehículos",
+    "title": "17  POO 2: herencias",
+    "section": "",
+    "text": "Es la clase base que define características comunes a todos los vehículos.\n__init__ es el constructor que inicializa los atributos básicos.\nTodos los vehículos tienen marca, modelo, año y estado de encendido.\n\n\n\nAuto(Vehiculo) significa que Auto hereda de Vehiculo.\nsuper().__init__() ejecuta el constructor del padre primero.\nLuego agregamos puertas, que es específico de los autos.\n\n\n\n\n\n\nSe llama Auto.__init__().\nQue a su vez llama Vehiculo.__init__() con super().\nSe inicializan marca, modelo, año, encendido (del padre).\nSe inicializa puertas (específico del auto).",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>POO 2: herencias</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/poo3_resumen.html",
+    "href": "qmd/python/poo3_resumen.html",
+    "title": "18  POO: resumen",
+    "section": "",
+    "text": "18.1 Uso de super() en Python\nPara entender mejor la Programación Orientada a Objetos (POO), es esencial recordar los conceptos básicos de atributos y métodos.\nEjemplo Básico de una Clase:\nAl usar herencia vimos el método init() que es el cosntructor, el mismo es llamado automáticamente cuando se crea una nueva instancia de una clase y se utiliza para inicializar los atributos del objeto.\nEn este ejemplo, el constructor __init__ inicializa los atributos name y age de la clase Person.\nLa función super() en Python te permite acceder y llamar a métodos definidos en la superclase desde una subclase. Esto es útil cuando quieres extender o modificar la funcionalidad de los métodos de la superclase sin tener que repetir su implementación completa.\nEjemplo de Uso de super():\nclass Person:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n\n    def greet(self):\n        print(\"Hello! I am a person.\")\n\nclass Student(Person):\n    def __init__(self, name, age, student_id):\n        super().__init__(name, age)\n        self.student_id = student_id\n\n    def greet(self):\n        super().greet()\n        print(f\"Hi, I'm {self.name}, and I'm a student with ID: {self.student_id}\")\n\n# Crear instancia de Student y llamar a greet\nstudent = Student(\"Ana\", 20, \"S12345\")\nstudent.greet()  \n# Output: Hello! I am a person.\n#         Hi, I'm Ana, and I'm a student with ID: S12345\nEn este ejemplo:",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>POO: resumen</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/poo3_resumen.html#uso-de-super-en-python",
+    "href": "qmd/python/poo3_resumen.html#uso-de-super-en-python",
+    "title": "18  POO: resumen",
+    "section": "",
+    "text": "La clase Person define un método greet() que imprime un saludo genérico.\nLa clase Student, que es una subclase de Person, utiliza super().__init__(name, age) para llamar al constructor de la superclase Person y luego sobrescribe el método greet() para agregar información específica del estudiante.",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>POO: resumen</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/poo3_resumen.html#jerarquía-de-clases-y-constructores",
+    "href": "qmd/python/poo3_resumen.html#jerarquía-de-clases-y-constructores",
+    "title": "18  POO: resumen",
+    "section": "18.2 Jerarquía de Clases y Constructores",
+    "text": "18.2 Jerarquía de Clases y Constructores\n¿Qué sucede si una clase tiene una clase padre y esa clase padre tiene otra clase padre? En este caso, usamos super() para asegurar que todas las clases padre sean inicializadas correctamente.\nEjemplo de Jerarquía de Clases:\n\nclass LivingBeing:\n    def __init__(self, name):\n        self.name = name\n\nclass Person(LivingBeing):\n    def __init__(self, name, age):\n        super().__init__(name)\n        self.age = age\n\nclass Student(Person):\n    def __init__(self, name, age, student_id):\n        super().__init__(name, age)\n        self.student_id = student_id\n\n    def introduce(self):\n        print(f\"Hi, I'm {self.name}, {self.age} years old, and my student ID is {self.student_id}\")\n\n# Crear instancia de Student\nstudent = Student(\"Carlos\", 21, \"S54321\")\nstudent.introduce()  \n# Output: Hi, I'm Carlos, 21 years old, and my student ID is S54321\n\nEn este ejemplo:\n\nLivingBeing es la clase base que inicializa el atributo name.\nPerson es una subclase de LivingBeing que inicializa name a través de super().__init__(name) y luego inicializa age.\nStudent es una subclase de Person que inicializa name y age a través de super().__init__(name, age) y luego inicializa student_id.\n\nMétodos que Vienen por Defecto en Python En Python, todas las clases heredan de la clase base object. Esto significa que todas las clases tienen ciertos métodos por defecto, algunos de los cuales pueden ser útiles para personalizar el comportamiento de tus clases.",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>POO: resumen</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/poo3_resumen.html#métodos-por-defecto-más-comunes",
+    "href": "qmd/python/poo3_resumen.html#métodos-por-defecto-más-comunes",
+    "title": "18  POO: resumen",
+    "section": "18.3 Métodos por Defecto Más Comunes",
+    "text": "18.3 Métodos por Defecto Más Comunes\n\n__init__(self): Constructor de la clase. Es llamado cuando se crea una nueva instancia de la clase. Inicializa los atributos del objeto.\n__str__(self): Devuelve una representación en cadena del objeto, utilizada por print() y str(). Este método es útil para proporcionar una representación legible del objeto.\n__repr__(self): Devuelve una representación “oficial” del objeto, utilizada por repr(). Este método está diseñado para devolver una cadena que represente al objeto de manera que se pueda recrear.\n\nEjemplo de Métodos str y repr\nVamos a crear una clase Person que sobrescriba los métodos __str__ y __repr__.\n\nclass Person:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n\n    def __str__(self):\n        return f\"{self.name}, {self.age} años\"\n\n    def __repr__(self):\n        return f\"Person(name={self.name}, age={self.age})\"\n\n# Crear instancias de Person\nperson1 = Person(\"Alice\", 30)\nperson2 = Person(\"Bob\", 25)\n\n# Uso de __str__\nprint(person1)  \n# Output: Alice, 30 años\n\n# Uso de __repr__\nprint(repr(person1))  \n# Output: Person(name=Alice, age=30)\n\nAlice, 30 años\nPerson(name=Alice, age=30)\n\n\nExplicación del Código\n\nEl método __str__ devuelve una representación en cadena del objeto, útil para mensajes de salida amigables.\nEl método __repr__ devuelve una representación más detallada del objeto, útil para la depuración.\nEstos métodos proporcionan una manera conveniente de representar y comparar objetos, lo que facilita la depuración y el uso de los objetos en el código.",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>POO: resumen</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/json.html",
+    "href": "qmd/python/json.html",
+    "title": "19  Lectura de archivos JSON",
+    "section": "",
+    "text": "19.1 Añadir información\nJSON, que significa JavaScript Object Notation, es un formato liviano de intercambio de datos. Es crucial para trabajar con datos en aplicaciones web y APIs. Aprender a manejarlo con Python es esencial para desarrolladores que buscan eficiencia y flexibilidad.\nPara cargar un JSON a python usamos la librería json, en específico, la la función load(),\nUna vez cargado el archivo, podemos iterar sobre el contenido.\nAñadir información a un archivo JSON es tan sencillo como leerlo. Supongamos que quieres añadir un nuevo producto:\n### Este bloque de codigo no se ejecutara en el libro ###\n# Creamos un nuevo producto con la estructura del JSON\nnew_product = {\n    \"name\": \"Wireless Charger\",\n    \"price\": 75,\n    \"quantity\": 100,\n    \"brand\": \"ChargeMaster\",\n    \"category\": \"Accessories\",\n    \"entry_date\": \"2025-06-14\"\n}\n\n# Leemos el archivo\nwith open('Products.json', 'r') as file:\n    products = json.load(file)\n\n# Ingresamos el nuevo producto a la lista con los datos JSON\nproducts.append(new_product)\n\n# Sobreescribimos el archivo\nwith open('Products.json', 'w') as file:\n    json.dump(products, file, indent = 4)",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Lectura de archivos JSON</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/librerias_modulos.html",
+    "href": "qmd/python/librerias_modulos.html",
+    "title": "20  Librerías y módulos",
+    "section": "",
+    "text": "20.1 ¿Qué es la Biblioteca Estándar de Python?\nComo programador, una de las mayores satisfacciones es encontrar la solución perfecta al problema que estás tratando de resolver, y hacerlo de manera eficiente. ¿Te imaginas tener a tu disposición un conjunto de herramientas que te permita escribir menos código pero lograr más? Eso es lo que ofrece la Biblioteca Estándar de Python.\nImagina poder saltar directamente a construir la lógica de tu aplicación sin preocuparte por las tareas rutinarias, porque ya tienes los módulos que necesitas listos para usar. Aquí vamos a explorar cómo la Biblioteca Estándar de Python puede transformar tu manera de programar, dándote acceso inmediato a una vasta colección de herramientas que te permiten concentrarte en lo que realmente importa: resolver problemas de manera elegante y eficaz.\nLa Biblioteca Estándar de Python es como tener un conjunto de herramientas integradas directamente en el lenguaje que te ayudan a realizar una variedad de tareas sin tener que reinventar la rueda. Desde la manipulación de archivos, pasando por cálculos matemáticos complejos, hasta la creación de servidores web, la Biblioteca Estándar tiene módulos que simplifican casi cualquier tarea que te propongas.",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Librerías y módulos</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/librerias_modulos.html#qué-es-una-librería-y-qué-es-un-módulo",
+    "href": "qmd/python/librerias_modulos.html#qué-es-una-librería-y-qué-es-un-módulo",
+    "title": "20  Librerías y módulos",
+    "section": "20.2 ¿Qué es una Librería y qué es un Módulo?",
+    "text": "20.2 ¿Qué es una Librería y qué es un Módulo?\nAntes de sumergirnos en cómo puedes aprovechar la Biblioteca Estándar, aclaremos dos conceptos clave:\n\nLibrería: En Python, una librería es un conjunto organizado de módulos que puedes usar para añadir funcionalidades a tu código sin tener que escribirlas tú mismo. Piensa en ello como una colección de herramientas especializadas listas para usar.\nMódulo: Un módulo es un archivo de Python que contiene código que puedes reutilizar en tus proyectos. Un módulo puede incluir funciones, clases, y variables que te ayudan a resolver problemas específicos de manera eficiente.\n\nEstos conceptos son fundamentales porque la Biblioteca Estándar está compuesta por una amplia variedad de módulos, cada uno diseñado para hacer tu vida como programador más fácil.",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Librerías y módulos</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/librerias_modulos.html#la-conexión-de-la-biblioteca-estándar-con-tus-proyectos",
+    "href": "qmd/python/librerias_modulos.html#la-conexión-de-la-biblioteca-estándar-con-tus-proyectos",
+    "title": "20  Librerías y módulos",
+    "section": "20.3 La Conexión de la Biblioteca Estándar con tus Proyectos",
+    "text": "20.3 La Conexión de la Biblioteca Estándar con tus Proyectos\nLa belleza de la Biblioteca Estándar radica en cómo cada módulo está diseñado para interactuar con otros, permitiéndote construir aplicaciones completas sin tener que buscar soluciones externas. Al trabajar en un proyecto, puedes confiar en que la Biblioteca Estándar tiene las herramientas necesarias para cubrir la mayoría de tus necesidades.\nPor ejemplo, si estás trabajando en una aplicación que necesita interactuar con el sistema de archivos, el módulo os te permite manipular directorios y archivos de manera eficiente. Si tu aplicación necesita realizar operaciones matemáticas complejas, el módulo math ofrece un amplio rango de funciones listas para usar. Cada módulo tiene su propósito, pero todos están diseñados para trabajar juntos y hacer tu código más limpio y eficiente.",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Librerías y módulos</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/librerias_modulos.html#explorando-áreas-clave-de-la-biblioteca-estándar",
+    "href": "qmd/python/librerias_modulos.html#explorando-áreas-clave-de-la-biblioteca-estándar",
+    "title": "20  Librerías y módulos",
+    "section": "20.4 Explorando Áreas Clave de la Biblioteca Estándar",
+    "text": "20.4 Explorando Áreas Clave de la Biblioteca Estándar\nAhora, veamos algunas de las áreas más importantes que cubre la Biblioteca Estándar:\n\nManejo de Archivos y Sistema: Módulos como os, shutil, y pathlib te permiten interactuar con el sistema de archivos, lo cual es esencial para casi cualquier proyecto.\nOperaciones Matemáticas: Módulos como math y random te proporcionan funciones matemáticas avanzadas y generación de números aleatorios.\nManejo de Fechas y Tiempos: datetime y time te permiten trabajar con fechas y horas, lo cual es crucial para la programación de eventos o el registro de actividades.\nManipulación de Datos: Módulos como json y csv son ideales para leer y escribir datos estructurados, algo común en el manejo de APIs y almacenamiento de información.\nRedes y Comunicaciones: Si estás construyendo aplicaciones que necesitan comunicarse a través de una red, socket y http.server te proporcionan las herramientas necesarias para gestionar conexiones y servidores web.\n\nEstos módulos no solo te ahorran tiempo, sino que también te ayudan a escribir código más limpio y mantenible.",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Librerías y módulos</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/librerias_modulos.html#qué-es-pippip3-y-cuándo-deberíamos-considerar-instalar-una-librería",
+    "href": "qmd/python/librerias_modulos.html#qué-es-pippip3-y-cuándo-deberíamos-considerar-instalar-una-librería",
+    "title": "20  Librerías y módulos",
+    "section": "20.5 ¿Qué es pip/pip3 y Cuándo Deberíamos Considerar Instalar una Librería?",
+    "text": "20.5 ¿Qué es pip/pip3 y Cuándo Deberíamos Considerar Instalar una Librería?\nLa Biblioteca Estándar es extremadamente poderosa, pero a veces necesitarás algo más específico o avanzado. Aquí es donde entra pip, una herramienta que te permite instalar librerías adicionales que no vienen incluidas en Python por defecto.\n\n20.5.1 ¿Cuándo deberías considerar instalar una librería?\n\nCuando necesitas funcionalidades que no están cubiertas por la Biblioteca Estándar.\nCuando quieres utilizar herramientas más especializadas para resolver problemas complejos.\nCuando necesitas una versión más reciente o específica de un módulo.\n\nPor ejemplo, si estás trabajando en análisis de datos, podrías necesitar pandas, una librería poderosa para la manipulación y análisis de datos que no está en la Biblioteca Estándar.\n\n\n20.5.2 ¿Cómo Instalar una Librería con pip?\nInstalar una librería con pip es directo y simple. Abre tu terminal y ejecuta:\n\n# Dependiendo de la version de python\npip install nombre-de-la-libreria\npip3 install nombre-de-la-libreria\n\nEsto descargará e instalará la librería desde PyPI, un repositorio en línea donde se alojan miles de librerías para Python, y estará lista para ser utilizada en tu proyecto.",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Librerías y módulos</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/librerias_ejemplos.html",
+    "href": "qmd/python/librerias_ejemplos.html",
+    "title": "21  Librerías útiles de sistema",
+    "section": "",
+    "text": "21.1 os\nInteractuar con el sistema operativo desde Python es una tarea que se hace mucho más sencilla gracias a la librería OS. Sin necesidad de instalaciones adicionales, esta herramienta permite automatizar y manejar archivos y directorios, lo que simplifica enormemente el flujo de trabajo. Veamos algunos ejemplos prácticos de su uso.\n# Importamos la libreria\nimport os",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Librerías útiles de sistema</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/librerias_ejemplos.html#os",
+    "href": "qmd/python/librerias_ejemplos.html#os",
+    "title": "21  Librerías útiles de sistema",
+    "section": "",
+    "text": "Directorio actual\n\nos.getcwd()\n\n'/Users/jona/Github/book-cursos/qmd/python'\n\n\n\n\nListar los archivos del directorio\n\n# Listamos los archivos que comienzan con \"poo\" usando\n# list comprehension\npoo = [files for files in os.listdir(\".\") if files.startswith(\"poo\")]\nprint(f\"Los archivos de POO son: {poo}\")\n\nLos archivos de POO son: ['poo1_clases.qmd', 'poo1_clases.html', 'poo3_resumen.html', 'poo2_herencias.html', 'poo3_resumen.qmd', 'poo2_herencias.qmd']\n\n\n¿Cómo funciona esta list comprehension?\n\nos.listdir(\".\"):\n\n\nDevuelve una lista con todos los archivos y carpetas del directorio actual (el punto “.” representa el directorio actual).\n\n\nfor files in ...:\n\n\nItera sobre cada elemento (archivo/carpeta) de la lista que devuelve os.listdir(“.”)\nLa variable files toma el valor de cada nombre de archivo en cada iteración.\n\n\nif files.startswith(\"poo\"):\n\n\nCondición que filtra solo los archivos cuyo nombre comience con “poo”\nstartswith() devuelve True si el string comienza con el prefijo especificado.\n\n\nfiles (al inicio):\n\n\nEs lo que se incluye en la lista final para cada elemento que cumple la condición.",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Librerías útiles de sistema</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/librerias_ejemplos.html#math",
+    "href": "qmd/python/librerias_ejemplos.html#math",
+    "title": "21  Librerías útiles de sistema",
+    "section": "21.2 math",
+    "text": "21.2 math\nCuando trabajamos con cálculos matemáticos en Python, la librería Math es una aliada invaluable. Ofrece una serie de funciones y constantes matemáticas, ideal para conseguir resultados precisos.\n\nimport math\n\nEjemplos de uso de la librería math:\n\n# 1. Calcular el area y perimetro de una circunferencia\nradio = 5\n\narea = round((math.pi * radio ** 2), 1)\nperimetro = round((2 * math.pi * radio), 1) \n\nprint(f\"El área de un círculo con radio 5 es de: {area}\")\nprint(f\"El perímetro de un círculo con radio 5 es de: {perimetro}\")\n\nEl área de un círculo con radio 5 es de: 78.5\nEl perímetro de un círculo con radio 5 es de: 31.4",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Librerías útiles de sistema</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/librerias_ejemplos.html#random",
+    "href": "qmd/python/librerias_ejemplos.html#random",
+    "title": "21  Librerías útiles de sistema",
+    "section": "21.3 random",
+    "text": "21.3 random\nLa generación de números y elecciones aleatorias es una tarea comúnmente requerida, y la librería Random en Python nos ofrece varias herramientas útiles para este propósito.\n\nimport random\n\nEjemplos de uso de la librería random:\n\n# 1. Generar un numero entero aleatorio entre 1 y 10\nprint(f\"Número entero aleatorio: {random.randint(1, 10)}\")\n\n# 2. Elegir aleatoriamente\n## Con lista\nlista = ['manzana', 'banana', 'cereza']\nprint(\"Elegir un elemento de una lista: \", random.choice(lista))\n\n## Con tupla\ntupla = (10, 20, 30, 40)\nprint(\"Elegir un elemento de una tupla: \",random.choice(tupla))  # ej: 30\n\n## Con string\ncadena = \"ABCDEFG\"\nprint(\"Elegir un elemento de una string: \",random.choice(cadena))  # ej: 'D'\n\n## Con range\nrango = range(1, 11)  # números del 1 al 10\nprint(\"Elegir un elemento de un rango: \",random.choice(rango))\n\nNúmero entero aleatorio: 4\nElegir un elemento de una lista:  banana\nElegir un elemento de una tupla:  30\nElegir un elemento de una string:  C\nElegir un elemento de un rango:  1\n\n\nEjemplo de shuffle\n\n# Lista original\ncartas = ['As', 'Rey', 'Reina', 'Jota', '10', '9']\nprint(\"Original:\", cartas)\n\n# Mezclar la lista\nrandom.shuffle(cartas)\nprint(\"Mezclada:\", cartas)\n\nOriginal: ['As', 'Rey', 'Reina', 'Jota', '10', '9']\nMezclada: ['As', 'Reina', 'Rey', '10', '9', 'Jota']",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Librerías útiles de sistema</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/librerias_ejemplos.html#statistics",
+    "href": "qmd/python/librerias_ejemplos.html#statistics",
+    "title": "21  Librerías útiles de sistema",
+    "section": "21.4 statistics",
+    "text": "21.4 statistics\nEn el análisis de datos, es fundamental comprender y utilizar diversas medidas estadísticas para interpretar correctamente la información. Estas medidas nos permiten resumir y describir las características principales de un conjunto de datos, facilitando la toma de decisiones informadas.\n\nimport statistics\n\nAlgunas de las medidas estadísticas más comunes y sus fórmulas asociadas son las siguientes:\n\n# Datos para ejemplo:\ndatos = [1, 2, 3, 4, 4, 5, 6, 7, 8, 9, 10]\n\n# Media aritmetica: `.mean()`\nprint(\"La media es: \", statistics.mean(datos))\n\n# Mediana (valor central): `.median()`\nprint(\"La mediana es: \", statistics.median(datos))\n\n# Moda (valor mas frecuente): `.mode()`\nprint(\"La moda es: \", statistics.mode(datos))\n\n# Desviacion estandar: `.stdev()`\nprint(\"La desviación estándar es: \", round((statistics.stdev(datos)), 2))\n\n# Varianza de la muestra: `.variance()`\nprint(\"La varianza es: \", round((statistics.variance(datos)), 2))\n\n# Valor minimo: `.min()`\nprint(\"El valor mínimo es: \", min(datos))\n\n# Valor maximo: `.max()`\nprint(\"El valor máximo es: \", max(datos))\n\n# Cuartiles general: `.quantiles()`\nprint(\"Los cuartiles son: \", statistics.quantiles(datos, n = 4))\n\n# Primer cuartil: [N] segun index\nprint(\"El primer cuartil es: \", statistics.quantiles(datos, n = 4)[0])\n\nLa media es:  5.363636363636363\nLa mediana es:  5\nLa moda es:  4\nLa desviación estándar es:  2.91\nLa varianza es:  8.45\nEl valor mínimo es:  1\nEl valor máximo es:  10\nLos cuartiles son:  [3.0, 5.0, 8.0]\nEl primer cuartil es:  3.0",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Librerías útiles de sistema</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/pythonic.html",
+    "href": "qmd/python/pythonic.html",
+    "title": "22  Código pythonco",
+    "section": "",
+    "text": "22.1 Uso general\nEscribir código Pytónico es fundamental para cualquier desarrollador que aspire a trabajar en proyectos grandes y colaborativos. No se trata solo de hacer que el código funcione, sino de garantizar que sea claro, eficiente y mantenible.\nAl dominar estas habilidades, un desarrollador no solo mejora su capacidad para colaborar con otros, sino que también contribuye significativamente a la calidad de los proyectos.\nEste enfoque resalta la importancia de seguir las mejores prácticas de Python, que se describen en el documento PEP8.\nEjemplos de código no pythonico y código sí pythonico para uso general:\n# 1. Iteración sobre listas:\n## No pythónico\nlista = [1, 2, 3, 4, 5]\nfor i in range(len(lista)):\n    print(lista[i])\n\n## Pythónico\nfor elemento in lista:\n    print(elemento)\n\n---------------------------\n\n# 2. Intercambio de variables:\n## No pythónico\ntemp = a\na = b\nb = temp\n\n## Pythónico\na, b = b, a\n\n--------------------------\n\n# 3. List comprehensions:\n## No pythónico\ncuadrados = []\nfor x in range(10):\n    cuadrados.append(x**2)\n\n## Pythónico\ncuadrados = [x**2 for x in range(10)]\n\n--------------------------\n\n# 4. Verificar si una lista está vacía:\n## No pythónico\nif len(lista) == 0:\n    print(\"Lista vacía\")\n\n## Pythónico\nif not lista:\n    print(\"Lista vacía\")\n\n--------------------------\n\n# 5. Usar enumerate() para índices:\n## No pythónico\nnombres = ['Ana', 'Luis', 'María']\nfor i in range(len(nombres)):\n    print(f\"{i}: {nombres[i]}\")\n\n## Pythónico\nfor i, nombre in enumerate(nombres):\n    print(f\"{i}: {nombre}\")\n\n--------------------------\n\n# 6. Manejo de diccionarios:\n## No pythónico\ndiccionario = {'clave': 'valor'}\nif 'clave' in diccionario:\n    valor = diccionario['clave']\nelse:\n    valor = 'por_defecto'\n\n## Pythónico\nvalor = diccionario.get('clave',",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Código pythonco</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/pythonic.html#clases",
+    "href": "qmd/python/pythonic.html#clases",
+    "title": "22  Código pythonco",
+    "section": "22.2 Clases",
+    "text": "22.2 Clases\n\n# 1. Definición de clases:\n## No pythónico - nombres incorrectos\n# PROBLEMA: Nombre de clase en camelCase y atributo con prefijo innecesario\n# SOLUCIÓN: Usar PascalCase para clases y nombres descriptivos para atributos\nclass miClase:\n    def __init__(self, valor):\n        self.mi_valor = valor\n\n## Pythónico - PascalCase para clases\nclass MiClase:\n    def __init__(self, valor):\n        self.valor = valor\n\n--------------------------\n\n# 2. Propiedades vs getters/setters:\n## No pythónico - getters/setters innecesarios\n# PROBLEMA: Usar métodos get/set como en Java, hace el código verboso\n# SOLUCIÓN: Python prefiere acceso directo o propiedades con @property\nclass Persona:\n    def __init__(self, nombre):\n        self._nombre = nombre\n    \n    def get_nombre(self):\n        return self._nombre\n    \n    def set_nombre(self, nombre):\n        self._nombre = nombre\n\n## Pythónico - usar propiedades\nclass Persona:\n    def __init__(self, nombre):\n        self._nombre = nombre\n    \n    @property\n    def nombre(self):\n        return self._nombre\n    \n    @nombre.setter\n    def nombre(self, valor):\n        self._nombre = valor\n\n--------------------------\n\n# 3. Método __str__ vs print manual:\n## No pythónico\n# PROBLEMA: Método personalizado para mostrar info, no reutilizable\n# SOLUCIÓN: Usar __str__ para representación legible y __repr__ para depuración\nclass Producto:\n    def __init__(self, nombre, precio):\n        self.nombre = nombre\n        self.precio = precio\n    \n    def mostrar_info(self):\n        print(f\"{self.nombre}: ${self.precio}\")\n\n## Pythónico - usar __str__ y __repr__\nclass Producto:\n    def __init__(self, nombre, precio):\n        self.nombre = nombre\n        self.precio = precio\n    \n    def __str__(self):\n        return f\"{self.nombre}: ${self.precio}\"\n    \n    def __repr__(self):\n        return f\"Producto({self.nombre!r}, {self.precio})\"\n\n--------------------------\n\n# 4. Herencia y super():\n## No pythónico - llamada directa a clase padre\n# PROBLEMA: Llamar directamente al constructor padre por nombre, \n#            frágil si cambia la herencia\n# SOLUCIÓN: Usar super() que es más flexible y mantenible\nclass Animal:\n    def __init__(self, nombre):\n        self.nombre = nombre\n\nclass Perro(Animal):\n    def __init__(self, nombre, raza):\n        Animal.__init__(self, nombre)  # Rígido y propenso a errores\n        self.raza = raza\n\n## Pythónico - usar super()\nclass Perro(Animal):\n    def __init__(self, nombre, raza):\n        super().__init__(nombre)  # Flexible y mantenible\n        self.raza = raza\n\n--------------------------\n\n# 5. Métodos de clase vs funciones externas:\n## No pythónico\n# PROBLEMA: Función externa para crear instancias, rompe encapsulación\n# SOLUCIÓN: Usar @classmethod para constructores alternativos dentro de la clase\nclass Contador:\n    def __init__(self, valor=0):\n        self.valor = valor\n\ndef crear_contador_desde_string(texto):  # Función suelta, no cohesiva\n    return Contador(len(texto))\n\n## Pythónico - usar @classmethod\nclass Contador:\n    def __init__(self, valor=0):\n        self.valor = valor\n    \n    @classmethod\n    def desde_string(cls, texto):  # Constructor alternativo",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Código pythonco</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/comm_dockstrings.html",
+    "href": "qmd/python/comm_dockstrings.html",
+    "title": "23  Comentarios y dockstrings",
+    "section": "",
+    "text": "23.1 Cosas a evitar\nTrabajar en proyectos grandes y complejos requiere no solo habilidades técnicas sino también la capacidad de comunicar eficazmente dentro del equipo. Mantener la claridad a través de documentación precisa, como comentarios y docstrings, es esencial.\nEsto es similar a roxygen2 en R.\nSi trabajamos en VSCode, al invocar la función y pasar el mouse sobre esta, si dicha función tiene comentarios este te los va a mostrar en una pequeña ventana.",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Comentarios y dockstrings</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/comm_dockstrings.html#cosas-a-evitar",
+    "href": "qmd/python/comm_dockstrings.html#cosas-a-evitar",
+    "title": "23  Comentarios y dockstrings",
+    "section": "",
+    "text": "Redundancia: No repitas lo que ya es evidente en el nombre de la función o la operación realizada. Si el nombre de la función ya indica que calcula el área de un triángulo, un comentario adicional que repita esta información es innecesario.\nSobreinformar: Incluir demasiada información puede llegar a confundir en lugar de aclarar. Recuerda, los comentarios deben añadir valor al código, no abarrotarlo de explicaciones obvias.",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Comentarios y dockstrings</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/var_local_global.html",
+    "href": "qmd/python/var_local_global.html",
+    "title": "24  Variables locales y globales",
+    "section": "",
+    "text": "En el fascinante mundo de la programación, comprender la vida útil de una variable es vital para evitar errores comunes y mejorar el rendimiento del código. Las variables locales y globales juegan un papel crucial en este ámbito.\nMientras que las variables locales existen sólo dentro de un bloque de código determinado, las variables globales pueden ser accedidas desde cualquier parte del programa.\nLas variables nonlocal actúan como un puente entre variables locales y globales, permitiendo que las funciones internas accedan y modifiquen variables en funciones ‘encapsulantes’ externas.\n\ndef funcion_externa():\n    x = \"inicial\"\n\n    def funcion_interna():\n        nonlocal x\n        x = \"modificado\"\n        print(\"El valor en inner es\", x)\n\n    funcion_interna()\n    print(\"El valor afuera es\", x)\n\nfuncion_externa()\n\nEl valor en inner es modificado\nEl valor afuera es modificado",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Variables locales y globales</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/anotaciones.html",
+    "href": "qmd/python/anotaciones.html",
+    "title": "25  Anotaciones",
+    "section": "",
+    "text": "25.1 En variables\nLas anotaciones en Python son una herramienta que permite agregar información adicional sobre las variables, funciones y métodos que programamos. Aunque no restringen el tipo de datos que se puede almacenar en una variable, proporcionan un contexto más claro sobre el objetivo del código, beneficiando la legibilidad y comprensión, especialmente en entornos de trabajo en equipo.\nLas anotaciones para las variables consisten en especificar el tipo esperado usando dos puntos seguidos de la declaración del tipo. Por ejemplo, al crear un identificador para empleados, podríamos especificarlo de la siguiente manera:\nid1: int = 101\nid2: int = 102",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Anotaciones</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/anotaciones.html#en-funciones",
+    "href": "qmd/python/anotaciones.html#en-funciones",
+    "title": "25  Anotaciones",
+    "section": "25.2 En funciones",
+    "text": "25.2 En funciones\nEn las funciones, las anotaciones ayudan a definir los tipos de datos que los parámetros deben recibir y el tipo de dato que devolverá la función. La sintaxis se asemeja a esto:\n\n# Aqui estipulamos lo que se espera para los parametros\n# y el resultado deberia ser un entero\ndef sumar_ids_empleados(id1: int, id2: int) -&gt; int:\n    return id1 + id2",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Anotaciones</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/anotaciones.html#en-clases",
+    "href": "qmd/python/anotaciones.html#en-clases",
+    "title": "25  Anotaciones",
+    "section": "25.3 En clases",
+    "text": "25.3 En clases\nAl trabajar con clases, las anotaciones ayudan a definir tipos de los atributos y métodos.\n\nclass Empleado:\n    def __init__(self, nombre: str, edad: int, salario: float):\n        self.nombre = nombre\n        self.edad = edad\n        self.salario = salario\n\n    def presentarse(self) -&gt; str:\n        return f\"Hola, me llamo {self.nombre}. Tengo {self.edad} años.\"",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Anotaciones</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/anotaciones.html#optional-y-union",
+    "href": "qmd/python/anotaciones.html#optional-y-union",
+    "title": "25  Anotaciones",
+    "section": "25.4 Optional y Union",
+    "text": "25.4 Optional y Union\nLas librerías Optional y Union permiten mayor flexibilidad en las anotaciones al trabajar con funciones que pueden manejar múltiples tipos de datos o retornar None.\n\nfrom typing import Optional\n\ndef buscar_usuario(id_usuario: int) -&gt; Optional[str]:\n    \"\"\"\n    Busca un usuario por ID.\n    Retorna el nombre del usuario o None si no existe.\n    \"\"\"\n    usuarios = {1: \"Ana\", 2: \"Luis\", 3: \"María\"}\n    \n    if id_usuario in usuarios:\n        return usuarios[id_usuario]  # Retorna str\n    else:\n        return None  # Retorna None\n\n# Uso de la función\nnombre = buscar_usuario(1)  # tipo: Optional[str]\nprint(nombre)  # \"Ana\"\n\nnombre = buscar_usuario(99)  # tipo: Optional[str] \nprint(nombre)  # None",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>Anotaciones</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/python/validaciones.html",
+    "href": "qmd/python/validaciones.html",
+    "title": "26  Validaciones de datos",
+    "section": "",
+    "text": "La validación de tipos y manejo de excepciones en Python es esencial, sobre todo en proyectos colaborativos o críticos donde los datos externos juegan un papel crucial.\n\n\n\n\n\n\nImportant\n\n\n\nAunque Python permite especificar tipos de datos para los parámetros de una función (capítulo anterior), no garantiza que estos sean correctos en tiempo de ejecución.\n\n\nPara realizar esto utilizamos la función isinstance, que verifica si un objeto es una instancia de una clase específica o de cualquiera de las clases especificadas. Devuelve True si la condición se cumple, False en caso contrario.\n\ndef dividir(a, b):\n\n    # Validar que ambos valores rean enteros:\n    #  not isinstance(a, int) = \"Si no es entero\"\n    if not isinstance(a, int) or not isinstance(b, int):\n        raise TypeError(\"Ambos parámetros deben ser enteros\")\n        return None\n\n    # Validar que no se pueda dividir por 0\n    if b == 0:\n        raise ValueError(\"El divisor no puede ser cero\")\n    \n    # Retornar el resultado\n    return a / b\n\n# Error de tipo de dato\ndividir(a = 4, b = 2.2)\n# TypeError: Ambos parámetros deben ser enteros\n\n\ndividir(a = 4, b = 0)\n# ValueError: El divisor no puede ser cero",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Validaciones de datos</span>"
     ]
   }
 ]

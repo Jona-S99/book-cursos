@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>9&nbsp; Iteraciones y bucles – Apuntes varios</title>
+<title>16&nbsp; POO 1: clases – Apuntes varios</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,8 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../qmd/python/iteradores.html" rel="next">
-<link href="../../qmd/python/if_else_elif.html" rel="prev">
+<link href="../../qmd/python/poo2_herencias.html" rel="next">
+<link href="../../qmd/python/errores.html" rel="prev">
 <link href="../../static/images/cover.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -285,7 +285,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../qmd/python/1_intro_py.html">Python</a></li><li class="breadcrumb-item"><a href="../../qmd/python/bucles.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Iteraciones y bucles</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../qmd/python/1_intro_py.html">Python</a></li><li class="breadcrumb-item"><a href="../../qmd/python/poo1_clases.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">POO 1: clases</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -427,7 +427,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../qmd/python/bucles.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../qmd/python/bucles.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Iteraciones y bucles</span></span></a>
   </div>
 </li>
@@ -469,7 +469,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../qmd/python/poo1_clases.html" class="sidebar-item-text sidebar-link">
+  <a href="../../qmd/python/poo1_clases.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">POO 1: clases</span></span></a>
   </div>
 </li>
@@ -545,11 +545,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#for" id="toc-for" class="nav-link active" data-scroll-target="#for"><span class="header-section-number">9.1</span> For</a></li>
-  <li><a href="#range" id="toc-range" class="nav-link" data-scroll-target="#range"><span class="header-section-number">9.2</span> Range</a></li>
-  <li><a href="#condicionales-dentro-de-bucles" id="toc-condicionales-dentro-de-bucles" class="nav-link" data-scroll-target="#condicionales-dentro-de-bucles"><span class="header-section-number">9.3</span> Condicionales dentro de bucles</a></li>
-  <li><a href="#while" id="toc-while" class="nav-link" data-scroll-target="#while"><span class="header-section-number">9.4</span> while</a></li>
-  <li><a href="#break-y-continue" id="toc-break-y-continue" class="nav-link" data-scroll-target="#break-y-continue"><span class="header-section-number">9.5</span> break y continue</a></li>
+  <li><a href="#crear-una-clase" id="toc-crear-una-clase" class="nav-link active" data-scroll-target="#crear-una-clase"><span class="header-section-number">16.1</span> Crear una clase</a></li>
+  <li><a href="#self---analogía-con-un-espejo" id="toc-self---analogía-con-un-espejo" class="nav-link" data-scroll-target="#self---analogía-con-un-espejo"><span class="header-section-number">16.2</span> Self - Analogía con un espejo:</a></li>
   </ul>
 </nav>
     </div>
@@ -557,9 +554,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../qmd/python/1_intro_py.html">Python</a></li><li class="breadcrumb-item"><a href="../../qmd/python/bucles.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Iteraciones y bucles</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../qmd/python/1_intro_py.html">Python</a></li><li class="breadcrumb-item"><a href="../../qmd/python/poo1_clases.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">POO 1: clases</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Iteraciones y bucles</span></h1>
+<h1 class="title"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">POO 1: clases</span></h1>
 </div>
 
 
@@ -576,192 +573,89 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Aprender a automatizar el proceso de iteración en listas utilizando bucles y controles de iteración es fundamental para optimizar el manejo de datos en Python.</p>
-<section id="for" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="for"><span class="header-section-number">9.1</span> For</h2>
-<p>Un bucle <code>for</code> en Python te permite recorrer secuencias (listas, tuplas, cadenas, rangos, etc.) elemento a elemento, ejecutando un bloque de código para cada uno. Su sintaxis básica es:</p>
-<div id="2d01dddb" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> elemento <span class="kw">in</span> iterable:</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># bloque de código que usa “elemento”</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Sus características son:</p>
+<p>La Programación Orientada a Objetos es un paradigma de programación que organiza el diseño del software en torno a objetos. Los objetos son instancias de clases, que pueden tener atributos (datos) y métodos (funciones).</p>
+<p>Las clases actúan como plantillas genéricas que definen atributos y comportamientos. Por ejemplo, una clase “Persona” puede tener atributos como nombre, apellido y fecha de nacimiento.</p>
+<p>Conceptos claves:</p>
 <ul>
-<li><p><strong>Iterable:</strong> cualquier objeto que implemente el protocolo de iteración (list, tuple, str, dict, range, etc.).</p></li>
-<li><p><strong>Elemento:</strong> variable que toma, en cada iteración, el siguiente valor del iterable.</p></li>
-<li><p>El bloque indentado se ejecuta una vez por cada elemento.</p></li>
+<li><strong>Clase</strong>: Es un molde o plantilla que define los atributos y métodos que tendrán los objetos.</li>
+<li><strong>Objeto</strong>: Es una instancia de una clase.</li>
+<li><strong>Atributo</strong>: Es una variable que pertenece a una clase o a un objeto.</li>
+<li><strong>Método</strong>: Es una función que pertenece a una clase o a un objeto.</li>
+<li><strong>Herencia</strong>: Es un mecanismo por el cual una clase puede heredar atributos y métodos de otra clase.</li>
+<li><strong>Encapsulamiento</strong>: Es el concepto de ocultar los detalles internos de un objeto y exponer sólo lo necesario.</li>
+<li><strong>Polimorfismo</strong>: Es la capacidad de diferentes clases de ser tratadas como instancias de la misma clase a través de una interfaz común.</li>
 </ul>
-<p>Ejemplo con una lista</p>
-<div id="11c66845" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Lista</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Imprimir el valor de i</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> numbers:</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"El valor de i es: </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="crear-una-clase" class="level2" data-number="16.1">
+<h2 data-number="16.1" class="anchored" data-anchor-id="crear-una-clase"><span class="header-section-number">16.1</span> Crear una clase</h2>
+<p>Para crear una clase en Python, se utiliza la palabra reservada <code>class</code> seguida del nombre de la clase con <strong>la primera letra en mayúscula</strong> (es una buena práctica). Dentro de la clase, se define un constructor con la función <code>__init__</code>. Esta función inicializa los atributos del objeto.</p>
+<div id="168cdea9" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Difinicion de la clase</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Persona:</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Constructor de la clase:</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">#   - Es importante que tenga 'self'</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nombre, edad):</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.nombre <span class="op">=</span> nombre</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.edad <span class="op">=</span> edad</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> saludar(<span class="va">self</span>):</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Hola, mi nombre es </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>nombre<span class="sc">}</span><span class="ss"> y tengo </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>edad<span class="sc">}</span><span class="ss"> años"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Crearemos dos objetos utilzando esta clase:</p>
+<div id="af18d7e0" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear objetos de la clase Persona</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>persona1 <span class="op">=</span> Persona(nombre <span class="op">=</span> <span class="st">"Ana"</span>, edad <span class="op">=</span> <span class="dv">30</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>persona2 <span class="op">=</span> Persona(<span class="st">"Luis"</span>, <span class="dv">25</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Y utilizamos el método <code>saludar</code> de nuestra clase Persona: los métodos son funciones definidas dentro de una clase que operan sobre los objetos de la misma.</p>
+<div id="a7baa036" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>persona1.saludar()</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>persona2.saludar()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>El valor de i es: 1
-El valor de i es: 2
-El valor de i es: 3
-El valor de i es: 4
-El valor de i es: 5
-El valor de i es: 6</code></pre>
+<pre><code>Hola, mi nombre es Ana y tengo 30 años
+Hola, mi nombre es Luis y tengo 25 años</code></pre>
 </div>
 </div>
 </section>
-<section id="range" class="level2" data-number="9.2">
-<h2 data-number="9.2" class="anchored" data-anchor-id="range"><span class="header-section-number">9.2</span> Range</h2>
-<p>ELa función <code>range</code> permite iterar un conjunto de números fijos para producir índices o repeticiones controladas.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Es importante mencionar que range omite el último número solicitado.</p>
-</div>
-</div>
-<p>Ejemplos:</p>
-<div id="ff25a2d3" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Imprimit del 0 al 9, omitiendo el 10</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>0
-1
-2
-3
-4
-5
-6
-7
-8
-9</code></pre>
-</div>
-</div>
-<div id="b05f91c4" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Imprime del 3 al 9</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>, <span class="dv">10</span>):</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>3
-4
-5
-6
-7
-8
-9</code></pre>
-</div>
-</div>
-<div id="7087c7ad" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># range(start, stop, step)</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Imprime los pares entre 2 y 10 (excluyendo 10)</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>, <span class="dv">10</span>, <span class="dv">2</span>):</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(n)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>2
-4
-6
-8</code></pre>
-</div>
-</div>
-</section>
-<section id="condicionales-dentro-de-bucles" class="level2" data-number="9.3">
-<h2 data-number="9.3" class="anchored" data-anchor-id="condicionales-dentro-de-bucles"><span class="header-section-number">9.3</span> Condicionales dentro de bucles</h2>
-<p>También podemos utilizar condicionales <code>ìf</code>, <code>else</code> y <code>elif</code> al momento de usar los bucles for.</p>
-<p>Un ejemplo sencillo sería:</p>
-<div id="ebe4bf47" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>frutas <span class="op">=</span> [<span class="st">"manzana"</span>, <span class="st">"pera"</span>, <span class="st">"uva"</span>, <span class="st">"naranja"</span>, <span class="st">"tomate"</span>]</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> fruta <span class="kw">in</span> frutas:</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(fruta)</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> fruta <span class="op">==</span> <span class="st">"naranja"</span>:</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"naranja encontrada"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>manzana
-pera
-uva
-naranja
-naranja encontrada
-tomate</code></pre>
-</div>
-</div>
-<p>En tanto, un ejemplo más complejo sería:</p>
-<ol type="1">
-<li><p>El <code>for</code> itera <code>i</code> desde 0 hasta 9.</p></li>
-<li><p><code>if i % 2 == 0</code> comprueba si es par.</p></li>
-<li><p>Si no es par, <code>elif i % 3 == 0</code> comprueba si es múltiplo de 3.</p></li>
-<li><p><code>else</code> cubre todos los demás casos.</p></li>
-</ol>
-<div id="9e290bd6" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Recorremos del 0 al 9</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss"> es par"</span>)</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss"> es múltiplo de 3 pero no par"</span>)</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss"> es impar y no múltiplo de 3"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>0 es par
-1 es impar y no múltiplo de 3
-2 es par
-3 es múltiplo de 3 pero no par
-4 es par
-5 es impar y no múltiplo de 3
-6 es par
-7 es impar y no múltiplo de 3
-8 es par
-9 es múltiplo de 3 pero no par</code></pre>
-</div>
-</div>
-</section>
-<section id="while" class="level2" data-number="9.4">
-<h2 data-number="9.4" class="anchored" data-anchor-id="while"><span class="header-section-number">9.4</span> while</h2>
-<p>La instrucción <code>while</code> permite ejecutar un bloque de código de forma repetida <strong>mientras</strong> una condición booleana sea <code>True</code>. Es útil cuando no sabemos de antemano cuántas iteraciones haremos.</p>
-<p>En este ejemplo estamos diciendo “voy a imprimir el contar cuando sea menor a 5”</p>
-<div id="fd006083" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejemplo: contar de 0 a 4</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>contador <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> contador <span class="op">&lt;</span> <span class="dv">5</span>:</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Valor de contador: </span><span class="sc">{</span>contador<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    contador <span class="op">+=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Valor de contador: 0
-Valor de contador: 1
-Valor de contador: 2
-Valor de contador: 3
-Valor de contador: 4</code></pre>
-</div>
-</div>
-</section>
-<section id="break-y-continue" class="level2" data-number="9.5">
-<h2 data-number="9.5" class="anchored" data-anchor-id="break-y-continue"><span class="header-section-number">9.5</span> break y continue</h2>
-<p>La palabra clave <code>break</code> se utiliza para salir del bucle prematuramente, mientras que <code>continue</code> omite la iteración actual y pasa a la siguiente:</p>
-<div id="2beace70" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> numbers:</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">==</span> <span class="dv">3</span>:</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)  <span class="co"># Termina al llegar a 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>1
-2</code></pre>
-</div>
-</div>
-<div id="cbcd9d62" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> numbers:</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">==</span> <span class="dv">3</span>:</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)  <span class="co"># Omite el 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>1
-2
-4
-5
-6</code></pre>
-</div>
+<section id="self---analogía-con-un-espejo" class="level2" data-number="16.2">
+<h2 data-number="16.2" class="anchored" data-anchor-id="self---analogía-con-un-espejo"><span class="header-section-number">16.2</span> Self - Analogía con un espejo:</h2>
+<p>Encotré este ejemplo en un comentario el platzi.</p>
+<p>Imagina que cada objeto tiene un espejo. Cuando un objeto se mira en el espejo (self), ve sus propios atributos (nombre, color, nivel de batería) y puede actuar sobre ellos (caminar, hablar, cargar batería).</p>
+<p>Ejemplo con robot’s:</p>
+<div id="15ea3735" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Robot:</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nombre, color, nivel_bateria):</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.nombre <span class="op">=</span> nombre</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.color <span class="op">=</span> color</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.nivel_bateria <span class="op">=</span> nivel_bateria</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> caminar(<span class="va">self</span>):</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="va">self</span>.nivel_bateria <span class="op">&gt;</span> <span class="dv">10</span>:</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>nombre<span class="sc">}</span><span class="ss"> está caminando."</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.nivel_bateria <span class="op">-=</span> <span class="dv">10</span>  <span class="co"># Reduce la batería al caminar</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>nombre<span class="sc">}</span><span class="ss"> necesita recargar batería."</span>)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> hablar(<span class="va">self</span>, mensaje):</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>nombre<span class="sc">}</span><span class="ss"> dice: </span><span class="sc">{</span>mensaje<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> cargar_bateria(<span class="va">self</span>):</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.nivel_bateria <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>nombre<span class="sc">}</span><span class="ss"> ha recargado su batería al 100%."</span>)</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Creamos dos robots</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>mi_robot <span class="op">=</span> Robot(<span class="st">"R2-D2"</span>, <span class="st">"blanco"</span>, <span class="dv">100</span>)</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Hacemos que los robots realicen acciones</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>mi_robot.caminar()        <span class="co"># Output: R2-D2 está caminando.</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>mi_robot.hablar(<span class="st">"¡Hola!"</span>)  <span class="co"># Output: R2-D2 dice: ¡Hola!</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulamos que los robots caminan varias veces</span></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>): </span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>    mi_robot.caminar()</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>mi_robot.caminar()        <span class="co"># Output: R2-D2 necesita recargar batería.</span></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>mi_robot.cargar_bateria()  <span class="co"># Output: R2-D2 ha recargado su batería al 100%.</span></span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>mi_robot.caminar()        <span class="co"># Output: R2-D2 está caminando.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
@@ -1182,13 +1076,13 @@ Valor de contador: 4</code></pre>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../qmd/python/if_else_elif.html" class="pagination-link" aria-label="If, Else y Elif">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">If, Else y Elif</span></span>
+      <a href="../../qmd/python/errores.html" class="pagination-link" aria-label="Manejo de errores">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Manejo de errores</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../qmd/python/iteradores.html" class="pagination-link" aria-label="Iteradores y generadores">
-        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Iteradores y generadores</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../qmd/python/poo2_herencias.html" class="pagination-link" aria-label="POO 2: herencias">
+        <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">POO 2: herencias</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -65,6 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
+<link href="../../qmd/python/poo1_clases.html" rel="next">
 <link href="../../qmd/python/recursividad.html" rel="prev">
 <link href="../../static/images/cover.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
@@ -466,6 +467,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Manejo de errores</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/python/poo1_clases.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">POO 1: clases</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/python/poo2_herencias.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">POO 2: herencias</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/python/poo3_resumen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">POO: resumen</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/python/json.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Lectura de archivos JSON</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/python/librerias_modulos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Librerías y módulos</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/python/librerias_ejemplos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Librerías útiles de sistema</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/python/pythonic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Código pythonco</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/python/comm_dockstrings.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Comentarios y dockstrings</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/python/var_local_global.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Variables locales y globales</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/python/anotaciones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Anotaciones</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/python/validaciones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Validaciones de datos</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -522,7 +589,7 @@ Estructúra básica de un <code>try: except:</code>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div id="2a7d8788" class="cell" data-execution_count="1">
+<div id="20107923" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Código que puede generar una excepción</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    codigo_riesgoso()</span>
@@ -536,7 +603,7 @@ Estructúra básica de un <code>try: except:</code>
 </div>
 </div>
 <p>Una <strong>buena práctica</strong> es manejar el <code>TipoDeError</code> si lo conocemos con anterioridad. En el siguiente ejemplo podemos ver cómo se definen los errores dependiendo del valor que toma <code>numero</code>.</p>
-<div id="a1603c73" class="cell" data-execution_count="2">
+<div id="bc131c9c" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Lo ideal seria que el ejemplo sea con un input(), pero eso no es </span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># admisible usando quarto, asi que definire un valor X para el </span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ejemplo, de todas maneras quedo comentado.</span></span>
@@ -576,7 +643,7 @@ Operación finalizada</code></pre>
 <p>En ciertas ocasiones necesitarás errores personalizados para tu programa. Para levantar una excepción o error puedes utilizar <code>raise</code> y seguido de la clase del error con un mensaje personalizado.</p>
 <p>Levantar excepciones hace que nuestro código más explicativo de lo que debemos o no manejar.</p>
 <p>Por ejemplo, creemos una función que evalúe la edad de un usuario no sea negativa y que no sea menor de edad.</p>
-<div id="b957fc64" class="cell" data-execution_count="3">
+<div id="4e3b050d" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> verificar_edad(edad):</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> edad <span class="op">&lt;</span> <span class="dv">0</span>:</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">"La edad no puede ser negativa"</span>)</span>
@@ -597,7 +664,7 @@ Operación finalizada</code></pre>
 <p>Las excepciones tienen jerarquías, esto significa que están organizadas en una estructura de clases tipo árbol, donde unas excepciones son más generales (padre) y otras más específicas (hijas), heredando características de sus clases padre.</p>
 <p>Esta jerarquía es importante porque podemos tratar a una exepción padre y que englobará a todas las excepciones hijas.</p>
 <p>La clase base de todas las excepciones es <code>BaseException</code>, y de ahí se derivan clases más específicas:</p>
-<div id="c722c135" class="cell" data-execution_count="4">
+<div id="b44c3750" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> print_exception_hierarchy(exception_class, indent<span class="op">=</span><span class="dv">0</span>):</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">' '</span> <span class="op">*</span> indent <span class="op">+</span> exception_class.<span class="va">__name__</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> subclass <span class="kw">in</span> exception_class.__subclasses__():</span>
@@ -1378,6 +1445,9 @@ Operación finalizada</code></pre>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../../qmd/python/poo1_clases.html" class="pagination-link" aria-label="POO 1: clases">
+        <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">POO 1: clases</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>9&nbsp; Iteraciones y bucles – Apuntes varios</title>
+<title>21&nbsp; Librerías útiles de sistema – Apuntes varios</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,8 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../qmd/python/iteradores.html" rel="next">
-<link href="../../qmd/python/if_else_elif.html" rel="prev">
+<link href="../../qmd/python/pythonic.html" rel="next">
+<link href="../../qmd/python/librerias_modulos.html" rel="prev">
 <link href="../../static/images/cover.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -285,7 +285,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../qmd/python/1_intro_py.html">Python</a></li><li class="breadcrumb-item"><a href="../../qmd/python/bucles.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Iteraciones y bucles</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../qmd/python/1_intro_py.html">Python</a></li><li class="breadcrumb-item"><a href="../../qmd/python/librerias_ejemplos.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Librerías útiles de sistema</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -427,7 +427,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../qmd/python/bucles.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../qmd/python/bucles.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Iteraciones y bucles</span></span></a>
   </div>
 </li>
@@ -499,7 +499,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../qmd/python/librerias_ejemplos.html" class="sidebar-item-text sidebar-link">
+  <a href="../../qmd/python/librerias_ejemplos.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Librerías útiles de sistema</span></span></a>
   </div>
 </li>
@@ -545,11 +545,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#for" id="toc-for" class="nav-link active" data-scroll-target="#for"><span class="header-section-number">9.1</span> For</a></li>
-  <li><a href="#range" id="toc-range" class="nav-link" data-scroll-target="#range"><span class="header-section-number">9.2</span> Range</a></li>
-  <li><a href="#condicionales-dentro-de-bucles" id="toc-condicionales-dentro-de-bucles" class="nav-link" data-scroll-target="#condicionales-dentro-de-bucles"><span class="header-section-number">9.3</span> Condicionales dentro de bucles</a></li>
-  <li><a href="#while" id="toc-while" class="nav-link" data-scroll-target="#while"><span class="header-section-number">9.4</span> while</a></li>
-  <li><a href="#break-y-continue" id="toc-break-y-continue" class="nav-link" data-scroll-target="#break-y-continue"><span class="header-section-number">9.5</span> break y continue</a></li>
+  <li><a href="#os" id="toc-os" class="nav-link active" data-scroll-target="#os"><span class="header-section-number">21.1</span> os</a>
+  <ul class="collapse">
+  <li><a href="#directorio-actual" id="toc-directorio-actual" class="nav-link" data-scroll-target="#directorio-actual">Directorio actual</a></li>
+  <li><a href="#listar-los-archivos-del-directorio" id="toc-listar-los-archivos-del-directorio" class="nav-link" data-scroll-target="#listar-los-archivos-del-directorio">Listar los archivos del directorio</a></li>
+  </ul></li>
+  <li><a href="#math" id="toc-math" class="nav-link" data-scroll-target="#math"><span class="header-section-number">21.2</span> math</a></li>
+  <li><a href="#random" id="toc-random" class="nav-link" data-scroll-target="#random"><span class="header-section-number">21.3</span> random</a></li>
+  <li><a href="#statistics" id="toc-statistics" class="nav-link" data-scroll-target="#statistics"><span class="header-section-number">21.4</span> statistics</a></li>
   </ul>
 </nav>
     </div>
@@ -557,9 +560,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../qmd/python/1_intro_py.html">Python</a></li><li class="breadcrumb-item"><a href="../../qmd/python/bucles.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Iteraciones y bucles</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../qmd/python/1_intro_py.html">Python</a></li><li class="breadcrumb-item"><a href="../../qmd/python/librerias_ejemplos.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Librerías útiles de sistema</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Iteraciones y bucles</span></h1>
+<h1 class="title"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Librerías útiles de sistema</span></h1>
 </div>
 
 
@@ -576,191 +579,181 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Aprender a automatizar el proceso de iteración en listas utilizando bucles y controles de iteración es fundamental para optimizar el manejo de datos en Python.</p>
-<section id="for" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="for"><span class="header-section-number">9.1</span> For</h2>
-<p>Un bucle <code>for</code> en Python te permite recorrer secuencias (listas, tuplas, cadenas, rangos, etc.) elemento a elemento, ejecutando un bloque de código para cada uno. Su sintaxis básica es:</p>
-<div id="2d01dddb" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> elemento <span class="kw">in</span> iterable:</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># bloque de código que usa “elemento”</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="os" class="level2" data-number="21.1">
+<h2 data-number="21.1" class="anchored" data-anchor-id="os"><span class="header-section-number">21.1</span> os</h2>
+<p>Interactuar con el sistema operativo desde Python es una tarea que se hace mucho más sencilla gracias a la librería <code>OS</code>. Sin necesidad de instalaciones adicionales, esta herramienta permite automatizar y manejar archivos y directorios, lo que simplifica enormemente el flujo de trabajo. Veamos algunos ejemplos prácticos de su uso.</p>
+<div id="cb44b0e7" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Importamos la libreria</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Sus características son:</p>
-<ul>
-<li><p><strong>Iterable:</strong> cualquier objeto que implemente el protocolo de iteración (list, tuple, str, dict, range, etc.).</p></li>
-<li><p><strong>Elemento:</strong> variable que toma, en cada iteración, el siguiente valor del iterable.</p></li>
-<li><p>El bloque indentado se ejecuta una vez por cada elemento.</p></li>
-</ul>
-<p>Ejemplo con una lista</p>
-<div id="11c66845" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Lista</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Imprimir el valor de i</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> numbers:</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"El valor de i es: </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>El valor de i es: 1
-El valor de i es: 2
-El valor de i es: 3
-El valor de i es: 4
-El valor de i es: 5
-El valor de i es: 6</code></pre>
+<section id="directorio-actual" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="directorio-actual">Directorio actual</h3>
+<div id="b01a2b58" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>os.getcwd()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>'/Users/jona/Github/book-cursos/qmd/python'</code></pre>
 </div>
 </div>
 </section>
-<section id="range" class="level2" data-number="9.2">
-<h2 data-number="9.2" class="anchored" data-anchor-id="range"><span class="header-section-number">9.2</span> Range</h2>
-<p>ELa función <code>range</code> permite iterar un conjunto de números fijos para producir índices o repeticiones controladas.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Es importante mencionar que range omite el último número solicitado.</p>
-</div>
-</div>
-<p>Ejemplos:</p>
-<div id="ff25a2d3" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Imprimit del 0 al 9, omitiendo el 10</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="listar-los-archivos-del-directorio" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="listar-los-archivos-del-directorio">Listar los archivos del directorio</h3>
+<div id="1c27e6d1" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Listamos los archivos que comienzan con "poo" usando</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># list comprehension</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>poo <span class="op">=</span> [files <span class="cf">for</span> files <span class="kw">in</span> os.listdir(<span class="st">"."</span>) <span class="cf">if</span> files.startswith(<span class="st">"poo"</span>)]</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Los archivos de POO son: </span><span class="sc">{</span>poo<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>0
-1
-2
-3
-4
-5
-6
-7
-8
-9</code></pre>
+<pre><code>Los archivos de POO son: ['poo1_clases.qmd', 'poo1_clases.html', 'poo3_resumen.html', 'poo2_herencias.html', 'poo3_resumen.qmd', 'poo2_herencias.qmd']</code></pre>
 </div>
 </div>
-<div id="b05f91c4" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Imprime del 3 al 9</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>, <span class="dv">10</span>):</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>3
-4
-5
-6
-7
-8
-9</code></pre>
-</div>
-</div>
-<div id="7087c7ad" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># range(start, stop, step)</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Imprime los pares entre 2 y 10 (excluyendo 10)</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>, <span class="dv">10</span>, <span class="dv">2</span>):</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(n)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>2
-4
-6
-8</code></pre>
-</div>
-</div>
-</section>
-<section id="condicionales-dentro-de-bucles" class="level2" data-number="9.3">
-<h2 data-number="9.3" class="anchored" data-anchor-id="condicionales-dentro-de-bucles"><span class="header-section-number">9.3</span> Condicionales dentro de bucles</h2>
-<p>También podemos utilizar condicionales <code>ìf</code>, <code>else</code> y <code>elif</code> al momento de usar los bucles for.</p>
-<p>Un ejemplo sencillo sería:</p>
-<div id="ebe4bf47" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>frutas <span class="op">=</span> [<span class="st">"manzana"</span>, <span class="st">"pera"</span>, <span class="st">"uva"</span>, <span class="st">"naranja"</span>, <span class="st">"tomate"</span>]</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> fruta <span class="kw">in</span> frutas:</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(fruta)</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> fruta <span class="op">==</span> <span class="st">"naranja"</span>:</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"naranja encontrada"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>manzana
-pera
-uva
-naranja
-naranja encontrada
-tomate</code></pre>
-</div>
-</div>
-<p>En tanto, un ejemplo más complejo sería:</p>
+<p>¿Cómo funciona esta list comprehension?</p>
 <ol type="1">
-<li><p>El <code>for</code> itera <code>i</code> desde 0 hasta 9.</p></li>
-<li><p><code>if i % 2 == 0</code> comprueba si es par.</p></li>
-<li><p>Si no es par, <code>elif i % 3 == 0</code> comprueba si es múltiplo de 3.</p></li>
-<li><p><code>else</code> cubre todos los demás casos.</p></li>
+<li><code>os.listdir(".")</code>:</li>
 </ol>
-<div id="9e290bd6" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Recorremos del 0 al 9</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss"> es par"</span>)</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss"> es múltiplo de 3 pero no par"</span>)</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss"> es impar y no múltiplo de 3"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Devuelve una lista con todos los archivos y carpetas del directorio actual (el punto “.” representa el directorio actual).</li>
+</ul>
+<ol start="2" type="1">
+<li><code>for files in ...</code>:</li>
+</ol>
+<ul>
+<li>Itera sobre cada elemento (archivo/carpeta) de la lista que devuelve os.listdir(“.”)</li>
+<li>La variable files toma el valor de cada nombre de archivo en cada iteración.</li>
+</ul>
+<ol start="3" type="1">
+<li><code>if files.startswith("poo")</code>:</li>
+</ol>
+<ul>
+<li>Condición que filtra solo los archivos cuyo nombre comience con “poo”</li>
+<li><code>startswith()</code> devuelve True si el string comienza con el prefijo especificado.</li>
+</ul>
+<ol start="4" type="1">
+<li><code>files (al inicio)</code>:</li>
+</ol>
+<ul>
+<li>Es lo que se incluye en la lista final para cada elemento que cumple la condición.</li>
+</ul>
+</section>
+</section>
+<section id="math" class="level2" data-number="21.2">
+<h2 data-number="21.2" class="anchored" data-anchor-id="math"><span class="header-section-number">21.2</span> math</h2>
+<p>Cuando trabajamos con cálculos matemáticos en Python, la librería Math es una aliada invaluable. Ofrece una serie de funciones y constantes matemáticas, ideal para conseguir resultados precisos.</p>
+<div id="49c1454f" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Ejemplos de uso de la librería math:</p>
+<div id="21d39b09" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Calcular el area y perimetro de una circunferencia</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>radio <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>area <span class="op">=</span> <span class="bu">round</span>((math.pi <span class="op">*</span> radio <span class="op">**</span> <span class="dv">2</span>), <span class="dv">1</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>perimetro <span class="op">=</span> <span class="bu">round</span>((<span class="dv">2</span> <span class="op">*</span> math.pi <span class="op">*</span> radio), <span class="dv">1</span>) </span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"El área de un círculo con radio 5 es de: </span><span class="sc">{</span>area<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"El perímetro de un círculo con radio 5 es de: </span><span class="sc">{</span>perimetro<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>0 es par
-1 es impar y no múltiplo de 3
-2 es par
-3 es múltiplo de 3 pero no par
-4 es par
-5 es impar y no múltiplo de 3
-6 es par
-7 es impar y no múltiplo de 3
-8 es par
-9 es múltiplo de 3 pero no par</code></pre>
+<pre><code>El área de un círculo con radio 5 es de: 78.5
+El perímetro de un círculo con radio 5 es de: 31.4</code></pre>
 </div>
 </div>
 </section>
-<section id="while" class="level2" data-number="9.4">
-<h2 data-number="9.4" class="anchored" data-anchor-id="while"><span class="header-section-number">9.4</span> while</h2>
-<p>La instrucción <code>while</code> permite ejecutar un bloque de código de forma repetida <strong>mientras</strong> una condición booleana sea <code>True</code>. Es útil cuando no sabemos de antemano cuántas iteraciones haremos.</p>
-<p>En este ejemplo estamos diciendo “voy a imprimir el contar cuando sea menor a 5”</p>
-<div id="fd006083" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejemplo: contar de 0 a 4</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>contador <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> contador <span class="op">&lt;</span> <span class="dv">5</span>:</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Valor de contador: </span><span class="sc">{</span>contador<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    contador <span class="op">+=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="random" class="level2" data-number="21.3">
+<h2 data-number="21.3" class="anchored" data-anchor-id="random"><span class="header-section-number">21.3</span> random</h2>
+<p>La generación de números y elecciones aleatorias es una tarea comúnmente requerida, y la librería Random en Python nos ofrece varias herramientas útiles para este propósito.</p>
+<div id="9a7aff6d" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Ejemplos de uso de la librería random:</p>
+<div id="6bc48ffe" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Generar un numero entero aleatorio entre 1 y 10</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Número entero aleatorio: </span><span class="sc">{</span>random<span class="sc">.</span>randint(<span class="dv">1</span>, <span class="dv">10</span>)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Elegir aleatoriamente</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co">## Con lista</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>lista <span class="op">=</span> [<span class="st">'manzana'</span>, <span class="st">'banana'</span>, <span class="st">'cereza'</span>]</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Elegir un elemento de una lista: "</span>, random.choice(lista))</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co">## Con tupla</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>tupla <span class="op">=</span> (<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>)</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Elegir un elemento de una tupla: "</span>,random.choice(tupla))  <span class="co"># ej: 30</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="co">## Con string</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>cadena <span class="op">=</span> <span class="st">"ABCDEFG"</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Elegir un elemento de una string: "</span>,random.choice(cadena))  <span class="co"># ej: 'D'</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="co">## Con range</span></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>rango <span class="op">=</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">11</span>)  <span class="co"># números del 1 al 10</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Elegir un elemento de un rango: "</span>,random.choice(rango))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Valor de contador: 0
-Valor de contador: 1
-Valor de contador: 2
-Valor de contador: 3
-Valor de contador: 4</code></pre>
+<pre><code>Número entero aleatorio: 4
+Elegir un elemento de una lista:  banana
+Elegir un elemento de una tupla:  30
+Elegir un elemento de una string:  C
+Elegir un elemento de un rango:  1</code></pre>
+</div>
+</div>
+<p>Ejemplo de <code>shuffle</code></p>
+<div id="1133bcca" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Lista original</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>cartas <span class="op">=</span> [<span class="st">'As'</span>, <span class="st">'Rey'</span>, <span class="st">'Reina'</span>, <span class="st">'Jota'</span>, <span class="st">'10'</span>, <span class="st">'9'</span>]</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original:"</span>, cartas)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Mezclar la lista</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>random.shuffle(cartas)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Mezclada:"</span>, cartas)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Original: ['As', 'Rey', 'Reina', 'Jota', '10', '9']
+Mezclada: ['As', 'Reina', 'Rey', '10', '9', 'Jota']</code></pre>
 </div>
 </div>
 </section>
-<section id="break-y-continue" class="level2" data-number="9.5">
-<h2 data-number="9.5" class="anchored" data-anchor-id="break-y-continue"><span class="header-section-number">9.5</span> break y continue</h2>
-<p>La palabra clave <code>break</code> se utiliza para salir del bucle prematuramente, mientras que <code>continue</code> omite la iteración actual y pasa a la siguiente:</p>
-<div id="2beace70" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> numbers:</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">==</span> <span class="dv">3</span>:</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)  <span class="co"># Termina al llegar a 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>1
-2</code></pre>
+<section id="statistics" class="level2" data-number="21.4">
+<h2 data-number="21.4" class="anchored" data-anchor-id="statistics"><span class="header-section-number">21.4</span> statistics</h2>
+<p>En el análisis de datos, es fundamental comprender y utilizar diversas medidas estadísticas para interpretar correctamente la información. Estas medidas nos permiten resumir y describir las características principales de un conjunto de datos, facilitando la toma de decisiones informadas.</p>
+<div id="6d48475b" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statistics</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-<div id="cbcd9d62" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> numbers:</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">==</span> <span class="dv">3</span>:</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)  <span class="co"># Omite el 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Algunas de las medidas estadísticas más comunes y sus fórmulas asociadas son las siguientes:</p>
+<div id="29fb2d4b" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Datos para ejemplo:</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>datos <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>]</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Media aritmetica: `.mean()`</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"La media es: "</span>, statistics.mean(datos))</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Mediana (valor central): `.median()`</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"La mediana es: "</span>, statistics.median(datos))</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Moda (valor mas frecuente): `.mode()`</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"La moda es: "</span>, statistics.mode(datos))</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Desviacion estandar: `.stdev()`</span></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"La desviación estándar es: "</span>, <span class="bu">round</span>((statistics.stdev(datos)), <span class="dv">2</span>))</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Varianza de la muestra: `.variance()`</span></span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"La varianza es: "</span>, <span class="bu">round</span>((statistics.variance(datos)), <span class="dv">2</span>))</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Valor minimo: `.min()`</span></span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"El valor mínimo es: "</span>, <span class="bu">min</span>(datos))</span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Valor maximo: `.max()`</span></span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"El valor máximo es: "</span>, <span class="bu">max</span>(datos))</span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Cuartiles general: `.quantiles()`</span></span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Los cuartiles son: "</span>, statistics.quantiles(datos, n <span class="op">=</span> <span class="dv">4</span>))</span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Primer cuartil: [N] segun index</span></span>
+<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"El primer cuartil es: "</span>, statistics.quantiles(datos, n <span class="op">=</span> <span class="dv">4</span>)[<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>1
-2
-4
-5
-6</code></pre>
+<pre><code>La media es:  5.363636363636363
+La mediana es:  5
+La moda es:  4
+La desviación estándar es:  2.91
+La varianza es:  8.45
+El valor mínimo es:  1
+El valor máximo es:  10
+Los cuartiles son:  [3.0, 5.0, 8.0]
+El primer cuartil es:  3.0</code></pre>
 </div>
 </div>
 
@@ -1182,13 +1175,13 @@ Valor de contador: 4</code></pre>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../qmd/python/if_else_elif.html" class="pagination-link" aria-label="If, Else y Elif">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">If, Else y Elif</span></span>
+      <a href="../../qmd/python/librerias_modulos.html" class="pagination-link" aria-label="Librerías y módulos">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Librerías y módulos</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../qmd/python/iteradores.html" class="pagination-link" aria-label="Iteradores y generadores">
-        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Iteradores y generadores</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../qmd/python/pythonic.html" class="pagination-link" aria-label="Código pythonco">
+        <span class="nav-page-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Código pythonco</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
