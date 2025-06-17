@@ -49,3 +49,28 @@ procesar_pago()
 
 Los decoradores anidados son una técnica avanzada en Python que permite aplicar múltiples decoradores a una sola función. Son herramientas poderosas que facilitan la modificación del comportamiento de las funciones de manera dinámica y reutilizable. Esta capacidad de anidar decoradores y hacer uso de parámetros adicionales es especialmente útil en proyectos grandes y complejos que requieren control sobre el flujo de ejecución.
 
+Ejemplo:
+
+```{python}
+def negrita(func):
+    def wrapper():
+        resultado = func()
+        return f"**{resultado}**"
+    return wrapper
+
+def cursiva(func):
+    def wrapper():
+        resultado = func()
+        return f"*{resultado}*"
+    return wrapper
+
+# Decoradores anidados
+@negrita     # Segundo en activarse
+@cursiva     # Primero en activarse
+def mensaje():
+    return "Hola mundo"
+
+print(mensaje())
+```
+
+Los decoradores se ejecutan de abajo hacia arriba, como si estuvieras poniendo capas: en el ejemplo, primero la cursiva, luego la negrita encima.
