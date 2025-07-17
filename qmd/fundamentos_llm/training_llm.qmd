@@ -1,0 +1,72 @@
+---
+jupyter: python3
+---
+
+# Entrenamiento de un LLM
+
+Entrenar un modelo de lenguaje grande (Large Language Model, LLM) implica un proceso extenso que combina grandes volúmenes de información, potente infraestructura tecnológica y variadas técnicas de aprendizaje automático. Comprender cómo se llevan a cabo estos pasos ayuda a aprovechar al máximo el potencial de un LLM para resolver distintos problemas o tareas específicas.
+
+## Corpus o conjunto de entrenamiento
+
+El conjunto de entrenamiento o corpus es la base esencial del desarrollo de un LLM. Este dataset determina directamente qué problemas puede ayudar a resolver nuestro modelo.
+
+- El corpus está compuesto por textos recolectados, generalmente vía web scraping.
+
+- Para tener datasets de calidad, se requiere infraestructura tecnológica robusta y habilidades humanas para revisión y limpieza, pues esta información puede venir con elementos que no son atingentes al problema que queremos resolver.
+
+- Este corpus puede llegar a tener tamaños inmensos. Por ejemplo, el modelo Lama 4 de Meta utiliza cerca de treinta trillones de tokens, equivalentes aproximadamente a ciento nueve terabytes de información textual.
+
+## Tokenización
+
+Una vez que tenemos listo nuestro corpus, lo debemos tokenizar para que sea reconocible por los computadores, es decir, transformamos las palabras a números.
+
+
+## Arquitectura de un LLM
+
+Una vez tokenizados los datos, seleccionamos o desarrollamos la arquitectura a usar:
+
+- La arquitectura varía según el uso específico deseado.
+
+- Ejemplo: GPT-2 consiste principalmente en capas de atención y capas de multilayer perceptron apiladas.
+
+- Empresas como Meta hacen pública su arquitectura (open source), facilitando su replicación y adaptación.
+
+
+## Entrenamiento de un LLM
+
+Esta es la parte más costosa. Requiere miles de GPUs o TPUs distribuidos en centros especializados de procesamiento. Cada GPU procesa fragmentos del corpus y reporta resultados, errores y ajustes al servidor central. 
+
+Este proceso es altamente repetitivo y dura mucho tiempo, dependiendo del volumen de datos y tamaño del LLM.
+
+
+## Post Entrenamiento
+
+Al finalizar el entrenamiento básico, el LLM aún es general. Para tareas específicas, se ejecuta una fase adicional conocida como **fine tuning**. El tiempo de ajuste de este paso es considerablemente menor al entrenamiento inicial.
+
+Esta técnica consiste en reentrenar parcialmente el modelo con datos específicos para lograr un modelo espacilizado en ciertas áreas.
+
+Por ejemplo: adaptación con imágenes médicas o consultas financieras.
+
+
+## RLHF
+
+El Reinforcement Learning with Human Feedback (RLHF) introduce retroalimentación humana para ajustar el modelo según nuestras necesidades y expectativas:
+
+¿Cómo funciona RLHF?
+
+1. El modelo genera respuestas a preguntas o tareas.
+
+2. Humanos evalúan esas respuestas, indicando cuáles son mejores o más apropiadas.
+
+3. El modelo recibe recompensas (o penalizaciones) según la evaluación humana, y ajusta sus parámetros para maximizar las respuestas preferidas por las personas.
+
+4. Este proceso se repite, permitiendo que el modelo aprenda comportamientos alineados con las expectativas y valores humanos.
+
+Como es de esperar, este proceso es tedioso y lento, por eso, se han creado herramientas de **Reinforcement Learning offline (no supervisado)**.
+
+
+## RL Offline
+
+En estas técnicas, el modelo aprende a partir de un conjunto de datos de experiencias previas (respuestas y recompensas ya almacenadas), sin requerir interacción en tiempo real ni retroalimentación humana directa durante el entrenamiento. Con refuerzos positivos y negativos (aprendizaje por refuerzo clásico).
+
+Un ejemplo puede ser un agente que aprende a jugar un videojuego solo, recibiendo **puntos por ganar** y **penalizaciones por perder**, sin que un humano intervenga para decirle si su comportamiento es bueno o malo. Este proceso de "cuándo gana y cuándo pierde" lo programa un humano.

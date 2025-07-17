@@ -1,0 +1,25 @@
+---
+jupyter: python3
+fig-cap-location: top
+---
+
+# RoPE
+
+RoPE (Rotary Position Embedding o Rotary Position Encoding) es una técnica utilizada en modelos de lenguaje como los Transformers para que el modelo pueda saber en qué posición está cada palabra o token dentro de una secuencia de texto.
+
+::: {.callout-note}
+Rotary Position Embedding y Rotary Position Encoding son la misma técnica, pero con distinto nombre. En la mayoría de los artículos y recursos técnicos se usa Rotary Position Embedding, pero el concepto es el mismo: una forma de incorporar la posición en los tokens a través de rotaciones en el espacio vectorial.
+:::
+
+A diferencia de los métodos tradicionales que suman información de posición a los vectores de las palabras, RoPE incorpora la posición aplicando rotaciones matemáticas en el espacio vectorial de cada token. 
+
+::: {}
+Funcionamiento de RoPE:
+![](../../static/images/fundamentos_llm/RoPE_ej.jpg)
+:::
+
+En este ejemplo, primeramente se guardó la posición de "perro", y luego identifica "cuánto se mueve" al entrar en contacto con otras palabras.
+
+Esto permite que el modelo entienda mejor el orden y la relación entre las palabras, incluso en secuencias largas, y mejora su capacidad para captar patrones y dependencias en el texto. 
+
+En resumen, RoPE ayuda a que el modelo “sepa” dónde está cada palabra y cómo se relaciona con las demás, usando rotaciones en vez de sumas, lo que resulta más eficiente y flexible para el aprendizaje.

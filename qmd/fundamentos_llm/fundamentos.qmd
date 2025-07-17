@@ -1,0 +1,108 @@
+---
+jupyter: python3
+---
+
+# Fundamentos de los LLM
+
+## Conceptos clave
+
+- **Tokenización:** Proceso de dividir texto en partes más pequeñas (tokens), como palabras o subpalabras, para su análisis.
+
+- **Vectorización:** Asignación de vectores a cada token, permitiendo que las palabras se representen numéricamente.
+
+- **Embeddings:** Técnica que organiza los vectores en un espacio vectorial, capturando relaciones semánticas. Permite realizar operaciones matemáticas entre palabras, como sumar o restar vectores.
+
+- **Transformers:** Arquitectura utilizada en los LLMs que facilita el procesamiento de texto mediante atención y paralelismo.
+
+
+### Ejemplos prácticos utilizando python
+
+1. Librería transformers
+
+::: {.callout-note}
+La librería transformers es un paquete de Python desarrollado por Hugging Face que facilita el uso de modelos de lenguaje avanzados (como BERT, GPT, T5, etc.) para tareas de procesamiento de lenguaje natural (NLP).
+
+Posee compatibilidad con PyTorch y TensorFlow. Además, posee funciones eficientes de tokenización.
+:::
+
+```{python}
+pip install transformers
+```
+
+2. Tokenizador
+
+```{python}
+# LLamamos a la clase BertTokenizer
+from transformers import BertTokenizer
+
+# Definimos un modelo para tokenizar
+# Debe descargar el modelo: tokeniza por subpalabras
+tokenizador = BertTokenizer.from_pretrained("bert-base-uncased")
+```
+
+3. Aplicación de tokenizador
+
+```{python}
+# Aplicar tokenizador
+token = tokenizador.tokenize("Hola, ¿cómo estás?")
+print(f'La frase tokenizada es: {token}')
+```
+
+
+4. Embeddings
+
+Para crear los embeddings usaremos la librería PyTorch, que es una biblioteca de Python de código abierto desarrollada por Facebook para el cálculo numérico y el aprendizaje profundo (deep learning). 
+
+Esta nos permite crear y entrenar redes neuronales de manera flexible y eficiente.
+
+```{python}
+pip install torch
+```
+
+```{python}
+# Importamos torch
+import torch
+
+# Importamos el modelo Bert desde transformers
+from transformers import BertModel
+```
+
+Utilizaremos un modelo pre entrenado para el ejemplo (se va a descargae). Este modelo descarga `safetensors`, que es un formato de archivo desarrollado por Hugging Face para almacenar y cargar los pesos (parámetros) de modelos de machine learning de forma más segura y eficiente que el formato tradicional .pt o .bin de PyTorch.
+
+```{python}
+model = BertModel.from_pretrained("bert-base-uncased")
+```
+
+Cuando ya tenemos nuestro modelo, podemos crear nuestros token y transformarlos en vectores, para luego crear los embbeddings.
+
+```{python}
+# Convertir palabras a ids
+#  - El resultado es una lista, así que obtenemos el primer elemento (0)
+#    para recuperar el resultado
+king_token_id = tokenizador.convert_tokens_to_ids(["king"])[0]
+man_token_id = tokenizador.convert_tokens_to_ids(["man"])[0]
+woman_token_id = tokenizador.convert_tokens_to_ids(["woman"])[0]
+queen_token_id = tokenizador.convert_tokens_to_ids(["queen"])[0]
+
+# Creamos los embeddings usando el modelo descargado.
+# - Sera un embedding de palabras (se define porque tambien puede ser
+#   de audio o de imagenes) utilizando el metodo `word_embeddings`
+# - Ademas, usamos la funcion `tensor()` para convertir el vector a 
+#   un tensor
+king_embedding = model.embeddings.word_embeddings(torch.tensor(king_token_id))
+man_embedding = model.embeddings.word_embeddings(torch.tensor([king_token_id]))
+woman_embedding = model. embeddings.word_embeddings(torch.tensor([king_token_id]))
+queen_embedding = model. embeddings.word_embeddings(torch. tensor([queen_token_id]))
+```
+
+
+Una vez que construimos los embeddings, podemos comenzar a realizar operaciones matemáticas con ellos, como por ejemplo, obtener la similitud entre embeddigs: utilizaremos torch y la funcion coseno
+
+Los resultados de la función coseno van del -1 al 1, donde, mientas más cerca de 1, significa que los vectores son similares, y si están más cerca de -1 es que son más diferentes entre sí
+
+```{python}
+# Definimos la funcion coseno en una variable
+cos = torch.nn.CosineSimilarity()
+
+cos(king_embedding, queen_embedding)
+```
