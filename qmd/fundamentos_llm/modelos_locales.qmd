@@ -1,0 +1,35 @@
+---
+jupyter: python3
+---
+
+# Modelos locales
+
+Para ejecutar modelos de lenguaje forma local necesitamos ciertas herramientas:
+
+## [Ollama](https://ollama.com/)
+
+La página de Ollama contiene diversos modelos para descargar y correr localemente. En la descripción de cada modelo veremos ciertos elementos que nos indican las características del mismo.
+
+
+## ¿Qué es ExoLabs y cómo potencia el uso local de LLMs?
+
+ExoLabs permite conectar múltiples computadoras creando un clúster local de potencia computacional compartida:
+
+Concepto principal: Usa redes peer-to-peer (P2P) como la tecnología detrás de plataformas como Torrent para compartir datos y tareas entre máquinas conectadas.
+Ventajas: Reduce costos al utilizar varias computadoras económicas, mejora la privacidad (importante en sectores bancarios o jurídicos) y permite controlar específicamente las configuraciones y costos operacionales.
+
+## ¿Cómo montar un clúster local con ExoLabs?
+
+Estos pasos específicos son clave para conectar varias máquinas con ExoLabs:
+
+- **Equipamiento**: necesitas diversas computadoras conectadas mediante switch y router, pudiendo combinar conexiones Ethernet y WiFi.
+
+- **Configuración** y ejecución: instala ExoLabs en cada máquina; al ejecutar, crea automáticamente una red entre ellas mostrando información como teraflops o memoria disponible.
+
+- **Funcionamiento**: Cada computadora aporta sus capacidades (CPU, GPU, memoria) a la red, haciendo posible ejecutar modelos de gran tamaño que de otro modo requerirían hardware costoso.
+
+## ¿Cuáles son las ventajas concretas de ejecutar LLM en local?
+
+- **Privacidad total**: Los datos sensibles permanecen en tu entorno, clave para industrias sensibles al manejo de información.
+
+- **Control absoluto**: Define exactamente qué quieres ejecutar, cuánto gastar, y cómo ajustar o optimizar tu modelo específicamente para tu caso de uso con técnicas como el fine tuning.
