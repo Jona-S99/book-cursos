@@ -24,6 +24,7 @@ book:
 
   chapters:
     - index.qmd
+    - part: qmd/python/uv.qmd
     - part: qmd/python/1_intro_py.qmd
       chapters:
         - qmd/python/strings.qmd
