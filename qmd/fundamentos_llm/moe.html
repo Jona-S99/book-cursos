@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Prompt Engineering – Apuntes varios</title>
+<title>31&nbsp; Mixture of Experts (MoE) – Apuntes varios</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../qmd/prompt_engineering/zero_shot.html" rel="next">
-<link href="../../qmd/fundamentos_llm/lora.html" rel="prev">
+<link href="../../qmd/fundamentos_llm/modelos_locales.html" rel="next">
+<link href="../../qmd/fundamentos_llm/escalado_multimodal.html" rel="prev">
 <link href="../../static/images/cover.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -250,7 +250,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../qmd/prompt_engineering/1_intro.html">Prompt Engineering</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../qmd/fundamentos_llm/fundamentos.html">Fundamentos de LLMs</a></li><li class="breadcrumb-item"><a href="../../qmd/fundamentos_llm/moe.html"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Mixture of Experts (MoE)</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -465,13 +465,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Fundamentos de LLMs</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../qmd/fundamentos_llm/fundamentos.html" class="sidebar-item-text sidebar-link">
@@ -498,7 +498,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../qmd/fundamentos_llm/moe.html" class="sidebar-item-text sidebar-link">
+  <a href="../../qmd/fundamentos_llm/moe.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Mixture of Experts (MoE)</span></span></a>
   </div>
 </li>
@@ -524,13 +524,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../qmd/prompt_engineering/1_intro.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../qmd/prompt_engineering/1_intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Prompt Engineering</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../qmd/prompt_engineering/zero_shot.html" class="sidebar-item-text sidebar-link">
@@ -568,16 +568,22 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#como-hace-el-llm-para-activar-los-expertos" id="toc-como-hace-el-llm-para-activar-los-expertos" class="nav-link active" data-scroll-target="#como-hace-el-llm-para-activar-los-expertos"><span class="header-section-number">31.1</span> ¿Como hace el LLM para activar los expertos?</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../qmd/fundamentos_llm/fundamentos.html">Fundamentos de LLMs</a></li><li class="breadcrumb-item"><a href="../../qmd/fundamentos_llm/moe.html"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Mixture of Experts (MoE)</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Prompt Engineering</h1>
+<h1 class="title"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Mixture of Experts (MoE)</span></h1>
 </div>
 
 
@@ -594,26 +600,22 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>El Prompt Engineering es el arte y la ciencia de diseñar instrucciones efectivas para modelos de lenguaje de inteligencia artificial. Esta disciplina emergente se centra en cómo formular, estructurar y refinar los “prompts” (instrucciones o peticiones) que se proporcionan a los modelos de IA para obtener los resultados más precisos, útiles y relevantes.</p>
-<p>En esencia, un ingeniero de prompts desarrolla habilidades para:</p>
+<p>Es una arquitectura que combina varios modelos especializados (“expertos”) para resolver una tarea. En vez de entrenar una inmensa red general que responda todo tipo de preguntas, se entrenan múltiples modelos más pequeños, cada uno especializándose en áreas específicas como programación, matemáticas o idiomas.</p>
+<p>Cada uno de estos expertos actúa de forma independiente durante el entrenamiento inicial y posteriormente se combinan. El resultado es una arquitectura eficiente que utiliza solo una pequeña porción de parámetros durante la inferencia.</p>
+<p>Para implementar esta arquitectura utilizamos nuestro corpus con clasificaciones, las cuales entrenan mini modelos que responden a tareas específicas. Luego, se realizan fines tuning a las respuestas de estos modelos, y, finalmente, se deben unir.</p>
+<p><img src="../../static/images/fundamentos_llm/moe.jpg" class="img-fluid"></p>
+<section id="como-hace-el-llm-para-activar-los-expertos" class="level2" data-number="31.1">
+<h2 data-number="31.1" class="anchored" data-anchor-id="como-hace-el-llm-para-activar-los-expertos"><span class="header-section-number">31.1</span> ¿Como hace el LLM para activar los expertos?</h2>
+<p>Utilizanso la denominada gate network. Esta “red gate” funciona como un guía intuitivo, reconocido por identificar rápidamente qué expertos deben activarse según la consulta específica realizada por el usuario.</p>
+<p>Es una mini red neuronal que fue entrenada para conocer cada categoría del LLM, y que sabe “dónde buscar”.</p>
+<p>Esta get network se compone de dos caraterísticas priniciaples:</p>
 <ul>
-<li>Formular instrucciones claras y específicas</li>
-<li>Proporcionar el contexto adecuado</li>
-<li>Estructurar las peticiones para maximizar la calidad de las respuestas</li>
-<li>Guiar al modelo hacia el formato y estilo deseado</li>
-<li>Superar las limitaciones inherentes de los sistemas de IA</li>
+<li><p><strong>Sparsity (esparcidad)</strong>: técnica que asegura que la gate network dirija únicamente hacia expertos relevantes, evitando activar innecesariamente áreas de la red no útiles.</p></li>
+<li><p><strong>Load balancing</strong>: en entrenamiento e inferencia asegura que los expertos se activen adecuadamente en función de la tarea requerida.</p></li>
 </ul>
-<p>El Prompt Engineering se ha convertido en una habilidad esencial para aprovechar al máximo el potencial de los modelos de lenguaje en sus flujos de trabajo.</p>
-<p>Importancia del Prompt Engineering</p>
-<ul>
-<li><p><strong>Eficiencia:</strong> obtener respuestas precisas y útiles en menos iteraciones</p></li>
-<li><p><strong>Personalización:</strong> adaptar las respuestas a necesidades específicas</p></li>
-<li><p><strong>Superación de limitaciones:</strong> minimizar errores, sesgos o confusiones del modelo</p></li>
-<li><p><strong>Casos de uso avanzados:</strong> habilitar aplicaciones complejas que serían imposibles con prompts básicos</p></li>
-</ul>
-<p>Este apartado refiere a los apuntes hechos del curso Prompt Engineering de <a href="https://platzi.com/">Platzi</a>.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1030,13 +1032,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../qmd/fundamentos_llm/lora.html" class="pagination-link" aria-label="Lora">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Lora</span></span>
+      <a href="../../qmd/fundamentos_llm/escalado_multimodal.html" class="pagination-link" aria-label="Escalado y modelos multimodales">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Escalado y modelos multimodales</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../qmd/prompt_engineering/zero_shot.html" class="pagination-link" aria-label="Zero-Shot">
-        <span class="nav-page-text">Zero-Shot</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../qmd/fundamentos_llm/modelos_locales.html" class="pagination-link" aria-label="Modelos locales">
+        <span class="nav-page-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Modelos locales</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

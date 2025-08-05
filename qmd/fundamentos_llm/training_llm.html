@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Prompt Engineering – Apuntes varios</title>
+<title>28&nbsp; Entrenamiento de un LLM – Apuntes varios</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../qmd/prompt_engineering/zero_shot.html" rel="next">
-<link href="../../qmd/fundamentos_llm/lora.html" rel="prev">
+<link href="../../qmd/fundamentos_llm/rope.html" rel="next">
+<link href="../../qmd/fundamentos_llm/fundamentos.html" rel="prev">
 <link href="../../static/images/cover.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -250,7 +250,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../qmd/prompt_engineering/1_intro.html">Prompt Engineering</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../qmd/fundamentos_llm/fundamentos.html">Fundamentos de LLMs</a></li><li class="breadcrumb-item"><a href="../../qmd/fundamentos_llm/training_llm.html"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Entrenamiento de un LLM</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -465,13 +465,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Fundamentos de LLMs</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../qmd/fundamentos_llm/fundamentos.html" class="sidebar-item-text sidebar-link">
@@ -480,7 +480,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../qmd/fundamentos_llm/training_llm.html" class="sidebar-item-text sidebar-link">
+  <a href="../../qmd/fundamentos_llm/training_llm.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Entrenamiento de un LLM</span></span></a>
   </div>
 </li>
@@ -524,13 +524,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../qmd/prompt_engineering/1_intro.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../qmd/prompt_engineering/1_intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Prompt Engineering</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../qmd/prompt_engineering/zero_shot.html" class="sidebar-item-text sidebar-link">
@@ -568,16 +568,28 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#corpus-o-conjunto-de-entrenamiento" id="toc-corpus-o-conjunto-de-entrenamiento" class="nav-link active" data-scroll-target="#corpus-o-conjunto-de-entrenamiento"><span class="header-section-number">28.1</span> Corpus o conjunto de entrenamiento</a></li>
+  <li><a href="#tokenización" id="toc-tokenización" class="nav-link" data-scroll-target="#tokenización"><span class="header-section-number">28.2</span> Tokenización</a></li>
+  <li><a href="#arquitectura-de-un-llm" id="toc-arquitectura-de-un-llm" class="nav-link" data-scroll-target="#arquitectura-de-un-llm"><span class="header-section-number">28.3</span> Arquitectura de un LLM</a></li>
+  <li><a href="#entrenamiento-de-un-llm" id="toc-entrenamiento-de-un-llm" class="nav-link" data-scroll-target="#entrenamiento-de-un-llm"><span class="header-section-number">28.4</span> Entrenamiento de un LLM</a></li>
+  <li><a href="#post-entrenamiento" id="toc-post-entrenamiento" class="nav-link" data-scroll-target="#post-entrenamiento"><span class="header-section-number">28.5</span> Post Entrenamiento</a></li>
+  <li><a href="#rlhf" id="toc-rlhf" class="nav-link" data-scroll-target="#rlhf"><span class="header-section-number">28.6</span> RLHF</a></li>
+  <li><a href="#rl-offline" id="toc-rl-offline" class="nav-link" data-scroll-target="#rl-offline"><span class="header-section-number">28.7</span> RL Offline</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../qmd/fundamentos_llm/fundamentos.html">Fundamentos de LLMs</a></li><li class="breadcrumb-item"><a href="../../qmd/fundamentos_llm/training_llm.html"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Entrenamiento de un LLM</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Prompt Engineering</h1>
+<h1 class="title"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Entrenamiento de un LLM</span></h1>
 </div>
 
 
@@ -594,26 +606,59 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>El Prompt Engineering es el arte y la ciencia de diseñar instrucciones efectivas para modelos de lenguaje de inteligencia artificial. Esta disciplina emergente se centra en cómo formular, estructurar y refinar los “prompts” (instrucciones o peticiones) que se proporcionan a los modelos de IA para obtener los resultados más precisos, útiles y relevantes.</p>
-<p>En esencia, un ingeniero de prompts desarrolla habilidades para:</p>
+<p>Entrenar un modelo de lenguaje grande (Large Language Model, LLM) implica un proceso extenso que combina grandes volúmenes de información, potente infraestructura tecnológica y variadas técnicas de aprendizaje automático. Comprender cómo se llevan a cabo estos pasos ayuda a aprovechar al máximo el potencial de un LLM para resolver distintos problemas o tareas específicas.</p>
+<section id="corpus-o-conjunto-de-entrenamiento" class="level2" data-number="28.1">
+<h2 data-number="28.1" class="anchored" data-anchor-id="corpus-o-conjunto-de-entrenamiento"><span class="header-section-number">28.1</span> Corpus o conjunto de entrenamiento</h2>
+<p>El conjunto de entrenamiento o corpus es la base esencial del desarrollo de un LLM. Este dataset determina directamente qué problemas puede ayudar a resolver nuestro modelo.</p>
 <ul>
-<li>Formular instrucciones claras y específicas</li>
-<li>Proporcionar el contexto adecuado</li>
-<li>Estructurar las peticiones para maximizar la calidad de las respuestas</li>
-<li>Guiar al modelo hacia el formato y estilo deseado</li>
-<li>Superar las limitaciones inherentes de los sistemas de IA</li>
+<li><p>El corpus está compuesto por textos recolectados, generalmente vía web scraping.</p></li>
+<li><p>Para tener datasets de calidad, se requiere infraestructura tecnológica robusta y habilidades humanas para revisión y limpieza, pues esta información puede venir con elementos que no son atingentes al problema que queremos resolver.</p></li>
+<li><p>Este corpus puede llegar a tener tamaños inmensos. Por ejemplo, el modelo Lama 4 de Meta utiliza cerca de treinta trillones de tokens, equivalentes aproximadamente a ciento nueve terabytes de información textual.</p></li>
 </ul>
-<p>El Prompt Engineering se ha convertido en una habilidad esencial para aprovechar al máximo el potencial de los modelos de lenguaje en sus flujos de trabajo.</p>
-<p>Importancia del Prompt Engineering</p>
+</section>
+<section id="tokenización" class="level2" data-number="28.2">
+<h2 data-number="28.2" class="anchored" data-anchor-id="tokenización"><span class="header-section-number">28.2</span> Tokenización</h2>
+<p>Una vez que tenemos listo nuestro corpus, lo debemos tokenizar para que sea reconocible por los computadores, es decir, transformamos las palabras a números.</p>
+</section>
+<section id="arquitectura-de-un-llm" class="level2" data-number="28.3">
+<h2 data-number="28.3" class="anchored" data-anchor-id="arquitectura-de-un-llm"><span class="header-section-number">28.3</span> Arquitectura de un LLM</h2>
+<p>Una vez tokenizados los datos, seleccionamos o desarrollamos la arquitectura a usar:</p>
 <ul>
-<li><p><strong>Eficiencia:</strong> obtener respuestas precisas y útiles en menos iteraciones</p></li>
-<li><p><strong>Personalización:</strong> adaptar las respuestas a necesidades específicas</p></li>
-<li><p><strong>Superación de limitaciones:</strong> minimizar errores, sesgos o confusiones del modelo</p></li>
-<li><p><strong>Casos de uso avanzados:</strong> habilitar aplicaciones complejas que serían imposibles con prompts básicos</p></li>
+<li><p>La arquitectura varía según el uso específico deseado.</p></li>
+<li><p>Ejemplo: GPT-2 consiste principalmente en capas de atención y capas de multilayer perceptron apiladas.</p></li>
+<li><p>Empresas como Meta hacen pública su arquitectura (open source), facilitando su replicación y adaptación.</p></li>
 </ul>
-<p>Este apartado refiere a los apuntes hechos del curso Prompt Engineering de <a href="https://platzi.com/">Platzi</a>.</p>
+</section>
+<section id="entrenamiento-de-un-llm" class="level2" data-number="28.4">
+<h2 data-number="28.4" class="anchored" data-anchor-id="entrenamiento-de-un-llm"><span class="header-section-number">28.4</span> Entrenamiento de un LLM</h2>
+<p>Esta es la parte más costosa. Requiere miles de GPUs o TPUs distribuidos en centros especializados de procesamiento. Cada GPU procesa fragmentos del corpus y reporta resultados, errores y ajustes al servidor central.</p>
+<p>Este proceso es altamente repetitivo y dura mucho tiempo, dependiendo del volumen de datos y tamaño del LLM.</p>
+</section>
+<section id="post-entrenamiento" class="level2" data-number="28.5">
+<h2 data-number="28.5" class="anchored" data-anchor-id="post-entrenamiento"><span class="header-section-number">28.5</span> Post Entrenamiento</h2>
+<p>Al finalizar el entrenamiento básico, el LLM aún es general. Para tareas específicas, se ejecuta una fase adicional conocida como <strong>fine tuning</strong>. El tiempo de ajuste de este paso es considerablemente menor al entrenamiento inicial.</p>
+<p>Esta técnica consiste en reentrenar parcialmente el modelo con datos específicos para lograr un modelo espacilizado en ciertas áreas.</p>
+<p>Por ejemplo: adaptación con imágenes médicas o consultas financieras.</p>
+</section>
+<section id="rlhf" class="level2" data-number="28.6">
+<h2 data-number="28.6" class="anchored" data-anchor-id="rlhf"><span class="header-section-number">28.6</span> RLHF</h2>
+<p>El Reinforcement Learning with Human Feedback (RLHF) introduce retroalimentación humana para ajustar el modelo según nuestras necesidades y expectativas:</p>
+<p>¿Cómo funciona RLHF?</p>
+<ol type="1">
+<li><p>El modelo genera respuestas a preguntas o tareas.</p></li>
+<li><p>Humanos evalúan esas respuestas, indicando cuáles son mejores o más apropiadas.</p></li>
+<li><p>El modelo recibe recompensas (o penalizaciones) según la evaluación humana, y ajusta sus parámetros para maximizar las respuestas preferidas por las personas.</p></li>
+<li><p>Este proceso se repite, permitiendo que el modelo aprenda comportamientos alineados con las expectativas y valores humanos.</p></li>
+</ol>
+<p>Como es de esperar, este proceso es tedioso y lento, por eso, se han creado herramientas de <strong>Reinforcement Learning offline (no supervisado)</strong>.</p>
+</section>
+<section id="rl-offline" class="level2" data-number="28.7">
+<h2 data-number="28.7" class="anchored" data-anchor-id="rl-offline"><span class="header-section-number">28.7</span> RL Offline</h2>
+<p>En estas técnicas, el modelo aprende a partir de un conjunto de datos de experiencias previas (respuestas y recompensas ya almacenadas), sin requerir interacción en tiempo real ni retroalimentación humana directa durante el entrenamiento. Con refuerzos positivos y negativos (aprendizaje por refuerzo clásico).</p>
+<p>Un ejemplo puede ser un agente que aprende a jugar un videojuego solo, recibiendo <strong>puntos por ganar</strong> y <strong>penalizaciones por perder</strong>, sin que un humano intervenga para decirle si su comportamiento es bueno o malo. Este proceso de “cuándo gana y cuándo pierde” lo programa un humano.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1030,13 +1075,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../qmd/fundamentos_llm/lora.html" class="pagination-link" aria-label="Lora">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Lora</span></span>
+      <a href="../../qmd/fundamentos_llm/fundamentos.html" class="pagination-link" aria-label="Fundamentos de los LLM">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Fundamentos de los LLM</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../qmd/prompt_engineering/zero_shot.html" class="pagination-link" aria-label="Zero-Shot">
-        <span class="nav-page-text">Zero-Shot</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../qmd/fundamentos_llm/rope.html" class="pagination-link" aria-label="RoPE">
+        <span class="nav-page-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">RoPE</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

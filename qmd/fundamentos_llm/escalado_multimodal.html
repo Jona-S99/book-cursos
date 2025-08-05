@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Prompt Engineering – Apuntes varios</title>
+<title>30&nbsp; Escalado y modelos multimodales – Apuntes varios</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../qmd/prompt_engineering/zero_shot.html" rel="next">
-<link href="../../qmd/fundamentos_llm/lora.html" rel="prev">
+<link href="../../qmd/fundamentos_llm/moe.html" rel="next">
+<link href="../../qmd/fundamentos_llm/rope.html" rel="prev">
 <link href="../../static/images/cover.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -250,7 +250,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../qmd/prompt_engineering/1_intro.html">Prompt Engineering</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../qmd/fundamentos_llm/fundamentos.html">Fundamentos de LLMs</a></li><li class="breadcrumb-item"><a href="../../qmd/fundamentos_llm/escalado_multimodal.html"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Escalado y modelos multimodales</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -465,13 +465,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Fundamentos de LLMs</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../qmd/fundamentos_llm/fundamentos.html" class="sidebar-item-text sidebar-link">
@@ -492,7 +492,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../qmd/fundamentos_llm/escalado_multimodal.html" class="sidebar-item-text sidebar-link">
+  <a href="../../qmd/fundamentos_llm/escalado_multimodal.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Escalado y modelos multimodales</span></span></a>
   </div>
 </li>
@@ -524,13 +524,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../qmd/prompt_engineering/1_intro.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../qmd/prompt_engineering/1_intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Prompt Engineering</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../qmd/prompt_engineering/zero_shot.html" class="sidebar-item-text sidebar-link">
@@ -568,16 +568,23 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#leyes-de-escalado" id="toc-leyes-de-escalado" class="nav-link active" data-scroll-target="#leyes-de-escalado"><span class="header-section-number">30.1</span> Leyes de escalado</a></li>
+  <li><a href="#modelos-multimodales" id="toc-modelos-multimodales" class="nav-link" data-scroll-target="#modelos-multimodales"><span class="header-section-number">30.2</span> Modelos multimodales</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../qmd/fundamentos_llm/fundamentos.html">Fundamentos de LLMs</a></li><li class="breadcrumb-item"><a href="../../qmd/fundamentos_llm/escalado_multimodal.html"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Escalado y modelos multimodales</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Prompt Engineering</h1>
+<h1 class="title"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Escalado y modelos multimodales</span></h1>
 </div>
 
 
@@ -594,26 +601,29 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>El Prompt Engineering es el arte y la ciencia de diseñar instrucciones efectivas para modelos de lenguaje de inteligencia artificial. Esta disciplina emergente se centra en cómo formular, estructurar y refinar los “prompts” (instrucciones o peticiones) que se proporcionan a los modelos de IA para obtener los resultados más precisos, útiles y relevantes.</p>
-<p>En esencia, un ingeniero de prompts desarrolla habilidades para:</p>
+<p>Las leyes de escalado y los modelos multimodales son esenciales en el ámbito actual de la inteligencia artificial. Aumentar los parámetros, la cantidad de datos y la capacidad computacional mejora el desempeño, aunque con retornos decrecientes tras cierto punto. A su vez, los modelos multimodales combinan diferentes tipos de información, permitiendo aplicaciones avanzadas en diversos contextos.</p>
+<section id="leyes-de-escalado" class="level2" data-number="30.1">
+<h2 data-number="30.1" class="anchored" data-anchor-id="leyes-de-escalado"><span class="header-section-number">30.1</span> Leyes de escalado</h2>
+<p>Las leyes de escalado revelan cómo mejora previsiblemente el rendimiento de un modelo al incrementar ciertos recursos clave. Estos recursos son:</p>
 <ul>
-<li>Formular instrucciones claras y específicas</li>
-<li>Proporcionar el contexto adecuado</li>
-<li>Estructurar las peticiones para maximizar la calidad de las respuestas</li>
-<li>Guiar al modelo hacia el formato y estilo deseado</li>
-<li>Superar las limitaciones inherentes de los sistemas de IA</li>
+<li><p>Parámetros del modelo.</p></li>
+<li><p>Datos disponibles para entrenamiento.</p></li>
+<li><p>Capacidad computacional.</p></li>
 </ul>
-<p>El Prompt Engineering se ha convertido en una habilidad esencial para aprovechar al máximo el potencial de los modelos de lenguaje en sus flujos de trabajo.</p>
-<p>Importancia del Prompt Engineering</p>
-<ul>
-<li><p><strong>Eficiencia:</strong> obtener respuestas precisas y útiles en menos iteraciones</p></li>
-<li><p><strong>Personalización:</strong> adaptar las respuestas a necesidades específicas</p></li>
-<li><p><strong>Superación de limitaciones:</strong> minimizar errores, sesgos o confusiones del modelo</p></li>
-<li><p><strong>Casos de uso avanzados:</strong> habilitar aplicaciones complejas que serían imposibles con prompts básicos</p></li>
-</ul>
-<p>Este apartado refiere a los apuntes hechos del curso Prompt Engineering de <a href="https://platzi.com/">Platzi</a>.</p>
+<p><img src="../../static/images/fundamentos_llm/escalado_gpt3.jpg" class="img-fluid"></p>
+<p>En esta imagen podemos observar que, para GPT3, la pérdida disminuyó al momento de aumentar los parámetros del modelo y aumentar la cantidad de datos de entrenamiento.</p>
+<p>La relación entre el rendimiento y los recursos sigue una ley matemática conocida como ley de potencia, mostrando cómo al aumentar recursos específicos, los errores o pérdidas disminuyen con predictibilidad.</p>
+<p>No obstante, llega un punto donde este incremento adicional tiene un efecto menor, lo que se conoce como retornos decreciente, por eso es importante mantener el equilibrio, así no sacrificamos potencial ni tenemos grandes pérdidas en los modelos.</p>
+</section>
+<section id="modelos-multimodales" class="level2" data-number="30.2">
+<h2 data-number="30.2" class="anchored" data-anchor-id="modelos-multimodales"><span class="header-section-number">30.2</span> Modelos multimodales</h2>
+<p>Los modelos multimodales en inteligencia artificial son sistemas capaces de procesar y combinar información proveniente de diferentes tipos de datos o “modalidades”, como texto, imágenes, audio y video.</p>
+<p>A diferencia de los modelos tradicionales que solo trabajan con un tipo de dato (por ejemplo, solo texto o solo imágenes), los modelos multimodales pueden entender y relacionar información de varias fuentes al mismo tiempo.</p>
+<p>Esto les permite tener una comprensión más completa y contextual del mundo, facilitando tareas como describir imágenes con texto, responder preguntas sobre videos, o analizar conversaciones que incluyen voz y texto.</p>
+<p>Ejemplos actuales de modelos multimodales incluyen GPT-4 (que puede analizar texto e imágenes) y CLIP (que relaciona imágenes y descripciones textuales).</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1030,13 +1040,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../qmd/fundamentos_llm/lora.html" class="pagination-link" aria-label="Lora">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Lora</span></span>
+      <a href="../../qmd/fundamentos_llm/rope.html" class="pagination-link" aria-label="RoPE">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">RoPE</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../qmd/prompt_engineering/zero_shot.html" class="pagination-link" aria-label="Zero-Shot">
-        <span class="nav-page-text">Zero-Shot</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../qmd/fundamentos_llm/moe.html" class="pagination-link" aria-label="Mixture of Experts (MoE)">
+        <span class="nav-page-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Mixture of Experts (MoE)</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

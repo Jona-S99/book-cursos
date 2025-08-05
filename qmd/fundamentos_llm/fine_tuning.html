@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Prompt Engineering – Apuntes varios</title>
+<title>33&nbsp; Fine tuning supervisado – Apuntes varios</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +65,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../qmd/prompt_engineering/zero_shot.html" rel="next">
-<link href="../../qmd/fundamentos_llm/lora.html" rel="prev">
+<link href="../../qmd/fundamentos_llm/lora.html" rel="next">
+<link href="../../qmd/fundamentos_llm/modelos_locales.html" rel="prev">
 <link href="../../static/images/cover.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -250,7 +285,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../qmd/prompt_engineering/1_intro.html">Prompt Engineering</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../qmd/fundamentos_llm/fundamentos.html">Fundamentos de LLMs</a></li><li class="breadcrumb-item"><a href="../../qmd/fundamentos_llm/fine_tuning.html"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Fine tuning supervisado</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -465,13 +500,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Fundamentos de LLMs</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../qmd/fundamentos_llm/fundamentos.html" class="sidebar-item-text sidebar-link">
@@ -510,7 +545,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../qmd/fundamentos_llm/fine_tuning.html" class="sidebar-item-text sidebar-link">
+  <a href="../../qmd/fundamentos_llm/fine_tuning.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Fine tuning supervisado</span></span></a>
   </div>
 </li>
@@ -524,13 +559,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../qmd/prompt_engineering/1_intro.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../qmd/prompt_engineering/1_intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Prompt Engineering</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../qmd/prompt_engineering/zero_shot.html" class="sidebar-item-text sidebar-link">
@@ -568,16 +603,27 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#dataset" id="toc-dataset" class="nav-link active" data-scroll-target="#dataset"><span class="header-section-number">33.1</span> Dataset</a></li>
+  <li><a href="#fine-tuning-con-openia" id="toc-fine-tuning-con-openia" class="nav-link" data-scroll-target="#fine-tuning-con-openia"><span class="header-section-number">33.2</span> Fine tuning con OpenIA</a></li>
+  <li><a href="#cargar-datos-procesados" id="toc-cargar-datos-procesados" class="nav-link" data-scroll-target="#cargar-datos-procesados"><span class="header-section-number">33.3</span> Cargar datos procesados</a></li>
+  <li><a href="#formatear-el-dataset" id="toc-formatear-el-dataset" class="nav-link" data-scroll-target="#formatear-el-dataset"><span class="header-section-number">33.4</span> Formatear el dataset</a></li>
+  <li><a href="#openia-desde-python" id="toc-openia-desde-python" class="nav-link" data-scroll-target="#openia-desde-python"><span class="header-section-number">33.5</span> OpenIA desde python</a></li>
+  <li><a href="#openia-desde-platform" id="toc-openia-desde-platform" class="nav-link" data-scroll-target="#openia-desde-platform"><span class="header-section-number">33.6</span> OpenIA desde platform</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../qmd/fundamentos_llm/fundamentos.html">Fundamentos de LLMs</a></li><li class="breadcrumb-item"><a href="../../qmd/fundamentos_llm/fine_tuning.html"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Fine tuning supervisado</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Prompt Engineering</h1>
+<h1 class="title"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Fine tuning supervisado</span></h1>
 </div>
 
 
@@ -594,26 +640,160 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>El Prompt Engineering es el arte y la ciencia de diseñar instrucciones efectivas para modelos de lenguaje de inteligencia artificial. Esta disciplina emergente se centra en cómo formular, estructurar y refinar los “prompts” (instrucciones o peticiones) que se proporcionan a los modelos de IA para obtener los resultados más precisos, útiles y relevantes.</p>
-<p>En esencia, un ingeniero de prompts desarrolla habilidades para:</p>
-<ul>
-<li>Formular instrucciones claras y específicas</li>
-<li>Proporcionar el contexto adecuado</li>
-<li>Estructurar las peticiones para maximizar la calidad de las respuestas</li>
-<li>Guiar al modelo hacia el formato y estilo deseado</li>
-<li>Superar las limitaciones inherentes de los sistemas de IA</li>
-</ul>
-<p>El Prompt Engineering se ha convertido en una habilidad esencial para aprovechar al máximo el potencial de los modelos de lenguaje en sus flujos de trabajo.</p>
-<p>Importancia del Prompt Engineering</p>
-<ul>
-<li><p><strong>Eficiencia:</strong> obtener respuestas precisas y útiles en menos iteraciones</p></li>
-<li><p><strong>Personalización:</strong> adaptar las respuestas a necesidades específicas</p></li>
-<li><p><strong>Superación de limitaciones:</strong> minimizar errores, sesgos o confusiones del modelo</p></li>
-<li><p><strong>Casos de uso avanzados:</strong> habilitar aplicaciones complejas que serían imposibles con prompts básicos</p></li>
-</ul>
-<p>Este apartado refiere a los apuntes hechos del curso Prompt Engineering de <a href="https://platzi.com/">Platzi</a>.</p>
+<p>El fine tuning supervisado significa entrenar un modelo preexistente suministrando claramente tanto el dato como la respuesta esperada. El modelo ajusta sus pesos mediante procesos llamados forward pass y backward pass, procedimientos explicados previamente y esenciales para adaptar el modelo al nuevo contexto.</p>
+<p>Esta técnica permite darle al modelo la habilidad de responder preguntas específicas que inicialmente no podría contestar bien debido a la limitación de su entrenamiento original.</p>
+<section id="dataset" class="level2" data-number="33.1">
+<h2 data-number="33.1" class="anchored" data-anchor-id="dataset"><span class="header-section-number">33.1</span> Dataset</h2>
+<p>Es importante revisar que los datos estén limpios (sin errores, duplicados o inconsistencias), que las entradas y salidas sean claras y estén alineadas (cada pregunta tenga una respuesta adecuada), y que el formato sea compatible con el modelo.</p>
+</section>
+<section id="fine-tuning-con-openia" class="level2" data-number="33.2">
+<h2 data-number="33.2" class="anchored" data-anchor-id="fine-tuning-con-openia"><span class="header-section-number">33.2</span> Fine tuning con OpenIA</h2>
+<p>Las siguientes líneas muestran un ejemplo de cómo se haría fine tuning con python y la API de OpenIA utilizando un conjunto de datos específico.</p>
+</section>
+<section id="cargar-datos-procesados" class="level2" data-number="33.3">
+<h2 data-number="33.3" class="anchored" data-anchor-id="cargar-datos-procesados"><span class="header-section-number">33.3</span> Cargar datos procesados</h2>
+<div id="39ac0e70" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>input_file <span class="op">=</span> <span class="st">"ruta/al/archivo"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> pd.read_json(input_file)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># En este ejemplo, se utilizaron filas específicas para</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># reducir el tamaño del dataset</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> dataset[dataset[<span class="st">'output'</span>].<span class="bu">str</span>.<span class="bu">len</span>() <span class="op">&lt;</span> <span class="dv">500</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="formatear-el-dataset" class="level2" data-number="33.4">
+<h2 data-number="33.4" class="anchored" data-anchor-id="formatear-el-dataset"><span class="header-section-number">33.4</span> Formatear el dataset</h2>
+<p>OpenIA recomienda utilizar un formato específico para el fine tuning, esto es utilzando la siguiente estructura:</p>
+<ol type="1">
+<li>system: la instrucción.</li>
+<li>user: lo que pregunta el usuario.</li>
+<li>assistant: como debería responder el asistente.</li>
+</ol>
+<div id="947ad538" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creamos una lista vacia para guardar los mensajes</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> []</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Para cada mensaje del json, crearemos los tres roles necesarios</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># y los iremos guardando en la lista result con append</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _, row <span class="kw">in</span> dataset.iterrows():</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    messages <span class="op">=</span> [</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>        {<span class="st">"role"</span>: <span class="st">"system"</span>, <span class="st">"content"</span>: row[<span class="st">'instruction'</span>]},</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>        {<span class="st">"role"</span>: <span class="st">"user"</span>, <span class="st">"content"</span>: row[<span class="st">'input'</span>]},</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>        {<span class="st">"role"</span>: <span class="st">"assistant"</span>, <span class="st">"content"</span>: row[<span class="st">'output'</span>]}</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    ]</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    result.append({<span class="st">"messages"</span>: messages})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Una vez que tenemos el dataset formateado, debemos guardarlo en un formato específico: JSON Lines, donde cada elemento de la lista se interpreta como un registro único.</p>
+<p>Es importante splitear el archivo en un conjunto de datos de prueba, y otro conjunto de entrenamiento</p>
+<div id="ab6fb52b" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Por terminos practicos de tiempo y costo, seleccionamos solo las</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># primeras 500 filas</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>data_to_finetune <span class="op">=</span> result[:<span class="dv">500</span>]</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Para guardar en formato JSONL (JSON Lines) el conjunto de datos</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># de entrenamiento</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'./train_formatted_dataset.jsonl'</span>, <span class="st">'w'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>) <span class="im">as</span> f:</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> item <span class="kw">in</span> data_to_finetune:</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        f.write(json.dumps(item, ensure_ascii<span class="op">=</span><span class="va">False</span>) <span class="op">+</span> <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Seleccion de casos para el conjunto de prueba</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>data_to_finetune <span class="op">=</span> result[<span class="dv">501</span>:<span class="dv">1000</span>]</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Para guardar en formato JSONL (JSON Lines) el</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co"># conjunto de prueba</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'./test_formatted_dataset.jsonl'</span>, <span class="st">'w'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>) <span class="im">as</span> f:</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> item <span class="kw">in</span> data_to_finetune:</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>        f.write(json.dumps(item, ensure_ascii<span class="op">=</span><span class="va">False</span>) <span class="op">+</span> <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="openia-desde-python" class="level2" data-number="33.5">
+<h2 data-number="33.5" class="anchored" data-anchor-id="openia-desde-python"><span class="header-section-number">33.5</span> OpenIA desde python</h2>
+<p>Para usar los servicios de OpenIA desde python debemos tener una API Key. Esta la guardamos en nuestro entorno, y la llamamos usando la librería <code>dotenv</code> y la función <code>load_dotenv</code>.</p>
+<p>Luego, generamos una conexión al cliente.</p>
+<div id="abeb83ed" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Importar librerias</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> dotenv <span class="im">import</span> load_dotenv</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Accedemos a nuestra API Key</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>load_dotenv()</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>api_key <span class="op">=</span> os.getenv(<span class="st">"OPENAI_API_KEY"</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Conexion con OpenAI usando la libreria</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> openai <span class="im">import</span> OpenAI</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Guardamos la conexion en client</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> OpenAI(api_key <span class="op">=</span> api_key)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Una vez que tenemos una conexión, hay que subir los archivos de train y de test a OpenIA.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Debemos definir el propósito de los datos que estamos creando, para este caso, un <code>fine-tune</code></p>
+</div>
+</div>
+<p>Al subir los archivos, OpenIA nos entregará Ids únicos para cada dataset cargado.</p>
+<div id="c2196237" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Subir el archivo de entrenamiento</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>train <span class="op">=</span> client.files.create(</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">file</span> <span class="op">=</span> <span class="bu">open</span>(<span class="st">"train_formatted_dataset.jsonl"</span>, <span class="st">"rb"</span>),</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  purpose <span class="op">=</span> <span class="st">"fine-tune"</span>  <span class="co"># PORPOSITO</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Subir el archivo de pruebas.</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>test <span class="op">=</span> client.files.create(</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="bu">file</span> <span class="op">=</span> <span class="bu">open</span>(<span class="st">"test_formatted_dataset.jsonl"</span>, <span class="st">"rb"</span>),</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  purpose <span class="op">=</span> <span class="st">"fine-tune"</span>  <span class="co"># PORPOSITO</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Una vez que subimos los archivos a los servidores, viene la última parte, crear un job de fine tuning en los servicios de OpenIA, es decir, es un proceso en la nube, ya habríamos terminado con el código</p>
+<div id="a9588d2f" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generamos un "job" de fine tuning</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>job <span class="op">=</span> client.fine_tuning.jobs.create(</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    training_file <span class="op">=</span> <span class="st">"file-JqgvG1NAVf19w5bQeJ76Nw"</span>,    <span class="co"># ID generado anteriormente</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    validation_file <span class="op">=</span> <span class="st">"file-V7jgUevqPnJ1sHvYbq5PQ2"</span>,  <span class="co"># ID generado anteriormente</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> <span class="st">"gpt-4o-2024-08-06"</span>,   <span class="co"># Modelo base al que haremos fine tuning</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    method <span class="op">=</span> {</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">"type"</span>: <span class="st">"supervised"</span>,   <span class="co"># Metodo del fine tuning</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"supervised"</span>: {         <span class="co"># Este metodo tiene ciertos hiperparametros</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>            <span class="st">"hyperparameters"</span>: {</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>            <span class="st">"batch_size"</span>: <span class="st">"5"</span>, <span class="co"># depende del problema, es un trade-off entre eficiencia en el uso de recursos y el performance del modelo.</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>            <span class="st">"learning_rate_multiplier"</span>: <span class="st">"0.001"</span>, <span class="co"># Recomendado de 0.0001-10</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>            <span class="st">"n_epochs"</span>: <span class="st">"auto"</span>,</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>          }</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>        },</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="openia-desde-platform" class="level2" data-number="33.6">
+<h2 data-number="33.6" class="anchored" data-anchor-id="openia-desde-platform"><span class="header-section-number">33.6</span> OpenIA desde platform</h2>
+<p>Podremos ver el proceso del job en la página OpenIA (no en la página de chatgpt). Obtendremos una vista como esta, donde hallaremos las características de nuestro fine tuning.</p>
+<p><img src="../../static/images/fundamentos_llm/job_finetuning.jpg" class="img-fluid"></p>
+<p>Este proceso consta de varias etapas, comenzando por la validación de los datos de entrenamiento y prueba. Una vez finalizada esta fase, se inicia el entrenamiento del modelo utilizando la información proporcionada. La duración total del procedimiento depende tanto del volumen de datos cargados como de la disponibilidad de los servidores de OpenIA, ya que en ocasiones puede haber una lista de espera para la ejecución de los trabajos.</p>
+<p>En este ejemplo, OpenIA nos lanzó a una cola de casi 16 horas.</p>
+<p><img src="../../static/images/fundamentos_llm/queued_finetuning.jpg" class="img-fluid"></p>
+<p>Una vez que se terminó el proceso de fine tuning, OpenIA nos entrega méticas respecto a la calidad del modelo.</p>
+<ol type="1">
+<li><p>Trained tokens: número de tokens que se utilizaron para crear el fine tuning. Este número es importante, pues nos indica cuánto nos van a cobrar por el procedimiento.</p></li>
+<li><p>Hiperparámetros: aquí deberíamos ver los mismos que definimos al momento de crear el job, a excepción del Epoch, que lo definió OpenIA y la seed o semilla.</p></li>
+<li><p>Checkpoint: OpenIA realiza puntos de guardado durante el proceso, y se puede “probar” el modelo en cada uno de ellos. Muy útil para ver cambios entre pasos.</p></li>
+<li><p>Train loss: representa el error promedio que comete el modelo sobre el conjunto de datos de entrenamiento durante el proceso de ajuste. Es una medida de qué tan bien el modelo está aprendiendo a predecir las respuestas correctas para los ejemplos que ha visto. Un valor bajo de train loss indica que el modelo está ajustando sus parámetros correctamente y está logrando predecir bien las salidas esperadas en el entrenamiento; un valor alto sugiere que el modelo aún comete muchos errores.</p></li>
+<li><p>Valid loss: representa el error promedio que comete el modelo sobre el conjunto de datos de validación, es decir, sobre ejemplos que no ha visto durante el entrenamiento. Sirve para evaluar qué tan bien el modelo generaliza a datos nuevos y desconocidos. Un valor bajo de valid loss indica que el modelo está aprendiendo correctamente y no solo memorizando los datos de entrenamiento; un valor alto puede señalar problemas de sobreajuste o que el modelo no está captando bien el patrón de los datos.</p></li>
+<li><p>Full valid loss: representa el error promedio del modelo sobre todo el conjunto de datos de validación, considerando todas las muestras y posibles checkpoints del entrenamiento. Es útil para tener una visión global de cómo el modelo se desempeña en datos que no ha visto, y ayuda a comparar el rendimiento entre diferentes etapas del entrenamiento. Un valor bajo de full valid loss indica buena capacidad de generalización; un valor alto puede señalar problemas de sobreajuste o que el modelo no está aprendiendo correctamente los patrones del conjunto de validación.</p></li>
+<li><p>Accuracy: indica el porcentaje de respuestas correctas que el modelo genera en el conjunto de prueba, comparando las respuestas esperadas con las obtenidas. Es una medida de qué tan bien el modelo predice correctamente en ejemplos que no ha visto durante el entrenamiento. Un valor alto de accuracy significa que el modelo generaliza bien y responde correctamente en la mayoría de los casos; un valor bajo indica que el modelo comete muchos errores en datos nuevos.</p></li>
+</ol>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1030,13 +1210,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../qmd/fundamentos_llm/lora.html" class="pagination-link" aria-label="Lora">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Lora</span></span>
+      <a href="../../qmd/fundamentos_llm/modelos_locales.html" class="pagination-link" aria-label="Modelos locales">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Modelos locales</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../qmd/prompt_engineering/zero_shot.html" class="pagination-link" aria-label="Zero-Shot">
-        <span class="nav-page-text">Zero-Shot</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../qmd/fundamentos_llm/lora.html" class="pagination-link" aria-label="Lora">
+        <span class="nav-page-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Lora</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

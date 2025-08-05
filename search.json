@@ -10,189 +10,53 @@
     ]
   },
   {
-    "objectID": "qmd/prompt_engineering/1_intro.html",
-    "href": "qmd/prompt_engineering/1_intro.html",
-    "title": "Prompt Engineering",
+    "objectID": "qmd/python/uv.html",
+    "href": "qmd/python/uv.html",
+    "title": "UV",
     "section": "",
-    "text": "El Prompt Engineering es el arte y la ciencia de diseñar instrucciones efectivas para modelos de lenguaje de inteligencia artificial. Esta disciplina emergente se centra en cómo formular, estructurar y refinar los “prompts” (instrucciones o peticiones) que se proporcionan a los modelos de IA para obtener los resultados más precisos, útiles y relevantes.\nEn esencia, un ingeniero de prompts desarrolla habilidades para:\n\nFormular instrucciones claras y específicas\nProporcionar el contexto adecuado\nEstructurar las peticiones para maximizar la calidad de las respuestas\nGuiar al modelo hacia el formato y estilo deseado\nSuperar las limitaciones inherentes de los sistemas de IA\n\nEl Prompt Engineering se ha convertido en una habilidad esencial para aprovechar al máximo el potencial de los modelos de lenguaje en sus flujos de trabajo.\nImportancia del Prompt Engineering\n\nEficiencia: obtener respuestas precisas y útiles en menos iteraciones\nPersonalización: adaptar las respuestas a necesidades específicas\nSuperación de limitaciones: minimizar errores, sesgos o confusiones del modelo\nCasos de uso avanzados: habilitar aplicaciones complejas que serían imposibles con prompts básicos\n\nEste apartado refiere a los apuntes hechos del curso Prompt Engineering de Platzi.",
+    "text": "Poyecto general con uv\nuv es una herramienta moderna y ultrarrápida para la gestión de entornos virtuales y dependencias en proyectos Python, diseñada para reemplazar y mejorar el rendimiento de utilidades tradicionales como pip, pip-tools o pipenv.\nEntre sus principales ventajas destacan una velocidad de instalación y resolución de dependencias significativamente superior, una integración sencilla con diferentes formatos de archivos de dependencias (como requirements.txt y pyproject.toml), así como la capacidad de crear y administrar entornos virtuales de forma eficiente.\nEsto permite a los desarrolladores ahorrar tiempo en la configuración y gestión de sus proyectos, optimizando tanto flujos de trabajo individuales como de equipos, y garantizando una experiencia más fluida y productiva en el desarrollo con Python.\nUV proporciona una herramienta que, al ejecutarse, crea los archivos básicos para comenzar un proyecto de python.",
     "crumbs": [
-      "Prompt Engineering"
+      "UV"
     ]
   },
   {
-    "objectID": "qmd/prompt_engineering/zero_shot.html",
-    "href": "qmd/prompt_engineering/zero_shot.html",
-    "title": "Zero-Shot",
+    "objectID": "qmd/python/uv.html#poyecto-general-con-uv",
+    "href": "qmd/python/uv.html#poyecto-general-con-uv",
+    "title": "UV",
     "section": "",
-    "text": "¿Qué es el Zero-Shot Prompting?\nEl Zero-Shot Prompting es una técnica que permite obtener respuestas específicas de un modelo de lenguaje (LLM) proporcionándole únicamente una instrucción directa y sin ejemplos previamente definidos. Este método es ideal cuando se necesitan respuestas inmediatas y claras sin mostrar al modelo ejemplos anteriores de lo que se espera.",
+    "text": "Elementos que crea uv init en nuestro directorio\n\n\n\n\n\n\n\n\nComando para crear el proyecto\n\n\n\nuv init",
     "crumbs": [
-      "Prompt Engineering",
-      "Zero-Shot"
+      "UV"
     ]
   },
   {
-    "objectID": "qmd/prompt_engineering/zero_shot.html#cuándo-usar-zero-shot-prompting",
-    "href": "qmd/prompt_engineering/zero_shot.html#cuándo-usar-zero-shot-prompting",
-    "title": "Zero-Shot",
-    "section": "¿Cuándo usar Zero-Shot Prompting?",
-    "text": "¿Cuándo usar Zero-Shot Prompting?\nEl Zero-Shot Prompting es útil en situaciones donde:\n\nSe requiere una respuesta rápida\nNo se dan ejemplos previos al modelo, solo se le da una instrucción directa.",
+    "objectID": "qmd/python/uv.html#entornos-virtuales",
+    "href": "qmd/python/uv.html#entornos-virtuales",
+    "title": "UV",
+    "section": "Entornos virtuales",
+    "text": "Entornos virtuales\nOtra característica principal de uv es poder facilitar la creación de entornos virtuales.\n\n\n\n\n\n\nCreación de entornos virtuales\n\n\n\nuv venv: este comando crea el entorno virtual “.venv” por defecto. uv venv nombre_entorno: podemos asignar un nombre en específigo a nuestro entorno virtual. uv venv --python x.yz: podemos designar una versión específica de python (si no la tenemos, la descarga).",
     "crumbs": [
-      "Prompt Engineering",
-      "Zero-Shot"
+      "UV"
     ]
   },
   {
-    "objectID": "qmd/prompt_engineering/zero_shot.html#conceptos-clave-para-un-buen-zero-shot-prompt",
-    "href": "qmd/prompt_engineering/zero_shot.html#conceptos-clave-para-un-buen-zero-shot-prompt",
-    "title": "Zero-Shot",
-    "section": "Conceptos Clave para un Buen Zero-Shot Prompt",
-    "text": "Conceptos Clave para un Buen Zero-Shot Prompt\n\nEnfoque: definir claramente la tarea a realizar.\n\nEjemplo: “Ayúdame a planear mis vacaciones con mi esposa.”.\n\nContexto: información adicional que debe tener en cuenta el LLM desde el inicio.\n\nEjemplo: “Tenemos la idea de ir a Europa, pero no sabemos qué países reqiueren visa.”.\n\nLímites: cosas que puede o no puede hacer el LLM.\nRol: definir el perfil que debe asumir el LLM, como un agente de viajes.",
+    "objectID": "qmd/python/uv.html#instalación-de-paquetes",
+    "href": "qmd/python/uv.html#instalación-de-paquetes",
+    "title": "UV",
+    "section": "Instalación de paquetes",
+    "text": "Instalación de paquetes\nEn el contexto de uv, existen los comandos uv pip install y uv pip add. Ambos sirven para instalar dependencias, pero su comportamiento y propósito tienen diferencias importantes, especialmente cuando trabajas con proyectos gestionados con pyproject.toml (el enfoque moderno).\n\n\n\n\n\n\nuv pip install vs uv pip add\n\n\n\nuv pip install: si le pasas un nombre de paquete, lo instala, pero no lo añade automáticamente al archivo pyproject.toml (ni a requirements.txt).\nuv pip add: instala el paquete y lo agrega automáticamente como dependencia en el archivo pyproject.toml",
     "crumbs": [
-      "Prompt Engineering",
-      "Zero-Shot"
+      "UV"
     ]
   },
   {
-    "objectID": "qmd/prompt_engineering/zero_shot.html#técnica-paso-a-paso",
-    "href": "qmd/prompt_engineering/zero_shot.html#técnica-paso-a-paso",
-    "title": "Zero-Shot",
-    "section": "Técnica “Paso a Paso”",
-    "text": "Técnica “Paso a Paso”\nSí uno le inidica al modelo que piense o realice la tarea paso a paso, el LLM razonará un plan para resolver la tarea que le estamos pidiendo.\n\nCon la técnica: hace más preguntas, más estructura tipo cuestionario.\nSin la técnica: puede asumir muchas cosas sin preguntar y limitar opciones.",
+    "objectID": "qmd/python/uv.html#ejecución-de-scripts",
+    "href": "qmd/python/uv.html#ejecución-de-scripts",
+    "title": "UV",
+    "section": "Ejecución de scripts",
+    "text": "Ejecución de scripts\nTambién podemos ejecutar scripts de python sin tener que inicializar el entorno virtual, pues uv lo hace por debajo.\n\n\n\n\n\n\nEjecución de scripts\n\n\n\nuv run pytest",
     "crumbs": [
-      "Prompt Engineering",
-      "Zero-Shot"
-    ]
-  },
-  {
-    "objectID": "qmd/prompt_engineering/zero_shot.html#técnica-de-agregar-etiquetas-xml",
-    "href": "qmd/prompt_engineering/zero_shot.html#técnica-de-agregar-etiquetas-xml",
-    "title": "Zero-Shot",
-    "section": "Técnica de agregar etiquetas XML",
-    "text": "Técnica de agregar etiquetas XML\nUtilizar etiquetas XML permite clarificar con precisión dónde comienzan y finalizan ciertas partes del prompt. Dado que estas etiquetas estructuran claramente el texto, reducen la posibilidad de confusión y facilitan la interpretación correcta del prompt por parte del modelo.\nUn ejemplo:\n\nDefinicion de secciones:\n\n&lt;Instrucciones&gt;\nCrea un plan para unas vacaciones en pareja.\nComo agente de viajes, realizame las preguntas pertinentes para crear el\nplan de vacaciones.\nDa al usuario varias opciones de planes, antes de crear un itinerario.\nUna vez generado el intinerario, crea una lista de requisitios para el viaje\ncomo: visas, vuelos, hoteles entre otros.\nPiensa paso a paso.\n&lt;/Instrucciones&gt;\n\n&lt;contexto&gt;\nEste plan de viaje es para chilenos.\nEl destino debe estar en Europa.\n&lt;/contexto&gt;",
-    "crumbs": [
-      "Prompt Engineering",
-      "Zero-Shot"
-    ]
-  },
-  {
-    "objectID": "qmd/prompt_engineering/zero_shot.html#en-resumen-consideraciones-para-refinar-un-prompt",
-    "href": "qmd/prompt_engineering/zero_shot.html#en-resumen-consideraciones-para-refinar-un-prompt",
-    "title": "Zero-Shot",
-    "section": "En resumen: consideraciones para refinar un prompt",
-    "text": "En resumen: consideraciones para refinar un prompt\n\nClaridad en el rol: Define claramente el rol que el LLM debe asumir (por ejemplo, “actúa como un agente de viajes”).\nInstrucciones específicas: Proporciona instrucciones claras y directas sobre lo que deseas que haga el modelo, evita ser vago.\nFlexibilidad en preguntas: permite que el modelo formule preguntas abiertas para obtener más información pertinente.\nPensamiento paso a paso: indica que el modelo debe desglosar el problema en pasos más pequeños, facilitando una respuesta más estructurada.\nDelimitación de contexto: usa etiquetas o delimitadores (sin programación) para separar instrucciones, contexto y reglas, mejorando la comprensión del modelo.",
-    "crumbs": [
-      "Prompt Engineering",
-      "Zero-Shot"
-    ]
-  },
-  {
-    "objectID": "qmd/prompt_engineering/few_shot.html",
-    "href": "qmd/prompt_engineering/few_shot.html",
-    "title": "FewShot",
-    "section": "",
-    "text": "¿Cuándo utilizar FewShot en vez de ZeroShot?\nEn inteligencia artificial, FewShot es una estrategia que ayuda al modelo a entender con claridad lo que deseas al incluir ejemplos específicos en las instrucciones. A diferencia de ZeroShot, que es más abierta y general, FewShot permite solucionar problemas complejos pero definidos, proporcionando ejemplos claros que guían los resultados.\nZeroShot es ideal cuando buscas flexibilidad y creatividad en respuestas amplias y subjetivas, como diseñar un plan de vacaciones a medida. FewShot, por otro lado, destaca en tareas específicas y complejas donde se necesitan respuestas claras y precisas, como clasificar correctamente opiniones en positivas, negativas o neutras.",
-    "crumbs": [
-      "Prompt Engineering",
-      "FewShot"
-    ]
-  },
-  {
-    "objectID": "qmd/prompt_engineering/few_shot.html#ejemplo-de-uso-clasificación-de-comentarios-con-fewshot",
-    "href": "qmd/prompt_engineering/few_shot.html#ejemplo-de-uso-clasificación-de-comentarios-con-fewshot",
-    "title": "FewShot",
-    "section": "Ejemplo de uso: clasificación de comentarios con FewShot",
-    "text": "Ejemplo de uso: clasificación de comentarios con FewShot\nPara emplear FewShot y diferenciar los comentarios que recibes, sigue estos pasos:\n\nDefine indicaciones claras: dile al modelo que actúe como analista de sentimientos, identificando comentarios positivos, negativos o neutrales según la opinión expresada.\nIncluye ejemplos prácticos: proporciona ejemplos breves y claros que demuestren qué consideras positivo, negativo o neutro.\nUtiliza un formato consistente: emplea etiquetas claras para pisos y techos de los ejemplos facilitando al modelo la identificación de los límites.\n\nUn ejemplo puede ser:\n&lt;reglas&gt;\nResponde solo con la palabra neutral, positiva o negativa.\n&lt;/reglas&gt;\n\n&lt;ejemplo&gt;\nComentario: “La comida fue pésima”.\nCalificación: negativa.\n&lt;/ejemplo&gt;\n\n&lt;ejemplo&gt;\nComentario: “El servicio estuvo increíble y la comida deliciosa”.\nCalificación: positiva.\n&lt;/ejemplo&gt;\n\n&lt;ejemplo&gt;\nComentario: “El servicio fue bueno, pero la comida estuvo muy regular”.\nCalificación: neutral.\n&lt;/ejemplo&gt;",
-    "crumbs": [
-      "Prompt Engineering",
-      "FewShot"
-    ]
-  },
-  {
-    "objectID": "qmd/prompt_engineering/few_shot.html#importancia-de-los-ejemplos-en-fewshot",
-    "href": "qmd/prompt_engineering/few_shot.html#importancia-de-los-ejemplos-en-fewshot",
-    "title": "FewShot",
-    "section": "Importancia de los ejemplos en FewShot",
-    "text": "Importancia de los ejemplos en FewShot\nCada ejemplo que incluyas enseña al modelo a distinguir con exactitud lo que quieres decir, dando una guía práctica y clara para identificar sentimientos y evitar ambigüedades. Recuerda que cada palabra y detalle influye notablemente en el resultado, por lo que una buena elección de ejemplos impacta positivamente en la efectividad final del modelo.\n\n¿Cuántos ejemplos debo incluir en mi prompt?\nPoner muchos o pocos ejemplos dependerá del rendimiento deseado y la complejidad del problema:\n\nCada ejemplo consume tokens y va a afectar el costo del uso.\nA mayor cantidad de ejemplos, más precisa será la calificación al detalle.\n\n\n\n\n\n\n\nTip\n\n\n\nLo recomendable es iniciar con algunos ejemplos clave e ir agregando aquellos donde identifiques errores previos para mejorar continuamente los resultados.",
-    "crumbs": [
-      "Prompt Engineering",
-      "FewShot"
-    ]
-  },
-  {
-    "objectID": "qmd/prompt_engineering/few_shot.html#cómo-puedo-validar-los-resultados-de-mi-análisis",
-    "href": "qmd/prompt_engineering/few_shot.html#cómo-puedo-validar-los-resultados-de-mi-análisis",
-    "title": "FewShot",
-    "section": "¿Cómo puedo validar los resultados de mi análisis?",
-    "text": "¿Cómo puedo validar los resultados de mi análisis?\nRealiza pruebas constantes ajustando detalles del prompt como las comillas o etiquetas y verificando si los resultados varían. Mediante ensayos controlados, puedes detectar y corregir errores eficientemente, garantizando que el modelo entienda con precisión tu requerimiento.",
-    "crumbs": [
-      "Prompt Engineering",
-      "FewShot"
-    ]
-  },
-  {
-    "objectID": "qmd/prompt_engineering/chain_of_thought.html",
-    "href": "qmd/prompt_engineering/chain_of_thought.html",
-    "title": "Chain of thought o cadena de pensamiento",
-    "section": "",
-    "text": "La técnica de prompting Chain of Thought, o cadena de pensamiento, mejora significativamente la calidad de respuesta de los modelos de lenguaje como ChatGPT. Aplicar este método implica guiar paso a paso las respuestas mediante instrucciones claras, para obtener resultados más precisos y coherentes. Veamos qué implica esta técnica y cómo sacarle el máximo provecho.\nChain of Thought consiste en pedir al modelo que explique, paso por paso, cómo llega a una respuesta determinada, especialmente ante preguntas que requieren razonamiento lógico. Antes de contar con modelos avanzados, era necesario indicar explícitamente en los prompts que “pensaran paso a paso”; los modelos actuales con capacidad de razonamiento avanzado ya operan bajo esta lógica por defecto.\nEsta técnica mejora los resultados, pero necesita un mayor tiempo de procesamiento por parte del modelo.\n\n¿Cuándo conviene usar chain of thougth?\n\nResolución lógica de acertijos.\nProcedimientos matemáticos y científicos que siguen un orden definido. Por ejemplo, resolver ecuaciones siguiendo reglas establecidas como la jerarquía de operaciones matemáticas (primero paréntesis, luego multiplicación y división, finalmente suma y resta).\n\nEjemplo práctico\n[CONTEXTO]\nNecesito resolver el siguiente problema matemático: Un tren A sale de Madrid a las 8:00 AM viajando a 120 km/h hacia Valencia. Un tren B sale de Valencia a las 9:30 AM viajando a 90 km/h hacia Madrid. Si la distancia entre Madrid y Valencia es de 360 km, ¿a qué hora se cruzarán los trenes?\n\n[INSTRUCCIÓN EXPLÍCITA CON CHAIN OF THOUGHT]\nPor favor, resuelve este problema paso a paso. Piensa de forma estructurada:\n1. Identifica los datos relevantes\n2. Plantea las ecuaciones necesarias\n3. Resuelve algebraicamente\n4. Verifica tu respuesta\n\n[FORMATO DESEADO]\nMuestra cada uno de tus pasos de razonamiento y explica por qué sigues ese enfoque. Finaliza con una conclusión clara que responda directamente a la pregunta.",
-    "crumbs": [
-      "Prompt Engineering",
-      "Chain of thought o cadena de pensamiento"
-    ]
-  },
-  {
-    "objectID": "qmd/prompt_engineering/meta_prompting.html",
-    "href": "qmd/prompt_engineering/meta_prompting.html",
-    "title": "Meta prompting",
-    "section": "",
-    "text": "Casos de uso:\nEl meta-prompting es una técnica avanzada de prompt engineering donde se instruye al modelo de lenguaje para que genere, refine o evalúe prompts. En lugar de pedir directamente una respuesta a una tarea, se le pide al modelo que actúe como un “ingeniero de prompts” o un “asistente de creación de prompts”, ayudando a construir el prompt óptimo para una tarea específica. Esta técnica es útil cuando se busca mejorar la calidad de los prompts existentes, generar variaciones de prompts para probar diferentes enfoques, o incluso para que el modelo explique por qué un prompt particular podría ser más efectivo que otro.",
-    "crumbs": [
-      "Prompt Engineering",
-      "Meta prompting"
-    ]
-  },
-  {
-    "objectID": "qmd/prompt_engineering/meta_prompting.html#casos-de-uso",
-    "href": "qmd/prompt_engineering/meta_prompting.html#casos-de-uso",
-    "title": "Meta prompting",
-    "section": "",
-    "text": "Optimización de Prompts: Mejorar un prompt existente para obtener mejores respuestas.\nGeneración de Variaciones de Prompts: Crear múltiples versiones de un prompt para A/B testing o para cubrir diferentes matices de una tarea.\nAnálisis de Prompts: Pedir al modelo que evalúe la efectividad de un prompt y sugiera mejoras.\nCreación de Prompts para Tareas Complejas: Guiar al modelo para que construya un prompt detallado para una tarea que requiere múltiples consideraciones.\nEducación en Prompt Engineering: Usar el modelo para que enseñe cómo construir buenos prompts.",
-    "crumbs": [
-      "Prompt Engineering",
-      "Meta prompting"
-    ]
-  },
-  {
-    "objectID": "qmd/prompt_engineering/meta_prompting.html#por-qué-es-importante-refinar-un-prompt",
-    "href": "qmd/prompt_engineering/meta_prompting.html#por-qué-es-importante-refinar-un-prompt",
-    "title": "Meta prompting",
-    "section": "¿Por qué es importante refinar un prompt?",
-    "text": "¿Por qué es importante refinar un prompt?\nCrear un prompt efectivo va más allá de agregar más instrucciones o reglas. Modificar palabras y comprender claramente su significado es clave para obtener resultados precisos usando inteligencia artificial. Este método de refinamiento puede aplicarse a diversas profesiones y tareas cotidianas.",
-    "crumbs": [
-      "Prompt Engineering",
-      "Meta prompting"
-    ]
-  },
-  {
-    "objectID": "qmd/prompt_engineering/meta_prompting.html#ejemplo-de-meta-promt",
-    "href": "qmd/prompt_engineering/meta_prompting.html#ejemplo-de-meta-promt",
-    "title": "Meta prompting",
-    "section": "Ejemplo de Meta promt",
-    "text": "Ejemplo de Meta promt\n[ROL]\nEres un experto en Prompt Engineering especializado en la creación de prompts para modelos de lenguaje generativos de texto.\n\n[TAREA]\nQuiero generar descripciones de productos concisas y persuasivas para una tienda online de artículos de tecnología. El público objetivo son jóvenes adultos interesados en las últimas novedades.\n\n[INSTRUCCIÓN DE META-PROMPTING]\nPor favor, crea tres variaciones de un prompt que yo pueda usar con un modelo como ChatGPT para generar estas descripciones de producto. Cada prompt debe:\n1. Especificar el tono deseado (moderno, entusiasta).\n2. Indicar la longitud aproximada de la descripción (ej. 2-3 frases).\n3. Solicitar que se destaquen 1-2 características clave del producto.\n4. Incluir un placeholder para el [NOMBRE_DEL_PRODUCTO] y [CARACTERISTICAS_CLAVE].\n\n[FORMATO DESEADO]\nPresenta cada variación del prompt claramente numerada.",
-    "crumbs": [
-      "Prompt Engineering",
-      "Meta prompting"
-    ]
-  },
-  {
-    "objectID": "qmd/prompt_engineering/prompt_chaining.html",
-    "href": "qmd/prompt_engineering/prompt_chaining.html",
-    "title": "Prompt chaining",
-    "section": "",
-    "text": "El Prompt Chaining se basa en descomponer grandes retos en partes pequeñas que manejas individualmente en múltiples chats. A diferencia de lo habitual, donde mantienes todo dentro de un solo chat, esta técnica implica tomar cada resultado logrado y moverlo a un nuevo chat específico, garantizando mayor claridad y menos errores.",
-    "crumbs": [
-      "Prompt Engineering",
-      "Prompt chaining"
+      "UV"
     ]
   },
   {
@@ -364,7 +228,7 @@
     "href": "qmd/python/listas.html#copiar-una-lista",
     "title": "5  Listas",
     "section": "5.2 Copiar una lista",
-    "text": "5.2 Copiar una lista\n\n\n\n\n\n\nNote\n\n\n\nCuando asignamos una lista a una nueva variable, por ejemplo, B = A, no estamos creando una copia independiente. Ambas variables apuntan al mismo espacio de memoria. Así, cualquier cambio en A se reflejará en B.\n\n\n\n# Crear lista\nls_a = [1, 2, 3, 4, 5]\n\n# Copiar lista\nls_b = ls_a\n\nprint(\"El id de la lista a es: \", id(ls_a))\nprint(\"El id de la lista b es: \", id(ls_b))\n\nEl id de la lista a es:  4421662272\nEl id de la lista b es:  4421662272\n\n\nComo podemos ver, son iguales, pues apuntan la mismo lugar en memoria. Entonces, ¿cómo evitamos esto?\nUitlizando el método slicing.\n\n# Crear lista c\nls_c = ls_a[:]\n\nprint(\"El id de la lista a es: \", id(ls_a))\nprint(\"El id de la lista b es: \", id(ls_c))\n\nEl id de la lista a es:  4421662272\nEl id de la lista b es:  4421663232\n\n\nComo vemos, son ids diferentes.",
+    "text": "5.2 Copiar una lista\n\n\n\n\n\n\nNote\n\n\n\nCuando asignamos una lista a una nueva variable, por ejemplo, B = A, no estamos creando una copia independiente. Ambas variables apuntan al mismo espacio de memoria. Así, cualquier cambio en A se reflejará en B.\n\n\n\n# Crear lista\nls_a = [1, 2, 3, 4, 5]\n\n# Copiar lista\nls_b = ls_a\n\nprint(\"El id de la lista a es: \", id(ls_a))\nprint(\"El id de la lista b es: \", id(ls_b))\n\nEl id de la lista a es:  4379208768\nEl id de la lista b es:  4379208768\n\n\nComo podemos ver, son iguales, pues apuntan la mismo lugar en memoria. Entonces, ¿cómo evitamos esto?\nUitlizando el método slicing.\n\n# Crear lista c\nls_c = ls_a[:]\n\nprint(\"El id de la lista a es: \", id(ls_a))\nprint(\"El id de la lista b es: \", id(ls_c))\n\nEl id de la lista a es:  4379208768\nEl id de la lista b es:  4379206016\n\n\nComo vemos, son ids diferentes.",
     "crumbs": [
       "Python",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Listas</span>"
@@ -870,7 +734,7 @@
     "href": "qmd/python/librerias_ejemplos.html#os",
     "title": "21  Librerías útiles de sistema",
     "section": "",
-    "text": "Directorio actual\n\nos.getcwd()\n\n'/Users/jona/Github/book-cursos/qmd/python'\n\n\n\n\nListar los archivos del directorio\n\n# Listamos los archivos que comienzan con \"poo\" usando\n# list comprehension\npoo = [files for files in os.listdir(\".\") if files.startswith(\"poo\")]\nprint(f\"Los archivos de POO son: {poo}\")\n\nLos archivos de POO son: ['poo1_clases.qmd', 'poo1_clases.html', 'poo3_resumen.html', 'poo2_herencias.html', 'poo3_resumen.qmd', 'poo2_herencias.qmd']\n\n\n¿Cómo funciona esta list comprehension?\n\nos.listdir(\".\"):\n\n\nDevuelve una lista con todos los archivos y carpetas del directorio actual (el punto “.” representa el directorio actual).\n\n\nfor files in ...:\n\n\nItera sobre cada elemento (archivo/carpeta) de la lista que devuelve os.listdir(“.”)\nLa variable files toma el valor de cada nombre de archivo en cada iteración.\n\n\nif files.startswith(\"poo\"):\n\n\nCondición que filtra solo los archivos cuyo nombre comience con “poo”\nstartswith() devuelve True si el string comienza con el prefijo especificado.\n\n\nfiles (al inicio):\n\n\nEs lo que se incluye en la lista final para cada elemento que cumple la condición.",
+    "text": "Directorio actual\n\nos.getcwd()\n\n'/Users/jona/Github/book-cursos/qmd/python'\n\n\n\n\nListar los archivos del directorio\n\n# Listamos los archivos que comienzan con \"poo\" usando\n# list comprehension\npoo = [files for files in os.listdir(\".\") if files.startswith(\"poo\")]\nprint(f\"Los archivos de POO son: {poo}\")\n\nLos archivos de POO son: ['poo1_clases.qmd', 'poo1_clases.quarto_ipynb', 'poo1_clases.html', 'poo3_resumen.html', 'poo2_herencias.html', 'poo2_herencias.quarto_ipynb', 'poo3_resumen.qmd', 'poo2_herencias.qmd', 'poo3_resumen.quarto_ipynb']\n\n\n¿Cómo funciona esta list comprehension?\n\nos.listdir(\".\"):\n\n\nDevuelve una lista con todos los archivos y carpetas del directorio actual (el punto “.” representa el directorio actual).\n\n\nfor files in ...:\n\n\nItera sobre cada elemento (archivo/carpeta) de la lista que devuelve os.listdir(“.”)\nLa variable files toma el valor de cada nombre de archivo en cada iteración.\n\n\nif files.startswith(\"poo\"):\n\n\nCondición que filtra solo los archivos cuyo nombre comience con “poo”\nstartswith() devuelve True si el string comienza con el prefijo especificado.\n\n\nfiles (al inicio):\n\n\nEs lo que se incluye en la lista final para cada elemento que cumple la condición.",
     "crumbs": [
       "Python",
       "<span class='chapter-number'>21</span>  <span class='chapter-title'>Librerías útiles de sistema</span>"
@@ -892,7 +756,7 @@
     "href": "qmd/python/librerias_ejemplos.html#random",
     "title": "21  Librerías útiles de sistema",
     "section": "21.3 random",
-    "text": "21.3 random\nLa generación de números y elecciones aleatorias es una tarea comúnmente requerida, y la librería Random en Python nos ofrece varias herramientas útiles para este propósito.\n\nimport random\n\nEjemplos de uso de la librería random:\n\n# 1. Generar un numero entero aleatorio entre 1 y 10\nprint(f\"Número entero aleatorio: {random.randint(1, 10)}\")\n\n# 2. Elegir aleatoriamente\n## Con lista\nlista = ['manzana', 'banana', 'cereza']\nprint(\"Elegir un elemento de una lista: \", random.choice(lista))\n\n## Con tupla\ntupla = (10, 20, 30, 40)\nprint(\"Elegir un elemento de una tupla: \",random.choice(tupla))  # ej: 30\n\n## Con string\ncadena = \"ABCDEFG\"\nprint(\"Elegir un elemento de una string: \",random.choice(cadena))  # ej: 'D'\n\n## Con range\nrango = range(1, 11)  # números del 1 al 10\nprint(\"Elegir un elemento de un rango: \",random.choice(rango))\n\nNúmero entero aleatorio: 4\nElegir un elemento de una lista:  banana\nElegir un elemento de una tupla:  30\nElegir un elemento de una string:  C\nElegir un elemento de un rango:  1\n\n\nEjemplo de shuffle\n\n# Lista original\ncartas = ['As', 'Rey', 'Reina', 'Jota', '10', '9']\nprint(\"Original:\", cartas)\n\n# Mezclar la lista\nrandom.shuffle(cartas)\nprint(\"Mezclada:\", cartas)\n\nOriginal: ['As', 'Rey', 'Reina', 'Jota', '10', '9']\nMezclada: ['As', 'Reina', 'Rey', '10', '9', 'Jota']",
+    "text": "21.3 random\nLa generación de números y elecciones aleatorias es una tarea comúnmente requerida, y la librería Random en Python nos ofrece varias herramientas útiles para este propósito.\n\nimport random\n\nEjemplos de uso de la librería random:\n\n# 1. Generar un numero entero aleatorio entre 1 y 10\nprint(f\"Número entero aleatorio: {random.randint(1, 10)}\")\n\n# 2. Elegir aleatoriamente\n## Con lista\nlista = ['manzana', 'banana', 'cereza']\nprint(\"Elegir un elemento de una lista: \", random.choice(lista))\n\n## Con tupla\ntupla = (10, 20, 30, 40)\nprint(\"Elegir un elemento de una tupla: \",random.choice(tupla))  # ej: 30\n\n## Con string\ncadena = \"ABCDEFG\"\nprint(\"Elegir un elemento de una string: \",random.choice(cadena))  # ej: 'D'\n\n## Con range\nrango = range(1, 11)  # números del 1 al 10\nprint(\"Elegir un elemento de un rango: \",random.choice(rango))\n\nNúmero entero aleatorio: 1\nElegir un elemento de una lista:  manzana\nElegir un elemento de una tupla:  20\nElegir un elemento de una string:  E\nElegir un elemento de un rango:  6\n\n\nEjemplo de shuffle\n\n# Lista original\ncartas = ['As', 'Rey', 'Reina', 'Jota', '10', '9']\nprint(\"Original:\", cartas)\n\n# Mezclar la lista\nrandom.shuffle(cartas)\nprint(\"Mezclada:\", cartas)\n\nOriginal: ['As', 'Rey', 'Reina', 'Jota', '10', '9']\nMezclada: ['Reina', 'As', '9', 'Jota', 'Rey', '10']",
     "crumbs": [
       "Python",
       "<span class='chapter-number'>21</span>  <span class='chapter-title'>Librerías útiles de sistema</span>"
@@ -1017,6 +881,489 @@
     "crumbs": [
       "Python",
       "<span class='chapter-number'>26</span>  <span class='chapter-title'>Validaciones de datos</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/fundamentos_llm/fundamentos.html",
+    "href": "qmd/fundamentos_llm/fundamentos.html",
+    "title": "27  Fundamentos de los LLM",
+    "section": "",
+    "text": "27.1 Conceptos clave",
+    "crumbs": [
+      "Fundamentos de LLMs",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Fundamentos de los LLM</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/fundamentos_llm/fundamentos.html#conceptos-clave",
+    "href": "qmd/fundamentos_llm/fundamentos.html#conceptos-clave",
+    "title": "27  Fundamentos de los LLM",
+    "section": "",
+    "text": "Tokenización: Proceso de dividir texto en partes más pequeñas (tokens), como palabras o subpalabras, para su análisis.\nVectorización: Asignación de vectores a cada token, permitiendo que las palabras se representen numéricamente.\nEmbeddings: Técnica que organiza los vectores en un espacio vectorial, capturando relaciones semánticas. Permite realizar operaciones matemáticas entre palabras, como sumar o restar vectores.\nTransformers: Arquitectura utilizada en los LLMs que facilita el procesamiento de texto mediante atención y paralelismo.\n\n\n27.1.1 Ejemplos prácticos utilizando python\n\nLibrería transformers\n\n\n\n\n\n\n\nNote\n\n\n\nLa librería transformers es un paquete de Python desarrollado por Hugging Face que facilita el uso de modelos de lenguaje avanzados (como BERT, GPT, T5, etc.) para tareas de procesamiento de lenguaje natural (NLP).\nPosee compatibilidad con PyTorch y TensorFlow. Además, posee funciones eficientes de tokenización.\n\n\n\npip install transformers\n\n\nRequirement already satisfied: transformers in /Users/jona/Github/book-cursos/.venv/lib/python3.13/site-packages (4.53.2)\n\nRequirement already satisfied: filelock in /Users/jona/Github/book-cursos/.venv/lib/python3.13/site-packages (from transformers) (3.18.0)\n\nRequirement already satisfied: huggingface-hub&lt;1.0,&gt;=0.30.0 in /Users/jona/Github/book-cursos/.venv/lib/python3.13/site-packages (from transformers) (0.33.4)\n\nRequirement already satisfied: numpy&gt;=1.17 in /Users/jona/Github/book-cursos/.venv/lib/python3.13/site-packages (from transformers) (2.3.1)\n\nRequirement already satisfied: packaging&gt;=20.0 in /Users/jona/Github/book-cursos/.venv/lib/python3.13/site-packages (from transformers) (25.0)\n\nRequirement already satisfied: pyyaml&gt;=5.1 in /Users/jona/Github/book-cursos/.venv/lib/python3.13/site-packages (from transformers) (6.0.2)\n\nRequirement already satisfied: regex!=2019.12.17 in /Users/jona/Github/book-cursos/.venv/lib/python3.13/site-packages (from transformers) (2024.11.6)\n\nRequirement already satisfied: requests in /Users/jona/Github/book-cursos/.venv/lib/python3.13/site-packages (from transformers) (2.32.3)\n\nRequirement already satisfied: tokenizers&lt;0.22,&gt;=0.21 in /Users/jona/Github/book-cursos/.venv/lib/python3.13/site-packages (from transformers) (0.21.2)\n\nRequirement already satisfied: safetensors&gt;=0.4.3 in /Users/jona/Github/book-cursos/.venv/lib/python3.13/site-packages (from transformers) (0.5.3)\n\nRequirement already satisfied: tqdm&gt;=4.27 in /Users/jona/Github/book-cursos/.venv/lib/python3.13/site-packages (from transformers) (4.67.1)\n\nRequirement already satisfied: fsspec&gt;=2023.5.0 in /Users/jona/Github/book-cursos/.venv/lib/python3.13/site-packages (from huggingface-hub&lt;1.0,&gt;=0.30.0-&gt;transformers) (2025.7.0)\n\nRequirement already satisfied: typing-extensions&gt;=3.7.4.3 in /Users/jona/Github/book-cursos/.venv/lib/python3.13/site-packages (from huggingface-hub&lt;1.0,&gt;=0.30.0-&gt;transformers) (4.13.2)\n\nRequirement already satisfied: hf-xet&lt;2.0.0,&gt;=1.1.2 in /Users/jona/Github/book-cursos/.venv/lib/python3.13/site-packages (from huggingface-hub&lt;1.0,&gt;=0.30.0-&gt;transformers) (1.1.5)\n\nRequirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /Users/jona/Github/book-cursos/.venv/lib/python3.13/site-packages (from requests-&gt;transformers) (3.4.2)\n\nRequirement already satisfied: idna&lt;4,&gt;=2.5 in /Users/jona/Github/book-cursos/.venv/lib/python3.13/site-packages (from requests-&gt;transformers) (3.10)\n\nRequirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /Users/jona/Github/book-cursos/.venv/lib/python3.13/site-packages (from requests-&gt;transformers) (2.4.0)\n\nRequirement already satisfied: certifi&gt;=2017.4.17 in /Users/jona/Github/book-cursos/.venv/lib/python3.13/site-packages (from requests-&gt;transformers) (2025.4.26)\n\n\n\n[notice] A new release of pip is available: 25.1.1 -&gt; 25.2\n\n[notice] To update, run: pip install --upgrade pip\n\nNote: you may need to restart the kernel to use updated packages.\n\n\n\n\n\nTokenizador\n\n\n# LLamamos a la clase BertTokenizer\nfrom transformers import BertTokenizer\n\n# Definimos un modelo para tokenizar\n# Debe descargar el modelo: tokeniza por subpalabras\ntokenizador = BertTokenizer.from_pretrained(\"bert-base-uncased\")\n\n\nAplicación de tokenizador\n\n\n# Aplicar tokenizador\ntoken = tokenizador.tokenize(\"Hola, ¿cómo estás?\")\nprint(f'La frase tokenizada es: {token}')\n\nLa frase tokenizada es: ['ho', '##la', ',', '¿', 'como', 'est', '##as', '?']\n\n\n\nEmbeddings\n\nPara crear los embeddings usaremos la librería PyTorch, que es una biblioteca de Python de código abierto desarrollada por Facebook para el cálculo numérico y el aprendizaje profundo (deep learning).\nEsta nos permite crear y entrenar redes neuronales de manera flexible y eficiente.\n\npip install torch\n\n\nRequirement already satisfied: torch in /Users/jona/Github/book-cursos/.venv/lib/python3.13/site-packages (2.7.1)\n\nRequirement already satisfied: filelock in /Users/jona/Github/book-cursos/.venv/lib/python3.13/site-packages (from torch) (3.18.0)\n\nRequirement already satisfied: typing-extensions&gt;=4.10.0 in /Users/jona/Github/book-cursos/.venv/lib/python3.13/site-packages (from torch) (4.13.2)\n\nRequirement already satisfied: setuptools in /Users/jona/Github/book-cursos/.venv/lib/python3.13/site-packages (from torch) (80.8.0)\n\nRequirement already satisfied: sympy&gt;=1.13.3 in /Users/jona/Github/book-cursos/.venv/lib/python3.13/site-packages (from torch) (1.14.0)\n\nRequirement already satisfied: networkx in /Users/jona/Github/book-cursos/.venv/lib/python3.13/site-packages (from torch) (3.5)\n\nRequirement already satisfied: jinja2 in /Users/jona/Github/book-cursos/.venv/lib/python3.13/site-packages (from torch) (3.1.6)\n\nRequirement already satisfied: fsspec in /Users/jona/Github/book-cursos/.venv/lib/python3.13/site-packages (from torch) (2025.7.0)\n\nRequirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /Users/jona/Github/book-cursos/.venv/lib/python3.13/site-packages (from sympy&gt;=1.13.3-&gt;torch) (1.3.0)\n\nRequirement already satisfied: MarkupSafe&gt;=2.0 in /Users/jona/Github/book-cursos/.venv/lib/python3.13/site-packages (from jinja2-&gt;torch) (3.0.2)\n\n\n\n[notice] A new release of pip is available: 25.1.1 -&gt; 25.2\n\n[notice] To update, run: pip install --upgrade pip\n\nNote: you may need to restart the kernel to use updated packages.\n\n\n\n\n\n# Importamos torch\nimport torch\n\n# Importamos el modelo Bert desde transformers\nfrom transformers import BertModel\n\nUtilizaremos un modelo pre entrenado para el ejemplo (se va a descargae). Este modelo descarga safetensors, que es un formato de archivo desarrollado por Hugging Face para almacenar y cargar los pesos (parámetros) de modelos de machine learning de forma más segura y eficiente que el formato tradicional .pt o .bin de PyTorch.\n\nmodel = BertModel.from_pretrained(\"bert-base-uncased\")\n\nCuando ya tenemos nuestro modelo, podemos crear nuestros token y transformarlos en vectores, para luego crear los embbeddings.\n\n# Convertir palabras a ids\n#  - El resultado es una lista, así que obtenemos el primer elemento (0)\n#    para recuperar el resultado\nking_token_id = tokenizador.convert_tokens_to_ids([\"king\"])[0]\nman_token_id = tokenizador.convert_tokens_to_ids([\"man\"])[0]\nwoman_token_id = tokenizador.convert_tokens_to_ids([\"woman\"])[0]\nqueen_token_id = tokenizador.convert_tokens_to_ids([\"queen\"])[0]\n\n# Creamos los embeddings usando el modelo descargado.\n# - Sera un embedding de palabras (se define porque tambien puede ser\n#   de audio o de imagenes) utilizando el metodo `word_embeddings`\n# - Ademas, usamos la funcion `tensor()` para convertir el vector a \n#   un tensor\nking_embedding = model.embeddings.word_embeddings(torch.tensor(king_token_id))\nman_embedding = model.embeddings.word_embeddings(torch.tensor([king_token_id]))\nwoman_embedding = model. embeddings.word_embeddings(torch.tensor([king_token_id]))\nqueen_embedding = model. embeddings.word_embeddings(torch. tensor([queen_token_id]))\n\nUna vez que construimos los embeddings, podemos comenzar a realizar operaciones matemáticas con ellos, como por ejemplo, obtener la similitud entre embeddigs: utilizaremos torch y la funcion coseno\nLos resultados de la función coseno van del -1 al 1, donde, mientas más cerca de 1, significa que los vectores son similares, y si están más cerca de -1 es que son más diferentes entre sí\n\n# Definimos la funcion coseno en una variable\ncos = torch.nn.CosineSimilarity()\n\ncos(king_embedding, queen_embedding)\n\ntensor([0.6469], grad_fn=&lt;SumBackward1&gt;)",
+    "crumbs": [
+      "Fundamentos de LLMs",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Fundamentos de los LLM</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/fundamentos_llm/training_llm.html",
+    "href": "qmd/fundamentos_llm/training_llm.html",
+    "title": "28  Entrenamiento de un LLM",
+    "section": "",
+    "text": "28.1 Corpus o conjunto de entrenamiento\nEntrenar un modelo de lenguaje grande (Large Language Model, LLM) implica un proceso extenso que combina grandes volúmenes de información, potente infraestructura tecnológica y variadas técnicas de aprendizaje automático. Comprender cómo se llevan a cabo estos pasos ayuda a aprovechar al máximo el potencial de un LLM para resolver distintos problemas o tareas específicas.\nEl conjunto de entrenamiento o corpus es la base esencial del desarrollo de un LLM. Este dataset determina directamente qué problemas puede ayudar a resolver nuestro modelo.",
+    "crumbs": [
+      "Fundamentos de LLMs",
+      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Entrenamiento de un LLM</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/fundamentos_llm/training_llm.html#corpus-o-conjunto-de-entrenamiento",
+    "href": "qmd/fundamentos_llm/training_llm.html#corpus-o-conjunto-de-entrenamiento",
+    "title": "28  Entrenamiento de un LLM",
+    "section": "",
+    "text": "El corpus está compuesto por textos recolectados, generalmente vía web scraping.\nPara tener datasets de calidad, se requiere infraestructura tecnológica robusta y habilidades humanas para revisión y limpieza, pues esta información puede venir con elementos que no son atingentes al problema que queremos resolver.\nEste corpus puede llegar a tener tamaños inmensos. Por ejemplo, el modelo Lama 4 de Meta utiliza cerca de treinta trillones de tokens, equivalentes aproximadamente a ciento nueve terabytes de información textual.",
+    "crumbs": [
+      "Fundamentos de LLMs",
+      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Entrenamiento de un LLM</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/fundamentos_llm/training_llm.html#tokenización",
+    "href": "qmd/fundamentos_llm/training_llm.html#tokenización",
+    "title": "28  Entrenamiento de un LLM",
+    "section": "28.2 Tokenización",
+    "text": "28.2 Tokenización\nUna vez que tenemos listo nuestro corpus, lo debemos tokenizar para que sea reconocible por los computadores, es decir, transformamos las palabras a números.",
+    "crumbs": [
+      "Fundamentos de LLMs",
+      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Entrenamiento de un LLM</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/fundamentos_llm/training_llm.html#arquitectura-de-un-llm",
+    "href": "qmd/fundamentos_llm/training_llm.html#arquitectura-de-un-llm",
+    "title": "28  Entrenamiento de un LLM",
+    "section": "28.3 Arquitectura de un LLM",
+    "text": "28.3 Arquitectura de un LLM\nUna vez tokenizados los datos, seleccionamos o desarrollamos la arquitectura a usar:\n\nLa arquitectura varía según el uso específico deseado.\nEjemplo: GPT-2 consiste principalmente en capas de atención y capas de multilayer perceptron apiladas.\nEmpresas como Meta hacen pública su arquitectura (open source), facilitando su replicación y adaptación.",
+    "crumbs": [
+      "Fundamentos de LLMs",
+      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Entrenamiento de un LLM</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/fundamentos_llm/training_llm.html#entrenamiento-de-un-llm",
+    "href": "qmd/fundamentos_llm/training_llm.html#entrenamiento-de-un-llm",
+    "title": "28  Entrenamiento de un LLM",
+    "section": "28.4 Entrenamiento de un LLM",
+    "text": "28.4 Entrenamiento de un LLM\nEsta es la parte más costosa. Requiere miles de GPUs o TPUs distribuidos en centros especializados de procesamiento. Cada GPU procesa fragmentos del corpus y reporta resultados, errores y ajustes al servidor central.\nEste proceso es altamente repetitivo y dura mucho tiempo, dependiendo del volumen de datos y tamaño del LLM.",
+    "crumbs": [
+      "Fundamentos de LLMs",
+      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Entrenamiento de un LLM</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/fundamentos_llm/training_llm.html#post-entrenamiento",
+    "href": "qmd/fundamentos_llm/training_llm.html#post-entrenamiento",
+    "title": "28  Entrenamiento de un LLM",
+    "section": "28.5 Post Entrenamiento",
+    "text": "28.5 Post Entrenamiento\nAl finalizar el entrenamiento básico, el LLM aún es general. Para tareas específicas, se ejecuta una fase adicional conocida como fine tuning. El tiempo de ajuste de este paso es considerablemente menor al entrenamiento inicial.\nEsta técnica consiste en reentrenar parcialmente el modelo con datos específicos para lograr un modelo espacilizado en ciertas áreas.\nPor ejemplo: adaptación con imágenes médicas o consultas financieras.",
+    "crumbs": [
+      "Fundamentos de LLMs",
+      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Entrenamiento de un LLM</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/fundamentos_llm/training_llm.html#rlhf",
+    "href": "qmd/fundamentos_llm/training_llm.html#rlhf",
+    "title": "28  Entrenamiento de un LLM",
+    "section": "28.6 RLHF",
+    "text": "28.6 RLHF\nEl Reinforcement Learning with Human Feedback (RLHF) introduce retroalimentación humana para ajustar el modelo según nuestras necesidades y expectativas:\n¿Cómo funciona RLHF?\n\nEl modelo genera respuestas a preguntas o tareas.\nHumanos evalúan esas respuestas, indicando cuáles son mejores o más apropiadas.\nEl modelo recibe recompensas (o penalizaciones) según la evaluación humana, y ajusta sus parámetros para maximizar las respuestas preferidas por las personas.\nEste proceso se repite, permitiendo que el modelo aprenda comportamientos alineados con las expectativas y valores humanos.\n\nComo es de esperar, este proceso es tedioso y lento, por eso, se han creado herramientas de Reinforcement Learning offline (no supervisado).",
+    "crumbs": [
+      "Fundamentos de LLMs",
+      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Entrenamiento de un LLM</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/fundamentos_llm/training_llm.html#rl-offline",
+    "href": "qmd/fundamentos_llm/training_llm.html#rl-offline",
+    "title": "28  Entrenamiento de un LLM",
+    "section": "28.7 RL Offline",
+    "text": "28.7 RL Offline\nEn estas técnicas, el modelo aprende a partir de un conjunto de datos de experiencias previas (respuestas y recompensas ya almacenadas), sin requerir interacción en tiempo real ni retroalimentación humana directa durante el entrenamiento. Con refuerzos positivos y negativos (aprendizaje por refuerzo clásico).\nUn ejemplo puede ser un agente que aprende a jugar un videojuego solo, recibiendo puntos por ganar y penalizaciones por perder, sin que un humano intervenga para decirle si su comportamiento es bueno o malo. Este proceso de “cuándo gana y cuándo pierde” lo programa un humano.",
+    "crumbs": [
+      "Fundamentos de LLMs",
+      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Entrenamiento de un LLM</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/fundamentos_llm/rope.html",
+    "href": "qmd/fundamentos_llm/rope.html",
+    "title": "29  RoPE",
+    "section": "",
+    "text": "RoPE (Rotary Position Embedding o Rotary Position Encoding) es una técnica utilizada en modelos de lenguaje como los Transformers para que el modelo pueda saber en qué posición está cada palabra o token dentro de una secuencia de texto.\n\n\n\n\n\n\nNote\n\n\n\nRotary Position Embedding y Rotary Position Encoding son la misma técnica, pero con distinto nombre. En la mayoría de los artículos y recursos técnicos se usa Rotary Position Embedding, pero el concepto es el mismo: una forma de incorporar la posición en los tokens a través de rotaciones en el espacio vectorial.\n\n\nA diferencia de los métodos tradicionales que suman información de posición a los vectores de las palabras, RoPE incorpora la posición aplicando rotaciones matemáticas en el espacio vectorial de cada token.\n\nFuncionamiento de RoPE: \n\nEn este ejemplo, primeramente se guardó la posición de “perro”, y luego identifica “cuánto se mueve” al entrar en contacto con otras palabras.\nEsto permite que el modelo entienda mejor el orden y la relación entre las palabras, incluso en secuencias largas, y mejora su capacidad para captar patrones y dependencias en el texto.\nEn resumen, RoPE ayuda a que el modelo “sepa” dónde está cada palabra y cómo se relaciona con las demás, usando rotaciones en vez de sumas, lo que resulta más eficiente y flexible para el aprendizaje.",
+    "crumbs": [
+      "Fundamentos de LLMs",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>RoPE</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/fundamentos_llm/escalado_multimodal.html",
+    "href": "qmd/fundamentos_llm/escalado_multimodal.html",
+    "title": "30  Escalado y modelos multimodales",
+    "section": "",
+    "text": "30.1 Leyes de escalado\nLas leyes de escalado y los modelos multimodales son esenciales en el ámbito actual de la inteligencia artificial. Aumentar los parámetros, la cantidad de datos y la capacidad computacional mejora el desempeño, aunque con retornos decrecientes tras cierto punto. A su vez, los modelos multimodales combinan diferentes tipos de información, permitiendo aplicaciones avanzadas en diversos contextos.\nLas leyes de escalado revelan cómo mejora previsiblemente el rendimiento de un modelo al incrementar ciertos recursos clave. Estos recursos son:\nEn esta imagen podemos observar que, para GPT3, la pérdida disminuyó al momento de aumentar los parámetros del modelo y aumentar la cantidad de datos de entrenamiento.\nLa relación entre el rendimiento y los recursos sigue una ley matemática conocida como ley de potencia, mostrando cómo al aumentar recursos específicos, los errores o pérdidas disminuyen con predictibilidad.\nNo obstante, llega un punto donde este incremento adicional tiene un efecto menor, lo que se conoce como retornos decreciente, por eso es importante mantener el equilibrio, así no sacrificamos potencial ni tenemos grandes pérdidas en los modelos.",
+    "crumbs": [
+      "Fundamentos de LLMs",
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Escalado y modelos multimodales</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/fundamentos_llm/escalado_multimodal.html#leyes-de-escalado",
+    "href": "qmd/fundamentos_llm/escalado_multimodal.html#leyes-de-escalado",
+    "title": "30  Escalado y modelos multimodales",
+    "section": "",
+    "text": "Parámetros del modelo.\nDatos disponibles para entrenamiento.\nCapacidad computacional.",
+    "crumbs": [
+      "Fundamentos de LLMs",
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Escalado y modelos multimodales</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/fundamentos_llm/escalado_multimodal.html#modelos-multimodales",
+    "href": "qmd/fundamentos_llm/escalado_multimodal.html#modelos-multimodales",
+    "title": "30  Escalado y modelos multimodales",
+    "section": "30.2 Modelos multimodales",
+    "text": "30.2 Modelos multimodales\nLos modelos multimodales en inteligencia artificial son sistemas capaces de procesar y combinar información proveniente de diferentes tipos de datos o “modalidades”, como texto, imágenes, audio y video.\nA diferencia de los modelos tradicionales que solo trabajan con un tipo de dato (por ejemplo, solo texto o solo imágenes), los modelos multimodales pueden entender y relacionar información de varias fuentes al mismo tiempo.\nEsto les permite tener una comprensión más completa y contextual del mundo, facilitando tareas como describir imágenes con texto, responder preguntas sobre videos, o analizar conversaciones que incluyen voz y texto.\nEjemplos actuales de modelos multimodales incluyen GPT-4 (que puede analizar texto e imágenes) y CLIP (que relaciona imágenes y descripciones textuales).",
+    "crumbs": [
+      "Fundamentos de LLMs",
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Escalado y modelos multimodales</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/fundamentos_llm/moe.html",
+    "href": "qmd/fundamentos_llm/moe.html",
+    "title": "31  Mixture of Experts (MoE)",
+    "section": "",
+    "text": "31.1 ¿Como hace el LLM para activar los expertos?\nEs una arquitectura que combina varios modelos especializados (“expertos”) para resolver una tarea. En vez de entrenar una inmensa red general que responda todo tipo de preguntas, se entrenan múltiples modelos más pequeños, cada uno especializándose en áreas específicas como programación, matemáticas o idiomas.\nCada uno de estos expertos actúa de forma independiente durante el entrenamiento inicial y posteriormente se combinan. El resultado es una arquitectura eficiente que utiliza solo una pequeña porción de parámetros durante la inferencia.\nPara implementar esta arquitectura utilizamos nuestro corpus con clasificaciones, las cuales entrenan mini modelos que responden a tareas específicas. Luego, se realizan fines tuning a las respuestas de estos modelos, y, finalmente, se deben unir.\nUtilizanso la denominada gate network. Esta “red gate” funciona como un guía intuitivo, reconocido por identificar rápidamente qué expertos deben activarse según la consulta específica realizada por el usuario.\nEs una mini red neuronal que fue entrenada para conocer cada categoría del LLM, y que sabe “dónde buscar”.\nEsta get network se compone de dos caraterísticas priniciaples:",
+    "crumbs": [
+      "Fundamentos de LLMs",
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Mixture of Experts (MoE)</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/fundamentos_llm/moe.html#como-hace-el-llm-para-activar-los-expertos",
+    "href": "qmd/fundamentos_llm/moe.html#como-hace-el-llm-para-activar-los-expertos",
+    "title": "31  Mixture of Experts (MoE)",
+    "section": "",
+    "text": "Sparsity (esparcidad): técnica que asegura que la gate network dirija únicamente hacia expertos relevantes, evitando activar innecesariamente áreas de la red no útiles.\nLoad balancing: en entrenamiento e inferencia asegura que los expertos se activen adecuadamente en función de la tarea requerida.",
+    "crumbs": [
+      "Fundamentos de LLMs",
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Mixture of Experts (MoE)</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/fundamentos_llm/modelos_locales.html",
+    "href": "qmd/fundamentos_llm/modelos_locales.html",
+    "title": "32  Modelos locales",
+    "section": "",
+    "text": "32.1 Ollama\nPara ejecutar modelos de lenguaje forma local necesitamos ciertas herramientas:\nLa página de Ollama contiene diversos modelos para descargar y correr localemente. En la descripción de cada modelo veremos ciertos elementos que nos indican las características del mismo.",
+    "crumbs": [
+      "Fundamentos de LLMs",
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Modelos locales</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/fundamentos_llm/modelos_locales.html#qué-es-exolabs-y-cómo-potencia-el-uso-local-de-llms",
+    "href": "qmd/fundamentos_llm/modelos_locales.html#qué-es-exolabs-y-cómo-potencia-el-uso-local-de-llms",
+    "title": "32  Modelos locales",
+    "section": "32.2 ¿Qué es ExoLabs y cómo potencia el uso local de LLMs?",
+    "text": "32.2 ¿Qué es ExoLabs y cómo potencia el uso local de LLMs?\nExoLabs permite conectar múltiples computadoras creando un clúster local de potencia computacional compartida:\nConcepto principal: Usa redes peer-to-peer (P2P) como la tecnología detrás de plataformas como Torrent para compartir datos y tareas entre máquinas conectadas. Ventajas: Reduce costos al utilizar varias computadoras económicas, mejora la privacidad (importante en sectores bancarios o jurídicos) y permite controlar específicamente las configuraciones y costos operacionales.",
+    "crumbs": [
+      "Fundamentos de LLMs",
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Modelos locales</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/fundamentos_llm/modelos_locales.html#cómo-montar-un-clúster-local-con-exolabs",
+    "href": "qmd/fundamentos_llm/modelos_locales.html#cómo-montar-un-clúster-local-con-exolabs",
+    "title": "32  Modelos locales",
+    "section": "32.3 ¿Cómo montar un clúster local con ExoLabs?",
+    "text": "32.3 ¿Cómo montar un clúster local con ExoLabs?\nEstos pasos específicos son clave para conectar varias máquinas con ExoLabs:\n\nEquipamiento: necesitas diversas computadoras conectadas mediante switch y router, pudiendo combinar conexiones Ethernet y WiFi.\nConfiguración y ejecución: instala ExoLabs en cada máquina; al ejecutar, crea automáticamente una red entre ellas mostrando información como teraflops o memoria disponible.\nFuncionamiento: Cada computadora aporta sus capacidades (CPU, GPU, memoria) a la red, haciendo posible ejecutar modelos de gran tamaño que de otro modo requerirían hardware costoso.",
+    "crumbs": [
+      "Fundamentos de LLMs",
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Modelos locales</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/fundamentos_llm/modelos_locales.html#cuáles-son-las-ventajas-concretas-de-ejecutar-llm-en-local",
+    "href": "qmd/fundamentos_llm/modelos_locales.html#cuáles-son-las-ventajas-concretas-de-ejecutar-llm-en-local",
+    "title": "32  Modelos locales",
+    "section": "32.4 ¿Cuáles son las ventajas concretas de ejecutar LLM en local?",
+    "text": "32.4 ¿Cuáles son las ventajas concretas de ejecutar LLM en local?\n\nPrivacidad total: Los datos sensibles permanecen en tu entorno, clave para industrias sensibles al manejo de información.\nControl absoluto: Define exactamente qué quieres ejecutar, cuánto gastar, y cómo ajustar o optimizar tu modelo específicamente para tu caso de uso con técnicas como el fine tuning.",
+    "crumbs": [
+      "Fundamentos de LLMs",
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Modelos locales</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/fundamentos_llm/fine_tuning.html",
+    "href": "qmd/fundamentos_llm/fine_tuning.html",
+    "title": "33  Fine tuning supervisado",
+    "section": "",
+    "text": "33.1 Dataset\nEl fine tuning supervisado significa entrenar un modelo preexistente suministrando claramente tanto el dato como la respuesta esperada. El modelo ajusta sus pesos mediante procesos llamados forward pass y backward pass, procedimientos explicados previamente y esenciales para adaptar el modelo al nuevo contexto.\nEsta técnica permite darle al modelo la habilidad de responder preguntas específicas que inicialmente no podría contestar bien debido a la limitación de su entrenamiento original.\nEs importante revisar que los datos estén limpios (sin errores, duplicados o inconsistencias), que las entradas y salidas sean claras y estén alineadas (cada pregunta tenga una respuesta adecuada), y que el formato sea compatible con el modelo.",
+    "crumbs": [
+      "Fundamentos de LLMs",
+      "<span class='chapter-number'>33</span>  <span class='chapter-title'>Fine tuning  supervisado</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/fundamentos_llm/fine_tuning.html#fine-tuning-con-openia",
+    "href": "qmd/fundamentos_llm/fine_tuning.html#fine-tuning-con-openia",
+    "title": "33  Fine tuning supervisado",
+    "section": "33.2 Fine tuning con OpenIA",
+    "text": "33.2 Fine tuning con OpenIA\nLas siguientes líneas muestran un ejemplo de cómo se haría fine tuning con python y la API de OpenIA utilizando un conjunto de datos específico.",
+    "crumbs": [
+      "Fundamentos de LLMs",
+      "<span class='chapter-number'>33</span>  <span class='chapter-title'>Fine tuning  supervisado</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/fundamentos_llm/fine_tuning.html#cargar-datos-procesados",
+    "href": "qmd/fundamentos_llm/fine_tuning.html#cargar-datos-procesados",
+    "title": "33  Fine tuning supervisado",
+    "section": "33.3 Cargar datos procesados",
+    "text": "33.3 Cargar datos procesados\n\ninput_file = \"ruta/al/archivo\"\ndataset = pd.read_json(input_file)\n\n# En este ejemplo, se utilizaron filas específicas para\n# reducir el tamaño del dataset\ndataset = dataset[dataset['output'].str.len() &lt; 500]",
+    "crumbs": [
+      "Fundamentos de LLMs",
+      "<span class='chapter-number'>33</span>  <span class='chapter-title'>Fine tuning  supervisado</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/fundamentos_llm/fine_tuning.html#formatear-el-dataset",
+    "href": "qmd/fundamentos_llm/fine_tuning.html#formatear-el-dataset",
+    "title": "33  Fine tuning supervisado",
+    "section": "33.4 Formatear el dataset",
+    "text": "33.4 Formatear el dataset\nOpenIA recomienda utilizar un formato específico para el fine tuning, esto es utilzando la siguiente estructura:\n\nsystem: la instrucción.\nuser: lo que pregunta el usuario.\nassistant: como debería responder el asistente.\n\n\n# Creamos una lista vacia para guardar los mensajes\nresult = []\n\n# Para cada mensaje del json, crearemos los tres roles necesarios\n# y los iremos guardando en la lista result con append\nfor _, row in dataset.iterrows():\n    messages = [\n        {\"role\": \"system\", \"content\": row['instruction']},\n        {\"role\": \"user\", \"content\": row['input']},\n        {\"role\": \"assistant\", \"content\": row['output']}\n    ]\n    result.append({\"messages\": messages})\n\nUna vez que tenemos el dataset formateado, debemos guardarlo en un formato específico: JSON Lines, donde cada elemento de la lista se interpreta como un registro único.\nEs importante splitear el archivo en un conjunto de datos de prueba, y otro conjunto de entrenamiento\n\n# Por terminos practicos de tiempo y costo, seleccionamos solo las\n# primeras 500 filas\ndata_to_finetune = result[:500]\n\n# Para guardar en formato JSONL (JSON Lines) el conjunto de datos\n# de entrenamiento\nwith open('./train_formatted_dataset.jsonl', 'w', encoding='utf-8') as f:\n    for item in data_to_finetune:\n        f.write(json.dumps(item, ensure_ascii=False) + '\\n')\n\n\n# Seleccion de casos para el conjunto de prueba\ndata_to_finetune = result[501:1000]\n\n# Para guardar en formato JSONL (JSON Lines) el\n# conjunto de prueba\nwith open('./test_formatted_dataset.jsonl', 'w', encoding='utf-8') as f:\n    for item in data_to_finetune:\n        f.write(json.dumps(item, ensure_ascii=False) + '\\n')",
+    "crumbs": [
+      "Fundamentos de LLMs",
+      "<span class='chapter-number'>33</span>  <span class='chapter-title'>Fine tuning  supervisado</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/fundamentos_llm/fine_tuning.html#openia-desde-python",
+    "href": "qmd/fundamentos_llm/fine_tuning.html#openia-desde-python",
+    "title": "33  Fine tuning supervisado",
+    "section": "33.5 OpenIA desde python",
+    "text": "33.5 OpenIA desde python\nPara usar los servicios de OpenIA desde python debemos tener una API Key. Esta la guardamos en nuestro entorno, y la llamamos usando la librería dotenv y la función load_dotenv.\nLuego, generamos una conexión al cliente.\n\n# Importar librerias\nimport os\nfrom dotenv import load_dotenv\n\n# Accedemos a nuestra API Key\nload_dotenv()\napi_key = os.getenv(\"OPENAI_API_KEY\")\n\n# Conexion con OpenAI usando la libreria\nfrom openai import OpenAI\n\n# Guardamos la conexion en client\nclient = OpenAI(api_key = api_key)\n\nUna vez que tenemos una conexión, hay que subir los archivos de train y de test a OpenIA.\n\n\n\n\n\n\nImportant\n\n\n\nDebemos definir el propósito de los datos que estamos creando, para este caso, un fine-tune\n\n\nAl subir los archivos, OpenIA nos entregará Ids únicos para cada dataset cargado.\n\n# Subir el archivo de entrenamiento\ntrain = client.files.create(\n  file = open(\"train_formatted_dataset.jsonl\", \"rb\"),\n  purpose = \"fine-tune\"  # PORPOSITO\n)\n\n# Subir el archivo de pruebas.\ntest = client.files.create(\n  file = open(\"test_formatted_dataset.jsonl\", \"rb\"),\n  purpose = \"fine-tune\"  # PORPOSITO\n)\n\nUna vez que subimos los archivos a los servidores, viene la última parte, crear un job de fine tuning en los servicios de OpenIA, es decir, es un proceso en la nube, ya habríamos terminado con el código\n\n# Generamos un \"job\" de fine tuning\njob = client.fine_tuning.jobs.create(\n    training_file = \"file-JqgvG1NAVf19w5bQeJ76Nw\",    # ID generado anteriormente\n    validation_file = \"file-V7jgUevqPnJ1sHvYbq5PQ2\",  # ID generado anteriormente\n    model = \"gpt-4o-2024-08-06\",   # Modelo base al que haremos fine tuning\n    method = {\n        \"type\": \"supervised\",   # Metodo del fine tuning\n        \"supervised\": {         # Este metodo tiene ciertos hiperparametros\n            \"hyperparameters\": {\n            \"batch_size\": \"5\", # depende del problema, es un trade-off entre eficiencia en el uso de recursos y el performance del modelo.\n            \"learning_rate_multiplier\": \"0.001\", # Recomendado de 0.0001-10\n            \"n_epochs\": \"auto\",\n          }\n        },\n    },\n)",
+    "crumbs": [
+      "Fundamentos de LLMs",
+      "<span class='chapter-number'>33</span>  <span class='chapter-title'>Fine tuning  supervisado</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/fundamentos_llm/fine_tuning.html#openia-desde-platform",
+    "href": "qmd/fundamentos_llm/fine_tuning.html#openia-desde-platform",
+    "title": "33  Fine tuning supervisado",
+    "section": "33.6 OpenIA desde platform",
+    "text": "33.6 OpenIA desde platform\nPodremos ver el proceso del job en la página OpenIA (no en la página de chatgpt). Obtendremos una vista como esta, donde hallaremos las características de nuestro fine tuning.\n\nEste proceso consta de varias etapas, comenzando por la validación de los datos de entrenamiento y prueba. Una vez finalizada esta fase, se inicia el entrenamiento del modelo utilizando la información proporcionada. La duración total del procedimiento depende tanto del volumen de datos cargados como de la disponibilidad de los servidores de OpenIA, ya que en ocasiones puede haber una lista de espera para la ejecución de los trabajos.\nEn este ejemplo, OpenIA nos lanzó a una cola de casi 16 horas.\n\nUna vez que se terminó el proceso de fine tuning, OpenIA nos entrega méticas respecto a la calidad del modelo.\n\nTrained tokens: número de tokens que se utilizaron para crear el fine tuning. Este número es importante, pues nos indica cuánto nos van a cobrar por el procedimiento.\nHiperparámetros: aquí deberíamos ver los mismos que definimos al momento de crear el job, a excepción del Epoch, que lo definió OpenIA y la seed o semilla.\nCheckpoint: OpenIA realiza puntos de guardado durante el proceso, y se puede “probar” el modelo en cada uno de ellos. Muy útil para ver cambios entre pasos.\nTrain loss: representa el error promedio que comete el modelo sobre el conjunto de datos de entrenamiento durante el proceso de ajuste. Es una medida de qué tan bien el modelo está aprendiendo a predecir las respuestas correctas para los ejemplos que ha visto. Un valor bajo de train loss indica que el modelo está ajustando sus parámetros correctamente y está logrando predecir bien las salidas esperadas en el entrenamiento; un valor alto sugiere que el modelo aún comete muchos errores.\nValid loss: representa el error promedio que comete el modelo sobre el conjunto de datos de validación, es decir, sobre ejemplos que no ha visto durante el entrenamiento. Sirve para evaluar qué tan bien el modelo generaliza a datos nuevos y desconocidos. Un valor bajo de valid loss indica que el modelo está aprendiendo correctamente y no solo memorizando los datos de entrenamiento; un valor alto puede señalar problemas de sobreajuste o que el modelo no está captando bien el patrón de los datos.\nFull valid loss: representa el error promedio del modelo sobre todo el conjunto de datos de validación, considerando todas las muestras y posibles checkpoints del entrenamiento. Es útil para tener una visión global de cómo el modelo se desempeña en datos que no ha visto, y ayuda a comparar el rendimiento entre diferentes etapas del entrenamiento. Un valor bajo de full valid loss indica buena capacidad de generalización; un valor alto puede señalar problemas de sobreajuste o que el modelo no está aprendiendo correctamente los patrones del conjunto de validación.\nAccuracy: indica el porcentaje de respuestas correctas que el modelo genera en el conjunto de prueba, comparando las respuestas esperadas con las obtenidas. Es una medida de qué tan bien el modelo predice correctamente en ejemplos que no ha visto durante el entrenamiento. Un valor alto de accuracy significa que el modelo generaliza bien y responde correctamente en la mayoría de los casos; un valor bajo indica que el modelo comete muchos errores en datos nuevos.",
+    "crumbs": [
+      "Fundamentos de LLMs",
+      "<span class='chapter-number'>33</span>  <span class='chapter-title'>Fine tuning  supervisado</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/fundamentos_llm/lora.html",
+    "href": "qmd/fundamentos_llm/lora.html",
+    "title": "34  Lora",
+    "section": "",
+    "text": "LoRa, o Low-Rank Adaptation, permite realizar fine tuning sobre modelos gigantes con menos recursos computacionales. En lugar de entrenar la totalidad de un modelo con millones o incluso billones de parámetros, LoRa entrena solamente pequeñas matrices, disminuyendo enormemente el uso de memoria y tiempo del proceso.\nLoRa aprovecha la llamada hipótesis del rango intrínseco, según la cual con pocos ajustes puntuales en pequeñas matrices es posible adaptar el comportamiento del modelo más grande. Esto implica:\n\nCongelar la gran matriz de pesos original.\nCrear matrices reducidas que sí serán entrenadas.\nIntegrar, al final, estas matrices con la matriz original para adaptar el modelo al nuevo caso de uso.\n\nEl procedimiento es principalmente útil para disminuir la cantidad de parámetros de un modelo, y con ello, la necesidad de cómputo.",
+    "crumbs": [
+      "Fundamentos de LLMs",
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Lora</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/prompt_engineering/1_intro.html",
+    "href": "qmd/prompt_engineering/1_intro.html",
+    "title": "Prompt Engineering",
+    "section": "",
+    "text": "El Prompt Engineering es el arte y la ciencia de diseñar instrucciones efectivas para modelos de lenguaje de inteligencia artificial. Esta disciplina emergente se centra en cómo formular, estructurar y refinar los “prompts” (instrucciones o peticiones) que se proporcionan a los modelos de IA para obtener los resultados más precisos, útiles y relevantes.\nEn esencia, un ingeniero de prompts desarrolla habilidades para:\n\nFormular instrucciones claras y específicas\nProporcionar el contexto adecuado\nEstructurar las peticiones para maximizar la calidad de las respuestas\nGuiar al modelo hacia el formato y estilo deseado\nSuperar las limitaciones inherentes de los sistemas de IA\n\nEl Prompt Engineering se ha convertido en una habilidad esencial para aprovechar al máximo el potencial de los modelos de lenguaje en sus flujos de trabajo.\nImportancia del Prompt Engineering\n\nEficiencia: obtener respuestas precisas y útiles en menos iteraciones\nPersonalización: adaptar las respuestas a necesidades específicas\nSuperación de limitaciones: minimizar errores, sesgos o confusiones del modelo\nCasos de uso avanzados: habilitar aplicaciones complejas que serían imposibles con prompts básicos\n\nEste apartado refiere a los apuntes hechos del curso Prompt Engineering de Platzi.",
+    "crumbs": [
+      "Prompt Engineering"
+    ]
+  },
+  {
+    "objectID": "qmd/prompt_engineering/zero_shot.html",
+    "href": "qmd/prompt_engineering/zero_shot.html",
+    "title": "Zero-Shot",
+    "section": "",
+    "text": "¿Qué es el Zero-Shot Prompting?\nEl Zero-Shot Prompting es una técnica que permite obtener respuestas específicas de un modelo de lenguaje (LLM) proporcionándole únicamente una instrucción directa y sin ejemplos previamente definidos. Este método es ideal cuando se necesitan respuestas inmediatas y claras sin mostrar al modelo ejemplos anteriores de lo que se espera.",
+    "crumbs": [
+      "Prompt Engineering",
+      "Zero-Shot"
+    ]
+  },
+  {
+    "objectID": "qmd/prompt_engineering/zero_shot.html#cuándo-usar-zero-shot-prompting",
+    "href": "qmd/prompt_engineering/zero_shot.html#cuándo-usar-zero-shot-prompting",
+    "title": "Zero-Shot",
+    "section": "¿Cuándo usar Zero-Shot Prompting?",
+    "text": "¿Cuándo usar Zero-Shot Prompting?\nEl Zero-Shot Prompting es útil en situaciones donde:\n\nSe requiere una respuesta rápida\nNo se dan ejemplos previos al modelo, solo se le da una instrucción directa.",
+    "crumbs": [
+      "Prompt Engineering",
+      "Zero-Shot"
+    ]
+  },
+  {
+    "objectID": "qmd/prompt_engineering/zero_shot.html#conceptos-clave-para-un-buen-zero-shot-prompt",
+    "href": "qmd/prompt_engineering/zero_shot.html#conceptos-clave-para-un-buen-zero-shot-prompt",
+    "title": "Zero-Shot",
+    "section": "Conceptos Clave para un Buen Zero-Shot Prompt",
+    "text": "Conceptos Clave para un Buen Zero-Shot Prompt\n\nEnfoque: definir claramente la tarea a realizar.\n\nEjemplo: “Ayúdame a planear mis vacaciones con mi esposa.”.\n\nContexto: información adicional que debe tener en cuenta el LLM desde el inicio.\n\nEjemplo: “Tenemos la idea de ir a Europa, pero no sabemos qué países reqiueren visa.”.\n\nLímites: cosas que puede o no puede hacer el LLM.\nRol: definir el perfil que debe asumir el LLM, como un agente de viajes.",
+    "crumbs": [
+      "Prompt Engineering",
+      "Zero-Shot"
+    ]
+  },
+  {
+    "objectID": "qmd/prompt_engineering/zero_shot.html#técnica-paso-a-paso",
+    "href": "qmd/prompt_engineering/zero_shot.html#técnica-paso-a-paso",
+    "title": "Zero-Shot",
+    "section": "Técnica “Paso a Paso”",
+    "text": "Técnica “Paso a Paso”\nSí uno le inidica al modelo que piense o realice la tarea paso a paso, el LLM razonará un plan para resolver la tarea que le estamos pidiendo.\n\nCon la técnica: hace más preguntas, más estructura tipo cuestionario.\nSin la técnica: puede asumir muchas cosas sin preguntar y limitar opciones.",
+    "crumbs": [
+      "Prompt Engineering",
+      "Zero-Shot"
+    ]
+  },
+  {
+    "objectID": "qmd/prompt_engineering/zero_shot.html#técnica-de-agregar-etiquetas-xml",
+    "href": "qmd/prompt_engineering/zero_shot.html#técnica-de-agregar-etiquetas-xml",
+    "title": "Zero-Shot",
+    "section": "Técnica de agregar etiquetas XML",
+    "text": "Técnica de agregar etiquetas XML\nUtilizar etiquetas XML permite clarificar con precisión dónde comienzan y finalizan ciertas partes del prompt. Dado que estas etiquetas estructuran claramente el texto, reducen la posibilidad de confusión y facilitan la interpretación correcta del prompt por parte del modelo.\nUn ejemplo:\n\nDefinicion de secciones:\n\n&lt;Instrucciones&gt;\nCrea un plan para unas vacaciones en pareja.\nComo agente de viajes, realizame las preguntas pertinentes para crear el\nplan de vacaciones.\nDa al usuario varias opciones de planes, antes de crear un itinerario.\nUna vez generado el intinerario, crea una lista de requisitios para el viaje\ncomo: visas, vuelos, hoteles entre otros.\nPiensa paso a paso.\n&lt;/Instrucciones&gt;\n\n&lt;contexto&gt;\nEste plan de viaje es para chilenos.\nEl destino debe estar en Europa.\n&lt;/contexto&gt;",
+    "crumbs": [
+      "Prompt Engineering",
+      "Zero-Shot"
+    ]
+  },
+  {
+    "objectID": "qmd/prompt_engineering/zero_shot.html#en-resumen-consideraciones-para-refinar-un-prompt",
+    "href": "qmd/prompt_engineering/zero_shot.html#en-resumen-consideraciones-para-refinar-un-prompt",
+    "title": "Zero-Shot",
+    "section": "En resumen: consideraciones para refinar un prompt",
+    "text": "En resumen: consideraciones para refinar un prompt\n\nClaridad en el rol: Define claramente el rol que el LLM debe asumir (por ejemplo, “actúa como un agente de viajes”).\nInstrucciones específicas: Proporciona instrucciones claras y directas sobre lo que deseas que haga el modelo, evita ser vago.\nFlexibilidad en preguntas: permite que el modelo formule preguntas abiertas para obtener más información pertinente.\nPensamiento paso a paso: indica que el modelo debe desglosar el problema en pasos más pequeños, facilitando una respuesta más estructurada.\nDelimitación de contexto: usa etiquetas o delimitadores (sin programación) para separar instrucciones, contexto y reglas, mejorando la comprensión del modelo.",
+    "crumbs": [
+      "Prompt Engineering",
+      "Zero-Shot"
+    ]
+  },
+  {
+    "objectID": "qmd/prompt_engineering/few_shot.html",
+    "href": "qmd/prompt_engineering/few_shot.html",
+    "title": "FewShot",
+    "section": "",
+    "text": "¿Cuándo utilizar FewShot en vez de ZeroShot?\nEn inteligencia artificial, FewShot es una estrategia que ayuda al modelo a entender con claridad lo que deseas al incluir ejemplos específicos en las instrucciones. A diferencia de ZeroShot, que es más abierta y general, FewShot permite solucionar problemas complejos pero definidos, proporcionando ejemplos claros que guían los resultados.\nZeroShot es ideal cuando buscas flexibilidad y creatividad en respuestas amplias y subjetivas, como diseñar un plan de vacaciones a medida. FewShot, por otro lado, destaca en tareas específicas y complejas donde se necesitan respuestas claras y precisas, como clasificar correctamente opiniones en positivas, negativas o neutras.",
+    "crumbs": [
+      "Prompt Engineering",
+      "FewShot"
+    ]
+  },
+  {
+    "objectID": "qmd/prompt_engineering/few_shot.html#ejemplo-de-uso-clasificación-de-comentarios-con-fewshot",
+    "href": "qmd/prompt_engineering/few_shot.html#ejemplo-de-uso-clasificación-de-comentarios-con-fewshot",
+    "title": "FewShot",
+    "section": "Ejemplo de uso: clasificación de comentarios con FewShot",
+    "text": "Ejemplo de uso: clasificación de comentarios con FewShot\nPara emplear FewShot y diferenciar los comentarios que recibes, sigue estos pasos:\n\nDefine indicaciones claras: dile al modelo que actúe como analista de sentimientos, identificando comentarios positivos, negativos o neutrales según la opinión expresada.\nIncluye ejemplos prácticos: proporciona ejemplos breves y claros que demuestren qué consideras positivo, negativo o neutro.\nUtiliza un formato consistente: emplea etiquetas claras para pisos y techos de los ejemplos facilitando al modelo la identificación de los límites.\n\nUn ejemplo puede ser:\n&lt;reglas&gt;\nResponde solo con la palabra neutral, positiva o negativa.\n&lt;/reglas&gt;\n\n&lt;ejemplo&gt;\nComentario: “La comida fue pésima”.\nCalificación: negativa.\n&lt;/ejemplo&gt;\n\n&lt;ejemplo&gt;\nComentario: “El servicio estuvo increíble y la comida deliciosa”.\nCalificación: positiva.\n&lt;/ejemplo&gt;\n\n&lt;ejemplo&gt;\nComentario: “El servicio fue bueno, pero la comida estuvo muy regular”.\nCalificación: neutral.\n&lt;/ejemplo&gt;",
+    "crumbs": [
+      "Prompt Engineering",
+      "FewShot"
+    ]
+  },
+  {
+    "objectID": "qmd/prompt_engineering/few_shot.html#importancia-de-los-ejemplos-en-fewshot",
+    "href": "qmd/prompt_engineering/few_shot.html#importancia-de-los-ejemplos-en-fewshot",
+    "title": "FewShot",
+    "section": "Importancia de los ejemplos en FewShot",
+    "text": "Importancia de los ejemplos en FewShot\nCada ejemplo que incluyas enseña al modelo a distinguir con exactitud lo que quieres decir, dando una guía práctica y clara para identificar sentimientos y evitar ambigüedades. Recuerda que cada palabra y detalle influye notablemente en el resultado, por lo que una buena elección de ejemplos impacta positivamente en la efectividad final del modelo.\n\n¿Cuántos ejemplos debo incluir en mi prompt?\nPoner muchos o pocos ejemplos dependerá del rendimiento deseado y la complejidad del problema:\n\nCada ejemplo consume tokens y va a afectar el costo del uso.\nA mayor cantidad de ejemplos, más precisa será la calificación al detalle.\n\n\n\n\n\n\n\nTip\n\n\n\nLo recomendable es iniciar con algunos ejemplos clave e ir agregando aquellos donde identifiques errores previos para mejorar continuamente los resultados.",
+    "crumbs": [
+      "Prompt Engineering",
+      "FewShot"
+    ]
+  },
+  {
+    "objectID": "qmd/prompt_engineering/few_shot.html#cómo-puedo-validar-los-resultados-de-mi-análisis",
+    "href": "qmd/prompt_engineering/few_shot.html#cómo-puedo-validar-los-resultados-de-mi-análisis",
+    "title": "FewShot",
+    "section": "¿Cómo puedo validar los resultados de mi análisis?",
+    "text": "¿Cómo puedo validar los resultados de mi análisis?\nRealiza pruebas constantes ajustando detalles del prompt como las comillas o etiquetas y verificando si los resultados varían. Mediante ensayos controlados, puedes detectar y corregir errores eficientemente, garantizando que el modelo entienda con precisión tu requerimiento.",
+    "crumbs": [
+      "Prompt Engineering",
+      "FewShot"
+    ]
+  },
+  {
+    "objectID": "qmd/prompt_engineering/chain_of_thought.html",
+    "href": "qmd/prompt_engineering/chain_of_thought.html",
+    "title": "Chain of thought o cadena de pensamiento",
+    "section": "",
+    "text": "La técnica de prompting Chain of Thought, o cadena de pensamiento, mejora significativamente la calidad de respuesta de los modelos de lenguaje como ChatGPT. Aplicar este método implica guiar paso a paso las respuestas mediante instrucciones claras, para obtener resultados más precisos y coherentes. Veamos qué implica esta técnica y cómo sacarle el máximo provecho.\nChain of Thought consiste en pedir al modelo que explique, paso por paso, cómo llega a una respuesta determinada, especialmente ante preguntas que requieren razonamiento lógico. Antes de contar con modelos avanzados, era necesario indicar explícitamente en los prompts que “pensaran paso a paso”; los modelos actuales con capacidad de razonamiento avanzado ya operan bajo esta lógica por defecto.\nEsta técnica mejora los resultados, pero necesita un mayor tiempo de procesamiento por parte del modelo.\n\n¿Cuándo conviene usar chain of thougth?\n\nResolución lógica de acertijos.\nProcedimientos matemáticos y científicos que siguen un orden definido. Por ejemplo, resolver ecuaciones siguiendo reglas establecidas como la jerarquía de operaciones matemáticas (primero paréntesis, luego multiplicación y división, finalmente suma y resta).\n\nEjemplo práctico\n[CONTEXTO]\nNecesito resolver el siguiente problema matemático: Un tren A sale de Madrid a las 8:00 AM viajando a 120 km/h hacia Valencia. Un tren B sale de Valencia a las 9:30 AM viajando a 90 km/h hacia Madrid. Si la distancia entre Madrid y Valencia es de 360 km, ¿a qué hora se cruzarán los trenes?\n\n[INSTRUCCIÓN EXPLÍCITA CON CHAIN OF THOUGHT]\nPor favor, resuelve este problema paso a paso. Piensa de forma estructurada:\n1. Identifica los datos relevantes\n2. Plantea las ecuaciones necesarias\n3. Resuelve algebraicamente\n4. Verifica tu respuesta\n\n[FORMATO DESEADO]\nMuestra cada uno de tus pasos de razonamiento y explica por qué sigues ese enfoque. Finaliza con una conclusión clara que responda directamente a la pregunta.",
+    "crumbs": [
+      "Prompt Engineering",
+      "Chain of thought o cadena de pensamiento"
+    ]
+  },
+  {
+    "objectID": "qmd/prompt_engineering/meta_prompting.html",
+    "href": "qmd/prompt_engineering/meta_prompting.html",
+    "title": "Meta prompting",
+    "section": "",
+    "text": "Casos de uso:\nEl meta-prompting es una técnica avanzada de prompt engineering donde se instruye al modelo de lenguaje para que genere, refine o evalúe prompts. En lugar de pedir directamente una respuesta a una tarea, se le pide al modelo que actúe como un “ingeniero de prompts” o un “asistente de creación de prompts”, ayudando a construir el prompt óptimo para una tarea específica. Esta técnica es útil cuando se busca mejorar la calidad de los prompts existentes, generar variaciones de prompts para probar diferentes enfoques, o incluso para que el modelo explique por qué un prompt particular podría ser más efectivo que otro.",
+    "crumbs": [
+      "Prompt Engineering",
+      "Meta prompting"
+    ]
+  },
+  {
+    "objectID": "qmd/prompt_engineering/meta_prompting.html#casos-de-uso",
+    "href": "qmd/prompt_engineering/meta_prompting.html#casos-de-uso",
+    "title": "Meta prompting",
+    "section": "",
+    "text": "Optimización de Prompts: Mejorar un prompt existente para obtener mejores respuestas.\nGeneración de Variaciones de Prompts: Crear múltiples versiones de un prompt para A/B testing o para cubrir diferentes matices de una tarea.\nAnálisis de Prompts: Pedir al modelo que evalúe la efectividad de un prompt y sugiera mejoras.\nCreación de Prompts para Tareas Complejas: Guiar al modelo para que construya un prompt detallado para una tarea que requiere múltiples consideraciones.\nEducación en Prompt Engineering: Usar el modelo para que enseñe cómo construir buenos prompts.",
+    "crumbs": [
+      "Prompt Engineering",
+      "Meta prompting"
+    ]
+  },
+  {
+    "objectID": "qmd/prompt_engineering/meta_prompting.html#por-qué-es-importante-refinar-un-prompt",
+    "href": "qmd/prompt_engineering/meta_prompting.html#por-qué-es-importante-refinar-un-prompt",
+    "title": "Meta prompting",
+    "section": "¿Por qué es importante refinar un prompt?",
+    "text": "¿Por qué es importante refinar un prompt?\nCrear un prompt efectivo va más allá de agregar más instrucciones o reglas. Modificar palabras y comprender claramente su significado es clave para obtener resultados precisos usando inteligencia artificial. Este método de refinamiento puede aplicarse a diversas profesiones y tareas cotidianas.",
+    "crumbs": [
+      "Prompt Engineering",
+      "Meta prompting"
+    ]
+  },
+  {
+    "objectID": "qmd/prompt_engineering/meta_prompting.html#ejemplo-de-meta-promt",
+    "href": "qmd/prompt_engineering/meta_prompting.html#ejemplo-de-meta-promt",
+    "title": "Meta prompting",
+    "section": "Ejemplo de Meta promt",
+    "text": "Ejemplo de Meta promt\n[ROL]\nEres un experto en Prompt Engineering especializado en la creación de prompts para modelos de lenguaje generativos de texto.\n\n[TAREA]\nQuiero generar descripciones de productos concisas y persuasivas para una tienda online de artículos de tecnología. El público objetivo son jóvenes adultos interesados en las últimas novedades.\n\n[INSTRUCCIÓN DE META-PROMPTING]\nPor favor, crea tres variaciones de un prompt que yo pueda usar con un modelo como ChatGPT para generar estas descripciones de producto. Cada prompt debe:\n1. Especificar el tono deseado (moderno, entusiasta).\n2. Indicar la longitud aproximada de la descripción (ej. 2-3 frases).\n3. Solicitar que se destaquen 1-2 características clave del producto.\n4. Incluir un placeholder para el [NOMBRE_DEL_PRODUCTO] y [CARACTERISTICAS_CLAVE].\n\n[FORMATO DESEADO]\nPresenta cada variación del prompt claramente numerada.",
+    "crumbs": [
+      "Prompt Engineering",
+      "Meta prompting"
+    ]
+  },
+  {
+    "objectID": "qmd/prompt_engineering/prompt_chaining.html",
+    "href": "qmd/prompt_engineering/prompt_chaining.html",
+    "title": "Prompt chaining",
+    "section": "",
+    "text": "El Prompt Chaining se basa en descomponer grandes retos en partes pequeñas que manejas individualmente en múltiples chats. A diferencia de lo habitual, donde mantienes todo dentro de un solo chat, esta técnica implica tomar cada resultado logrado y moverlo a un nuevo chat específico, garantizando mayor claridad y menos errores.",
+    "crumbs": [
+      "Prompt Engineering",
+      "Prompt chaining"
     ]
   }
 ]

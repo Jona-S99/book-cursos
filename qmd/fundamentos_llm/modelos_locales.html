@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Prompt Engineering – Apuntes varios</title>
+<title>32&nbsp; Modelos locales – Apuntes varios</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../qmd/prompt_engineering/zero_shot.html" rel="next">
-<link href="../../qmd/fundamentos_llm/lora.html" rel="prev">
+<link href="../../qmd/fundamentos_llm/fine_tuning.html" rel="next">
+<link href="../../qmd/fundamentos_llm/moe.html" rel="prev">
 <link href="../../static/images/cover.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -250,7 +250,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../qmd/prompt_engineering/1_intro.html">Prompt Engineering</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../qmd/fundamentos_llm/fundamentos.html">Fundamentos de LLMs</a></li><li class="breadcrumb-item"><a href="../../qmd/fundamentos_llm/modelos_locales.html"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Modelos locales</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -465,13 +465,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Fundamentos de LLMs</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../qmd/fundamentos_llm/fundamentos.html" class="sidebar-item-text sidebar-link">
@@ -504,7 +504,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../qmd/fundamentos_llm/modelos_locales.html" class="sidebar-item-text sidebar-link">
+  <a href="../../qmd/fundamentos_llm/modelos_locales.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Modelos locales</span></span></a>
   </div>
 </li>
@@ -524,13 +524,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../qmd/prompt_engineering/1_intro.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../qmd/prompt_engineering/1_intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Prompt Engineering</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../qmd/prompt_engineering/zero_shot.html" class="sidebar-item-text sidebar-link">
@@ -568,16 +568,25 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#ollama" id="toc-ollama" class="nav-link active" data-scroll-target="#ollama"><span class="header-section-number">32.1</span> Ollama</a></li>
+  <li><a href="#qué-es-exolabs-y-cómo-potencia-el-uso-local-de-llms" id="toc-qué-es-exolabs-y-cómo-potencia-el-uso-local-de-llms" class="nav-link" data-scroll-target="#qué-es-exolabs-y-cómo-potencia-el-uso-local-de-llms"><span class="header-section-number">32.2</span> ¿Qué es ExoLabs y cómo potencia el uso local de LLMs?</a></li>
+  <li><a href="#cómo-montar-un-clúster-local-con-exolabs" id="toc-cómo-montar-un-clúster-local-con-exolabs" class="nav-link" data-scroll-target="#cómo-montar-un-clúster-local-con-exolabs"><span class="header-section-number">32.3</span> ¿Cómo montar un clúster local con ExoLabs?</a></li>
+  <li><a href="#cuáles-son-las-ventajas-concretas-de-ejecutar-llm-en-local" id="toc-cuáles-son-las-ventajas-concretas-de-ejecutar-llm-en-local" class="nav-link" data-scroll-target="#cuáles-son-las-ventajas-concretas-de-ejecutar-llm-en-local"><span class="header-section-number">32.4</span> ¿Cuáles son las ventajas concretas de ejecutar LLM en local?</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../qmd/fundamentos_llm/fundamentos.html">Fundamentos de LLMs</a></li><li class="breadcrumb-item"><a href="../../qmd/fundamentos_llm/modelos_locales.html"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Modelos locales</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Prompt Engineering</h1>
+<h1 class="title"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Modelos locales</span></h1>
 </div>
 
 
@@ -594,26 +603,34 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>El Prompt Engineering es el arte y la ciencia de diseñar instrucciones efectivas para modelos de lenguaje de inteligencia artificial. Esta disciplina emergente se centra en cómo formular, estructurar y refinar los “prompts” (instrucciones o peticiones) que se proporcionan a los modelos de IA para obtener los resultados más precisos, útiles y relevantes.</p>
-<p>En esencia, un ingeniero de prompts desarrolla habilidades para:</p>
+<p>Para ejecutar modelos de lenguaje forma local necesitamos ciertas herramientas:</p>
+<section id="ollama" class="level2" data-number="32.1">
+<h2 data-number="32.1" class="anchored" data-anchor-id="ollama"><span class="header-section-number">32.1</span> <a href="https://ollama.com/">Ollama</a></h2>
+<p>La página de Ollama contiene diversos modelos para descargar y correr localemente. En la descripción de cada modelo veremos ciertos elementos que nos indican las características del mismo.</p>
+</section>
+<section id="qué-es-exolabs-y-cómo-potencia-el-uso-local-de-llms" class="level2" data-number="32.2">
+<h2 data-number="32.2" class="anchored" data-anchor-id="qué-es-exolabs-y-cómo-potencia-el-uso-local-de-llms"><span class="header-section-number">32.2</span> ¿Qué es ExoLabs y cómo potencia el uso local de LLMs?</h2>
+<p>ExoLabs permite conectar múltiples computadoras creando un clúster local de potencia computacional compartida:</p>
+<p>Concepto principal: Usa redes peer-to-peer (P2P) como la tecnología detrás de plataformas como Torrent para compartir datos y tareas entre máquinas conectadas. Ventajas: Reduce costos al utilizar varias computadoras económicas, mejora la privacidad (importante en sectores bancarios o jurídicos) y permite controlar específicamente las configuraciones y costos operacionales.</p>
+</section>
+<section id="cómo-montar-un-clúster-local-con-exolabs" class="level2" data-number="32.3">
+<h2 data-number="32.3" class="anchored" data-anchor-id="cómo-montar-un-clúster-local-con-exolabs"><span class="header-section-number">32.3</span> ¿Cómo montar un clúster local con ExoLabs?</h2>
+<p>Estos pasos específicos son clave para conectar varias máquinas con ExoLabs:</p>
 <ul>
-<li>Formular instrucciones claras y específicas</li>
-<li>Proporcionar el contexto adecuado</li>
-<li>Estructurar las peticiones para maximizar la calidad de las respuestas</li>
-<li>Guiar al modelo hacia el formato y estilo deseado</li>
-<li>Superar las limitaciones inherentes de los sistemas de IA</li>
+<li><p><strong>Equipamiento</strong>: necesitas diversas computadoras conectadas mediante switch y router, pudiendo combinar conexiones Ethernet y WiFi.</p></li>
+<li><p><strong>Configuración</strong> y ejecución: instala ExoLabs en cada máquina; al ejecutar, crea automáticamente una red entre ellas mostrando información como teraflops o memoria disponible.</p></li>
+<li><p><strong>Funcionamiento</strong>: Cada computadora aporta sus capacidades (CPU, GPU, memoria) a la red, haciendo posible ejecutar modelos de gran tamaño que de otro modo requerirían hardware costoso.</p></li>
 </ul>
-<p>El Prompt Engineering se ha convertido en una habilidad esencial para aprovechar al máximo el potencial de los modelos de lenguaje en sus flujos de trabajo.</p>
-<p>Importancia del Prompt Engineering</p>
+</section>
+<section id="cuáles-son-las-ventajas-concretas-de-ejecutar-llm-en-local" class="level2" data-number="32.4">
+<h2 data-number="32.4" class="anchored" data-anchor-id="cuáles-son-las-ventajas-concretas-de-ejecutar-llm-en-local"><span class="header-section-number">32.4</span> ¿Cuáles son las ventajas concretas de ejecutar LLM en local?</h2>
 <ul>
-<li><p><strong>Eficiencia:</strong> obtener respuestas precisas y útiles en menos iteraciones</p></li>
-<li><p><strong>Personalización:</strong> adaptar las respuestas a necesidades específicas</p></li>
-<li><p><strong>Superación de limitaciones:</strong> minimizar errores, sesgos o confusiones del modelo</p></li>
-<li><p><strong>Casos de uso avanzados:</strong> habilitar aplicaciones complejas que serían imposibles con prompts básicos</p></li>
+<li><p><strong>Privacidad total</strong>: Los datos sensibles permanecen en tu entorno, clave para industrias sensibles al manejo de información.</p></li>
+<li><p><strong>Control absoluto</strong>: Define exactamente qué quieres ejecutar, cuánto gastar, y cómo ajustar o optimizar tu modelo específicamente para tu caso de uso con técnicas como el fine tuning.</p></li>
 </ul>
-<p>Este apartado refiere a los apuntes hechos del curso Prompt Engineering de <a href="https://platzi.com/">Platzi</a>.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1030,13 +1047,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../qmd/fundamentos_llm/lora.html" class="pagination-link" aria-label="Lora">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Lora</span></span>
+      <a href="../../qmd/fundamentos_llm/moe.html" class="pagination-link" aria-label="Mixture of Experts (MoE)">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Mixture of Experts (MoE)</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../qmd/prompt_engineering/zero_shot.html" class="pagination-link" aria-label="Zero-Shot">
-        <span class="nav-page-text">Zero-Shot</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../qmd/fundamentos_llm/fine_tuning.html" class="pagination-link" aria-label="Fine tuning  supervisado">
+        <span class="nav-page-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Fine tuning supervisado</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
