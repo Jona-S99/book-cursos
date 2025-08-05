@@ -1,0 +1,69 @@
+---
+jupyter: python3
+---
+
+# Métodos mágicos
+
+Los **métodos mágicos** en Python (también llamados "métodos especiales" o "dunder methods" por la doble subrayado que los rodea) son funciones predefinidas en las clases que permiten personalizar el comportamiento de los objetos en varias situaciones, como en operaciones matemáticas, conversiones de tipos, comparaciones y manejo de contenedores.
+
+Estos métodos permiten que tus objetos interactúen con las operaciones y funciones internas de Python, como:
+
+- Creación e inicialización de objetos: `__new__`, `__init__`
+- Representación de objetos: `__str__`, `__repr__`
+- Operadores aritméticos: `__add__`, `__sub__`, `__mul__`, etc.
+- Comparaciones: `__eq__`, `__lt__`, `__gt__`, etc.
+- Acceso a elementos: `__getitem__`, `__setitem__`
+- Conversión de tipos: `__int__`, `__float__`, `__bool__`
+- Contextos especiales: `__enter__`, `__exit__` (para with)
+
+```{python}
+#| eval: false
+
+# __init__: inicialización de objetos
+class Persona:
+    def __init__(self, nombre):
+        self.nombre = nombre
+
+p = Persona("Ana")
+print(p.nombre)  # Ana
+
+# __str__: representación legible
+class Producto:
+    def __init__(self, nombre, precio):
+        self.nombre = nombre
+        self.precio = precio
+
+    def __str__(self):
+        return f"{self.nombre} (${self.precio})"
+
+prod = Producto("Libro", 15)
+print(prod)  # Libro ($15)
+
+# __add__: suma personalizada
+class Punto:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __add__(self, otro):
+        return Punto(self.x + otro.x, self.y + otro.y)
+
+    def __str__(self):
+        return f"({self.x}, {self.y})"
+
+a = Punto(1, 2)
+b = Punto(3, 4)
+c = a + b
+print(c)  # (4, 6)
+
+# __len__: longitud personalizada
+class Grupo:
+    def __init__(self, miembros):
+        self.miembros = miembros
+
+    def __len__(self):
+        return len(self.miembros)
+
+g = Grupo(["Ana", "Luis", "María"])
+print(len(g))  # 3
+```
