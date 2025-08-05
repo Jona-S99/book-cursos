@@ -1,0 +1,15 @@
+---
+jupyter: python3
+---
+
+# Lora
+
+LoRa, o Low-Rank Adaptation, permite realizar fine tuning sobre modelos gigantes con menos recursos computacionales. En lugar de entrenar la totalidad de un modelo con millones o incluso billones de parámetros, LoRa entrena solamente pequeñas matrices, disminuyendo enormemente el uso de memoria y tiempo del proceso.
+
+LoRa aprovecha la llamada hipótesis del rango intrínseco, según la cual con pocos ajustes puntuales en pequeñas matrices es posible adaptar el comportamiento del modelo más grande. Esto implica:
+
+- Congelar la gran matriz de pesos original.
+- Crear matrices reducidas que sí serán entrenadas.
+- Integrar, al final, estas matrices con la matriz original para adaptar el modelo al nuevo caso de uso.
+
+El procedimiento es principalmente útil para disminuir la cantidad de parámetros de un modelo, y con ello, la necesidad de cómputo.
