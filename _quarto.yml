@@ -58,6 +58,10 @@ book:
         - qmd/fundamentos_llm/training_llm.qmd
         - qmd/fundamentos_llm/rope.qmd
         - qmd/fundamentos_llm/escalado_multimodal.qmd
+        - qmd/fundamentos_llm/moe.qmd
+        - qmd/fundamentos_llm/modelos_locales.qmd
+        - qmd/fundamentos_llm/fine_tuning.qmd
+        - qmd/fundamentos_llm/lora.qmd
     - part: qmd/prompt_engineering/1_intro.qmd
       chapters:
         - qmd/prompt_engineering/zero_shot.qmd
